@@ -187,7 +187,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       title: "Expedição Raízes da Mantiqueira", 
       category: "Aventura", 
       isPremium: true,
-      image: "/assets/imagens/o-que-fazer/Expedicao-raizes-da-mantiqueira.png",
+      image: "/assets/imagens/logos/logo-expedicao-raizes.jpg",
       description: "Passeios 4x4 em Penedo, trilhas e cachoeiras exclusivas. Prêmio TripAdvisor Travellers' Choice 2026.",
       fullInfo: "Empresa credenciada Ministério do turismo Cadastur realizando Turismo Legal. Guia credenciado Mtur Cadastur. Nosso compromisso é proporcionar a conectividade com a natureza de maneira sustentável. Não vendemos apenas um serviço proporcionamos experiências.",
       descricao_longa: "Embarque inesquecível pelo coração de Penedo. Com nossos passeios off-road 4x4, você terá acesso a trilhas escondidas e cachoeiras exclusivas que poucos têm a chance de conhecer. Somos guiados por profissionais apaixonados e garantimos a máxima segurança através do Turismo Legal, certificados pelo Cadastur. Mais do que vender passeios, nossa missão na Expedição Raízes da Mantiqueira é proporcionar uma verdadeira conexão sustentável com a natureza, entregando as experiências enriquecedoras e autênticas que nos garantiram o Prêmio TripAdvisor Travellers' Choice 2026.",
@@ -202,13 +202,12 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       link_video: "https://www.instagram.com/reel/DTawltXkhlC/",
       tripadvisorUrl: "https://www.tripadvisor.com.br/Attraction_Review-g2427181-d23280155-Reviews-Expedicao_Raizes_da_Mantiqueira-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
       galeria: [
-        "/assets/imagens/o-que-fazer/Expedicao-raizes-da-mantiqueira.png",
-        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/8e/26/36/travessia-serra-negra.jpg?w=1100&h=-1&s=1",
-        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/43/29/63/nascer-do-sol-pedra-selada.jpg?w=1100&h=-1&s=1",
-        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/5e/f0/85/tour-personalizado-parque.jpg?w=1200&h=-1&s=1",
-        "/assets/imagens/o-que-fazer/expedicao-raizes-jeep.jpg",
-        "/assets/imagens/o-que-fazer/expedicao-raizes-trail.jpg",
-        "/assets/imagens/o-que-fazer/expedicao-raizes-waterfall.jpg"
+        "/assets/imagens/premium/expedicao-raizes/galeria-1.jpg",
+        "/assets/imagens/premium/expedicao-raizes/galeria-2.jpg",
+        "/assets/imagens/premium/expedicao-raizes/galeria-3.jpg",
+        "/assets/imagens/premium/expedicao-raizes/galeria-4.jpg",
+        "/assets/imagens/premium/expedicao-raizes/galeria-5.jpg",
+        "/assets/imagens/premium/expedicao-raizes/galeria-6.jpg"
       ],
       tags: ["4x4", "passeios", "trilhas", "cachoeiras", "aventura", "natureza", "ecoturismo", "família", "guia"]
     },
@@ -399,9 +398,9 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       title: "Pousada Aurora da Mantiqueira",
       category: "Hospedagem",
       isPremium: true,
-      image: "/assets/imagens/onde-ficar/pousada-aurora-da-mantiqueira.jpg",
+      image: "/assets/imagens/logos/logo-pousada-aurora-mantiqueira.jpg",
       description: "A pousada mais bem avaliada de Penedo (Nota 9,8). Refúgio dos sonhos a apenas 1,2km do centro com café artesanal and alma familiar.",
-      descricao_longa: "Nascida do sonho de Sandro e sua família de oferecer um refúgio de paz na serra, a Pousada Aurora da Mantiqueira combina silêncio e natureza a apenas 1,2km do centro. Com nota 9,8 no Booking.com e mais de 100 avaliações 5 estrelas, somos o destino perfeito para casais em uma viagem romântica, famílias que buscam desacelerar e viajantes que não abrem mão de uma estadia pet friendly com seus cães.",
+      descricao_longa: "Nascida do sonho de Sandro e sua família de oferecer um refúgio de paz na serra, a Pousada Aurora da Mantiqueira combina silêncio e natureza a apenas 1,2km do centro. Com nota 9,8 no Booking.com e mais de 100 avaliações 5 estrelas, somos o destino perfeito para casais in a viagem romântica, famílias que buscam desacelerar e viajantes que não abrem mão de uma estadia pet friendly com seus cães.",
       fullInfo: "Localizada estrategicamente perto dos principais atrativos (como a Pequena Finlândia, Casa do Papai Noel, Fábrica de Chocolate e centrinho), a pousada proporciona o equilíbrio ideal entre tranquilidade e conveniência. Oferecemos piscina ao ar livre com vista panorâmica das montanhas, jardim preservado e estacionamento privativo grátis. Nossas acomodações contam com ar-condicionado, TV de tela plana, e opções exclusivas com varanda privativa ou banheira de hidromassagem. Um dos maiores destaques da experiência é o nosso café da manhã artesanal, preparado com carinho a partir de autênticas receitas de família.",
       location: "R. Francisco José de Barros, 220",
       rating: 4.8,
@@ -409,6 +408,14 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       instagram: "https://www.instagram.com/pousadaauroradamantiqueira/",
       tripadvisorUrl: "https://www.tripadvisor.com.br/Hotel_Review-g2427181-d21035987-Reviews-Pousada_Aurora_da_Mantiqueira-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
       link_booking: "https://www.booking.com/hotel/br/pousada-aurora-da-mantiqueira.pt-br.html",
+      galeria: [
+        "/assets/imagens/premium/pousada-aurora-da-mantiqueira/galeria-1.jpg",
+        "/assets/imagens/premium/pousada-aurora-da-mantiqueira/galeria-2.jpg",
+        "/assets/imagens/premium/pousada-aurora-da-mantiqueira/galeria-3.jpg",
+        "/assets/imagens/premium/pousada-aurora-da-mantiqueira/galeria-4.jpg",
+        "/assets/imagens/premium/pousada-aurora-da-mantiqueira/galeria-5.jpg",
+        "/assets/imagens/premium/pousada-aurora-da-mantiqueira/galeria-6.jpg"
+      ],
       tags: ["pousada", "natureza", "vista panorâmica", "serra da mantiqueira", "romântico", "casal", "piscina", "hidromassagem", "tranquilidade", "café da manhã"],
       link_video: "https://www.instagram.com/reel/DQSV0FDAQf3/"
     },
@@ -567,7 +574,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       title: "Pousada Rainha da Mata",
       category: "Hospedagem",
       isPremium: true,
-      image: "/assets/imagens/onde-ficar/pousada-rainha-da-mata.jpg",
+      image: "/assets/imagens/logos/logo-pousada-rainha-mata.jpg",
       description: "Paz, sossego e contato exuberante com a natureza a apenas 800m do centro de Penedo.",
       fullInfo: "Localizada a apenas 800m do centro de Penedo, a Pousada Rainha da Mata oferece acesso fácil a pontos como Pequena Finlândia (1km) e Parque Nacional de Itatiaia (6,3km). Com mais de 1.500m² de área verde, piscina com cascata, sauna a vapor e café da manhã artesanal, oferecemos o refúgio ideal para quem busca tranquilidade junto ao som do rio que corta a propriedade e da nossa árvore centenária.",
       location: "Rua Canto Verde, 120, Penedo - RJ",
@@ -576,6 +583,14 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       instagram: "https://www.instagram.com/pousadarainhadamata/",
       tripadvisorUrl: "https://www.tripadvisor.com.br/Hotel_Review-g2427181-d7359137-Reviews-Pousada_Rainha_Da_Mata-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
       link_booking: "https://www.booking.com/hotel/br/pousada-rainha-da-mata.pt-br.html",
+      galeria: [
+        "/assets/imagens/premium/pousada-rainha-da-mata/galeria-1.jpg",
+        "/assets/imagens/premium/pousada-rainha-da-mata/galeria-2.jpg",
+        "/assets/imagens/premium/pousada-rainha-da-mata/galeria-3.jpg",
+        "/assets/imagens/premium/pousada-rainha-da-mata/galeria-4.jpg",
+        "/assets/imagens/premium/pousada-rainha-da-mata/galeria-5.jpg",
+        "/assets/imagens/premium/pousada-rainha-da-mata/galeria-6.jpg"
+      ],
       tags: ["piscina", "natureza", "rio", "sauna", "centro", "tranquilidade", "café da manhã", "familiar"],
       link_video: "https://www.instagram.com/reel/DR43wyHEQVH/"
     }
@@ -659,7 +674,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       title: "Casa da Picanha",
       category: "Carnes",
       isPremium: true,
-      image: "/assets/imagens/gastronomia/casa-da-picanha.jpg",
+      image: "/assets/imagens/logos/logo-casa-da-picanha.jpg",
       description: "Cortes nobres e ambiente familiar. Possuímos 2 unidades para melhor atendê-lo.",
       fullInfo: "Com 2 unidades em Penedo, a Casa da Picanha é a escolha certa para os amantes de carne, sendo um ambiente perfeito para quem viaja em família. Especializada em cortes nobres, com destaque absoluto para a picanha servida na chapa, acompanhada de guarnições tradicionais e fartas.",
       location: "Av. das Mangueiras - Penedo",
@@ -668,6 +683,14 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       whatsapp: "24999999999",
       instagram: "https://www.instagram.com/casadapicanhapenedo_rj/",
       tripadvisorUrl: "https://www.tripadvisor.com.br/Restaurant_Review-g2427181-d4767980-Reviews-Casa_Da_Picanha_Penedo-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
+      galeria: [
+        "/assets/imagens/premium/casa-da-picanha/galeria-1.jpg",
+        "/assets/imagens/premium/casa-da-picanha/galeria-2.jpg",
+        "/assets/imagens/premium/casa-da-picanha/galeria-3.jpg",
+        "/assets/imagens/premium/casa-da-picanha/galeria-4.jpg",
+        "/assets/imagens/premium/casa-da-picanha/galeria-5.jpg",
+        "/assets/imagens/premium/casa-da-picanha/galeria-6.jpg"
+      ],
       tags: ["picanha", "carne", "chapa", "família", "espaço kids", "almoço", "jantar", "farto", "tradicional", "centro"],
       link_video: "https://www.instagram.com/reel/DZyAR9NDaJH/"
     },
@@ -927,6 +950,124 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       rating: 4.6,
       instagram: "https://www.instagram.com/kahvilacafe.br/",
       tags: ["café", "cafeteria", "acolhedor", "café da tarde", "gastronomia", "centro"]
+    },
+    {
+      id: 'santa-claus-burger',
+      title: "Santa Claus Burger",
+      category: "Gastronomia",
+      image: "/assets/imagens/gastronomia/santa-claus-burger.jpg",
+      description: "Hamburgueria de excelência ao lado da Pequena Finlândia. Sabor e qualidade com nota 4.8!",
+      fullInfo: "Localizada no coração de Penedo, a poucos passos da Casa do Papai Noel, o Santa Claus Burger é uma das hamburguerias mais bem avaliadas da região. Com um ambiente agradável (acessível para cadeirantes e com estacionamento gratuito), é o lugar perfeito para famílias e grupos. Eles oferecem opções para comer no local, delivery e retirada, além de um cardápio incrível de sobremesas e lanches que agradam adultos e crianças.",
+      is_premium: false,
+      slug: "santa-claus-burger",
+      tag_destaque: "Top Avaliação",
+      descricao_longa: "Localizada no coração de Penedo, a poucos passos da Casa do Papai Noel, o Santa Claus Burger é uma das hamburguerias mais bem avaliadas da região. Com um ambiente agradável (acessível para cadeirantes e com estacionamento gratuito), é o lugar perfeito para famílias e grupos. Eles oferecem opções para comer no local, delivery e retirada, além de um cardápio incrível de sobremesas e lanches que agradam adultos e crianças.",
+      link_whatsapp: "https://wa.me/5524993017228",
+      instagram: "https://www.instagram.com/santaclausburger",
+      link_instagram: "https://www.instagram.com/santaclausburger",
+      link_maps: "https://maps.google.com/?cid=17037218314129758382",
+      mapUrl: "https://maps.google.com/?cid=17037218314129758382",
+      tripadvisorUrl: "https://www.tripadvisor.com.br/Restaurant_Review-g2427181-d24100050-Reviews-Santa_Claus_Burger-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
+      rating: 4.8,
+      tags: ["hambúrguer", "hamburgueria", "artesanal", "papai noel", "centro", "sobremesas", "delivery", "família", "kids", "acessível"]
+    },
+    {
+      id: 'maria-cuisine',
+      title: "Maria Cuisine de Famille",
+      category: "Gastronomia",
+      image: "/assets/imagens/gastronomia/maria-cuisine.jpg",
+      description: "Alta gastronomia, ambiente acolhedor e carta de vinhos selecionada na principal avenida de Penedo.",
+      fullInfo: "Localizado na Av. das Mangueiras, o Maria Cuisine de Famille é sinônimo de excelência em Penedo, ostentando uma avaliação quase perfeita (4.9 estrelas). O restaurante se destaca por oferecer pratos refinados de dar água na boca, excelentes opções vegetarianas, coquetéis artesanais e uma ótima carta de vinhos. O ambiente é acolhedor e impecável, ideal para jantares românticos a dois ou celebrações em família. Eles aceitam reservas e possuem estacionamento próprio gratuito no local.",
+      is_premium: false,
+      slug: "maria-cuisine",
+      tag_destaque: "Excelente Avaliação",
+      descricao_longa: "Localizado na Av. das Mangueiras, o Maria Cuisine de Famille é sinônimo de excelência em Penedo, ostentando uma avaliação quase perfeita (4.9 estrelas). O restaurante se destaca por oferecer pratos refinados de dar água na boca, excelentes opções vegetarianas, coquetéis artesanais e uma ótima carta de vinhos. O ambiente é acolhedor e impecável, ideal para jantares românticos a dois ou celebrações em família. Eles aceitam reservas e possuem estacionamento próprio gratuito no local.",
+      link_whatsapp: "https://wa.me/5524993194229",
+      instagram: "https://www.instagram.com/mariacuisinedefamille/",
+      link_instagram: "https://www.instagram.com/mariacuisinedefamille/",
+      link_maps: "https://maps.google.com/?cid=11898708662588849032",
+      mapUrl: "https://maps.google.com/?cid=11898708662588849032",
+      tripadvisorUrl: "https://www.tripadvisor.com.br/Restaurant_Review-g2348871-d32885364-Reviews-Maria_Cuisine_De_Famille-Itatiaia_State_of_Rio_de_Janeiro.html",
+      rating: 4.9,
+      tags: ["alta gastronomia", "vinho", "romântico", "sofisticado", "vegetariano", "coquetéis", "reservas", "estacionamento", "av. das mangueiras", "almoço", "jantar"]
+    },
+    {
+      id: 'vanilla-patisserie',
+      title: "Vanilla Pâtisserie",
+      category: "Gastronomia",
+      image: "/assets/imagens/gastronomia/vanilla-patisserie.jpg",
+      description: "Doces finos, artesanais e sobremesas irresistíveis. A parada perfeita para o seu café da tarde em Penedo.",
+      fullInfo: "Localizada de forma charmosa no subsolo do Maria Cuisine, na movimentada Av. das Mangueiras, a Vanilla Pâtisserie é um verdadeiro pedacinho da França em Penedo. Com uma avaliação de excelência (4.8 estrelas), o local encanta pelos doces finos, tortas, sobremesas delicadas e cafés deliciosos. É o ambiente perfeito para aquela pausa relaxante durante o seu passeio pela cidade. O espaço conta com ótimo atendimento e aceita diversas formas de pagamento, incluindo cartões e aproximação (NFC). Funciona de terça a domingo!",
+      is_premium: false,
+      slug: "vanilla-patisserie",
+      tag_destaque: "Confeitaria Fina",
+      descricao_longa: "Localizada de forma charmosa no subsolo do Maria Cuisine, na movimentada Av. das Mangueiras, a Vanilla Pâtisserie é um verdadeiro pedacinho da França em Penedo. Com uma avaliação de excelência (4.8 estrelas), o local encanta pelos doces finos, tortas, sobremesas delicadas e cafés deliciosos. É o ambiente perfeito para aquela pausa relaxante durante o seu passeio pela cidade. O espaço conta com ótimo atendimento e aceita diversas formas de pagamento, incluindo cartões e aproximação (NFC). Funciona de terça a domingo!",
+      instagram: "https://www.instagram.com/vanilla.penedo/?hl=pt",
+      link_instagram: "https://www.instagram.com/vanilla.penedo/?hl=pt",
+      link_maps: "https://maps.google.com/?cid=16059561874423453573",
+      mapUrl: "https://maps.google.com/?cid=16059561874423453573",
+      rating: 4.8,
+      tags: ["confeitaria", "doces finos", "cafeteria", "café", "sobremesa", "tortas", "subsolo", "frança", "gastronomia", "chique"]
+    },
+    {
+      id: 'delicias-da-carol',
+      title: "Delicias da Carol",
+      category: "Gastronomia",
+      image: "/assets/imagens/gastronomia/delicias-da-carol.jpg",
+      description: "Cafeteria charmosa e super bem avaliada na principal avenida de Penedo. Doces, cafés e muito sabor!",
+      fullInfo: "Localizada na movimentada Av. das Mangueiras, a Delicias da Carol é o refúgio perfeito para os amantes de um bom café. Com uma avaliação impressionante de 4.9 estrelas, o espaço é famoso por seu atendimento acolhedor, doces divinos e ambiente familiar (ótimo para ir com crianças). Além dos tradicionais cafés, eles também servem vinhos para relaxar no fim de tarde. O local conta com entrada com acessibilidade, aceita pagamentos via cartão e aproximação (NFC), e funciona todos os dias da semana (com horário estendido até às 23h aos sábados!).",
+      is_premium: false,
+      slug: "delicias-da-carol",
+      tag_destaque: "Top Avaliação",
+      descricao_longa: "Localizada na movimentada Av. das Mangueiras, a Delicias da Carol é o refúgio perfeito para os amantes de um bom café. Com uma avaliação impressionante de 4.9 estrelas, o espaço é famoso por seu atendimento acolhedor, doces divinos e ambiente familiar (ótimo para ir com crianças). Além dos tradicionais cafés, eles também servem vinhos para relaxar no fim de tarde. O local conta com entrada com acessibilidade, aceita pagamentos via cartão e aproximação (NFC), e funciona todos os dias da semana (com horário estendido até às 23h aos sábados!).",
+      link_whatsapp: "https://wa.me/5524999716592",
+      instagram: "https://www.instagram.com/deliciascarolpenedo/",
+      link_instagram: "https://www.instagram.com/deliciascarolpenedo/",
+      link_maps: "https://maps.google.com/?cid=15927698586743302151",
+      mapUrl: "https://maps.google.com/?cid=15927698586743302151",
+      tripadvisorUrl: "https://www.tripadvisor.com.br/Attraction_Review-g2427181-d15143777-Reviews-Delicias_da_Carol-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
+      rating: 4.9,
+      tags: ["cafeteria", "café", "doces", "vinhos", "familiar", "kids", "acessível", "nfc", "gastronomia", "av. das mangueiras"]
+    },
+    {
+      id: 'fue-gelateria',
+      title: "Fuê Gelateria",
+      category: "Gastronomia",
+      image: "/assets/imagens/gastronomia/fue-gelateria.jpg",
+      description: "Gelatos artesanais deliciosos e cafés especiais no coração da Pequena Finlândia!",
+      fullInfo: "Localizada na charmosa Rua das Velas, bem no centro da Pequena Finlândia, a Fuê Gelateria é parada obrigatória para se refrescar e adoçar o passeio. Com quase mil avaliações positivas, o local é famoso por seus gelatos cremosos e artesanais, mas também serve ótimos cafés. O espaço é perfeito para famílias e crianças, conta com Wi-Fi gratuito e entrada acessível para cadeirantes. Funcionam todos os dias da semana, com horários estendidos até as 23h aos sábados. Aceitam todos os cartões e pagamentos por aproximação (NFC)!",
+      is_premium: false,
+      slug: "fue-gelateria",
+      tag_destaque: "Imperdível",
+      descricao_longa: "Localizada na charmosa Rua das Velas, bem no centro da Pequena Finlândia, a Fuê Gelateria é parada obrigatória para se refrescar e adoçar o passeio. Com quase mil avaliações positivas, o local é famoso por seus gelatos cremosos e artesanais, mas também serve ótimos cafés. O espaço é perfeito para famílias e crianças, conta com Wi-Fi gratuito e entrada acessível para cadeirantes. Funcionam todos os dias da semana, com horários estendidos até as 23h aos sábados. Aceitam todos os cartões e pagamentos por aproximação (NFC)!",
+      link_whatsapp: "https://wa.me/5524992494399",
+      instagram: "https://www.instagram.com/fuegelatoechocolate/",
+      link_instagram: "https://www.instagram.com/fuegelatoechocolate/",
+      link_maps: "https://maps.google.com/?cid=7155249969189648547",
+      mapUrl: "https://maps.google.com/?cid=7155249969189648547",
+      tripadvisorUrl: "https://www.tripadvisor.com.br/Restaurant_Review-g2348871-d7004291-Reviews-Fue_Gelateria_Escola-Itatiaia_State_of_Rio_de_Janeiro.html",
+      rating: 4.8,
+      tags: ["gelateria", "gelatos", "sorvete", "café", "pequena finlândia", "centro", "crianças", "família", "wi-fi", "acessível", "nfc", "gastronomia"]
+    },
+    {
+      id: 'cafe-finlandes-penedo',
+      title: "Café Finlandês Penedo",
+      category: "Gastronomia",
+      image: "/assets/imagens/gastronomia/cafe-finlandes.jpg",
+      description: "O autêntico sabor de Penedo! Cafés, doces, refeições completas e ambiente Pet Friendly na Av. das Mangueiras.",
+      fullInfo: "Localizado no fervo da Av. das Mangueiras (nº 1645), o Café Finlandês Penedo é um dos locais mais tradicionais e amados da cidade (com mais de 1.200 avaliações!). Muito mais que uma cafeteria, o espaço oferece um cardápio completo que vai do café da manhã até o jantar, incluindo deliciosas sobremesas, fondues, vinhos e drinks. O ambiente é super acolhedor, conta com agradáveis mesas ao ar livre, é totalmente acessível para cadeirantes e é Pet Friendly (seu cachorrinho é muito bem-vindo!). Aceitam reservas e funcionam todos os dias, das 08h30 às 22h.",
+      is_premium: false,
+      slug: "cafe-finlandes-penedo",
+      tag_destaque: "Tradição & Sabor",
+      descricao_longa: "Localizado no fervo da Av. das Mangueiras (nº 1645), o Café Finlandês Penedo é um dos locais mais tradicionais e amados da cidade (com mais de 1.200 avaliações!). Muito mais que uma cafeteria, o espaço oferece um cardápio completo que vai do café da manhã até o jantar, incluindo deliciosas sobremesas, fondues, vinhos e drinks. O ambiente é super acolhedor, conta com agradáveis mesas ao ar livre, é totalmente acessível para cadeirantes e é Pet Friendly (seu cachorrinho é muito bem-vindo!). Aceitam reservas e funcionam todos os dias, das 08h30 às 22h.",
+      link_whatsapp: "https://wa.me/5524998634222",
+      instagram: "https://www.instagram.com/cafefinlandes/",
+      link_instagram: "https://www.instagram.com/cafefinlandes/",
+      link_maps: "https://maps.google.com/?cid=2866118961007667073",
+      mapUrl: "https://maps.google.com/?cid=2866118961007667073",
+      tripadvisorUrl: "https://www.tripadvisor.com.br/Restaurant_Review-g2427181-d2425884-Reviews-Cafe_Finlandes-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
+      rating: 4.7,
+      tags: ["cafeteria", "café", "almoço", "jantar", "doces", "fondue", "vinhos", "pet friendly", "acessível", "av. das mangueiras", "reservas", "gastronomia"]
     }
   ],
   'compras': [
@@ -993,6 +1134,177 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       mapUrl: "https://www.google.com/maps/search/?api=1&query=Shopping+do+Esquilo+Penedo+Av.+Dr.+Arnaldo+Marzoto+Jardim+Martineli+Itatiaia+RJ+27580-000",
       tripadvisorUrl: "https://www.tripadvisor.com.br/Attraction_Review-g2427181-d18344322-Reviews-Shopping_do_Esquilo-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
       tags: ["esquilo", "compras", "tradicional", "entrada", "artesanato", "esotérico", "moda", "gastronomia", "estacionamento", "família"]
+    },
+    {
+      id: 'armazem-da-vila',
+      title: "Armazém da Vila",
+      category: "Compras",
+      image: "/assets/imagens/compras/armazem-da-vila.jpg",
+      description: "Loja charmosa localizada no coração da Pequena Finlândia. Perfeita para suas compras em Penedo.",
+      fullInfo: "O Armazém da Vila está estrategicamente localizado na Rua das Velas, dentro do icônico shopping Pequena Finlândia (pertinho da Casa do Papai Noel). É uma parada obrigatória no roteiro de quem deseja levar um pedacinho de Penedo para casa! O espaço é acessível para cadeirantes, possui ótimo atendimento (nota 4.5) e funciona todos os dias da semana, com horário estendido aos finais de semana para sua comodidade. A melhor Pasta de Truta da região 🧡\n🔸 + de 50 sabores\n🔸Fabricação Própria\n📍Penedo e Maringá - RJ",
+      is_premium: false,
+      slug: "armazem-da-vila",
+      tag_destaque: "Ótima Opção",
+      descricao_longa: "O Armazém da Vila está estrategicamente localizado na Rua das Velas, dentro do icônico shopping Pequena Finlândia (pertinho da Casa do Papai Noel). É uma parada obrigatória no roteiro de quem deseja levar um pedacinho de Penedo para casa! O espaço é acessível para cadeirantes, possui ótimo atendimento (nota 4.5) e funciona todos os dias da semana, com horário estendido aos finais de semana para sua comodidade. A melhor Pasta de Truta da região 🧡\n🔸 + de 50 sabores\n🔸Fabricação Própria\n📍Penedo e Maringá - RJ",
+      link_whatsapp: "https://wa.me/5524992206446",
+      instagram: "https://www.instagram.com/armazemdavilapenedo",
+      link_instagram: "https://www.instagram.com/armazemdavilapenedo",
+      link_maps: "https://maps.google.com/?cid=11204016888187024292",
+      mapUrl: "https://maps.google.com/?cid=11204016888187024292",
+      tripadvisorUrl: "https://www.tripadvisor.com.br/Attraction_Review-g2427181-d11747373-Reviews-Armazem_da_Vila-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
+      rating: 4.5,
+      tags: ["pasta de truta", "armazém", "pequena finlândia", "centro", "artesanato", "compras", "sabores", "fabricação própria", "turismo"]
+    },
+    {
+      id: 'geek-penedo',
+      title: "Geek Penedo",
+      category: "Compras",
+      image: "/assets/imagens/compras/geek-penedo.jpg",
+      description: "O paraíso dos colecionáveis e presentes criativos! A melhor loja nerd e geek de Penedo.",
+      fullInfo: "Localizada na movimentada Av. das Mangueiras, bem pertinho da Casa do Papai Noel, a Geek Penedo é parada obrigatória para os fãs de cultura pop, animes, filmes e séries. É uma excelente opção para encontrar presentes super criativos e lembranças únicas na cidade. A loja oferece ótimo atendimento e aceita diversas formas de pagamento, incluindo cartões e aproximação (NFC). Eles funcionam de quinta a segunda-feira, com horários estendidos até mais tarde nos finais de semana!",
+      is_premium: false,
+      slug: "geek-penedo",
+      tag_destaque: "Cultura Pop e Geek",
+      descricao_longa: "Localizada na movimentada Av. das Mangueiras, bem pertinho da Casa do Papai Noel, a Geek Penedo é parada obrigatória para os fãs de cultura pop, animes, filmes e séries. É uma excelente opção para encontrar presentes super criativos e lembranças únicas na cidade. A loja oferece ótimo atendimento e aceita diversas formas de pagamento, incluindo cartões e aproximação (NFC). Eles funcionam de quinta a segunda-feira, com horários estendidos até mais tarde nos finais de semana!",
+      link_instagram: "https://www.instagram.com/geek_penedo/",
+      instagram: "https://www.instagram.com/geek_penedo/",
+      link_maps: "https://maps.google.com/?cid=7913696677775624844",
+      mapUrl: "https://maps.google.com/?cid=7913696677775624844",
+      tripadvisorUrl: "https://www.tripadvisor.com.br/Attraction_Review-g2427181-d23808167-Reviews-Geek_Penedo-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
+      rating: 4.8,
+      tags: ["geek", "nerd", "colecionáveis", "animes", "cultura pop", "filmes", "séries", "presentes", "av. das mangueiras", "compras", "nfc"]
+    },
+    {
+      id: 'astral-exotheryca',
+      title: "Astral Exothéryca",
+      category: "Compras",
+      image: "/assets/imagens/compras/astral-exotheryca.jpg",
+      description: "Loja mágica e mística na entrada de Penedo. Encontre cristais, incensos e presentes especiais.",
+      fullInfo: "Localizada logo na entrada de Penedo, a Astral Exothéryca é uma loja encantadora e super bem avaliada pelos visitantes. O espaço é totalmente dedicado a artigos esotéricos, cristais, incensos, peças indianas, decoração e produtos místicos. É o lugar perfeito para renovar as energias e encontrar presentes com muito significado. A loja oferece estacionamento acessível e aceita pagamentos via cartão e aproximação (NFC). Aberta de quarta a segunda, das 11h às 19h!",
+      is_premium: false,
+      slug: "astral-exotheryca",
+      tag_destaque: "Energia e Bem-estar",
+      descricao_longa: "Localizada logo na entrada de Penedo, a Astral Exothéryca é uma loja encantadora e super bem avaliada pelos visitantes. O espaço é totalmente dedicado a artigos esotéricos, cristais, incensos, peças indianas, decoração e produtos místicos. É o lugar perfeito para renovar as energias e encontrar presentes com muito significado. A loja oferece estacionamento acessível e aceita pagamentos via cartão e aproximação (NFC). Aberta de quarta a segunda, das 11h às 19h!",
+      link_whatsapp: "https://wa.me/5524981556773",
+      instagram: "https://www.instagram.com/astralexotheryca/",
+      link_instagram: "https://www.instagram.com/astralexotheryca/",
+      link_maps: "https://maps.google.com/?cid=1293510098541823076",
+      mapUrl: "https://maps.google.com/?cid=1293510098541823076",
+      tripadvisorUrl: "https://www.tripadvisor.com.br/Attraction_Review-g2427181-d13792072-Reviews-Astral_Exotheryca-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
+      rating: 4.7,
+      tags: ["místico", "esotérico", "cristais", "incensos", "decoração", "peças indianas", "bem-estar", "compras", "entrada", "estacionamento"]
+    },
+    {
+      id: 'via-lactea-balas',
+      title: "Via-Láctea Loja das Balas",
+      category: "Compras",
+      image: "/assets/imagens/compras/via-lactea.jpg",
+      description: "O paraíso das guloseimas na Pequena Finlândia! Uma infinidade de balas, chocolates e doces a granel.",
+      fullInfo: "Localizada na charmosa Rua das Velas, bem dentro da Pequena Finlândia, a Via-Láctea Loja das Balas é o verdadeiro paraíso para crianças e adultos. Com excelente avaliação dos visitantes, a loja oferece uma variedade incrível de balas, doces importados, chocolates e guloseimas a granel para você montar o seu próprio mix. O espaço é acessível para cadeirantes, possui ótimo atendimento e funciona todos os dias, com horário estendido até as 22h às sextas e sábados. Aceita cartões e pagamentos por aproximação (NFC). Uma parada obrigatória e doce no seu roteiro!",
+      is_premium: false,
+      slug: "via-lactea-balas",
+      tag_destaque: "Paraíso dos Doces",
+      descricao_longa: "Localizada na charmosa Rua das Velas, bem dentro da Pequena Finlândia, a Via-Láctea Loja das Balas é o verdadeiro paraíso para crianças e adultos. Com excelente avaliação dos visitantes, a loja oferece uma variedade incrível de balas, doces importados, chocolates e guloseimas a granel para você montar o seu próprio mix. O espaço é acessível para cadeirantes, possui ótimo atendimento e funciona todos os dias, com horário estendido até as 22h às sextas e sábados. Aceita cartões e pagamentos por aproximação (NFC). Uma parada obrigatória e doce no seu roteiro!",
+      instagram: "https://www.instagram.com/vialacteabalas/",
+      link_instagram: "https://www.instagram.com/vialacteabalas/",
+      link_maps: "https://maps.google.com/?cid=7311349378174178394",
+      mapUrl: "https://maps.google.com/?cid=7311349378174178394",
+      rating: 4.6,
+      tags: ["balas", "doces", "guloseimas", "chocolates", "a granel", "importados", "pequena finlândia", "kids", "crianças", "compras", "acessível"]
+    },
+    {
+      id: 'arte-da-nossa-terra',
+      title: "Arte da Nossa Terra",
+      category: "Compras",
+      image: "/assets/imagens/compras/arte-da-nossa-terra.jpg",
+      description: "Loja charmosa na Rua das Velas. Encontre as melhores lembrancinhas e artesanatos locais de Penedo!",
+      fullInfo: "A \"Arte da Nossa Terra\" é uma loja de presentes encantadora localizada na famosa Rua das Velas, bem coladinha na Pequena Finlândia e na Casa do Papai Noel. É o local perfeito para você encontrar aquela lembrancinha especial, artigos de decoração e produtos de artesanato para levar como recordação de Penedo. Eles oferecem ótimo atendimento, aceitam pagamentos via cartões de crédito, débito e aproximação (NFC). A loja funciona de quinta a segunda-feira, com horário estendido até as 22h aos sábados para sua maior comodidade!",
+      is_premium: false,
+      slug: "arte-da-nossa-terra",
+      tag_destaque: "Artesanato e Presentes",
+      descricao_longa: "A \"Arte da Nossa Terra\" é uma loja de presentes encantadora localizada na famosa Rua das Velas, bem coladinha na Pequena Finlândia e na Casa do Papai Noel. É o local perfeito para você encontrar aquela lembrancinha especial, artigos de decoração e produtos de artesanato para levar como recordação de Penedo. Eles oferecem ótimo atendimento, aceitam pagamentos via cartões de crédito, débito e aproximação (NFC). A loja funciona de quinta a segunda-feira, com horário estendido até as 22h aos sábados para sua maior comodidade!",
+      link_whatsapp: "https://wa.me/5524992275712",
+      instagram: "https://www.instagram.com/artedanossaterra/",
+      link_instagram: "https://www.instagram.com/artedanossaterra/",
+      link_maps: "https://maps.google.com/?cid=9047201911561872295",
+      mapUrl: "https://maps.google.com/?cid=9047201911561872295",
+      rating: 4.5,
+      tags: ["presentes", "lembrancinhas", "artesanato", "decoração", "rua das velas", "pequena finlândia", "centro", "compras", "nfc"]
+    },
+    {
+      id: 'reserva-da-mata',
+      title: "Reserva Da Mata",
+      category: "Compras",
+      image: "/assets/imagens/compras/reserva-da-mata.jpg",
+      description: "Loja de roupas e acessórios com muito estilo, com localização privilegiada na Av. das Mangueiras.",
+      fullInfo: "Localizada no coração da Avenida das Mangueiras (bem em frente à Pequena Finlândia e ao lado da Casa do Fritz), a Reserva Da Mata é uma excelente loja de moda e vestuário em Penedo. Com ótima avaliação dos visitantes (4.6 estrelas), a loja oferece peças cheias de estilo, conforto e bom gosto, sendo uma parada perfeita para quem adora renovar o guarda-roupa ou comprar presentes durante a viagem. O espaço conta com excelente atendimento e aceita diversas formas de pagamento, incluindo cartões de débito e aproximação (NFC).",
+      is_premium: false,
+      slug: "reserva-da-mata",
+      tag_destaque: "Moda e Estilo",
+      descricao_longa: "Localizada no coração da Avenida das Mangueiras (bem em frente à Pequena Finlândia e ao lado da Casa do Fritz), a Reserva Da Mata é uma excelente loja de moda e vestuário em Penedo. Com ótima avaliação dos visitantes (4.6 estrelas), a loja oferece peças cheias de estilo, conforto e bom gosto, sendo uma parada perfeita para quem adora renovar o guarda-roupa ou comprar presentes durante a viagem. O espaço conta com excelente atendimento e aceita diversas formas de pagamento, incluindo cartões de débito e aproximação (NFC).",
+      link_whatsapp: "https://wa.me/552433513066",
+      instagram: "https://www.instagram.com/reservadamata/",
+      link_instagram: "https://www.instagram.com/reservadamata/",
+      link_maps: "https://maps.google.com/?cid=6753522909305314682",
+      mapUrl: "https://maps.google.com/?cid=6753522909305314682",
+      rating: 4.6,
+      tags: ["moda", "vestuário", "roupas", "estilo", "presentes", "av. das mangueiras", "compras", "nfc", "atendimento"]
+    },
+    {
+      id: 'meu-sonho',
+      title: "Meu Sonho",
+      category: "Compras",
+      image: "/assets/imagens/compras/meu-sonho.jpg",
+      description: "Loja encantadora no Shopping Vale dos Duendes, ideal para presentes e lembranças de Penedo.",
+      fullInfo: "Localizada no coração de Penedo, dentro do Shopping Vale dos Duendes (na movimentada Av. das Mangueiras), a loja \"Meu Sonho\" faz jus ao nome. O espaço é perfeito para quem busca opções de presentes, artigos locais e lembrancinhas encantadoras. Com uma localização privilegiada perto da Casa do Papai Noel, a loja abre todos os dias da semana e conta com horário de funcionamento estendido até as 22h aos sábados. Eles aceitam pagamentos via cartões de crédito, débito e aproximação (NFC).",
+      is_premium: false,
+      slug: "meu-sonho",
+      tag_destaque: "Lembranças e Presentes",
+      descricao_longa: "Localizada no coração de Penedo, dentro do Shopping Vale dos Duendes (na movimentada Av. das Mangueiras), a loja \"Meu Sonho\" faz jus ao nome. O espaço é perfeito para quem busca opções de presentes, artigos locais e lembrancinhas encantadoras. Com uma localização privilegiada perto da Casa do Papai Noel, a loja abre todos os dias da semana e conta com horário de funcionamento estendido até as 22h aos sábados. Eles aceitam pagamentos via cartões de crédito, débito e aproximação (NFC).",
+      link_whatsapp: "https://wa.me/5524998485245",
+      instagram: "https://www.instagram.com/loja.meusonho/",
+      link_instagram: "https://www.instagram.com/loja.meusonho/",
+      link_maps: "https://maps.google.com/?cid=3640453365322855656",
+      mapUrl: "https://maps.google.com/?cid=3640453365322855656",
+      rating: 4.5,
+      tags: ["presentes", "lembrancinhas", "vale dos duendes", "shopping", "compras", "av. das mangueiras", "nfc"]
+    },
+    {
+      id: 'artevelas',
+      title: "Artevelas",
+      category: "Compras",
+      image: "/assets/imagens/compras/artevelas.jpg",
+      description: "Loja especializada em velas artesanais e perfumadas na Av. das Mangueiras. O presente perfeito!",
+      fullInfo: "Localizada na movimentada Av. das Mangueiras, bem pertinho da Pequena Finlândia, a Artevelas é uma loja super tradicional de Penedo. O espaço é especializado na venda de velas artesanais, aromáticas, decorativas e artigos charmosos para a casa. É o lugar perfeito para encontrar um presente especial e perfumado para levar de lembrança da viagem! A loja funciona todos os dias da semana, com horários estendidos até as 22h nas sextas e sábados para sua comodidade. Aceitam diversas formas de pagamento, incluindo cartões e aproximação (NFC).",
+      is_premium: false,
+      slug: "artevelas",
+      tag_destaque: "Decoração e Aromas",
+      descricao_longa: "Localizada na movimentada Av. das Mangueiras, bem pertinho da Pequena Finlândia, a Artevelas é uma loja super tradicional de Penedo. O espaço é especializado na venda de velas artesanais, aromáticas, decorativas e artigos charmosos para a casa. É o lugar perfeito para encontrar um presente especial e perfumado para levar de lembrança da viagem! A loja funciona todos os dias da semana, com horários estendidos até as 22h nas sextas e sábados para sua comodidade. Aceitam diversas formas de pagamento, incluindo cartões e aproximação (NFC).",
+      link_whatsapp: "https://wa.me/5521999167676",
+      instagram: "https://www.instagram.com/artevelaspenedo/",
+      link_instagram: "https://www.instagram.com/artevelaspenedo/",
+      link_maps: "https://maps.google.com/?cid=17080737747191518978",
+      mapUrl: "https://maps.google.com/?cid=17080737747191518978",
+      rating: 4.5,
+      tags: ["velas", "velas artesanais", "velas perfumadas", "decoração", "casa", "aromas", "presentes", "av. das mangueiras", "compras", "nfc"]
+    },
+    {
+      id: 'raio-de-luz-decoracoes',
+      title: "Raio de Luz - Tapeçarias e Decorações",
+      category: "Compras",
+      image: "/assets/imagens/compras/raio-de-luz.jpg",
+      description: "Loja especializada em belíssimas tapeçarias, móveis e artigos de decoração na Av. das Mangueiras.",
+      fullInfo: "Localizada na movimentada Av. das Mangueiras (bem em frente ao Café Finlandês e pertinho da Pequena Finlândia), a Raio de Luz é a loja ideal para quem busca renovar o ambiente de casa. Com excelente avaliação dos clientes (4.5 estrelas), o espaço oferece uma curadoria incrível de tapeçarias exclusivas, móveis charmosos e artigos finos de decoração. É o lugar perfeito para comprar peças únicas e levar um pouco da elegância de Penedo para o seu lar. Aceitam diversas formas de pagamento, como cartões de crédito, débito e aproximação (NFC).",
+      is_premium: false,
+      slug: "raio-de-luz-decoracoes",
+      tag_destaque: "Casa e Decoração",
+      descricao_longa: "Localizada na movimentada Av. das Mangueiras (bem em frente ao Café Finlandês e pertinho da Pequena Finlândia), a Raio de Luz é a loja ideal para quem busca renovar o ambiente de casa. Com excelente avaliação dos clientes (4.5 estrelas), o espaço oferece uma curadoria incrível de tapeçarias exclusivas, móveis charmosos e artigos finos de decoração. É o lugar perfeito para comprar peças únicas e levar um pouco da elegância de Penedo para o seu lar. Aceitam diversas formas de pagamento, como cartões de crédito, débito e aproximação (NFC).",
+      instagram: "https://www.instagram.com/raiodeluz_penedo/",
+      link_instagram: "https://www.instagram.com/raiodeluz_penedo/",
+      link_maps: "https://maps.google.com/?cid=3706962587581718413",
+      mapUrl: "https://maps.google.com/?cid=3706962587581718413",
+      rating: 4.5,
+      tags: ["tapeçaria", "decoração", "móveis", "casa", "artigos finos", "av. das mangueiras", "compras", "nfc"]
     }
   ],
   'blog': [
@@ -1095,13 +1407,17 @@ function PremiumCarousel({ onNavigatePremium }: { onNavigatePremium: (slug: stri
           items={premiumItems as any}
           itemsPerView={{ mobile: 1, tablet: 2, desktop: 3 }}
           renderItem={(item) => (
-            <motion.div
+            <motion.a
+              href={`#/detalhe/${(item as any).slug || item.id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                ((item as any).slug || item.id) && onNavigatePremium((item as any).slug || item.id);
+              }}
               whileHover={{ y: -8 }}
-              className="bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-gray-100 flex flex-col h-full group cursor-pointer"
-              onClick={() => ((item as any).slug || item.id) && onNavigatePremium((item as any).slug || item.id)}
+              className="bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-gray-100 flex flex-col h-full group cursor-pointer block"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-gray-50">
-                {['Pousada Aurora da Mantiqueira', 'Pousada Rainha da Mata', 'Expedição Raízes da Mantiqueira', 'Hotel Girassol', 'Águia de Penedo', 'Rota dos Passeios', 'Trilhando Penedo Ecoturismo'].includes(item.title) && (
+                {['Hotel Girassol', 'Águia de Penedo', 'Rota dos Passeios', 'Trilhando Penedo Ecoturismo'].includes(item.title) && (
                   <div 
                     className="absolute inset-0 z-0 opacity-40 scale-110 blur-xl"
                     style={{ 
@@ -1115,7 +1431,7 @@ function PremiumCarousel({ onNavigatePremium }: { onNavigatePremium: (slug: stri
                   src={(item as any).galeria?.[0] || item.image} 
                   alt={item.title}
                   className={`relative z-10 w-full h-full transition-transform duration-700 group-hover:scale-110 ${
-                    ['Pousada Aurora da Mantiqueira', 'Pousada Rainha da Mata', 'Expedição Raízes da Mantiqueira', 'Hotel Girassol', 'Águia de Penedo', 'Rota dos Passeios', 'Trilhando Penedo Ecoturismo'].includes(item.title)
+                    ['Hotel Girassol', 'Águia de Penedo', 'Rota dos Passeios', 'Trilhando Penedo Ecoturismo'].includes(item.title)
                       ? 'object-contain object-center'
                       : 'object-cover'
                   }`}
@@ -1134,14 +1450,13 @@ function PremiumCarousel({ onNavigatePremium }: { onNavigatePremium: (slug: stri
                   </div>
                   <h3 className="text-2xl font-black text-penedo-forest mb-4 tracking-tighter">{item.title}</h3>
                 </div>
-                <button 
-                  onClick={() => ((item as any).slug || item.id) && onNavigatePremium((item as any).slug || item.id)}
-                  className="w-full py-3.5 bg-penedo-forest text-white rounded-2xl font-bold uppercase tracking-widest text-[10px] hover:bg-penedo-emerald transition-all shadow-lg flex items-center justify-center gap-2"
+                <div 
+                  className="w-full py-3.5 bg-penedo-forest text-white rounded-2xl font-bold uppercase tracking-widest text-[10px] hover:bg-penedo-emerald transition-all shadow-lg flex items-center justify-center gap-2 text-center"
                 >
                   SAIBA MAIS <ChevronRight size={14} />
-                </button>
+                </div>
               </div>
-            </motion.div>
+            </motion.a>
           )}
         />
       </div>
@@ -1187,7 +1502,7 @@ function FeaturedCard(props: { item: DetailItem, onClick: () => void }) {
         onClick={onClick}
       >
         {/* Blurred Background Layer for Contained Images */}
-        {['pequena-finlandia', 'pequena-finlandia-shopping', 'lelu-museu', 'hotel-girassol', 'hotel-bertell', 'hotel-britannia', 'hotel-daniela', 'hotel-rio-penedo', 'hotel-do-sino', 'hotel-titanic', 'pousada-aurora-mantiqueira', 'pousada-chez-nous', 'pousada-penedo', 'pousada-reserva-penedo', 'pousada-terraco', 'pousada-villa-luna', 'pousada-rainha-da-mata', 'vila-francesa-hotel', 'aglio-e-olio', 'bazzini-pizzeria', 'borbulha-penedo', 'botegare', 'braseiro-gaucho', 'casa-da-picanha', 'casa-do-fritz', 'enoteca-serrana', 'estancia-penedo', 'kaiten-sushi', 'loazo-resto', 'petit-gourmet', 'pizza-da-villa', 'querencia', 'rei-das-trutas', 'restaurante-finlandes', 'truta-viva', 'zero-a-zero'].includes(item.id) && (
+        {['pequena-finlandia', 'pequena-finlandia-shopping', 'lelu-museu', 'hotel-girassol', 'hotel-bertell', 'hotel-britannia', 'hotel-daniela', 'hotel-rio-penedo', 'hotel-do-sino', 'hotel-titanic', 'pousada-chez-nous', 'pousada-penedo', 'pousada-reserva-penedo', 'pousada-terraco', 'pousada-villa-luna', 'vila-francesa-hotel', 'aglio-e-olio', 'bazzini-pizzeria', 'borbulha-penedo', 'botegare', 'braseiro-gaucho', 'casa-do-fritz', 'enoteca-serrana', 'estancia-penedo', 'kaiten-sushi', 'loazo-resto', 'petit-gourmet', 'pizza-da-villa', 'querencia', 'rei-das-trutas', 'restaurante-finlandes', 'truta-viva', 'zero-a-zero'].includes(item.id) && (
           <div 
             className="absolute inset-0 z-0 opacity-40 scale-110 blur-xl font-sans"
             style={{ 
@@ -1203,7 +1518,7 @@ function FeaturedCard(props: { item: DetailItem, onClick: () => void }) {
           className={`relative z-10 w-full h-full transition-transform duration-1000 group-hover:scale-110 ${
             item.id === 'hotel-girassol'
               ? 'object-contain object-center'
-              : ['pequena-finlandia', 'pequena-finlandia-shopping', 'lelu-museu', 'hotel-bertell', 'hotel-britannia', 'hotel-daniela', 'hotel-rio-penedo', 'hotel-do-sino', 'hotel-titanic', 'pousada-aurora-mantiqueira', 'pousada-chez-nous', 'pousada-penedo', 'pousada-reserva-penedo', 'pousada-terraco', 'pousada-villa-luna', 'pousada-rainha-da-mata', 'vila-francesa-hotel', 'aglio-e-olio', 'bazzini-pizzeria', 'borbulha-penedo', 'botegare', 'braseiro-gaucho', 'casa-da-picanha', 'casa-do-fritz', 'enoteca-serrana', 'estancia-penedo', 'kaiten-sushi', 'loazo-resto', 'petit-gourmet', 'pizza-da-villa', 'querencia', 'rei-das-trutas', 'restaurante-finlandes', 'truta-viva', 'zero-a-zero'].includes(item.id) 
+              : ['pequena-finlandia', 'pequena-finlandia-shopping', 'lelu-museu', 'hotel-bertell', 'hotel-britannia', 'hotel-daniela', 'hotel-rio-penedo', 'hotel-do-sino', 'hotel-titanic', 'pousada-chez-nous', 'pousada-penedo', 'pousada-reserva-penedo', 'pousada-terraco', 'pousada-villa-luna', 'vila-francesa-hotel', 'aglio-e-olio', 'bazzini-pizzeria', 'borbulha-penedo', 'botegare', 'braseiro-gaucho', 'casa-do-fritz', 'enoteca-serrana', 'estancia-penedo', 'kaiten-sushi', 'loazo-resto', 'petit-gourmet', 'pizza-da-villa', 'querencia', 'rei-das-trutas', 'restaurante-finlandes', 'truta-viva', 'zero-a-zero'].includes(item.id) 
                 ? 'object-contain object-top' 
                 : 'object-cover'
           }`}
@@ -1405,25 +1720,28 @@ export default function App() {
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
-            <button 
-              onClick={() => navigate('home')} 
-              className="transition-colors flex items-center gap-3 group cursor-pointer"
-            >
-              <img 
-                src="/assets/imagens/Logo.jpg" 
-                alt="Vem Pra Penedo Logo" 
-                className="h-12 w-12 object-cover rounded-full shadow-md"
-                referrerPolicy="no-referrer"
-              />
-              <div className="flex flex-col items-center">
-                <span className="text-2xl font-bold tracking-tighter transition-colors leading-none mb-1 text-white">
+            <div className="flex items-center gap-3">
+              <a 
+                href="#/" 
+                onClick={(e) => { e.preventDefault(); navigate('home'); }} 
+                className="transition-colors group cursor-pointer"
+              >
+                <img 
+                  src="/assets/imagens/Logo.jpg" 
+                  alt="Vem Pra Penedo Logo" 
+                  className="h-12 w-12 object-cover rounded-full shadow-md"
+                  referrerPolicy="no-referrer"
+                />
+              </a>
+              <div className="flex flex-col items-center selection:bg-transparent">
+                <span className="text-2xl font-bold tracking-tighter leading-none mb-1 text-white select-none">
                   VEM PRA PENEDO
                 </span>
-                <span className="text-[#FFC107] text-[12px] font-bold tracking-wider drop-shadow-sm">
+                <span className="text-[#FFC107] text-[12px] font-bold tracking-wider drop-shadow-sm select-none">
                   onde a magia acontece
                 </span>
               </div>
-            </button>
+            </div>
             
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
@@ -1436,13 +1754,14 @@ export default function App() {
                 { id: 'blog', label: 'Blog' },
                 { id: 'contato', label: 'Contato' }
               ].map((item) => (
-                <button
+                <a
                   key={item.id}
-                  onClick={() => navigate(item.id as Page)}
+                  href={item.id === 'home' ? '#/' : `#/${item.id}`}
+                  onClick={(e) => { e.preventDefault(); navigate(item.id as Page); }}
                   className="font-medium text-sm transition-colors text-white/90 hover:text-white cursor-pointer"
                 >
                   {item.label}
-                </button>
+                </a>
               ))}
             </div>
 
@@ -1475,13 +1794,14 @@ export default function App() {
                   { id: 'blog', label: 'Blog' },
                   { id: 'contato', label: 'Contato' }
                 ].map((item) => (
-                  <button
+                  <a
                     key={item.id}
-                    onClick={() => navigate(item.id as Page)}
+                    href={item.id === 'home' ? '#/' : `#/${item.id}`}
+                    onClick={(e) => { e.preventDefault(); navigate(item.id as Page); }}
                     className="block w-full text-left px-3 py-2 rounded-md text-white/90 font-medium hover:bg-penedo-emerald/20 transition-colors cursor-pointer"
                   >
                     {item.label}
-                  </button>
+                  </a>
                 ))}
               </div>
             </motion.div>
@@ -1600,13 +1920,13 @@ export default function App() {
           <div>
             <h4 className="font-bold text-penedo-gold mb-6 text-lg">Links Rápidos</h4>
             <ul className="space-y-2 text-white/50">
-              <li><button onClick={() => navigate('home')} className="hover:text-white transition-colors cursor-pointer">Início</button></li>
-              <li><button onClick={() => navigate('o-que-fazer')} className="hover:text-white transition-colors cursor-pointer">O Que Fazer</button></li>
-              <li><button onClick={() => navigate('onde-ficar')} className="hover:text-white transition-colors cursor-pointer">Onde Ficar</button></li>
-              <li><button onClick={() => navigate('gastronomia')} className="hover:text-white transition-colors cursor-pointer">Gastronomia</button></li>
-              <li><button onClick={() => navigate('compras')} className="hover:text-white transition-colors cursor-pointer">Compras</button></li>
-              <li><button onClick={() => navigate('blog')} className="hover:text-white transition-colors cursor-pointer">Blog</button></li>
-              <li><button onClick={() => navigate('contato')} className="hover:text-white transition-colors cursor-pointer">Contato</button></li>
+              <li><a href="#/" onClick={(e) => { e.preventDefault(); navigate('home'); }} className="hover:text-white transition-colors cursor-pointer">Início</a></li>
+              <li><a href="#/o-que-fazer" onClick={(e) => { e.preventDefault(); navigate('o-que-fazer'); }} className="hover:text-white transition-colors cursor-pointer">O Que Fazer</a></li>
+              <li><a href="#/onde-ficar" onClick={(e) => { e.preventDefault(); navigate('onde-ficar'); }} className="hover:text-white transition-colors cursor-pointer">Onde Ficar</a></li>
+              <li><a href="#/gastronomia" onClick={(e) => { e.preventDefault(); navigate('gastronomia'); }} className="hover:text-white transition-colors cursor-pointer">Gastronomia</a></li>
+              <li><a href="#/compras" onClick={(e) => { e.preventDefault(); navigate('compras'); }} className="hover:text-white transition-colors cursor-pointer">Compras</a></li>
+              <li><a href="#/blog" onClick={(e) => { e.preventDefault(); navigate('blog'); }} className="hover:text-white transition-colors cursor-pointer">Blog</a></li>
+              <li><a href="#/contato" onClick={(e) => { e.preventDefault(); navigate('contato'); }} className="hover:text-white transition-colors cursor-pointer">Contato</a></li>
             </ul>
           </div>
           <div>
@@ -1957,8 +2277,59 @@ function PremiumDetailPage({ slug, onNavigate }: { slug: string, onNavigate: (pa
   }, [slug]);
 
   const galleryImages = React.useMemo(() => {
-    return item?.galeria?.slice(1, 7) || [];
-  }, [item?.galeria]);
+    if (!item) return [];
+    
+    const isPremium = item.isPremium || item.is_premium;
+    if (isPremium) {
+      const folder = item.slug || item.id;
+      let cleanFolder = folder.split('/').pop() || folder;
+      if (cleanFolder === 'pousada-aurora-mantiqueira') {
+        cleanFolder = 'pousada-aurora-da-mantiqueira';
+      } else if (cleanFolder === 'pousada-rainha-mata') {
+        cleanFolder = 'pousada-rainha-da-mata';
+      }
+      const prefix = `/assets/imagens/premium/${cleanFolder}/`;
+      
+      let rawImages = item.galeria || [];
+      
+      // Filter out any logos or cover images from the gallery
+      let cleanImages = rawImages.filter((img: string) => {
+        const filename = img.split('/').pop() || '';
+        return !filename.toLowerCase().includes('logo') && 
+               !filename.toLowerCase().includes('aurora-da-mantiqueira.jpg') && 
+               !filename.toLowerCase().includes('rainha-da-mata.jpg') && 
+               !filename.toLowerCase().includes('raizes-da-mantiqueira.png');
+      });
+
+      // Map paths to premium folder if they are not already, or standardize them
+      cleanImages = cleanImages.map((img: string) => {
+        const filename = img.split('/').pop() || '';
+        if (filename.startsWith('galeria-') || filename.startsWith('expedicao-raizes-') || filename.startsWith('casa-da-picanha-')) {
+          let standardName = filename;
+          if (filename.includes('jeep')) standardName = 'galeria-1.jpg';
+          if (filename.includes('trail')) standardName = 'galeria-2.jpg';
+          if (filename.includes('waterfall')) standardName = 'galeria-3.jpg';
+          return `${prefix}${standardName}`;
+        }
+        if (!img.startsWith('http') && img.includes('/')) {
+          return `${prefix}${filename}`;
+        }
+        return img;
+      });
+
+      // If no gallery images found, generate default galeria-1 to galeria-6
+      if (cleanImages.length === 0) {
+        for (let i = 1; i <= 6; i++) {
+          cleanImages.push(`${prefix}galeria-${i}.jpg`);
+        }
+      }
+
+      // Limit to max 6 gallery images
+      return cleanImages.slice(0, 6);
+    }
+    
+    return item.galeria?.slice(1, 7) || [];
+  }, [item]);
 
   useEffect(() => {
     if (!item) {
@@ -2086,11 +2457,26 @@ function PremiumDetailPage({ slug, onNavigate }: { slug: string, onNavigate: (pa
     );
   };
 
+  const resolvedCoverImage = React.useMemo(() => {
+    const isPremium = item.isPremium || item.is_premium;
+    if (isPremium) {
+      const folder = item.slug || item.id;
+      let cleanFolder = folder.split('/').pop() || folder;
+      if (cleanFolder === 'pousada-aurora-mantiqueira') {
+        cleanFolder = 'pousada-aurora-da-mantiqueira';
+      } else if (cleanFolder === 'pousada-rainha-mata') {
+        cleanFolder = 'pousada-rainha-da-mata';
+      }
+      return `/assets/imagens/premium/${cleanFolder}/galeria-1.jpg`;
+    }
+    return item.image;
+  }, [item]);
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": item.category === 'Hospedagem' ? "LodgingBusiness" : item.category === 'Gastronomia' ? "FoodEstablishment" : "TouristAttraction",
     "name": item.title,
-    "image": item.galeria || [item.image],
+    "image": galleryImages.length > 0 ? galleryImages : [resolvedCoverImage],
     "description": item.description,
     "address": {
       "@type": "PostalAddress",
@@ -2112,7 +2498,7 @@ function PremiumDetailPage({ slug, onNavigate }: { slug: string, onNavigate: (pa
         <meta name="description" content={item.description} />
         <meta property="og:title" content={`${item.title} - Vem Pra Penedo`} />
         <meta property="og:description" content={item.description} />
-        <meta property="og:image" content={item.image || (item.galeria && item.galeria[0])} />
+        <meta property="og:image" content={resolvedCoverImage} />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">
           {JSON.stringify(jsonLd)}
@@ -2129,16 +2515,22 @@ function PremiumDetailPage({ slug, onNavigate }: { slug: string, onNavigate: (pa
           </button>
           
           <div className="flex items-center gap-4 mb-6 md:mb-8 text-left">
-            {item.galeria?.[0] && (
-              <div className="w-14 h-14 md:w-20 md:h-20 rounded-full border-2 border-penedo-gold shadow-md shrink-0 bg-white overflow-hidden flex items-center justify-center p-2 md:p-3">
-                <img 
-                  src={item.galeria[0]} 
-                  alt={`Logo ${item.title}`} 
-                  className="w-full h-full object-contain" 
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-            )}
+            <div className="w-14 h-14 md:w-20 md:h-20 rounded-full border-2 border-penedo-gold shadow-md shrink-0 bg-white overflow-hidden flex items-center justify-center">
+              <img 
+                src={`/assets/imagens/logos/logo-${item.id}.jpg`} 
+                alt={`Logo ${item.title}`} 
+                className="w-full h-full object-cover" 
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  if (target.src !== item.image) {
+                    target.src = item.image;
+                  } else {
+                    target.style.display = 'none';
+                  }
+                }}
+              />
+            </div>
             <h1 className="text-4xl md:text-6xl font-black text-penedo-forest tracking-tighter leading-none drop-shadow-sm">
               {item.title}
             </h1>
@@ -2514,18 +2906,20 @@ function HomePage({
             transition={{ delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <button 
-              onClick={() => onNavigate('gastronomia')} 
-              className="px-8 py-4 bg-penedo-emerald hover:bg-penedo-forest text-white rounded-full font-bold transition-all transform hover:scale-105 flex items-center justify-center gap-2"
+            <a 
+              href="#/gastronomia"
+              onClick={(e) => { e.preventDefault(); onNavigate('gastronomia'); }} 
+              className="px-8 py-4 bg-penedo-emerald hover:bg-penedo-forest text-white rounded-full font-bold transition-all transform hover:scale-105 flex items-center justify-center gap-2 cursor-pointer"
             >
               Explorar Agora <ArrowRight size={20} />
-            </button>
-            <button 
-              onClick={() => onNavigate('compras')} 
-              className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-sm rounded-full font-bold transition-all flex items-center justify-center gap-2"
+            </a>
+            <a 
+              href="#/compras"
+              onClick={(e) => { e.preventDefault(); onNavigate('compras'); }} 
+              className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-sm rounded-full font-bold transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
               Onde Comprar
-            </button>
+            </a>
           </motion.div>
         </div>
       </section>
