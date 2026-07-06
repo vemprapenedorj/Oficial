@@ -28,7 +28,7 @@
       "is_premium": false,
       "slug": "cachoeira-de-deus",
       "galeria": [
-        "/assets/imagens/o-que-fazer/Cachoeira-de-Deus.jpg",
+        "/assets/imagens/logos/logo-cachoeira-deus.jpg",
         "https://picsum.photos/seed/deus1/800/600",
         "https://picsum.photos/seed/deus2/800/600",
         "https://picsum.photos/seed/deus3/800/600"
@@ -99,7 +99,7 @@
       "is_premium": false,
       "slug": "pousada-do-lago",
       "galeria": [
-        "/assets/imagens/onde-ficar/pousada-do-lago.jpg",
+        "/assets/imagens/logos/logo-pousada-lago.jpg",
         "https://picsum.photos/seed/lago1/800/600",
         "https://picsum.photos/seed/lago2/800/600",
         "https://picsum.photos/seed/lago3/800/600"
@@ -171,7 +171,7 @@
       "is_premium": false,
       "slug": "jardim-secreto",
       "galeria": [
-        "/assets/imagens/gastronomia/jardim-secreto.jpg",
+        "/assets/imagens/logos/logo-jardim-secreto.jpg",
         "https://picsum.photos/seed/jardim1/800/600",
         "https://picsum.photos/seed/jardim2/800/600",
         "https://picsum.photos/seed/jardim3/800/600"
@@ -191,7 +191,7 @@
       "is_premium": false,
       "slug": "casa-do-fritz",
       "galeria": [
-        "/assets/imagens/gastronomia/casa-do-fritz.jpg",
+        "/assets/imagens/logos/logo-casa-do-fritz.jpg",
         "https://picsum.photos/seed/fritz1/800/600",
         "https://picsum.photos/seed/fritz2/800/600",
         "https://picsum.photos/seed/fritz3/800/600"
@@ -235,7 +235,7 @@
       "is_premium": false,
       "slug": "botegare",
       "galeria": [
-        "/assets/imagens/gastronomia/botegare-penedo.jpg",
+        "/assets/imagens/logos/logo-botegare.jpg",
         "https://picsum.photos/seed/botegare1/800/600",
         "https://picsum.photos/seed/botegare2/800/600",
         "https://picsum.photos/seed/botegare3/800/600"

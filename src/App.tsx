@@ -89,7 +89,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'cachoeira-deus',
       title: "Cachoeira de Deus", 
       category: "Natureza", 
-      image: "/assets/imagens/o-que-fazer/Cachoeira-de-Deus.jpg",
+      image: "/assets/imagens/logos/logo-cachoeira-deus.jpg",
       description: "Uma das mais belas e famosas quedas d'água de Penedo.",
       fullInfo: "A Cachoeira de Deus é um dos pontos turísticos mais visitados. Com uma queda de aproximadamente 15 metros, forma um poço profundo e gelado, ideal para banhos revigorantes. O acesso é feito por uma trilha leve de cerca de 10 minutos.",
       location: "Alto Penedo, Itatiaia - RJ",
@@ -103,7 +103,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'clube-finlandia',
       title: "Clube Finlândia - Penedo", 
       category: "Cultura", 
-      image: "/assets/imagens/o-que-fazer/clube-finlandia.jpg",
+      image: "/assets/imagens/logos/logo-clube-finlandia.jpg",
       description: "O centro de cultura finlandesa no Brasil que celebra a riqueza das tradições.",
       fullInfo: "Bem-vindo ao Clube Finlândia, fundado em 1943, o centro de cultura finlandesa no Brasil que celebra até hoje a riqueza das tradições deste país distante. Somos mais do que um clube; somos uma comunidade que preserva e compartilha a vibrante herança finlandesa, incluindo a incrível história da chegada dos finlandeses ao Brasil em 1929. Junte-se a nós e embarque em uma jornada repleta de descobertas e experiências únicas, explorando nossa história, gastronomia, arte, música, dança e alegria, enquanto celebramos a identidade finlandesa no Brasil.",
       location: "Av. das Mangueiras, 2601",
@@ -117,7 +117,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'lelu-museu',
       title: "Lelu Museu (Museu de Brinquedos)", 
       category: "Cultura", 
-      image: "/assets/imagens/o-que-fazer/lelu-museo.jpg",
+      image: "/assets/imagens/logos/logo-lelu-museu.jpg",
       description: "Um incrível acervo com mais de 3.000 brinquedos clássicos e históricos.",
       fullInfo: "O Lelumuseo (Museu de Brinquedos em finlandês) é um espaço de 400m² que abriga cerca de 3.200 peças que marcaram gerações entre as décadas de 50 e 2000. O acervo inclui desde bonecas e carrinhos até bicicletas e velocípedes, sendo uma homenagem à cultura finlandesa e à nostalgia da infância.",
       location: "Penedo, Itatiaia - RJ",
@@ -131,7 +131,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'museu-finlandes',
       title: "Museu Finlandês Dona Eva", 
       category: "Cultura", 
-      image: "/assets/imagens/o-que-fazer/museu-finlandes.jpg",
+      image: "/assets/imagens/logos/logo-museu-finlandes.jpg",
       description: "O principal acervo histórico da colonização finlandesa em Penedo.",
       fullInfo: "Fundado em 1982 por Eva Hilden, o museu preserva a história dos imigrantes finlandeses que chegaram em 1929 em busca de um 'Éden Tropical'. O acervo diversificado inclui desde objetos pessoais das primeiras famílias até obras de arte e artesanato que narram a trajetória da única colônia finlandesa no Brasil. É uma narrativa viva da dedicação de Dona Eva em manter viva a cultura de sua terra natal.",
       location: "Rua das Velas, Penedo",
@@ -145,7 +145,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'pequena-finlandia',
       title: "Pequena Finlândia", 
       category: "Cultura", 
-      image: "/assets/imagens/o-que-fazer/pequena-finlandia.jpg",
+      image: "/assets/imagens/logos/logo-pequena-finlandia.jpg",
       description: "O coração comercial e cultural da vila, com arquitetura típica.",
       fullInfo: "Inaugurada em 1993, a Pequena Finlândia é um shopping a céu aberto que reproduz uma vila finlandesa. Lá você encontra a Casa do Papai Noel, lojas de artesanato, chocolates e sorveterias famosas.",
       location: "Rua das Velas, Penedo",
@@ -159,7 +159,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'poco-esmeraldas',
       title: "Poço das Esmeraldas", 
       category: "Natureza", 
-      image: "/assets/imagens/o-que-fazer/poco-das-esmeraldas.jpg",
+      image: "/assets/imagens/logos/logo-poco-das-esmeraldas.jpg",
       description: "Um poço de águas verdes e cristalinas, perfeito para um mergulho.",
       fullInfo: "O Poço das Esmeraldas é conhecido pela cor vibrante de suas águas, que lembram a pedra preciosa. É um local tranquilo, ideal para quem busca contato direto com a natureza e um banho refrescante em águas límpidas.",
       location: "Alto Penedo, Itatiaia - RJ",
@@ -173,7 +173,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'tres-cachoeiras',
       title: "Três Cachoeiras", 
       category: "Natureza", 
-      image: "/assets/imagens/o-que-fazer/tres-cachoeiras.jpg",
+      image: "/assets/imagens/logos/logo-tres-cachoeiras.jpg",
       description: "Conjunto de três quedas próximas de fácil acesso.",
       fullInfo: "Localizadas bem próximas ao centro, as Três Cachoeiras são ideais para quem não quer caminhar muito. O local é muito procurado por famílias e possui infraestrutura de quiosques ao redor.",
       location: "Av. das Três Cachoeiras, Penedo",
@@ -215,7 +215,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'aguia-de-penedo',
       title: "Águia de Penedo", 
       category: "Aventura", 
-      image: "/assets/imagens/o-que-fazer/Aguia-de-penedo.png",
+      image: "/assets/imagens/logos/logo-aguia-de-penedo.png",
       description: "Passeios de Quadriciclo 100% Off-Road e trilha incrível dentro de uma propriedade particular.",
       fullInfo: "O Mundo do Off-Road é diferente de todo tipo de aventura que você já viu. Nosso objetivo é proporcionar aventura aos participantes. Para isso preparamos uma trilha incrível, uma trilha dentro de uma propriedade particular, trilha 100% ecológica. Visitamos a cachoeira da LONTRA, única que vocês não têm acesso de carro. Quadriciclos 4x4 Honda. Passeio duração média 2 horas incluindo treinamento e parada para mergulho. Parada para foto com vista da Montanha Serra da Índia.",
       location: "R. das Velas, 154, Penedo",
@@ -230,7 +230,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'rota-dos-passeios',
       title: "Rota dos Passeios", 
       category: "Turismo", 
-      image: "/assets/imagens/o-que-fazer/Rota-dos-passeios.png",
+      image: "/assets/imagens/logos/logo-rota-dos-passeios.png",
       description: "Empresa de Turismo e Transporte (Cadastur). Passeios de Buggy, Jipe 4x4, city tour e transfers.",
       fullInfo: "Realizamos passeios de Buggy e Jipe pelas cachoeiras da região, passeios a cavalo, aluguel de bicicletas, voo de parapente, montanhismo, quadriciclo, city tour Penedo, Parque Nacional do Itatiaia, Visconde de Mauá e Serrinha do Alambari. Também realizamos serviços de Transfer nas regiões e RJ/SP.",
       location: "Av. das Mangueiras, 1857, Penedo",
@@ -246,7 +246,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'trilhando-penedo',
       title: "Trilhando Penedo Ecoturismo", 
       category: "Ecoturismo", 
-      image: "/assets/imagens/o-que-fazer/Trilhando-penedo-ecoturismo.jpg",
+      image: "/assets/imagens/logos/logo-trilhando-penedo.jpg",
       description: "Traveller's Choice especialista em turismo de aventura e passeios off-road.",
       fullInfo: "Especialista em turismo de aventura e passeios off-road. Empresa Traveller's Choice, Guia Cadastur, sempre proporcionando experiences inesquecíveis.",
       location: "Av. das Mangueiras, Penedo",
@@ -263,7 +263,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'hotel-bertell',
       title: "Hotel Bertell",
       category: "Hospedagem",
-      image: "/assets/imagens/onde-ficar/hotel-bertell.jpg",
+      image: "/assets/imagens/logos/logo-hotel-bertell.jpg",
       description: "Tradição finlandesa à beira do Rio das Pedras.",
       fullInfo: "Fundado pelos pioneiros finlandeses e situado à beira das curvas mais bonitas do Rio das Pedras, conservando toda sua beleza natural. Possui 15 Chalés, 05 Apartamentos e 06 Suítes totalmente equipadas. Oferece Academia, Salão de Jogos, Brinquedoteca, Cozinha do Bebê, SPA (Sauna e Hidro), Piscina Adulto e Infantil, Área Verde e Parque Infantil. Seu pet é super bem-vindo (pequeno porte).",
       location: "R. Harry Bertel, 47",
@@ -278,7 +278,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'hotel-britannia',
       title: "Hotel Britânia",
       category: "Hospedagem",
-      image: "/assets/imagens/onde-ficar/hotel-britania.jpg",
+      image: "/assets/imagens/logos/logo-hotel-britannia.jpg",
       description: "Tradição e temática britânica no coração de Penedo.",
       fullInfo: "O Hotel Britannia é um hotel tradicional de Penedo, localizado no centro da cidade, a 8 minutos de caminhada da famosa Casa do Papai Noel. Possui uma temática única, inspirada no requinte britânico, com referências à cultura inglesa, como a sala dos Beatles e o famoso chá da tarde servido no hotel. Os quartos possuem decoração inspiradora para que você se sinta um verdadeiro lorde inglês.",
       location: "Av. Casa das Pedras, 1240",
@@ -293,7 +293,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'hotel-casa-encantada',
       title: "Hotel Casa Encantada",
       category: "Hospedagem",
-      image: "/assets/imagens/onde-ficar/hotel-casa-encantada.jpg",
+      image: "/assets/imagens/logos/logo-hotel-casa-encantada.jpg",
       description: "Charme colonial e tranquilidade no centro de Penedo.",
       fullInfo: "Situado no Centro de Penedo, o Hotel Casa Encantada é ideal para quem quer aproveitar as atrações a pé. Com estilo colonial, oferece piscina, banheira de hidromassagem externa (custo adicional) e vista para o rio. Localizado em rua tranquila, permite relaxar ao som do Rio das Pedras e canto dos pássaros. Oferece buffet de café da manhã, Wi-Fi e estacionamento gratuitos.",
       location: "Av. da Finlândia, 70",
@@ -308,7 +308,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'hotel-daniela',
       title: "Hotel Daniela",
       category: "Hospedagem",
-      image: "/assets/imagens/onde-ficar/hotel-daniela.jpg",
+      image: "/assets/imagens/logos/logo-hotel-daniela.jpg",
       description: "Simplicidade, capricho e tradição familiar desde 1972.",
       fullInfo: "Fundado em 1972 por um casal que trocou a agitação do Rio pela paz do campo, o Hotel Daniela mantém os princípios de simplicidade e capricho. Localizado em uma linda casa de campo com jardim cortado pelo Ribeirão das Pedras. Oferece um ambiente familiar e acolhedor, ideal para quem busca descanso com bom custo-benefício.",
       location: "R. Santa Rita, 1",
@@ -323,7 +323,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'hotel-girassol',
       title: "Hotel Girassol",
       category: "Hospedagem",
-      image: "/assets/imagens/onde-ficar/hotel-girassol.png",
+      image: "/assets/imagens/logos/logo-hotel-girassol.png",
       description: "Conforto e lazer para toda a família com excelente estrutura.",
       fullInfo: "Situado em Penedo, o Hotel Girassol dispõe de banheira de hidromassagem e piscina ao ar livre. Oferece restaurante e bar no local, WiFi gratuito em todas as áreas e estacionamento privativo. Com ambiente familiar, dispõe de lounge compartilhado e tênis de mesa. Consolidado como uma opção segura e confortável para estadias curtas ou prolongadas.",
       location: "Av. Casa das Pedras, 766",
@@ -337,7 +337,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'hotel-rio-penedo',
       title: "Hotel Rio Penedo",
       category: "Hospedagem",
-      image: "/assets/imagens/onde-ficar/hotel-rio-penedo.jpg",
+      image: "/assets/imagens/logos/logo-hotel-rio-penedo.jpg",
       description: "Homenagem à Cidade Maravilhosa e à Colônia Finlandesa.",
       fullInfo: "Com o objetivo de bem servir, oferece o conforto do seu lar em um ambiente exuberante pela natureza. Próximo a florestas, flores, pássaros e cachoeiras, além dos melhores restaurantes da região. Ideal para conhecer as belezas naturais de Penedo no Parque Nacional de Itatiaia.",
       location: "R. Harry Bertel, 110",
@@ -352,7 +352,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'hotel-do-sino',
       title: "Hotel do Sino",
       category: "Hospedagem",
-      image: "/assets/imagens/onde-ficar/hotel-do-sino.jpg",
+      image: "/assets/imagens/logos/logo-hotel-do-sino.jpg",
       description: "Hotel tradicional com ampla área de lazer e salas de convenções.",
       fullInfo: "O Hotel do Sino oferece 30 apartamentos e 8 chalés confortáveis com ar condicionado, TV e frigobar. Conta com duas piscinas, sauna seca, sala de ginástica e salão de jogos. Possui salas para convenções e estacionamento privativo. Une o charme da natureza com o conforto de um dos hotéis mais tradicionais de Penedo, ideal para lazer ou eventos.",
       location: "Av. Brasil, 455",
@@ -367,7 +367,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'hotel-terras-finlandia',
       title: "Hotel Terras da Finlândia",
       category: "Hospedagem",
-      image: "/assets/imagens/onde-ficar/hotel-terras-da-finlandia.jpg",
+      image: "/assets/imagens/logos/logo-hotel-terras-finlandia.jpg",
       description: "Ideal para casais, no coração de Penedo.",
       fullInfo: "Localizado estrategicamente no centro, permite acesso a pé a restaurantes e shoppings (1 minuto do Shopping do Papai Noel). Arquitetura temática europeia inspirada na colonização finlandesa. Oferece piscina, sauna, espaço verde e área kids. Perfeito para lua de mel e renovação de votos.",
       location: "Av. das Mangueiras, 1815",
@@ -382,7 +382,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'hotel-titanic',
       title: "Hotel Titanic",
       category: "Hospedagem",
-      image: "/assets/imagens/onde-ficar/hotel-titanic.jpg",
+      image: "/assets/imagens/logos/logo-hotel-titanic.jpg",
       description: "Sofisticação e grandes momentos na entrada de Penedo.",
       fullInfo: "Localizado na entrada de Penedo, próximo a pontos turísticos e gastronômicos. Hotel de alto padrão com proposta romântica e familiar. Oferece piscina adulto e infantil, sauna, área verde e espaço para descanso. Destaque para limpeza e atendimento.",
       location: "Avenida Nova Penedo, s/n - Nova Penedo",
@@ -423,7 +423,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'pousada-chez-nous',
       title: "Pousada Chez Nous",
       category: "Hospedagem",
-      image: "/assets/imagens/onde-ficar/pousada-chez-nous.jpg",
+      image: "/assets/imagens/logos/logo-pousada-chez-nous.jpg",
       description: "Charme com influência europeia e hospitalidade familiar desde 1994.",
       fullInfo: "Fundada por Anna Wollens ('Mamie'), vinda da França, a pousada mantém um legado de amor e respeito à natureza. Localizada na Avenida Casa da Pedra, oferece um ambiente harmonioso cercado por vasta área verde. Possui piscina e espaços de convivência aconchegantes. Ideal para famílias que buscam equilíbrio entre preço, conforto e localização.",
       location: "Avenida Casa Da Pedra, 542",
@@ -438,7 +438,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'pousada-lago',
       title: "Pousada do Lago",
       category: "Hospedagem",
-      image: "/assets/imagens/onde-ficar/pousada-do-lago.jpg",
+      image: "/assets/imagens/logos/logo-pousada-lago.jpg",
       description: "Comodidade e praticidade próxima ao centro, cercada por 19.000m² de natureza.",
       fullInfo: "Localizada próxima ao centro de Penedo, permite passeios a pé para fábricas de chocolate e a Casa do Papai Noel. Possui um belo lago natural, piscina com hidromassagem, salão de jogos, academia e ampla área verde. Combina o silêncio da natureza com a facilidade de acesso ao comércio local. Ideal para famílias e casais.",
       location: "Av. das Mangueiras, 200",
@@ -453,7 +453,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'pousada-penedo',
       title: "Pousada Penedo",
       category: "Hospedagem",
-      image: "/assets/imagens/onde-ficar/pousada-penedo.jpg",
+      image: "/assets/imagens/logos/logo-pousada-penedo.jpg",
       description: "Preservando a essência e tradição finlandesa desde o início.",
       fullInfo: "Conhecida como a casa de Toivo, a Pousada Penedo está situada em um terreno cortado por um rio e cercado por farta vegetação. Mantém vivas as tradições finlandesas, recebendo hóspedes como amigos. Um lugar para voltar no tempo, com decoração do início do século passado e vasto material histórico sobre a colonização finlandesa.",
       location: "Av. da Finlândia, 270",
@@ -468,7 +468,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'pousada-reserva-penedo',
       title: "Pousada Reserva Penedo",
       category: "Hospedagem",
-      image: "/assets/imagens/onde-ficar/pousada-reserva-penedo.jpg",
+      image: "/assets/imagens/logos/logo-pousada-reserva-penedo.jpg",
       description: "Paz e sossego em meio a 160 metros de margem de rio.",
       fullInfo: "Lugar perfeito para quem busca fugir da agitação urbana e experimentar sensações de paz e liberdade. Oferece fácil acesso a pé ao centro e gastronomia local. Destaque para o café da manhã artesanal e área de lazer com piscina com cascata, sauna a vapor e lounge descontraído. Possui uma belíssima passagem de rio dentro da propriedade.",
       location: "Rua Alberto João Saad, 99",
@@ -483,7 +483,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'pousada-santa-fe',
       title: "Pousada Santa Fe de Penedo",
       category: "Hospedagem",
-      image: "/assets/imagens/onde-ficar/pousada-santa-fe-penedo.jpg",
+      image: "/assets/imagens/logos/logo-pousada-santa-fe.jpg",
       description: "Tranquilidade, aconchego e vista privilegiada da Serra da Mantiqueira.",
       fullInfo: "Localizada no Vale do Ermitão, oferece contato direto com a natureza. Possui 17 suítes, piscina panorâmica com hidromassagem aquecida, salão de jogos, sala de lareira e SPA com massagens. O café da manhã é servido à beira da piscina com vista para a serra. Ideal para casais buscando um clima romântico.",
       location: "Estr. Vale do Ermitão, 490",
@@ -498,7 +498,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'pousada-do-sol',
       title: "Pousada do Sol de Penedo",
       category: "Hospedagem",
-      image: "/assets/imagens/onde-ficar/pousada-do-sol.jpg",
+      image: "/assets/imagens/logos/logo-pousada-do-sol.jpg",
       description: "Hospedagem familiar com piscina and sauna pertinho do museu.",
       fullInfo: "A Pousada do Sol oferece piscina ao ar livre, sauna, serviço de quarto e Wi-Fi gratuito. Localizada a apenas 9 minutos a pé do Museu Finlandês, é uma opção prática e acolhedora. Os quartos possuem ar-condicionado, TV e alguns contam com varanda privativa. Ideal para quem busca boa localização com custo-benefício.",
       location: "Av. das Mangueiras, 1905",
@@ -513,7 +513,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'pousada-terraco',
       title: "Pousada Terraço Penedo",
       category: "Hospedagem",
-      image: "/assets/imagens/onde-ficar/pousada-terraco.jpg",
+      image: "/assets/imagens/logos/logo-pousada-terraco.jpg",
       description: "Uma das melhores vistas da Serra da Índia com excelente custo-benefício.",
       fullInfo: "Localizada a 200m da Mata Atlântica, oferece tranquilidade e som de cachoeira. Possui decoração rústica, sala de leitura, jogos, exercícios, piscina com hidromassagem coletiva, sauna seca e a vapor. Serve um delicioso café colonial. Muito procurada por casais jovens que buscam boa estrutura com preço acessível.",
       location: "Estr. Vale do Ermitão, 520",
@@ -528,7 +528,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'pousada-villa-luna',
       title: "Pousada Villa Luna",
       category: "Hospedagem",
-      image: "/assets/imagens/onde-ficar/pousada-villa-luna.jpg",
+      image: "/assets/imagens/logos/logo-pousada-villa-luna.jpg",
       description: "Proposta romântica e boutique no coração de Penedo.",
       fullInfo: "Localizada na avenida principal, a apenas 200m do centro. Oferece um ambiente harmonioso com jardins, redes, árvores frutíferas e observação de aves. Conta com piscina, sauna, massagens relaxantes e acomodações confortáveis com formatos diferenciados. Atendimento personalizado e exclusivo para quem busca tranquilidade e proximidade do centro.",
       location: "Av. das Mangueiras, 1457",
@@ -543,7 +543,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'vert-hotel',
       title: "Vert Hotel Penedo",
       category: "Hospedagem",
-      image: "/assets/imagens/onde-ficar/hotel-vert-spa.jpg",
+      image: "/assets/imagens/logos/logo-vert-hotel.jpg",
       description: "Experiência única de relaxamento e conexão com a natureza.",
       fullInfo: "Hotel boutique e Spa rodeado por exuberante área verde. Oferece piscina aquecida, spa exclusivo, sauna e massagens. Próximo ao centro, mas com total tranquilidade. Foco em bem-estar e experiência premium. Ideal para casais.",
       location: "R. do Lago, 60",
@@ -558,7 +558,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'vila-francesa-hotel',
       title: "Vila Francesa Hotel",
       category: "Hospedagem",
-      image: "/assets/imagens/onde-ficar/hotel-vila-francesa.jpg",
+      image: "/assets/imagens/logos/logo-vila-francesa-hotel.jpg",
       description: "Charme europeu e hospitalidade no coração de Penedo.",
       fullInfo: "Localizado no coração de Penedo, o Vila Francesa Hotel combina tranquilidade com a conveniência de estar na rua principal, a apenas 100m da Vila da Gula. Hotel pet friendly, com área de lazer convidativa e estilo europeu marcante, ideal para fotos e momentos inesquecíveis. Perfeito para casais, famílias e viagens de descanso.",
       location: "Av. Brasil, 653",
@@ -600,7 +600,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'aglio-e-olio',
       title: "Aglio e Olio",
       category: "Italiana",
-      image: "/assets/imagens/gastronomia/aglio-e-olio.jpg",
+      image: "/assets/imagens/logos/logo-aglio-e-olio.jpg",
       description: "Massas artesanais e ambiente familiar aconchegante.",
       fullInfo: "Para os amantes da culinária italiana, oferece um ambiente familiar e comida com gostinho de 'feita em casa'. Focado em massas artesanais, nhoques, lasanhas e molhos encorpados.",
       location: "Rua das Velas, 220",
@@ -614,7 +614,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'bazzini-pizzeria',
       title: "Bazzini Pizzeria",
       category: "Pizzaria",
-      image: "/assets/imagens/gastronomia/bazzini-pizzeria.jpg",
+      image: "/assets/imagens/logos/logo-bazzini-pizzeria.jpg",
       description: "Novo conceito em pizzaria com tradição italiana.",
       fullInfo: "Um novo conceito em pizzaria em Penedo no Rio de Janeiro. Ambiente aconchegante, familiar e com tradição italiana. Oferecemos serviço de mesa e opção para levar.",
       location: "Av. das Mangueiras, 1849",
@@ -629,7 +629,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'borbulha-penedo',
       title: "Borbulha de Penedo",
       category: "Gastronomia",
-      image: "/assets/imagens/gastronomia/borbulha-de-penedo.jpg",
+      image: "/assets/imagens/logos/logo-borbulha-penedo.jpg",
       description: "Ambiente climatizado com tradicional coleção de discos de vinil.",
       fullInfo: "Borbulha de Penedo foi inaugurado em 05 de junho de 2019. Possui vários ambientes, com serviço a la Carte. Ambiente climatizado e com a tradicional coleção de Discos de Vinil.",
       location: "Av. das Mangueiras, 1771",
@@ -644,7 +644,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'botegare',
       title: "Botegare - Penedo",
       category: "Contemporânea",
-      image: "/assets/imagens/gastronomia/botegare-penedo.jpg",
+      image: "/assets/imagens/logos/logo-botegare.jpg",
       description: "Gastronomia Contemporânea e de fusão com influências europeias.",
       fullInfo: "Restaurante de gastronomia Contemporânea e de fusão. Nosso objetivo e gerar boas experiências sensoriais aos nossos clientes. Nosso cardápio privilegia clássicos da Itália, França, Portugal e Espanha. Nossa parte de fusão, inclui ingredientes brasileiros dando uma nova roupagem aos clássicos. Possuímos uma excelente carta de vinho com mais de 60 rótulos de países diferentes. Nosso preço é de loja! Adega climatizada e aberta a visitação e escolha de nossos clientes. Nosso espaço é um diferencial à parte. Ambiente amplo, aberto onde a estrela é a natureza!",
       location: "Av. Casa das Pedras, 991",
@@ -659,7 +659,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'braseiro-gaucho',
       title: "Braseiro Gaúcho",
       category: "Churrasco",
-      image: "/assets/imagens/gastronomia/braseiro-gaucho.jpg",
+      image: "/assets/imagens/logos/logo-braseiro-gaucho.jpg",
       description: "O melhor do churrasco gaúcho na serra.",
       fullInfo: "A opção ideal para quem não abre mão de um excelente e farto churrasco. Focado em carnes nobres e na tradição gaúcha, com bife de chorizo, picanha e ancho como carros-chefes.",
       location: "Rua das Velas, 76",
@@ -698,7 +698,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'casa-do-fritz',
       title: "Casa do Fritz",
       category: "Alemã",
-      image: "/assets/imagens/gastronomia/casa-do-fritz.jpg",
+      image: "/assets/imagens/logos/logo-casa-do-fritz.jpg",
       description: "Autêntica experiência germânica e cervejas artesanais.",
       fullInfo: "Um verdadeiro clássico de Penedo para quem busca a autêntica experiência germânica aliada a excelentes cervejas artesanais. Especializado em culinária alemã, os destaques são o joelho de porco (Eisbein), o mix de salsichões, chucrute e as harmonizações com os chopes da própria casa.",
       location: "Av. das Mangueiras, 518 - Penedo",
@@ -712,7 +712,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'enoteca-serrana',
       title: "Enoteca Serrana",
       category: "Contemporânea",
-      image: "/assets/imagens/gastronomia/enoteca-serrana.jpg",
+      image: "/assets/imagens/logos/logo-enoteca-serrana.jpg",
       description: "Restaurante Contemporâneo com opções vegetarianas.",
       fullInfo: "Restaurante Contemporâneo adequado para vegetarianos e com opções sem glúten. Aceita cartões de crédito: American Express, Mastercard, Visa.",
       location: "Av. Casa das Pedras, 490",
@@ -727,7 +727,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'estancia-penedo',
       title: "Estância Penedo",
       category: "Churrasco",
-      image: "/assets/imagens/gastronomia/estancia-penedo.jpg",
+      image: "/assets/imagens/logos/logo-estancia-penedo.jpg",
       description: "Self service a quilo com churrasco e a la carte variado.",
       fullInfo: "No restaurante Estância Penedo trabalhamos com self service a quilo com churrasco e uma enorme variedade de quentes e frios, das 11:30 hr ate as 16:00 hr, após esse horário trabalhamos com a la carte com diversos pratos, como, rodízio de fondue, carnes na brasa, peixes e caldos todos muito bem servidos.",
       location: "Av. das Mangueiras, 1775",
@@ -742,7 +742,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'jardim-secreto',
       title: "Jardim Secreto",
       category: "Contemporânea",
-      image: "/assets/imagens/gastronomia/jardim-secreto.jpg",
+      image: "/assets/imagens/logos/logo-jardim-secreto.jpg",
       description: "Romantismo e alta gastronomia em ambiente intimista.",
       fullInfo: "Se o foco do seu roteiro é romantismo e alta gastronomia, este é o lugar. O ambiente é intimista e cercado por muita natureza. Culinária contemporânea e bistrô, com destaque para risotos, carnes nobres e peixes requintados.",
       location: "Av. das Mangueiras, 506 - Penedo",
@@ -756,7 +756,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'jazz-village',
       title: "Jazz Village Penedo",
       category: "Contemporânea",
-      image: "/assets/imagens/gastronomia/jazz-village.jpg",
+      image: "/assets/imagens/logos/logo-jazz-village.jpg",
       description: "Música de qualidade e gastronomia sofisticada.",
       fullInfo: "Uma mistura perfeita de música de altíssima qualidade com gastronomia sofisticada, localizado dentro do Hotel Pequena Suécia. Famoso pelas sequências de fondue e pratos que misturam a culinária contemporânea com toques nórdicos.",
       location: "Rua Toivo Suni, 33 - Penedo",
@@ -770,7 +770,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'kaiten-sushi',
       title: "Kaiten Sushi",
       category: "Japonesa",
-      image: "/assets/imagens/gastronomia/kaiten-sushi.jpg",
+      image: "/assets/imagens/logos/logo-kaiten-sushi.jpg",
       description: "O melhor da culinária japonesa em Penedo.",
       fullInfo: "O Kaiten Sushi oferece uma experiência autêntica da culinária japonesa, com sushis, sashimis e pratos quentes preparados com ingredientes frescos e selecionados.",
       location: "Av. Casa de Pedra, 785",
@@ -785,7 +785,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'loazo-resto',
       title: "Loazô Restô",
       category: "Gastronomia",
-      image: "/assets/imagens/gastronomia/loazo-resto.jpg",
+      image: "/assets/imagens/logos/logo-loazo-resto.jpg",
       description: "Restaurante familiar no Alto Penedo.",
       fullInfo: "O Loazô Restô oferece um ambiente familiar e acolhedor no Alto Penedo. Aceita cartão de crédito e oferece serviços para levar e restaurante privativo.",
       location: "Rua K, Alto Penedo",
@@ -800,7 +800,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'petit-gourmet',
       title: "Petit Gourmet",
       category: "Contemporânea",
-      image: "/assets/imagens/gastronomia/petit-gourmet.jpg",
+      image: "/assets/imagens/logos/logo-petit-gourmet.jpg",
       description: "Ambiente charmoso e sequências de fondue premiadas.",
       fullInfo: "Um ambiente charmoso e acolhedor no centro de Penedo. O cardápio transita entre a culinária contemporânea e os clássicos da serra, com destaque para as sequências de fondue e risotos cremosos.",
       location: "Avenida Brasil, 800",
@@ -814,7 +814,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'pizza-da-villa',
       title: "Pizza da Villa",
       category: "Pizzaria",
-      image: "/assets/imagens/gastronomia/pizza-da-villa.jpg",
+      image: "/assets/imagens/logos/logo-pizza-da-villa.jpg",
       description: "Pizzas de fermentação natural em forno a lenha.",
       fullInfo: "Localizada no coração turístico de Penedo, oferece pizzas com massa de fermentação natural, assadas em forno a lenha, com ingredientes de alta qualidade e sabores exclusivos da região.",
       location: "Av. das mangueiras, 1579",
@@ -828,7 +828,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'querencia',
       title: "Querência",
       category: "Carnes",
-      image: "/assets/imagens/gastronomia/querencia.jpg",
+      image: "/assets/imagens/logos/logo-querencia.jpg",
       description: "Picanha na pedra, bacalhau e fondues em ambiente rústico.",
       fullInfo: "Pratos como picanha na pedra e bacalhau, além de fondues e vinhos, em espaço rústico e familiar com varanda.",
       location: "Av. das Mangueiras, 2510",
@@ -843,7 +843,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'rei-das-trutas',
       title: "Rei das Trutas",
       category: "Peixes",
-      image: "/assets/imagens/gastronomia/rei-das-trutas.jpg",
+      image: "/assets/imagens/logos/logo-rei-das-trutas.jpg",
       description: "O peixe símbolo de Penedo em sua melhor forma.",
       fullInfo: "Como a truta é o ingrediente símbolo de Penedo, este restaurante é parada obrigatória. Oferece o peixe em dezenas de preparos: com amêndoas, alcaparras, molho de maracujá e muito mais.",
       location: "Av. das Mangueiras, 20 - Penedo",
@@ -857,7 +857,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'restaurante-finlandes',
       title: "Restaurante Korvapuusti",
       category: "Gastronomia",
-      image: "/assets/imagens/gastronomia/restaurante-korvappuusti.jpg",
+      image: "/assets/imagens/logos/logo-restaurante-finlandes.jpg",
       description: "O melhor da culinária nórdica e trutas.",
       fullInfo: "Especializado em trutas e pratos típicos finlandeses, o Korvapuusti é uma parada obrigatória para quem quer conhecer a história através do paladar.",
       location: "Rua das Velas, 101",
@@ -871,7 +871,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'truta-viva',
       title: "Truta Viva",
       category: "Experiência",
-      image: "/assets/imagens/gastronomia/truta-viva.jpg",
+      image: "/assets/imagens/logos/logo-truta-viva.jpg",
       description: "Pescaria e peixes frescos em meio à natureza.",
       fullInfo: "Mais do que um restaurante, é uma verdadeira experiência ecológica. O cliente pode pescar a própria truta nos lagos da propriedade, e ela é preparada na hora! Peixes fresquíssimos com tempero caseiro.",
       location: "Alto Penedo",
@@ -885,7 +885,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'zero-a-zero',
       title: "Zero a Zero",
       category: "Choperia",
-      image: "/assets/imagens/gastronomia/zero-a-zero.jpg",
+      image: "/assets/imagens/logos/logo-zero-a-zero.jpg",
       description: "Seu novo ponto de encontro em Penedo com ambiente sofisticado.",
       fullInfo: "Restaurante e Choperia Zero a Zero, seu novo ponto de encontro em Penedo-RJ. Com uma estrutura única, ambiente sofisticado e agradável. Cardápio variado com diversas opções de petiscos, pratos de carnes, massas, peixes, aves, fondues, e muito mais. Conheça também nossa variedade de cervejas, chopes, e vinhos. Somos a casa oficial do happy hour!",
       location: "Rua das Velas, 120",
@@ -900,7 +900,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'tonttulakki-suklaat',
       title: "Tonttulakki Suklaat",
       category: "Gastronomia",
-      image: "/assets/imagens/gastronomia/tonttulakki-Suklaat.jpg",
+      image: "/assets/imagens/logos/logo-tonttulakki-suklaat.jpg",
       description: "Chocolates artesanais com o verdadeiro sabor finlandês.",
       fullInfo: "Chocolates artesanais com o verdadeiro sabor finlandês.",
       location: "Rua das velas 100 – Penedo",
@@ -914,7 +914,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'lugano-penedo',
       title: "Lugano Penedo",
       category: "Gastronomia",
-      image: "/assets/imagens/gastronomia/lugano-Penedo.jpg",
+      image: "/assets/imagens/logos/logo-lugano-penedo.jpg",
       description: "A tradição do chocolate de Gramado agora em Penedo.",
       fullInfo: "A tradição do chocolate de Gramado agora em Penedo.",
       location: "Av. das Mangueiras, 1581 – Penedo",
@@ -928,7 +928,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'lolita-penedo',
       title: "Lolita Penedo",
       category: "Gastronomia",
-      image: "/assets/imagens/gastronomia/lolita-Penedo.jpg",
+      image: "/assets/imagens/logos/logo-lolita-penedo.jpg",
       description: "Cafeteria charmosa com doces e sobremesas inesquecíveis.",
       fullInfo: "Cafeteria charmosa com doces e sobremesas inesquecíveis.",
       location: "Avenida das Mangueiras, 1645, Loja 2, Penedo",
@@ -942,7 +942,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'kahvila-cafe',
       title: "Kahvila Café",
       category: "Gastronomia",
-      image: "/assets/imagens/gastronomia/kahvila-Penedo.jpg",
+      image: "/assets/imagens/logos/logo-kahvila-cafe.jpg",
       description: "Ambiente acolhedor para o seu café da tarde.",
       fullInfo: "Ambiente acolhedor para o seu café da tarde.",
       location: "Av. das Mangueiras, 1815 - Loja 1, Penedo",
@@ -955,7 +955,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'santa-claus-burger',
       title: "Santa Claus Burger",
       category: "Gastronomia",
-      image: "/assets/imagens/gastronomia/santa-claus-burger.jpg",
+      image: "/assets/imagens/logos/logo-santa-claus-burger.jpg",
       description: "Hamburgueria de excelência ao lado da Pequena Finlândia. Sabor e qualidade com nota 4.8!",
       fullInfo: "Localizada no coração de Penedo, a poucos passos da Casa do Papai Noel, o Santa Claus Burger é uma das hamburguerias mais bem avaliadas da região. Com um ambiente agradável (acessível para cadeirantes e com estacionamento gratuito), é o lugar perfeito para famílias e grupos. Eles oferecem opções para comer no local, delivery e retirada, além de um cardápio incrível de sobremesas e lanches que agradam adultos e crianças.",
       is_premium: false,
@@ -975,7 +975,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'maria-cuisine',
       title: "Maria Cuisine de Famille",
       category: "Gastronomia",
-      image: "/assets/imagens/gastronomia/maria-cuisine.jpg",
+      image: "/assets/imagens/logos/logo-maria-cuisine.jpg",
       description: "Alta gastronomia, ambiente acolhedor e carta de vinhos selecionada na principal avenida de Penedo.",
       fullInfo: "Localizado na Av. das Mangueiras, o Maria Cuisine de Famille é sinônimo de excelência em Penedo, ostentando uma avaliação quase perfeita (4.9 estrelas). O restaurante se destaca por oferecer pratos refinados de dar água na boca, excelentes opções vegetarianas, coquetéis artesanais e uma ótima carta de vinhos. O ambiente é acolhedor e impecável, ideal para jantares românticos a dois ou celebrações em família. Eles aceitam reservas e possuem estacionamento próprio gratuito no local.",
       is_premium: false,
@@ -995,7 +995,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'vanilla-patisserie',
       title: "Vanilla Pâtisserie",
       category: "Gastronomia",
-      image: "/assets/imagens/gastronomia/vanilla-patisserie.jpg",
+      image: "/assets/imagens/logos/logo-vanilla-patisserie.jpg",
       description: "Doces finos, artesanais e sobremesas irresistíveis. A parada perfeita para o seu café da tarde em Penedo.",
       fullInfo: "Localizada de forma charmosa no subsolo do Maria Cuisine, na movimentada Av. das Mangueiras, a Vanilla Pâtisserie é um verdadeiro pedacinho da França em Penedo. Com uma avaliação de excelência (4.8 estrelas), o local encanta pelos doces finos, tortas, sobremesas delicadas e cafés deliciosos. É o ambiente perfeito para aquela pausa relaxante durante o seu passeio pela cidade. O espaço conta com ótimo atendimento e aceita diversas formas de pagamento, incluindo cartões e aproximação (NFC). Funciona de terça a domingo!",
       is_premium: false,
@@ -1013,7 +1013,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'delicias-da-carol',
       title: "Delicias da Carol",
       category: "Gastronomia",
-      image: "/assets/imagens/gastronomia/delicias-da-carol.jpg",
+      image: "/assets/imagens/logos/logo-delicias-da-carol.jpg",
       description: "Cafeteria charmosa e super bem avaliada na principal avenida de Penedo. Doces, cafés e muito sabor!",
       fullInfo: "Localizada na movimentada Av. das Mangueiras, a Delicias da Carol é o refúgio perfeito para os amantes de um bom café. Com uma avaliação impressionante de 4.9 estrelas, o espaço é famoso por seu atendimento acolhedor, doces divinos e ambiente familiar (ótimo para ir com crianças). Além dos tradicionais cafés, eles também servem vinhos para relaxar no fim de tarde. O local conta com entrada com acessibilidade, aceita pagamentos via cartão e aproximação (NFC), e funciona todos os dias da semana (com horário estendido até às 23h aos sábados!).",
       is_premium: false,
@@ -1033,7 +1033,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'fue-gelateria',
       title: "Fuê Gelateria",
       category: "Gastronomia",
-      image: "/assets/imagens/gastronomia/fue-gelateria.jpg",
+      image: "/assets/imagens/logos/logo-fue-gelateria.jpg",
       description: "Gelatos artesanais deliciosos e cafés especiais no coração da Pequena Finlândia!",
       fullInfo: "Localizada na charmosa Rua das Velas, bem no centro da Pequena Finlândia, a Fuê Gelateria é parada obrigatória para se refrescar e adoçar o passeio. Com quase mil avaliações positivas, o local é famoso por seus gelatos cremosos e artesanais, mas também serve ótimos cafés. O espaço é perfeito para famílias e crianças, conta com Wi-Fi gratuito e entrada acessível para cadeirantes. Funcionam todos os dias da semana, com horários estendidos até as 23h aos sábados. Aceitam todos os cartões e pagamentos por aproximação (NFC)!",
       is_premium: false,
@@ -1053,7 +1053,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'cafe-finlandes-penedo',
       title: "Café Finlandês Penedo",
       category: "Gastronomia",
-      image: "/assets/imagens/gastronomia/cafe-finlandes.jpg",
+      image: "/assets/imagens/logos/logo-cafe-finlandes-penedo.jpg",
       description: "O autêntico sabor de Penedo! Cafés, doces, refeições completas e ambiente Pet Friendly na Av. das Mangueiras.",
       fullInfo: "Localizado no fervo da Av. das Mangueiras (nº 1645), o Café Finlandês Penedo é um dos locais mais tradicionais e amados da cidade (com mais de 1.200 avaliações!). Muito mais que uma cafeteria, o espaço oferece um cardápio completo que vai do café da manhã até o jantar, incluindo deliciosas sobremesas, fondues, vinhos e drinks. O ambiente é super acolhedor, conta com agradáveis mesas ao ar livre, é totalmente acessível para cadeirantes e é Pet Friendly (seu cachorrinho é muito bem-vindo!). Aceitam reservas e funcionam todos os dias, das 08h30 às 22h.",
       is_premium: false,
@@ -1139,7 +1139,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'armazem-da-vila',
       title: "Armazém da Vila",
       category: "Compras",
-      image: "/assets/imagens/compras/armazem-da-vila.jpg",
+      image: "/assets/imagens/logos/logo-armazem-da-vila.jpg",
       description: "Loja charmosa localizada no coração da Pequena Finlândia. Perfeita para suas compras em Penedo.",
       fullInfo: "O Armazém da Vila está estrategicamente localizado na Rua das Velas, dentro do icônico shopping Pequena Finlândia (pertinho da Casa do Papai Noel). É uma parada obrigatória no roteiro de quem deseja levar um pedacinho de Penedo para casa! O espaço é acessível para cadeirantes, possui ótimo atendimento (nota 4.5) e funciona todos os dias da semana, com horário estendido aos finais de semana para sua comodidade. A melhor Pasta de Truta da região 🧡\n🔸 + de 50 sabores\n🔸Fabricação Própria\n📍Penedo e Maringá - RJ",
       is_premium: false,
@@ -1159,7 +1159,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'geek-penedo',
       title: "Geek Penedo",
       category: "Compras",
-      image: "/assets/imagens/compras/geek-penedo.jpg",
+      image: "/assets/imagens/logos/logo-geek-penedo.jpg",
       description: "O paraíso dos colecionáveis e presentes criativos! A melhor loja nerd e geek de Penedo.",
       fullInfo: "Localizada na movimentada Av. das Mangueiras, bem pertinho da Casa do Papai Noel, a Geek Penedo é parada obrigatória para os fãs de cultura pop, animes, filmes e séries. É uma excelente opção para encontrar presentes super criativos e lembranças únicas na cidade. A loja oferece ótimo atendimento e aceita diversas formas de pagamento, incluindo cartões e aproximação (NFC). Eles funcionam de quinta a segunda-feira, com horários estendidos até mais tarde nos finais de semana!",
       is_premium: false,
@@ -1178,7 +1178,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'astral-exotheryca',
       title: "Astral Exothéryca",
       category: "Compras",
-      image: "/assets/imagens/compras/astral-exotheryca.jpg",
+      image: "/assets/imagens/logos/logo-astral-exotheryca.jpg",
       description: "Loja mágica e mística na entrada de Penedo. Encontre cristais, incensos e presentes especiais.",
       fullInfo: "Localizada logo na entrada de Penedo, a Astral Exothéryca é uma loja encantadora e super bem avaliada pelos visitantes. O espaço é totalmente dedicado a artigos esotéricos, cristais, incensos, peças indianas, decoração e produtos místicos. É o lugar perfeito para renovar as energias e encontrar presentes com muito significado. A loja oferece estacionamento acessível e aceita pagamentos via cartão e aproximação (NFC). Aberta de quarta a segunda, das 11h às 19h!",
       is_premium: false,
@@ -1198,7 +1198,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'via-lactea-balas',
       title: "Via-Láctea Loja das Balas",
       category: "Compras",
-      image: "/assets/imagens/compras/via-lactea.jpg",
+      image: "/assets/imagens/logos/logo-via-lactea-balas.jpg",
       description: "O paraíso das guloseimas na Pequena Finlândia! Uma infinidade de balas, chocolates e doces a granel.",
       fullInfo: "Localizada na charmosa Rua das Velas, bem dentro da Pequena Finlândia, a Via-Láctea Loja das Balas é o verdadeiro paraíso para crianças e adultos. Com excelente avaliação dos visitantes, a loja oferece uma variedade incrível de balas, doces importados, chocolates e guloseimas a granel para você montar o seu próprio mix. O espaço é acessível para cadeirantes, possui ótimo atendimento e funciona todos os dias, com horário estendido até as 22h às sextas e sábados. Aceita cartões e pagamentos por aproximação (NFC). Uma parada obrigatória e doce no seu roteiro!",
       is_premium: false,
@@ -1216,7 +1216,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'arte-da-nossa-terra',
       title: "Arte da Nossa Terra",
       category: "Compras",
-      image: "/assets/imagens/compras/arte-da-nossa-terra.jpg",
+      image: "/assets/imagens/logos/logo-arte-da-nossa-terra.jpg",
       description: "Loja charmosa na Rua das Velas. Encontre as melhores lembrancinhas e artesanatos locais de Penedo!",
       fullInfo: "A \"Arte da Nossa Terra\" é uma loja de presentes encantadora localizada na famosa Rua das Velas, bem coladinha na Pequena Finlândia e na Casa do Papai Noel. É o local perfeito para você encontrar aquela lembrancinha especial, artigos de decoração e produtos de artesanato para levar como recordação de Penedo. Eles oferecem ótimo atendimento, aceitam pagamentos via cartões de crédito, débito e aproximação (NFC). A loja funciona de quinta a segunda-feira, com horário estendido até as 22h aos sábados para sua maior comodidade!",
       is_premium: false,
@@ -1235,7 +1235,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'reserva-da-mata',
       title: "Reserva Da Mata",
       category: "Compras",
-      image: "/assets/imagens/compras/reserva-da-mata.jpg",
+      image: "/assets/imagens/logos/logo-reserva-da-mata.jpg",
       description: "Loja de roupas e acessórios com muito estilo, com localização privilegiada na Av. das Mangueiras.",
       fullInfo: "Localizada no coração da Avenida das Mangueiras (bem em frente à Pequena Finlândia e ao lado da Casa do Fritz), a Reserva Da Mata é uma excelente loja de moda e vestuário em Penedo. Com ótima avaliação dos visitantes (4.6 estrelas), a loja oferece peças cheias de estilo, conforto e bom gosto, sendo uma parada perfeita para quem adora renovar o guarda-roupa ou comprar presentes durante a viagem. O espaço conta com excelente atendimento e aceita diversas formas de pagamento, incluindo cartões de débito e aproximação (NFC).",
       is_premium: false,
@@ -1254,7 +1254,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'meu-sonho',
       title: "Meu Sonho",
       category: "Compras",
-      image: "/assets/imagens/compras/meu-sonho.jpg",
+      image: "/assets/imagens/logos/logo-meu-sonho.jpg",
       description: "Loja encantadora no Shopping Vale dos Duendes, ideal para presentes e lembranças de Penedo.",
       fullInfo: "Localizada no coração de Penedo, dentro do Shopping Vale dos Duendes (na movimentada Av. das Mangueiras), a loja \"Meu Sonho\" faz jus ao nome. O espaço é perfeito para quem busca opções de presentes, artigos locais e lembrancinhas encantadoras. Com uma localização privilegiada perto da Casa do Papai Noel, a loja abre todos os dias da semana e conta com horário de funcionamento estendido até as 22h aos sábados. Eles aceitam pagamentos via cartões de crédito, débito e aproximação (NFC).",
       is_premium: false,
@@ -1273,7 +1273,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'artevelas',
       title: "Artevelas",
       category: "Compras",
-      image: "/assets/imagens/compras/artevelas.jpg",
+      image: "/assets/imagens/logos/logo-artevelas.jpg",
       description: "Loja especializada em velas artesanais e perfumadas na Av. das Mangueiras. O presente perfeito!",
       fullInfo: "Localizada na movimentada Av. das Mangueiras, bem pertinho da Pequena Finlândia, a Artevelas é uma loja super tradicional de Penedo. O espaço é especializado na venda de velas artesanais, aromáticas, decorativas e artigos charmosos para a casa. É o lugar perfeito para encontrar um presente especial e perfumado para levar de lembrança da viagem! A loja funciona todos os dias da semana, com horários estendidos até as 22h nas sextas e sábados para sua comodidade. Aceitam diversas formas de pagamento, incluindo cartões e aproximação (NFC).",
       is_premium: false,
@@ -1292,7 +1292,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       id: 'raio-de-luz-decoracoes',
       title: "Raio de Luz - Tapeçarias e Decorações",
       category: "Compras",
-      image: "/assets/imagens/compras/raio-de-luz.jpg",
+      image: "/assets/imagens/logos/logo-raio-de-luz-decoracoes.jpg",
       description: "Loja especializada em belíssimas tapeçarias, móveis e artigos de decoração na Av. das Mangueiras.",
       fullInfo: "Localizada na movimentada Av. das Mangueiras (bem em frente ao Café Finlandês e pertinho da Pequena Finlândia), a Raio de Luz é a loja ideal para quem busca renovar o ambiente de casa. Com excelente avaliação dos clientes (4.5 estrelas), o espaço oferece uma curadoria incrível de tapeçarias exclusivas, móveis charmosos e artigos finos de decoração. É o lugar perfeito para comprar peças únicas e levar um pouco da elegância de Penedo para o seu lar. Aceitam diversas formas de pagamento, como cartões de crédito, débito e aproximação (NFC).",
       is_premium: false,
@@ -1356,6 +1356,47 @@ const FEATURED_ITEMS: DetailItem[] = [
   ...locaisData['gastronomia'] || [],
   ...locaisData['compras'] || []
 ].filter((item: any) => item.is_premium).slice(0, 12);
+
+interface PartnerHeaderProps {
+  item: DetailItem;
+  size?: 'small' | 'large';
+}
+
+function PartnerHeader({ item, size = 'large' }: PartnerHeaderProps) {
+  const containerSize = size === 'large' 
+    ? "w-14 h-14 md:w-20 md:h-20" 
+    : "w-10 h-10 md:w-14 md:h-14";
+  
+  const textSize = size === 'large'
+    ? "text-4xl md:text-6xl font-black text-penedo-forest tracking-tighter leading-none drop-shadow-sm text-left"
+    : "text-xl md:text-2xl font-black text-penedo-forest tracking-tighter leading-none drop-shadow-sm text-left line-clamp-2";
+
+  const HeadingTag = size === 'large' ? 'h1' : 'h3';
+
+  return (
+    <div className="flex items-center gap-4 text-left">
+      <div className={`${containerSize} rounded-full border-2 border-penedo-gold shadow-md shrink-0 bg-white overflow-hidden flex items-center justify-center`}>
+        <img 
+          src={`/assets/imagens/logos/logo-${item.id}.jpg`} 
+          alt={`Logo ${item.title}`} 
+          className="w-full h-full object-cover" 
+          referrerPolicy="no-referrer"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            if (target.src !== item.image) {
+              target.src = item.image;
+            } else {
+              target.style.display = 'none';
+            }
+          }}
+        />
+      </div>
+      <HeadingTag className={textSize}>
+        {item.title}
+      </HeadingTag>
+    </div>
+  );
+}
 
 function PremiumCarousel({ onNavigatePremium }: { onNavigatePremium: (slug: string) => void }) {
   const premiumItems = React.useMemo(() => {
@@ -1448,7 +1489,9 @@ function PremiumCarousel({ onNavigatePremium }: { onNavigatePremium: (slug: stri
                     <div className="h-1 w-6 bg-penedo-gold rounded-full"></div>
                     <span className="text-gray-400 text-[10px] font-bold uppercase tracking-widest">{(item as any).badge || item.category}</span>
                   </div>
-                  <h3 className="text-2xl font-black text-penedo-forest mb-4 tracking-tighter">{item.title}</h3>
+                  <div className="mb-4">
+                    <PartnerHeader item={item} size="small" />
+                  </div>
                 </div>
                 <div 
                   className="w-full py-3.5 bg-penedo-forest text-white rounded-2xl font-bold uppercase tracking-widest text-[10px] hover:bg-penedo-emerald transition-all shadow-lg flex items-center justify-center gap-2 text-center"
@@ -2518,26 +2561,8 @@ function PremiumDetailPage({ slug, onNavigate }: { slug: string, onNavigate: (pa
             <ArrowRight className="rotate-180" size={20} /> Voltar ao Início
           </button>
           
-          <div className="flex items-center gap-4 mb-6 md:mb-8 text-left">
-            <div className="w-14 h-14 md:w-20 md:h-20 rounded-full border-2 border-penedo-gold shadow-md shrink-0 bg-white overflow-hidden flex items-center justify-center">
-              <img 
-                src={`/assets/imagens/logos/logo-${item.id}.jpg`} 
-                alt={`Logo ${item.title}`} 
-                className="w-full h-full object-cover" 
-                referrerPolicy="no-referrer"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  if (target.src !== item.image) {
-                    target.src = item.image;
-                  } else {
-                    target.style.display = 'none';
-                  }
-                }}
-              />
-            </div>
-            <h1 className="text-4xl md:text-6xl font-black text-penedo-forest tracking-tighter leading-none drop-shadow-sm">
-              {item.title}
-            </h1>
+          <div className="mb-6 md:mb-8">
+            <PartnerHeader item={item} size="large" />
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-4 md:mb-8">
@@ -3078,7 +3103,7 @@ function WhatToDoPage({ onOpenDetail, onGoBack }: { onOpenDetail: (item: DetailI
       </div>
 <header className="relative pt-40 pb-6 md:pb-12 md:pt-48 md:pb-16 bg-penedo-forest text-center text-white overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <img src="/assets/imagens/o-que-fazer/penedo_sightseeing.jpg" className="w-full h-full object-cover" alt="Background" referrerPolicy="no-referrer" />
+          <img src="/assets/imagens/penedo_sightseeing.jpg" className="w-full h-full object-cover" alt="Background" referrerPolicy="no-referrer" />
         </div>
         <div className="relative z-10 px-4 max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">O Que Fazer em <span className="text-penedo-gold">Penedo</span></h1>
