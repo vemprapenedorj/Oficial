@@ -401,7 +401,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
       image: "/assets/imagens/logos/logo-pousada-aurora-mantiqueira.jpg",
       description: "A pousada mais bem avaliada de Penedo (Nota 9,8). Refúgio dos sonhos a apenas 1,2km do centro com café artesanal and alma familiar.",
       descricao_longa: "Nascida do sonho de Sandro e sua família de oferecer um refúgio de paz na serra, a Pousada Aurora da Mantiqueira combina silêncio e natureza a apenas 1,2km do centro. Com nota 9,8 no Booking.com e mais de 100 avaliações 5 estrelas, somos o destino perfeito para casais in a viagem romântica, famílias que buscam desacelerar e viajantes que não abrem mão de uma estadia pet friendly com seus cães.",
-      fullInfo: "Localizada estrategicamente perto dos principais atrativos (como a Pequena Finlândia, Casa do Papai Noel, Fábrica de Chocolate e centrinho), a pousada proporciona o equilíbrio ideal entre tranquilidade e conveniência. Oferecemos piscina ao ar livre com vista panorâmica das montanhas, jardim preservado e estacionamento privativo grátis. Nossas acomodações contam com ar-condicionado, TV de tela plana, e opções exclusivas com varanda privativa ou banheira de hidromassagem. Um dos maiores destaques da experiência é o nosso café da manhã artesanal, preparado com carinho a partir de autênticas receitas de família.",
+      fullInfo: "Localizada estrategicamente perto dos principais atrativos (como a Pequena Finlândia, Casa do Papai Noel, Fábrica de Chocolate e centrinho), a pousada proporciona o equilíbrio ideal entre tranquilidade e conveniência. Oferecemos piscina ao ar livre com vista panorâmica das montanhas, jardim preservado e estacionamento privativo grátis. Nossas acomodações contam com ar-condicionado, TV de tela plana, e opções exclusivas com varanda privativa. Um dos maiores destaques da experiência é o nosso café da manhã artesanal, preparado com carinho a partir de autênticas receitas de família.",
       location: "R. Francisco José de Barros, 220",
       rating: 4.8,
       whatsapp: "24992576384",
@@ -416,7 +416,7 @@ const DETAILS_DATA: Record<string, DetailItem[]> = {
         "/assets/imagens/premium/pousada-aurora-da-mantiqueira/galeria-5.jpg",
         "/assets/imagens/premium/pousada-aurora-da-mantiqueira/galeria-6.jpg"
       ],
-      tags: ["pousada", "natureza", "vista panorâmica", "serra da mantiqueira", "romântico", "casal", "piscina", "hidromassagem", "tranquilidade", "café da manhã"],
+      tags: ["pousada", "natureza", "vista panorâmica", "serra da mantiqueira", "romântico", "casal", "piscina", "tranquilidade", "café da manhã"],
       link_video: "https://www.instagram.com/reel/DQSV0FDAQf3/"
     },
     {
@@ -1734,9 +1734,13 @@ export default function App() {
                 />
               </a>
               <div className="flex flex-col items-center selection:bg-transparent">
-                <span className="text-2xl font-bold tracking-tighter leading-none mb-1 text-white select-none">
+                <a 
+                  href="#/" 
+                  onClick={(e) => { e.preventDefault(); navigate('home'); }}
+                  className="text-2xl font-bold tracking-tighter leading-none mb-1 text-white select-none cursor-pointer hover:text-white"
+                >
                   VEM PRA PENEDO
-                </span>
+                </a>
                 <span className="text-[#FFC107] text-[12px] font-bold tracking-wider drop-shadow-sm select-none">
                   onde a magia acontece
                 </span>
@@ -2916,7 +2920,7 @@ function HomePage({
             <a 
               href="#/compras"
               onClick={(e) => { e.preventDefault(); onNavigate('compras'); }} 
-              className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-sm rounded-full font-bold transition-all flex items-center justify-center gap-2 cursor-pointer"
+              className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-sm rounded-full font-bold transition-all transform hover:scale-105 flex items-center justify-center gap-2 cursor-pointer"
             >
               Onde Comprar
             </a>

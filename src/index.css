@@ -19,6 +19,10 @@ body {
   @apply bg-white text-penedo-graphite antialiased;
 }
 
+a {
+  text-decoration: none;
+}
+
 @layer utilities {
   .search-promo {
     @apply bg-[#f0f4f7] py-16 px-5 text-center border-b-5 border-penedo-gold mb-10;
