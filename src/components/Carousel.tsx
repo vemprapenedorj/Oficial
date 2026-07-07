@@ -5,7 +5,7 @@ import { DetailItem } from '../types';
 
 interface CarouselProps {
   items: DetailItem[];
-  renderItem: (item: DetailItem) => React.ReactNode;
+  renderItem: (item: DetailItem, index?: number) => React.ReactNode;
   title: string;
   subtitle?: string;
   onNavigate?: () => void;
@@ -127,7 +127,7 @@ export function Carousel({
                     width: `calc(${100 / currentItemsPerView}% - ${(gap * (currentItemsPerView - 1)) / currentItemsPerView}px)` 
                   }}
                 >
-                  {renderItem(item)}
+                  {renderItem(item, index)}
                 </div>
               ))}
             </motion.div>
