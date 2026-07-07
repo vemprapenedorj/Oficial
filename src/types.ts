@@ -13,6 +13,7 @@ export interface DetailItem {
   instagram?: string;
   tags?: string[];
   isPremium?: boolean;
+  is_premium?: boolean;
   badge?: string;
   tripadvisorUrl?: string;
   slug?: string;

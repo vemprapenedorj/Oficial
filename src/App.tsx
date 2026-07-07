@@ -18,6 +18,7 @@ import {
   MapPin,
   Clock,
   Star,
+  ShieldCheck,
   Info,
   Search,
   ChevronUp,
@@ -3169,7 +3170,7 @@ function WhatToDoPage({ onOpenDetail, onGoBack }: { onOpenDetail: (item: DetailI
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-            <div className="sticky top-20 z-40 bg-white/90 backdrop-blur-md border-b py-4 shadow-sm">
+            <div className="sticky top-[72px] z-40 bg-white/90 backdrop-blur-md border-b py-4 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           <button onClick={onGoBack} className="flex items-center gap-2 text-penedo-emerald font-bold hover:gap-3 transition-all cursor-pointer bg-transparent border-none outline-none">
             <ArrowRight className="rotate-180" size={20} /> Voltar ao Início
@@ -3232,7 +3233,7 @@ function WhereToStayPage({ onOpenDetail, onGoBack }: { onOpenDetail: (item: Deta
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-            <div className="sticky top-20 z-40 bg-white/90 backdrop-blur-md border-b py-4 shadow-sm">
+            <div className="sticky top-[72px] z-40 bg-white/90 backdrop-blur-md border-b py-4 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           <button onClick={onGoBack} className="flex items-center gap-2 text-penedo-emerald font-bold hover:gap-3 transition-all cursor-pointer bg-transparent border-none outline-none">
             <ArrowRight className="rotate-180" size={20} /> Voltar ao Início
@@ -3295,7 +3296,7 @@ function GastronomyPage({ onOpenDetail, onGoBack }: { onOpenDetail: (item: Detai
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-            <div className="sticky top-20 z-40 bg-white/90 backdrop-blur-md border-b py-4 shadow-sm">
+            <div className="sticky top-[72px] z-40 bg-white/90 backdrop-blur-md border-b py-4 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           <button onClick={onGoBack} className="flex items-center gap-2 text-penedo-emerald font-bold hover:gap-3 transition-all cursor-pointer bg-transparent border-none outline-none">
             <ArrowRight className="rotate-180" size={20} /> Voltar ao Início
@@ -3358,7 +3359,7 @@ function ShoppingPage({ onOpenDetail, onGoBack }: { onOpenDetail: (item: DetailI
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-            <div className="sticky top-20 z-40 bg-white/90 backdrop-blur-md border-b py-4 shadow-sm">
+            <div className="sticky top-[72px] z-40 bg-white/90 backdrop-blur-md border-b py-4 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           <button onClick={onGoBack} className="flex items-center gap-2 text-penedo-emerald font-bold hover:gap-3 transition-all cursor-pointer bg-transparent border-none outline-none">
             <ArrowRight className="rotate-180" size={20} /> Voltar ao Início
@@ -3617,7 +3618,7 @@ function BlogPage({ onOpenDetail, onNavigate, activeArticle, onSelectArticle }: 
           <meta property="og:image" content="/assets/imagens/blog/cachoeiras-penedo/Introducao.jpg" />
           <meta property="og:type" content="article" />
         </Helmet>
-        <div className="sticky top-20 z-40 bg-white/90 backdrop-blur-md border-b py-4 shadow-sm">
+        <div className="sticky top-[72px] z-40 bg-white/90 backdrop-blur-md border-b py-4 shadow-sm">
           <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
             <button onClick={() => handleSelectArticle(null)} className="flex items-center gap-2 text-penedo-emerald font-bold hover:gap-3 transition-all cursor-pointer">
               <ArrowRight className="rotate-180" size={20} /> Voltar para o Blog
@@ -3910,7 +3911,7 @@ function BlogPage({ onOpenDetail, onNavigate, activeArticle, onSelectArticle }: 
           <meta property="og:image" content="/assets/imagens/blog/penedo-guia/capa.jpg" />
           <meta property="og:type" content="article" />
         </Helmet>
-        <div className="sticky top-20 z-40 bg-white/90 backdrop-blur-md border-b py-4">
+        <div className="sticky top-[72px] z-40 bg-white/90 backdrop-blur-md border-b py-4">
           <div className="max-w-7xl mx-auto px-4">
             <button onClick={() => handleSelectArticle(null)} className="flex items-center gap-2 text-penedo-emerald font-bold hover:gap-3 transition-all cursor-pointer">
               <ArrowRight className="rotate-180" size={20} /> Voltar para o Blog
@@ -4264,7 +4265,7 @@ function BlogPage({ onOpenDetail, onNavigate, activeArticle, onSelectArticle }: 
         <meta property="og:image" content="/assets/imagens/blog/penedo_blog_header.jpg" />
         <meta property="og:type" content="website" />
       </Helmet>
-      <div className="sticky top-[80px] lg:top-20 z-40 bg-white/90 backdrop-blur-md border-b py-4 shadow-sm">
+      <div className="sticky top-[72px] z-40 bg-white/90 backdrop-blur-md border-b py-4 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           <button onClick={() => onNavigate('home')} className="flex items-center gap-2 text-penedo-emerald font-bold hover:gap-3 transition-all cursor-pointer bg-transparent border-none outline-none">
             <ArrowRight className="rotate-180" size={20} /> Voltar ao Início
