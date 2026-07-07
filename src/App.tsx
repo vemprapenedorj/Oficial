@@ -49,6 +49,18 @@ import { RestaurantesArticle } from './components/RestaurantesArticle';
 import { HospedagemArticle } from './components/HospedagemArticle';
 import { shuffleArray } from './utils/shuffle';
 import locaisData from './locais.json';
+import { 
+  pushWhatsappClick, 
+  pushInstagramClick, 
+  pushPremiumCardClick, 
+  pushSearch, 
+  pushBusinessPageView, 
+  pushScroll, 
+  pushPageEngagement, 
+  pushPageView 
+} from './analytics/events';
+import { pushToDataLayer } from './analytics/dataLayer';
+
 
 const BlogPostCTA = ({ label, onClick, primary = true }: { label: string, onClick: () => void, primary?: boolean }) => (
   <button
@@ -63,7 +75,7 @@ const BlogPostCTA = ({ label, onClick, primary = true }: { label: string, onClic
   </button>
 );
 
-// Google Analytics Event Tracking Helper
+// Google Analytics Event Tracking Helper (Redirecionado para GTM Data Layer)
 const trackEvent = (action: string, category: string, label: string) => {
   // Padronização conforme solicitado: Hospedagem -> Hotel, Gastronomia -> Restaurante, Shopping -> Lojas
   const categoryMap: Record<string, string> = {
@@ -76,12 +88,14 @@ const trackEvent = (action: string, category: string, label: string) => {
   
   const finalCategory = categoryMap[category] || category;
 
-  if (typeof window !== 'undefined' && (window as any).gtag) {
-    (window as any).gtag('event', action, {
-      'event_category': finalCategory,
-      'event_label': label
-    });
-  }
+  pushToDataLayer({
+    event: 'custom_event',
+    event_action: action,
+    event_category: finalCategory,
+    event_label: label,
+    page_location: window.location.href,
+    page_title: document.title || 'Vem Pra Penedo'
+  });
 };
 
 const DETAILS_DATA: Record<string, DetailItem[]> = {
@@ -1519,11 +1533,16 @@ function PremiumCarousel({ onNavigatePremium }: { onNavigatePremium: (slug: stri
           title=""
           items={premiumItems as any}
           itemsPerView={{ mobile: 1, tablet: 2, desktop: 3 }}
-          renderItem={(item) => (
+          renderItem={(item, index) => (
             <motion.a
               href={`#/detalhe/${(item as any).slug || item.id}`}
               onClick={(e) => {
                 e.preventDefault();
+                pushPremiumCardClick({
+                  business_id: item.id,
+                  business_name: item.title,
+                  business_category: item.category
+                }, index + 1);
                 ((item as any).slug || item.id) && onNavigatePremium((item as any).slug || item.id);
               }}
               whileHover={{ y: -8 }}
@@ -1791,6 +1810,56 @@ export default function App() {
       document.documentElement.style.scrollBehavior = 'smooth';
     };
   }, [currentPage, activeBlogArticle]);
+
+  // 1. GTM SPA page_view tracking
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const pagePath = window.location.hash || '#/';
+      const pageTitle = document.title || 'Vem Pra Penedo';
+      pushPageView(pagePath, pageTitle);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, [currentPage, selectedPremiumSlug, activeBlogArticle]);
+
+  // 2. GTM page_scroll tracking
+  useEffect(() => {
+    const triggered = { '25': false, '50': false, '75': false, '100': false };
+    const activeSlug = selectedPremiumSlug;
+
+    const handleScrollDepth = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (docHeight <= 0) return;
+
+      const scrollPct = Math.round((scrollTop / docHeight) * 100);
+      const thresholds = [25, 50, 75, 100];
+      
+      thresholds.forEach(t => {
+        const key = t.toString() as '25' | '50' | '75' | '100';
+        if (scrollPct >= t && !triggered[key]) {
+          triggered[key] = true;
+          pushScroll(t, activeSlug);
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScrollDepth);
+    return () => window.removeEventListener('scroll', handleScrollDepth);
+  }, [currentPage, selectedPremiumSlug, activeBlogArticle]);
+
+  // 3. GTM page_engagement tracking
+  useEffect(() => {
+    const activeSlug = selectedPremiumSlug;
+    const timers = [
+      setTimeout(() => pushPageEngagement(30, activeSlug), 30000),
+      setTimeout(() => pushPageEngagement(60, activeSlug), 60000),
+      setTimeout(() => pushPageEngagement(120, activeSlug), 120000)
+    ];
+
+    return () => {
+      timers.forEach(clearTimeout);
+    };
+  }, [currentPage, selectedPremiumSlug, activeBlogArticle]);
 
   const navigate = (page: Page, premiumSlug: string | null = null) => {
     setActiveBlogArticle(null);
@@ -2267,7 +2336,12 @@ function DetailModal({ item, onClose }: { item: DetailItem | null, onClose: () =
                           href={whatsappUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          onClick={() => trackEvent('whatsapp_lead', item.category, item.title)}
+                          onClick={() => pushWhatsappClick({
+                            business_id: item.id,
+                            business_name: item.title,
+                            business_category: item.category,
+                            is_premium: !!(item.isPremium || item.is_premium)
+                          })}
                           className="py-4 bg-[#25D366] text-white font-bold rounded-2xl hover:bg-[#128C7E] shadow-lg shadow-green-500/20 transition-all flex items-center justify-center gap-2 text-sm transform active:scale-95 h-full"
                         >
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-[18px] h-[18px]">
@@ -2278,7 +2352,12 @@ function DetailModal({ item, onClose }: { item: DetailItem | null, onClose: () =
                           href={item.instagram || item.link_instagram || "https://www.instagram.com/vemprapenedo/"}
                           target="_blank"
                           rel="noopener noreferrer"
-                          onClick={() => trackEvent('instagram_lead', item.category, item.title)}
+                          onClick={() => pushInstagramClick({
+                            business_id: item.id,
+                            business_name: item.title,
+                            business_category: item.category,
+                            is_premium: !!(item.isPremium || item.is_premium)
+                          })}
                           className="py-4 text-white font-bold rounded-2xl hover:opacity-90 transition-opacity flex items-center justify-center gap-2 text-sm h-full"
                           style={{ background: 'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)' }}
                         >
@@ -2306,7 +2385,12 @@ function DetailModal({ item, onClose }: { item: DetailItem | null, onClose: () =
                           href={item.instagram || item.link_instagram || "https://www.instagram.com/vemprapenedo/"}
                           target="_blank"
                           rel="noopener noreferrer"
-                          onClick={() => trackEvent('instagram_lead', item.category, item.title)}
+                          onClick={() => pushInstagramClick({
+                            business_id: item.id,
+                            business_name: item.title,
+                            business_category: item.category,
+                            is_premium: !!(item.isPremium || item.is_premium)
+                          })}
                           className="py-4 text-white font-bold rounded-2xl hover:opacity-90 transition-opacity flex items-center justify-center gap-2 text-sm h-full"
                           style={{ background: 'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)' }}
                         >
@@ -2322,7 +2406,12 @@ function DetailModal({ item, onClose }: { item: DetailItem | null, onClose: () =
                         href={whatsappUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={() => trackEvent('whatsapp_lead', item.category, item.title)}
+                        onClick={() => pushWhatsappClick({
+                          business_id: item.id,
+                          business_name: item.title,
+                          business_category: item.category,
+                          is_premium: !!(item.isPremium || item.is_premium)
+                        })}
                         className="py-4 bg-[#25D366] text-white font-bold rounded-2xl hover:bg-[#128C7E] shadow-lg shadow-green-500/20 transition-all flex items-center justify-center gap-2 text-sm transform active:scale-95"
                       >
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-[18px] h-[18px]">
@@ -2333,7 +2422,12 @@ function DetailModal({ item, onClose }: { item: DetailItem | null, onClose: () =
                         href={item.instagram || item.link_instagram || "https://www.instagram.com/vemprapenedo/"}
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={() => trackEvent('instagram_lead', item.category, item.title)}
+                        onClick={() => pushInstagramClick({
+                          business_id: item.id,
+                          business_name: item.title,
+                          business_category: item.category,
+                          is_premium: !!(item.isPremium || item.is_premium)
+                        })}
                         className="py-4 text-white font-bold rounded-2xl hover:opacity-90 transition-opacity flex items-center justify-center gap-2 text-sm"
                         style={{ background: 'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)' }}
                       >
@@ -2401,6 +2495,17 @@ function PremiumDetailPage({ slug, onNavigate }: { slug: string, onNavigate: (pa
     const allItems = [...Object.values(locaisData).flat(), ...Object.values(DETAILS_DATA).flat()];
     return allItems.find((i: any) => (i.slug === slug || i.id === slug) && (i.is_premium || i.isPremium)) as any;
   }, [slug]);
+
+  useEffect(() => {
+    if (item) {
+      pushBusinessPageView({
+        business_id: item.id,
+        business_name: item.title,
+        business_category: item.category,
+        is_premium: !!(item.isPremium || item.is_premium)
+      });
+    }
+  }, [item]);
 
   const galleryImages = React.useMemo(() => {
     if (!item) return [];
@@ -2536,7 +2641,12 @@ function PremiumDetailPage({ slug, onNavigate }: { slug: string, onNavigate: (pa
             href={whatsappUrl} 
             target="_blank" 
             rel="noopener noreferrer"
-            onClick={() => trackEvent('whatsapp_lead', item.category, item.title)}
+            onClick={() => pushWhatsappClick({
+              business_id: item.id,
+              business_name: item.title,
+              business_category: item.category,
+              is_premium: !!(item.isPremium || item.is_premium)
+            })}
             className="flex items-center justify-center gap-2 py-3 bg-[#25D366] text-white font-bold rounded-xl hover:bg-[#128C7E] transition-all text-sm shadow-md"
           >
             <MessageCircle size={18} /> WhatsApp
@@ -2560,7 +2670,12 @@ function PremiumDetailPage({ slug, onNavigate }: { slug: string, onNavigate: (pa
                 href={instagramUrl} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                onClick={() => trackEvent('instagram_lead', item.category, item.title)}
+                onClick={() => pushInstagramClick({
+                  business_id: item.id,
+                  business_name: item.title,
+                  business_category: item.category,
+                  is_premium: !!(item.isPremium || item.is_premium)
+                })}
                 className="flex items-center justify-center gap-2 py-3 text-white font-bold rounded-xl hover:opacity-90 transition-all text-sm shadow-md"
                 style={{ background: 'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)' }}
               >
@@ -2966,6 +3081,14 @@ function HomePage({
         item.tags?.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
       );
 
+  useEffect(() => {
+    if (!searchQuery.trim()) return;
+    const timer = setTimeout(() => {
+      pushSearch(searchQuery, filteredResults.length);
+    }, 800);
+    return () => clearTimeout(timer);
+  }, [searchQuery, filteredResults.length]);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -3164,6 +3287,14 @@ function WhatToDoPage({ onOpenDetail, onGoBack }: { onOpenDetail: (item: DetailI
     return a.title.localeCompare(b.title);
   });
 
+  useEffect(() => {
+    if (!searchQuery.trim()) return;
+    const timer = setTimeout(() => {
+      pushSearch(searchQuery, filteredItems.length);
+    }, 800);
+    return () => clearTimeout(timer);
+  }, [searchQuery, filteredItems.length]);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -3226,6 +3357,14 @@ function WhereToStayPage({ onOpenDetail, onGoBack }: { onOpenDetail: (item: Deta
     if (aPremium !== bPremium) return bPremium - aPremium;
     return a.title.localeCompare(b.title);
   });
+
+  useEffect(() => {
+    if (!searchQuery.trim()) return;
+    const timer = setTimeout(() => {
+      pushSearch(searchQuery, filteredItems.length);
+    }, 800);
+    return () => clearTimeout(timer);
+  }, [searchQuery, filteredItems.length]);
 
   return (
     <motion.div
@@ -3290,6 +3429,14 @@ function GastronomyPage({ onOpenDetail, onGoBack }: { onOpenDetail: (item: Detai
     return a.title.localeCompare(b.title);
   });
 
+  useEffect(() => {
+    if (!searchQuery.trim()) return;
+    const timer = setTimeout(() => {
+      pushSearch(searchQuery, filteredItems.length);
+    }, 800);
+    return () => clearTimeout(timer);
+  }, [searchQuery, filteredItems.length]);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -3352,6 +3499,14 @@ function ShoppingPage({ onOpenDetail, onGoBack }: { onOpenDetail: (item: DetailI
     if (aPremium !== bPremium) return bPremium - aPremium;
     return a.title.localeCompare(b.title);
   });
+
+  useEffect(() => {
+    if (!searchQuery.trim()) return;
+    const timer = setTimeout(() => {
+      pushSearch(searchQuery, filteredItems.length);
+    }, 800);
+    return () => clearTimeout(timer);
+  }, [searchQuery, filteredItems.length]);
 
   return (
     <motion.div
