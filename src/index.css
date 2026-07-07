@@ -73,3 +73,30 @@ a {
     @apply text-penedo-emerald hover:underline font-semibold;
   }
 }
+
+@keyframes float-slow-1 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-25px) rotate(5deg); }
+}
+
+@keyframes float-slow-2 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(20px) rotate(-4deg); }
+}
+
+@keyframes float-slow-3 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-22px) rotate(-5deg); }
+}
+
+.animate-float-slow-1 {
+  animation: float-slow-1 25s ease-in-out infinite;
+}
+
+.animate-float-slow-2 {
+  animation: float-slow-2 30s ease-in-out infinite;
+}
+
+.animate-float-slow-3 {
+  animation: float-slow-3 22s ease-in-out infinite;
+}

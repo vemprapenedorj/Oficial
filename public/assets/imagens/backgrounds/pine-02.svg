@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#064e3b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Left Tree -->
+  <path d="M8 8V22" />
+  <path d="M8 8L4 12H12L8 8Z" />
+  <path d="M8 11L3 16H13L8 11Z" />
+  <path d="M8 15L2 20H14L8 15Z" />
+  <!-- Right Tree -->
+  <path d="M16 4V22" />
+  <path d="M16 4L11 9H21L16 4Z" />
+  <path d="M16 8L10 14H22L16 8Z" />
+  <path d="M16 13L9 19H23L16 13Z" />
+</svg>
