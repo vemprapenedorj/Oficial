@@ -415,6 +415,39 @@
       "link_maps": "https://maps.google.com/?cid=2866118961007667073",
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Restaurant_Review-g2427181-d2425884-Reviews-Cafe_Finlandes-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
       "rating": 4.7
+    },
+    {
+      "id": "delivery-4-irmaos",
+      "title": "Delivery 4 Irmãos",
+      "category": "Delivery • Marmitaria • Jantar • Caldos",
+      "categoria_aba": "gastronomia",
+      "image": "/assets/imagens/logos/logo-delivery-4-irmaos.jpg",
+      "imagem_url": "/assets/imagens/logos/logo-delivery-4-irmaos.jpg",
+      "description": "Cardápio diferente todos os dias com refeições, pratos executivos e caldos para delivery em Penedo.",
+      "fullInfo": "O Delivery 4 Irmãos, em Penedo-RJ, oferece refeições caseiras preparadas com sabor e qualidade. O cardápio é atualizado diariamente, com opções de janta, pratos executivos e caldos, disponíveis para delivery. Uma excelente escolha para quem busca praticidade, boa comida e atendimento todos os dias da semana.",
+      "location": "Delivery em Penedo, Itatiaia - RJ",
+      "hours": "Segunda a Domingo – 19h às 23h",
+      "whatsapp": "24981287586",
+      "link_whatsapp": "https://wa.me/5524981287586",
+      "is_premium": false,
+      "slug": "delivery-4-irmaos",
+      "tags": [
+        "delivery",
+        "marmitaria",
+        "jantar",
+        "caldos",
+        "refeições caseiras",
+        "marmita",
+        "pratos executivos",
+        "comida",
+        "gastronomia",
+        "comida caseira",
+        "jantas",
+        "cardápio renovado diariamente",
+        "atendimento noturno",
+        "caldo"
+      ],
+      "link_maps": "https://www.google.com/maps/search/?api=1&query=Penedo+Itatiaia+RJ"
     }
   ],
   "compras": [
