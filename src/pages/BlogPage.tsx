@@ -764,7 +764,16 @@ export function BlogPage({ onOpenDetail, onNavigate, activeArticle, onSelectArti
       </div>
       <header className="relative pt-40 pb-6 md:pb-12 md:pt-48 md:pb-16 bg-penedo-forest text-center text-white overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <img src="/assets/imagens/blog/penedo_blog_header.jpg" className="w-full h-full object-cover" alt="Blog Portal" referrerPolicy="no-referrer" />
+          <img 
+            src="/assets/imagens/blog/penedo_blog_header.jpg" 
+            width="1408"
+            height="768"
+            className="w-full h-full object-cover" 
+            alt="Blog Portal" 
+            fetchPriority="high"
+            decoding="async"
+            referrerPolicy="no-referrer" 
+          />
         </div>
         <div className="relative z-10 px-4 max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Blog de <span className="text-penedo-gold">Penedo RJ</span></h1>
@@ -788,7 +797,16 @@ export function BlogPage({ onOpenDetail, onNavigate, activeArticle, onSelectArti
               className="bg-white rounded-[3rem] overflow-hidden shadow-2xl border border-gray-100 flex flex-col h-full group cursor-pointer"
             >
               <div className="relative h-72 overflow-hidden">
-                <img src={post.image} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt={post.title} referrerPolicy="no-referrer" />
+                <img 
+                  src={post.image} 
+                  width={400}
+                  height={300}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+                  alt={post.title} 
+                  referrerPolicy="no-referrer" 
+                />
                 <div className="absolute bottom-4 left-6">
                   <span className="bg-penedo-forest/80 backdrop-blur-md text-white font-black text-[10px] uppercase tracking-widest px-4 py-2 rounded-xl shadow-lg border border-white/20">
                     {post.category}

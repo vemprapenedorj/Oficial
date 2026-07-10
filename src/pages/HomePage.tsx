@@ -102,6 +102,8 @@ export function HomePage({
             
             <img 
               src="/assets/imagens/hero-mobile.jpg" 
+              width="768"
+              height="512"
               className="w-full h-full object-cover" 
               alt="Penedo"
               fetchPriority="high"
