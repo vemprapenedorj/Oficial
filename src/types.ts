@@ -3,6 +3,7 @@ export interface DetailItem {
   title: string;
   category: string;
   image: string;
+  imagem_url?: string;
   description: string;
   fullInfo: string;
   location?: string;
@@ -26,6 +27,15 @@ export interface DetailItem {
   link_booking?: string;
   tag_destaque?: string;
   date?: string;
+  latitude?: string;
+  longitude?: string;
+  googleProfileUrl?: string;
+  reviewCount?: number;
+  priceRange?: string;
+  paymentAccepted?: string;
+  currenciesAccepted?: string;
+  email?: string;
+  link_site?: string;
 }
 
-export type Page = 'home' | 'o-que-fazer' | 'onde-ficar' | 'gastronomia' | 'compras' | 'blog' | 'contato' | 'premium-detail';
+export type Page = 'home' | 'o-que-fazer' | 'onde-ficar' | 'gastronomia' | 'compras' | 'blog' | 'contato' | 'premium-detail' | '404';

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowLeft, X, ArrowRight, Camera } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
+import SEO from './SEO';
+import { generateSEO } from '../seo';
 
 interface RestaurantesArticleProps {
   handleSelectArticle: (id: string | null) => void;
@@ -133,14 +134,16 @@ export function RestaurantesArticle({ handleSelectArticle }: RestaurantesArticle
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="bg-white">
-      <Helmet>
-        <title>Gastronomia em Penedo - Vem Pra Penedo</title>
-        <meta name="description" content="Descubra os melhores restaurantes de Penedo. Massas, trutas, fondues e pratos que vão deixar sua viagem ainda mais deliciosa. Publicado em 12/07/2026." />
-        <meta property="og:title" content="Gastronomia em Penedo - Vem Pra Penedo" />
-        <meta property="og:description" content="Descubra os melhores restaurantes de Penedo. Massas, trutas, fondues e pratos que vão deixar sua viagem ainda mais deliciosa. Publicado em 12/07/2026." />
-        <meta property="og:image" content="/assets/imagens/blog/melhores-restaurantes/capa.jpg" />
-        <meta property="og:type" content="article" />
-      </Helmet>
+      <SEO 
+        {...generateSEO('article', {
+          slug: 'restaurantes',
+          title: 'Gastronomia em Penedo',
+          description: 'Descubra os melhores restaurantes de Penedo. Massas, trutas, fondues e pratos que vão deixar sua viagem ainda mais deliciosa.',
+          image: '/assets/imagens/blog/melhores-restaurantes/capa.jpg',
+          datePublished: '2026-07-12',
+          keywords: ['restaurantes penedo', 'onde comer em penedo', 'gastronomia penedo']
+        })}
+      />
       {/* Sticky Header Back Navigation */}
       <div className="sticky top-20 z-40 bg-white/90 backdrop-blur-md border-b py-4 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">

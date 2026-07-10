@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowLeft, X, ArrowRight, Check } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
+import SEO from './SEO';
+import { generateSEO } from '../seo';
 
 interface HospedagemArticleProps {
   handleSelectArticle: (id: string | null) => void;
@@ -138,14 +139,16 @@ export function HospedagemArticle({ handleSelectArticle }: HospedagemArticleProp
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="bg-white">
-      <Helmet>
-        <title>Onde se Hospedar em Penedo - Vem Pra Penedo</title>
-        <meta name="description" content="Um guia de hospedagem em Penedo com as melhores pousadas e chalés. Lareiras aconchegantes, hidromassagem e vistas incríveis. Publicado em 23/06/2026." />
-        <meta property="og:title" content="Onde se Hospedar em Penedo - Vem Pra Penedo" />
-        <meta property="og:description" content="Um guia de hospedagem em Penedo com as melhores pousadas e chalés. Lareiras aconchegantes, hidromassagem e vistas incríveis. Publicado em 23/06/2026." />
-        <meta property="og:image" content="/assets/imagens/blog/melhores-hospedagens/intro.jpg" />
-        <meta property="og:type" content="article" />
-      </Helmet>
+      <SEO 
+        {...generateSEO('article', {
+          slug: 'melhores-hospedagens',
+          title: 'Onde se Hospedar em Penedo',
+          description: 'Um guia de hospedagem em Penedo com as melhores pousadas e chalés. Lareiras aconchegantes, hidromassagem e vistas incríveis.',
+          image: '/assets/imagens/blog/melhores-hospedagens/intro.jpg',
+          datePublished: '2026-06-23',
+          keywords: ['onde ficar em penedo', 'pousadas penedo', 'hoteis penedo']
+        })}
+      />
       {/* Sticky Header Back Navigation */}
       <div className="sticky top-20 z-40 bg-white/90 backdrop-blur-md border-b py-4 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">

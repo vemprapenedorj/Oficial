@@ -1,9 +1,29 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vem Pra Penedo - Portal Oficial</title>
+    <meta name="theme-color" content="#064e3b" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/imagens/icons/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/imagens/icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/imagens/icons/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/imagens/icons/icon-512.png" />
+    <link rel="mask-icon" href="/assets/imagens/icons/safari-pinned-tab.svg" color="#064e3b" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/imagens/icons/apple-touch-icon.png" />
+
+    <!-- Preload Hero Image Responsively -->
+    <link rel="preload" as="image" href="/assets/imagens/hero-mobile.webp" media="(max-width: 767px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="/assets/imagens/hero-tablet.webp" media="(min-width: 768px) and (max-width: 1279px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="/assets/imagens/hero-desktop.webp" media="(min-width: 1280px)" fetchpriority="high" />
+
+    <!-- Preconnect & DNS Prefetch to speed up external fonts and analytics loads -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -17,6 +37,7 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTVH4RFS"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

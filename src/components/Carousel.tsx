@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { DetailItem } from '../types';
 
@@ -16,7 +15,7 @@ interface CarouselProps {
   };
 }
 
-export function Carousel({ 
+export const Carousel = React.memo(function Carousel({ 
   items, 
   renderItem, 
   title, 
@@ -112,12 +111,11 @@ export function Carousel({
 
           {/* Carousel Items Wrapper */}
           <div className="overflow-visible md:overflow-hidden">
-            <motion.div
-              className="flex gap-6"
-              animate={{
-                x: `calc(-${currentIndex * (100 / currentItemsPerView)}% - ${currentIndex * (gap / currentItemsPerView)}px)`
+            <div
+              className="flex gap-6 transition-transform duration-500 ease-out will-change-transform"
+              style={{
+                transform: `translateX(calc(-${currentIndex * (100 / currentItemsPerView)}% - ${currentIndex * (gap / currentItemsPerView)}px))`
               }}
-              transition={{ type: "spring", stiffness: 200, damping: 25 }}
             >
               {items.map((item, index) => (
                 <div 
@@ -130,7 +128,7 @@ export function Carousel({
                   {renderItem(item, index)}
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
 
           {/* Page Indicators */}
@@ -156,4 +154,4 @@ export function Carousel({
       </div>
     </section>
   );
-}
+});
