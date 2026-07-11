@@ -178,6 +178,29 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       instagram: "https://www.instagram.com/trilhando_penedo_ecotur",
       tripadvisorUrl: "https://www.tripadvisor.com.br/Attraction_Review-g2427181-d15154790-Reviews-Trilhando_Penedo_Ecoturismo-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
       tags: ["off-road", "aventura", "ecoturismo", "trilhas", "passeios", "guia", "natureza"]
+    },
+    { 
+      id: 'rodrigo-dione',
+      title: "Rodrigo Dione", 
+      category: "Bem-Estar", 
+      image: "/assets/imagens/logos/logo-Rodrigo-Massoterapeuta.jpeg",
+      description: "Atendimento personalizado de massoterapia em hotéis e pousadas de Penedo.",
+      fullInfo: "Em Penedo, levo minha expertise em massoterapia aos hotéis e pousadas, proporcionando uma experiência de bem-estar que vai além da técnica.",
+      descricao_longa: "Em Penedo, levo minha expertise em massoterapia aos hotéis e pousadas, proporcionando uma experiência de bem-estar que vai além da técnica. Cada atendimento é cuidadosamente personalizado, com protocolos voltados ao relaxamento profundo, equilíbrio do corpo e acolhimento, respeitando as necessidades de cada cliente. Meu compromisso é oferecer um serviço de alto padrão, marcado pela excelência, discrição e atenção aos detalhes, transformando cada sessão em uma experiência memorável.",
+      location: "Atendimento em hotéis e pousadas, Penedo, Itatiaia - RJ",
+      hours: "Atendimento sob agendamento",
+      whatsapp: "24988098075",
+      link_whatsapp: "https://wa.me/5524988098075",
+      instagram: "https://www.instagram.com/rodrigodionemassoterapeuta/",
+      link_instagram: "https://www.instagram.com/rodrigodionemassoterapeuta/",
+      link_maps: "https://share.google/Pqn3vUdjBaH7YgokN",
+      mapUrl: "https://share.google/Pqn3vUdjBaH7YgokN",
+      isPremium: false,
+      is_premium: false,
+      galeria: [
+        "/assets/imagens/logos/logo-Rodrigo-Massoterapeuta.jpeg"
+      ],
+      tags: ["massagem", "massoterapia", "bem-estar", "relaxamento", "pousadas", "hotéis", "saúde", "atendimento", "equilíbrio"]
     }
   ],
   'onde-ficar': [
