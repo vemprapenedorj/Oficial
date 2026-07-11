@@ -1,5 +1,5 @@
 import React from 'react';
-import { Info } from 'lucide-react';
+import { Info, MapPin } from 'lucide-react';
 import { DetailItem } from '../types';
 
 interface InfoCardProps {
@@ -133,6 +133,13 @@ export const InfoCard = React.memo(function InfoCard({ item, onOpen }: InfoCardP
           </div>
           <h3 className="text-xl font-bold leading-tight line-clamp-1">{item.title}</h3>
         </div>
+        
+        {item.location && (
+          <div className="flex items-center gap-1 text-white/50 text-[10px] mb-1 font-semibold">
+            <MapPin size={10} className="text-penedo-gold shrink-0" />
+            <span className="line-clamp-1">{item.location}</span>
+          </div>
+        )}
         
         {item.tripadvisorUrl && (
           <div className="card-rating !text-white/70 mb-1" onClick={(e) => e.stopPropagation()}>
