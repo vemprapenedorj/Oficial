@@ -187,7 +187,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       is_premium: true,
       image: "/assets/imagens/logos/logo-rodrigo-dione.jpg",
       description: "Atendimento personalizado de massoterapia em hotéis e pousadas de Penedo.",
-      fullInfo: "Em Penedo, levo minha expertise em massoterapia aos hotéis e pousadas, proporcionando uma experiência de bem-estar que vai além da técnica. Cada atendimento é cuidadosamente personalizado, com protocolos voltados ao relaxamento, equilíbrio corporal e acolhimento, respeitando as necessidades de cada cliente.",
+      fullInfo: "Massagem personalizada em hotéis e pousadas de Penedo, com técnicas voltadas ao relaxamento, alívio das tensões e equilíbrio corporal. Cada atendimento é realizado com cuidado e acolhimento, respeitando as necessidades individuais para proporcionar uma experiência completa de bem-estar.",
       descricao_longa: "Em Penedo, levo minha expertise em massoterapia aos hotéis e pousadas, proporcionando uma experiência de bem-estar que vai além da técnica. Cada atendimento é cuidadosamente personalizado, com protocolos voltados ao relaxamento, equilíbrio corporal e acolhimento, respeitando as necessidades de cada cliente.",
       location: "Atendimento em hotéis e pousadas, Penedo, Itatiaia - RJ",
       hours: "Atendimento sob agendamento",
