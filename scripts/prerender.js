@@ -104,6 +104,7 @@ const discoverRoutes = () => {
       } else {
         routes.add(`/${cat}`);
         DETAILS_DATA[cat].forEach(item => {
+          if (item.status === 'draft') return;
           const slug = explicitSlugs.get(item.id) || item.slug || item.id;
           const isPremium = item.isPremium || item.is_premium;
           if (slug && isPremium) {
@@ -118,6 +119,7 @@ const discoverRoutes = () => {
     Object.keys(locaisData).forEach(cat => {
       routes.add(`/${cat}`);
       locaisData[cat].forEach(item => {
+        if (item.status === 'draft') return;
         const slug = explicitSlugs.get(item.id) || item.slug || item.id;
         const isPremium = item.isPremium || item.is_premium;
         if (slug && isPremium) {

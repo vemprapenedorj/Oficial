@@ -25,13 +25,13 @@ export function HomePage({
   const [searchQuery, setSearchQuery] = useState('');
 
   // Randomized data for each section
-  const shuffledOQueFazer = React.useMemo(() => shuffleArray(DETAILS_DATA['o-que-fazer']), []);
-  const shuffledOndeFicar = React.useMemo(() => shuffleArray(DETAILS_DATA['onde-ficar']), []);
-  const shuffledGastronomia = React.useMemo(() => shuffleArray(DETAILS_DATA['gastronomia']), []);
-  const shuffledCompras = React.useMemo(() => shuffleArray(DETAILS_DATA['compras']), []);
-  const shuffledBlog = React.useMemo(() => shuffleArray(DETAILS_DATA['blog']), []);
+  const shuffledOQueFazer = React.useMemo(() => shuffleArray(DETAILS_DATA['o-que-fazer'].filter(item => item.status !== 'draft')), []);
+  const shuffledOndeFicar = React.useMemo(() => shuffleArray(DETAILS_DATA['onde-ficar'].filter(item => item.status !== 'draft')), []);
+  const shuffledGastronomia = React.useMemo(() => shuffleArray(DETAILS_DATA['gastronomia'].filter(item => item.status !== 'draft')), []);
+  const shuffledCompras = React.useMemo(() => shuffleArray(DETAILS_DATA['compras'].filter(item => item.status !== 'draft')), []);
+  const shuffledBlog = React.useMemo(() => shuffleArray(DETAILS_DATA['blog'].filter(item => item.status !== 'draft')), []);
 
-  const allItems = Object.values(DETAILS_DATA).flat();
+  const allItems = Object.values(DETAILS_DATA).flat().filter(item => item.status !== 'draft');
   const filteredResults = searchQuery.trim() === '' 
     ? [] 
     : allItems.filter(item => 

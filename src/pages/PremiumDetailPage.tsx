@@ -19,7 +19,7 @@ import { getSubcategoryInfo } from '../seo/utils/seoUtils';
 function getVideoEmbedData(url: string): { url: string; platform: 'youtube' | 'instagram' | 'unknown' } {
   const cleanUrl = url.trim();
   if (cleanUrl.includes('instagram.com/p/') || cleanUrl.includes('instagram.com/reel/')) {
-    const cleanInsta = cleanUrl.split('?')[0].replace(/\/$/, '');
+    const cleanInsta = cleanUrl.split('?')[0].replace(/\/?$/, '');
     return { url: `${cleanInsta}/embed`, platform: 'instagram' };
   }
   let videoId = '';
@@ -68,6 +68,8 @@ export function PremiumDetailPage({ slug, onNavigate, onOpenDetail }: { slug: st
         cleanFolder = 'pousada-aurora-da-mantiqueira';
       } else if (cleanFolder === 'pousada-rainha-mata') {
         cleanFolder = 'pousada-rainha-da-mata';
+      } else if (cleanFolder === 'rodrigo-dione') {
+        cleanFolder = 'rodrigo-massoterapeuta';
       }
       const prefix = `/assets/imagens/premium/${cleanFolder}/`;
       
@@ -301,7 +303,7 @@ export function PremiumDetailPage({ slug, onNavigate, onOpenDetail }: { slug: st
     
     const scoreCandidates = (cat: 'gastronomia' | 'onde-ficar' | 'o-que-fazer' | 'compras') => {
       return (DETAILS_DATA[cat] || [])
-        .filter(c => c.id !== item.id)
+        .filter(c => c.id !== item.id && (c as any).status !== 'draft')
         .map(c => {
           let score = getZoneScore(c.location || '');
           score += getSharedTagsCount(c.tags || []) * 2;
@@ -579,7 +581,7 @@ export function PremiumDetailPage({ slug, onNavigate, onOpenDetail }: { slug: st
                             className="absolute w-full h-[calc(100%+140px)] -top-[50px] left-0 border-none scale-[1.01]"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowFullScreen
-                          ></iframe>
+                          />
                         ) : (
                           <iframe
                             src={videoData.url}
@@ -588,7 +590,7 @@ export function PremiumDetailPage({ slug, onNavigate, onOpenDetail }: { slug: st
                             className="w-full h-full border-none"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowFullScreen
-                          ></iframe>
+                          />
                         )}
                       </div>
                     </div>

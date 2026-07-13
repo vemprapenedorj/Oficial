@@ -182,25 +182,36 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     { 
       id: 'rodrigo-dione',
       title: "Rodrigo Dione", 
-      category: "Bem-Estar", 
-      image: "/assets/imagens/logos/logo-Rodrigo-Massoterapeuta.jpeg",
+      category: "Bem-Estar",
+      isPremium: true,
+      is_premium: true,
+      image: "/assets/imagens/logos/logo-rodrigo-dione.jpg",
       description: "Atendimento personalizado de massoterapia em hotéis e pousadas de Penedo.",
-      fullInfo: "Em Penedo, levo minha expertise em massoterapia aos hotéis e pousadas, proporcionando uma experiência de bem-estar que vai além da técnica.",
-      descricao_longa: "Em Penedo, levo minha expertise em massoterapia aos hotéis e pousadas, proporcionando uma experiência de bem-estar que vai além da técnica. Cada atendimento é cuidadosamente personalizado, com protocolos voltados ao relaxamento profundo, equilíbrio do corpo e acolhimento, respeitando as necessidades de cada cliente. Meu compromisso é oferecer um serviço de alto padrão, marcado pela excelência, discrição e atenção aos detalhes, transformando cada sessão em uma experiência memorável.",
+      fullInfo: "Em Penedo, levo minha expertise em massoterapia aos hotéis e pousadas, proporcionando uma experiência de bem-estar que vai além da técnica. Cada atendimento é cuidadosamente personalizado, com protocolos voltados ao relaxamento, equilíbrio corporal e acolhimento, respeitando as necessidades de cada cliente.",
+      descricao_longa: "Em Penedo, levo minha expertise em massoterapia aos hotéis e pousadas, proporcionando uma experiência de bem-estar que vai além da técnica. Cada atendimento é cuidadosamente personalizado, com protocolos voltados ao relaxamento, equilíbrio corporal e acolhimento, respeitando as necessidades de cada cliente.",
       location: "Atendimento em hotéis e pousadas, Penedo, Itatiaia - RJ",
       hours: "Atendimento sob agendamento",
-      whatsapp: "24988098075",
+      rating: 5.0,
+      whatsapp: "5524988098075",
       link_whatsapp: "https://wa.me/5524988098075",
       instagram: "https://www.instagram.com/rodrigodionemassoterapeuta/",
       link_instagram: "https://www.instagram.com/rodrigodionemassoterapeuta/",
       link_maps: "https://share.google/Pqn3vUdjBaH7YgokN",
       mapUrl: "https://share.google/Pqn3vUdjBaH7YgokN",
-      isPremium: false,
-      is_premium: false,
+      badge: "Recomendado",
+      tag_destaque: "Recomendado",
       galeria: [
-        "/assets/imagens/logos/logo-Rodrigo-Massoterapeuta.jpeg"
+        "/assets/imagens/premium/rodrigo-massoterapeuta/galeria-1.jpg",
+        "/assets/imagens/premium/rodrigo-massoterapeuta/galeria-2.jpg",
+        "/assets/imagens/premium/rodrigo-massoterapeuta/galeria-3.jpg",
+        "/assets/imagens/premium/rodrigo-massoterapeuta/galeria-4.jpg",
+        "/assets/imagens/premium/rodrigo-massoterapeuta/galeria-5.jpg",
+        "/assets/imagens/premium/rodrigo-massoterapeuta/galeria-6.jpg"
       ],
-      tags: ["massagem", "massoterapia", "bem-estar", "relaxamento", "pousadas", "hotéis", "saúde", "atendimento", "equilíbrio"]
+      tags: ["massagem", "massoterapia", "bem-estar", "relaxamento", "pousadas", "hotéis", "saúde", "atendimento", "equilíbrio"],
+      link_video: "https://www.instagram.com/reel/DUHtyTLDN4_/",
+      seo_title: "Rodrigo Dione Massoterapeuta em Penedo | Vem Pra Penedo",
+      seo_description: "Massoterapia personalizada em hotéis e pousadas de Penedo, com atendimento sob agendamento e foco em relaxamento e bem-estar."
     }
   ],
   'onde-ficar': [
