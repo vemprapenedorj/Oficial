@@ -110,8 +110,8 @@ export const getBusinessSEOTemplate = (item: DetailItem) => {
     prefix = 'Atração em Penedo RJ';
   }
   
-  const title = `${prefix} | ${name} | Vem Pra Penedo`;
-  const description = item.description || generateFallbackDescription(name, item.category || 'Local', item.location);
+  const title = item.seo_title || `${prefix} | ${name} | Vem Pra Penedo`;
+  const description = item.seo_description || item.description || generateFallbackDescription(name, item.category || 'Local', item.location);
   const keywords = generateKeywords(name, item.category || 'Local', item.location, item.tags);
 
   const { subName, subSlug } = getSubcategoryInfo(item);

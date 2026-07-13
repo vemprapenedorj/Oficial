@@ -29,7 +29,7 @@ export function PartnerHeader({ item, size = 'large' }: PartnerHeaderProps) {
           height={imgSize}
           loading="lazy"
           decoding="async"
-          className="w-full h-full object-cover" 
+          className={`w-full h-full ${item.id === 'rodrigo-dione' ? 'object-contain object-center' : 'object-cover'}`}
           referrerPolicy="no-referrer"
           onError={(e) => {
             const target = e.target as HTMLImageElement;

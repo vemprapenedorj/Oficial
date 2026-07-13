@@ -11,10 +11,12 @@ export function WhereToStayPage({ onOpenDetail, onGoBack }: { onOpenDetail: (ite
   const [searchQuery, setSearchQuery] = useState('');
   
   const filteredItems = DETAILS_DATA['onde-ficar'].filter(item => 
-    item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    item.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    item.tags?.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+    item.status !== 'draft' && (
+      item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.tags?.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+    )
   ).sort((a, b) => {
     const aPremium = (a as any).is_premium || a.isPremium ? 1 : 0;
     const bPremium = (b as any).is_premium || b.isPremium ? 1 : 0;

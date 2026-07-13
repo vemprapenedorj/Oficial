@@ -36,6 +36,9 @@ export interface DetailItem {
   currenciesAccepted?: string;
   email?: string;
   link_site?: string;
+  status?: string;
+  seo_title?: string;
+  seo_description?: string;
 }
 
 export type Page = 'home' | 'o-que-fazer' | 'onde-ficar' | 'gastronomia' | 'compras' | 'blog' | 'contato' | 'premium-detail' | '404';
