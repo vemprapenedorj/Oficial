@@ -88,7 +88,7 @@ export function PremiumCarousel({ onNavigatePremium }: { onNavigatePremium: (slu
                   width={400}
                   height={300}
                   className={`relative z-10 w-full h-full transition-transform duration-700 group-hover:scale-110 ${
-                    ['Hotel Girassol', 'Águia de Penedo', 'Rota dos Passeios', 'Trilhando Penedo Ecoturismo'].includes(item.title)
+                    ['Hotel Girassol', 'Águia de Penedo', 'Rota dos Passeios', 'Trilhando Penedo Ecoturismo', 'Rodrigo Dione'].includes(item.title)
                       ? 'object-contain object-center'
                       : 'object-cover'
                   }`}

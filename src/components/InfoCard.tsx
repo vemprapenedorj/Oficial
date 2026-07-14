@@ -21,6 +21,8 @@ export const InfoCard = React.memo(function InfoCard({ item, onOpen }: InfoCardP
         cleanFolder = 'pousada-aurora-da-mantiqueira';
       } else if (cleanFolder === 'pousada-rainha-mata') {
         cleanFolder = 'pousada-rainha-da-mata';
+      } else if (cleanFolder === 'rodrigo-dione') {
+        cleanFolder = 'rodrigo-massoterapeuta';
       }
       return `/assets/imagens/premium/${cleanFolder}/galeria-1.jpg`;
     }
