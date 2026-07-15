@@ -212,6 +212,42 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       link_video: "https://www.instagram.com/reel/DUHtyTLDN4_/",
       seo_title: "Rodrigo Dione Massoterapeuta em Penedo | Vem Pra Penedo",
       seo_description: "Massoterapia personalizada em hotéis e pousadas de Penedo, com atendimento sob agendamento e foco em relaxamento e bem-estar."
+    },
+    {
+      id: 'gute-passeios',
+      title: "Gute Passeios",
+      category: "Passeios / Turismo de Aventura",
+      isPremium: false,
+      is_premium: false,
+      image: "/assets/imagens/logos/logo-gute-passeios.jpg",
+      imagem_url: "/assets/imagens/logos/logo-gute-passeios.jpg",
+      description: "Agência de turismo receptivo com passeios e experiências pela região de Penedo, Visconde de Mauá e Parque Nacional do Itatiaia. Atua também com turismo de aventura e roteiros educativos.",
+      fullInfo: "Agência de turismo receptivo com passeios e experiências pela região de Penedo, Visconde de Mauá e Parque Nacional do Itatiaia. Atua também com turismo de aventura e roteiros educativos.",
+      descricao_longa: "Agência de turismo receptivo com passeios e experiências pela região de Penedo, Visconde de Mauá e Parque Nacional do Itatiaia. Atua também com turismo de aventura e roteiros educativos.",
+      instagram: "https://www.instagram.com/gutepasseios/",
+      link_instagram: "https://www.instagram.com/gutepasseios/",
+      link_maps: "https://maps.app.goo.gl/q5iXo6sXygkEYuvB7",
+      tripadvisorUrl: "https://www.tripadvisor.com.br/Attraction_Review-g580465-d7984544-Reviews-Gute_Passeios-Itatiaia_National_Park_State_of_Rio_de_Janeiro.html",
+      link_site: "https://www.gutepasseios.com.br/",
+      tags: ["passeios", "turismo", "aventura", "ecoturismo", "roteiros", "visconde de mauá", "itatiaia"]
+    },
+    {
+      id: 'esquilo-passeios',
+      title: "Esquilo Passeios",
+      category: "Passeios de Aventura",
+      isPremium: false,
+      is_premium: false,
+      image: "/assets/imagens/logos/logo-esquilo-passeios.jpg",
+      imagem_url: "/assets/imagens/logos/logo-esquilo-passeios.jpg",
+      description: "Passeios de aventura em Penedo com opções de bugre, jipe e quadriciclo. Uma forma dinâmica de conhecer trilhas, paisagens e atrações naturais da região.",
+      fullInfo: "Passeios de aventura em Penedo com opções de bugre, jipe e quadriciclo. Uma forma dinâmica de conhecer trilhas, paisagens e atrações naturais da região.",
+      descricao_longa: "Passeios de aventura em Penedo com opções de bugre, jipe e quadriciclo. Uma forma dinâmica de conhecer trilhas, paisagens e atrações naturais da região.",
+      location: "Shopping Roda d'Água, Avenida das Mangueiras, 882, Loja 37",
+      instagram: "https://www.instagram.com/esquilo_passeiospenedo/",
+      link_instagram: "https://www.instagram.com/esquilo_passeiospenedo/",
+      link_maps: "https://maps.app.goo.gl/kxyQCf7WKuQjWuet6",
+      tripadvisorUrl: "https://www.tripadvisor.com.br/Attraction_Review-g2427181-d25166108-Reviews-Esquilo_Passeios-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
+      tags: ["bugre", "jipe", "quadriciclo", "aventura", "passeios", "trilhas", "natureza"]
     }
   ],
   'onde-ficar': [
@@ -1064,6 +1100,25 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       email: "reservas@pequenasuecia.com.br",
       link_site: "https://www.pequenasuecia.com.br/",
       tags: ["centro", "piscina", "sauna finlandesa", "quadra de tênis", "salão de jogos", "playground", "jazz village", "tradicional"]
+    },
+    {
+      id: 'pousada-vale-do-ermitao',
+      title: "Pousada Vale do Ermitão",
+      category: "Hospedagem",
+      isPremium: false,
+      is_premium: false,
+      image: "/assets/imagens/logos/logo-pousada-vale-ermitao.jpg",
+      imagem_url: "/assets/imagens/logos/logo-pousada-vale-ermitao.jpg",
+      description: "Pousada em meio à natureza, com chalés amplos e ambiente acolhedor em Penedo. Uma opção para descansar com conforto, área verde e proximidade das atrações da região.",
+      fullInfo: "Pousada em meio à natureza, com chalés amplos e ambiente acolhedor em Penedo. Uma opção para descansar com conforto, área verde e proximidade das atrações da região.",
+      descricao_longa: "Pousada em meio à natureza, com chalés amplos e ambiente acolhedor em Penedo. Uma opção para descansar com conforto, área verde e proximidade das atrações da região.",
+      location: "Estrada Vale do Ermitão, 359 - Penedo",
+      instagram: "https://www.instagram.com/pousadavaledoermitao.oficial/",
+      link_instagram: "https://www.instagram.com/pousadavaledoermitao.oficial/",
+      link_maps: "https://maps.app.goo.gl/2gKa3Fgv4YhUWRcn8",
+      link_booking: "https://www.booking.com/hotel/br/pousada-vale-do-ermitao.html",
+      tripadvisorUrl: "https://www.tripadvisor.com.br/Hotel_Review-g2427181-d2478382-Reviews-Pousada_Vale_do_Ermitao-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
+      tags: ["chalés", "natureza", "área verde", "conforto", "família", "descanso"]
     }
   ],
   'gastronomia': [
@@ -1544,6 +1599,24 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       tripadvisorUrl: "https://www.tripadvisor.com.br/Restaurant_Review-g2427181-d2425884-Reviews-Cafe_Finlandes-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
       rating: 4.7,
       tags: ["cafeteria", "café", "almoço", "jantar", "doces", "fondue", "vinhos", "pet friendly", "acessível", "av. das mangueiras", "reservas", "gastronomia"]
+    },
+    {
+      id: 'andicaro-penedo-cafes-especiais',
+      title: "Andicarô Penedo - Cafés Especiais",
+      category: "Cafeteria / Cafés Especiais",
+      isPremium: false,
+      is_premium: false,
+      image: "/assets/imagens/logos/logo-andicaro-penedo.jpg",
+      imagem_url: "/assets/imagens/logos/logo-andicaro-penedo.jpg",
+      description: "Cafeteria e torrefadora de cafés especiais em Penedo, com grãos selecionados, bebidas preparadas com cuidado e opções para acompanhar. Um espaço acolhedor para uma boa pausa no Centro.",
+      fullInfo: "Cafeteria e torrefadora de cafés especiais em Penedo, com grãos selecionados, bebidas preparadas com cuidado e opções para acompanhar. Um espaço acolhedor para uma boa pausa no Centro.",
+      descricao_longa: "Cafeteria e torrefadora de cafés especiais em Penedo, com grãos selecionados, bebidas preparadas com cuidado e opções para acompanhar. Um espaço acolhedor para uma boa pausa no Centro.",
+      location: "Avenida das Mangueiras, 1614",
+      instagram: "https://www.instagram.com/andicaropenedo/",
+      link_instagram: "https://www.instagram.com/andicaropenedo/",
+      link_maps: "https://maps.app.goo.gl/n7cWpnk4jpentLS89",
+      tripadvisorUrl: "https://www.tripadvisor.com.br/Attraction_Review-g2427181-d24993752-Reviews-Andicaro_Penedo-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
+      tags: ["café", "cafés especiais", "cafeteria", "torrefadora", "grãos", "centro", "av. das mangueiras"]
     }
   ],
   'compras': [
