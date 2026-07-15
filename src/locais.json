@@ -151,7 +151,8 @@
         "roteiros",
         "visconde de mauá",
         "itatiaia"
-      ]
+      ],
+      "rating": 5
     },
     {
       "id": "esquilo-passeios",
@@ -176,7 +177,8 @@
         "passeios",
         "trilhas",
         "natureza"
-      ]
+      ],
+      "rating": 5
     }
   ],
   "onde-ficar": [
@@ -718,7 +720,8 @@
         "conforto",
         "família",
         "descanso"
-      ]
+      ],
+      "rating": 4.5
     }
   ],
   "gastronomia": [
@@ -1001,7 +1004,8 @@
         "grãos",
         "centro",
         "av. das mangueiras"
-      ]
+      ],
+      "rating": 4.8
     }
   ],
   "compras": [
