@@ -13,7 +13,7 @@ export interface ArticleData {
 }
 
 export const getArticleSchema = (article: ArticleData) => {
-  const publishedDate = article.datePublished || new Date().toISOString().split('T')[0];
+  const publishedDate = article.datePublished;
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",

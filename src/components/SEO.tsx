@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 interface SEOProps {
@@ -25,11 +25,28 @@ export default function SEO({
   schema,
 }: SEOProps) {
   const finalCanonical = canonical || url;
+  const testHostnames = ['vemprapenedo.com', 'www.vemprapenedo.com', 'homologacao.vemprapenedo.com'];
+  const [effectiveRobots, setEffectiveRobots] = useState(robots);
+
+  useEffect(() => {
+    setEffectiveRobots(
+      testHostnames.includes(window.location.hostname)
+        ? 'noindex, nofollow, noarchive'
+        : robots
+    );
+  }, [robots]);
 
   const isLogoImage = image.includes('logo-google.png');
   const imgWidth = isLogoImage ? "512" : "800";
   const imgHeight = isLogoImage ? "512" : "600";
-  const imgType = isLogoImage ? "image/png" : "image/jpeg";
+  const imagePath = image.split('?')[0].toLowerCase();
+  const imgType = imagePath.endsWith('.png')
+    ? 'image/png'
+    : imagePath.endsWith('.webp')
+      ? 'image/webp'
+      : imagePath.endsWith('.avif')
+        ? 'image/avif'
+        : 'image/jpeg';
   const imgAlt = isLogoImage ? "Logo Vem Pra Penedo" : `Imagem representativa de ${title}`;
 
   return (
@@ -38,7 +55,7 @@ export default function SEO({
       <title>{title}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
-      <meta name="robots" content={robots} />
+      <meta name="robots" content={effectiveRobots} />
       
       {/* Canonical Link */}
       <link rel="canonical" href={finalCanonical} />
@@ -52,7 +69,7 @@ export default function SEO({
       <meta property="og:image:height" content={imgHeight} />
       <meta property="og:image:type" content={imgType} />
       <meta property="og:image:alt" content={imgAlt} />
-      <meta property="og:url" content={url} />
+      <meta property="og:url" content={finalCanonical} />
       <meta property="og:site_name" content="Vem Pra Penedo" />
 
       {/* Twitter Cards */}

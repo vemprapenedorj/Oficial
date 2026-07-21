@@ -6,6 +6,23 @@ import { trackEvent } from '../analytics/tracking';
 import { pushWhatsappClick, pushInstagramClick } from '../analytics/events';
 
 export function DetailModal({ item, onClose }: { item: DetailItem | null, onClose: () => void }) {
+  React.useEffect(() => {
+    if (item) {
+      document.body.style.overflow = 'hidden';
+      
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') {
+          onClose();
+        }
+      };
+      window.addEventListener('keydown', handleKeyDown);
+      return () => {
+        document.body.style.overflow = '';
+        window.removeEventListener('keydown', handleKeyDown);
+      };
+    }
+  }, [item, onClose]);
+
   if (!item) return null;
 
   const getWhatsAppMessage = () => {
@@ -54,7 +71,7 @@ export function DetailModal({ item, onClose }: { item: DetailItem | null, onClos
         >
           <div className="relative h-64 sm:h-80 bg-gray-100 flex items-center justify-center overflow-hidden">
             {/* Blurred Background Layer for Contained Images */}
-            {['pequena-finlandia', 'pequena-finlandia-shopping', 'lelu-museu', 'hotel-girassol', 'hotel-bertell', 'hotel-britannia', 'hotel-daniela', 'hotel-rio-penedo', 'hotel-do-sino', 'hotel-titanic', 'pousada-aurora-mantiqueira', 'pousada-chez-nous', 'pousada-penedo', 'pousada-reserva-penedo', 'pousada-terraco', 'pousada-villa-luna', 'pousada-rainha-da-mata', 'vila-francesa-hotel', 'aglio-e-olio', 'bazzini-pizzeria', 'borbulha-penedo', 'botegare', 'braseiro-gaucho', 'casa-da-picanha', 'casa-do-fritz', 'enoteca-serrana', 'estancia-penedo', 'kaiten-sushi', 'loazo-resto', 'petit-gourmet', 'pizza-da-villa', 'querencia', 'rei-das-trutas', 'restaurante-finlandes', 'truta-viva', 'zero-a-zero', 'tonttulakki-suklaat', 'lugano-penedo', 'lolita-penedo', 'kahvila-cafe'].includes(item.id) && (
+            {['pequena-finlandia', 'pequena-finlandia-shopping', 'lelu-museu', 'hotel-girassol', 'hotel-bertell', 'hotel-britannia', 'hotel-daniela', 'hotel-rio-penedo', 'hotel-do-sino', 'hotel-titanic', 'pousada-aurora-mantiqueira', 'pousada-chez-nous', 'pousada-penedo', 'pousada-reserva-penedo', 'pousada-terraco', 'pousada-villa-luna', 'pousada-rainha-da-mata', 'vila-francesa-hotel', 'aglio-e-olio', 'bazzini-pizzeria', 'borbulha-penedo', 'botegare', 'braseiro-gaucho', 'casa-da-picanha', 'casa-do-fritz', 'enoteca-serrana', 'estancia-penedo', 'kaiten-sushi', 'loazo-resto', 'petit-gourmet', 'pizza-da-villa', 'querencia', 'rei-das-trutas', 'restaurante-finlandes', 'truta-viva', 'zero-a-zero', 'tonttulakki-suklaat', 'lugano-penedo', 'lolita-penedo', 'kahvila-cafe', 'chocolate-do-papai-noel', 'emporio-haru'].includes(item.id) && (
               <div 
                 className="absolute inset-0 z-0 opacity-40 scale-110 blur-xl"
                 style={{ 
@@ -66,10 +83,13 @@ export function DetailModal({ item, onClose }: { item: DetailItem | null, onClos
             )}
             <img 
               src={item.image} 
+              decoding="async"
               className={`relative z-10 w-full h-full ${
-                item.id === 'hotel-girassol'
+                item.id === 'enoteca-serrana'
+                  ? 'object-cover object-[center_75%]'
+                  : item.id === 'hotel-girassol'
                   ? 'object-contain object-center p-4'
-                  : ['pequena-finlandia', 'pequena-finlandia-shopping', 'lelu-museu', 'hotel-bertell', 'hotel-britannia', 'hotel-daniela', 'hotel-rio-penedo', 'hotel-do-sino', 'hotel-titanic', 'pousada-aurora-mantiqueira', 'pousada-chez-nous', 'pousada-penedo', 'pousada-reserva-penedo', 'pousada-terraco', 'pousada-villa-luna', 'pousada-rainha-da-mata', 'vila-francesa-hotel', 'aglio-e-olio', 'bazzini-pizzeria', 'borbulha-penedo', 'botegare', 'braseiro-gaucho', 'casa-da-picanha', 'casa-do-fritz', 'enoteca-serrana', 'estancia-penedo', 'kaiten-sushi', 'loazo-resto', 'petit-gourmet', 'pizza-da-villa', 'querencia', 'rei-das-trutas', 'restaurante-finlandes', 'truta-viva', 'zero-a-zero', 'tonttulakki-suklaat', 'lugano-penedo', 'lolita-penedo', 'kahvila-cafe'].includes(item.id) 
+                  : ['pequena-finlandia', 'pequena-finlandia-shopping', 'lelu-museu', 'hotel-bertell', 'hotel-britannia', 'hotel-daniela', 'hotel-rio-penedo', 'hotel-do-sino', 'hotel-titanic', 'pousada-aurora-mantiqueira', 'pousada-chez-nous', 'pousada-penedo', 'pousada-reserva-penedo', 'pousada-terraco', 'pousada-villa-luna', 'pousada-rainha-da-mata', 'vila-francesa-hotel', 'aglio-e-olio', 'bazzini-pizzeria', 'borbulha-penedo', 'botegare', 'braseiro-gaucho', 'casa-da-picanha', 'casa-do-fritz', 'enoteca-serrana', 'estancia-penedo', 'kaiten-sushi', 'loazo-resto', 'petit-gourmet', 'pizza-da-villa', 'querencia', 'rei-das-trutas', 'restaurante-finlandes', 'truta-viva', 'zero-a-zero', 'tonttulakki-suklaat', 'lugano-penedo', 'lolita-penedo', 'kahvila-cafe', 'chocolate-do-papai-noel', 'emporio-haru'].includes(item.id) 
                     ? 'object-contain object-top p-4' 
                     : 'object-cover'
               }`} 
@@ -79,6 +99,7 @@ export function DetailModal({ item, onClose }: { item: DetailItem | null, onClos
             <button 
               onClick={onClose}
               className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center hover:bg-white/40 transition-colors"
+              aria-label="Fechar detalhes"
             >
               <X size={24} />
             </button>
@@ -129,7 +150,7 @@ export function DetailModal({ item, onClose }: { item: DetailItem | null, onClos
             
             <div className="pt-6 border-t grid grid-cols-1 sm:grid-cols-3 gap-3">
               <a 
-                href={item.link_maps || item.mapUrl || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.title + ' ' + (item.location || 'Penedo Itatiaia RJ'))}`}
+                href={item.mapsUrl || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.title + ' ' + (item.location || 'Penedo Itatiaia RJ'))}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackEvent('map_location', item.category, item.title)}
@@ -138,10 +159,10 @@ export function DetailModal({ item, onClose }: { item: DetailItem | null, onClos
                 <MapPin size={18} /> Como Chegar
               </a>
               {(() => {
-                const isPremium = item.isPremium || (item as any).is_premium;
+                const isPremium = item.isPremium;
                 const isHospedagem = item.category === 'Hospedagem';
                 const fallbackBookingUrl = 'https://www.booking.com/searchresults.pt-br.html?label=pt-br-booking-desktop-9_uvqir24qvA6x6xGiDvCQS652796015463%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-65526620%3Alp1031722%3Ali%3Adec%3Adm&gclid=Cj0KCQjwxvjRBhC2ARIsAI7KJa1ZHtRerJPfgkFeXecwrxjO7CkOzHPB6Gy0PC6H1ul-Q0ltXy90nk0aAiq6EALw_wcB&aid=2311236&dest_id=900048364&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&order=class';
-                const bookingUrl = item.link_booking || fallbackBookingUrl;
+                const bookingUrl = item.bookingUrl || fallbackBookingUrl;
 
                 if (isHospedagem) {
                   if (isPremium) {
@@ -155,7 +176,7 @@ export function DetailModal({ item, onClose }: { item: DetailItem | null, onClos
                             business_id: item.id,
                             business_name: item.title,
                             business_category: item.category,
-                            is_premium: !!(item.isPremium || item.is_premium)
+                            is_premium: !!(item.isPremium)
                           })}
                           className="py-4 bg-[#25D366] text-white font-bold rounded-2xl hover:bg-[#128C7E] shadow-lg shadow-green-500/20 transition-all flex items-center justify-center gap-2 text-sm transform active:scale-95 h-full"
                         >
@@ -164,14 +185,14 @@ export function DetailModal({ item, onClose }: { item: DetailItem | null, onClos
                           </svg> WhatsApp
                         </a>
                         <a 
-                          href={item.instagram || item.link_instagram || "https://www.instagram.com/vemprapenedo/"}
+                          href={item.instagramUrl || "https://www.instagram.com/vemprapenedo/"}
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={() => pushInstagramClick({
                             business_id: item.id,
                             business_name: item.title,
                             business_category: item.category,
-                            is_premium: !!(item.isPremium || item.is_premium)
+                            is_premium: !!(item.isPremium)
                           })}
                           className="py-4 text-white font-bold rounded-2xl hover:opacity-90 transition-opacity flex items-center justify-center gap-2 text-sm h-full"
                           style={{ background: 'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)' }}
@@ -197,14 +218,14 @@ export function DetailModal({ item, onClose }: { item: DetailItem | null, onClos
                           <span className="font-extrabold text-[13px] tracking-tight">Booking.com</span>
                         </a>
                         <a 
-                          href={item.instagram || item.link_instagram || "https://www.instagram.com/vemprapenedo/"}
+                          href={item.instagramUrl || "https://www.instagram.com/vemprapenedo/"}
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={() => pushInstagramClick({
                             business_id: item.id,
                             business_name: item.title,
                             business_category: item.category,
-                            is_premium: !!(item.isPremium || item.is_premium)
+                            is_premium: !!(item.isPremium)
                           })}
                           className="py-4 text-white font-bold rounded-2xl hover:opacity-90 transition-opacity flex items-center justify-center gap-2 text-sm h-full"
                           style={{ background: 'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)' }}
@@ -225,7 +246,7 @@ export function DetailModal({ item, onClose }: { item: DetailItem | null, onClos
                           business_id: item.id,
                           business_name: item.title,
                           business_category: item.category,
-                          is_premium: !!(item.isPremium || item.is_premium)
+                          is_premium: !!(item.isPremium)
                         })}
                         className="py-4 bg-[#25D366] text-white font-bold rounded-2xl hover:bg-[#128C7E] shadow-lg shadow-green-500/20 transition-all flex items-center justify-center gap-2 text-sm transform active:scale-95"
                       >
@@ -234,14 +255,14 @@ export function DetailModal({ item, onClose }: { item: DetailItem | null, onClos
                         </svg> WhatsApp
                       </a>
                       <a 
-                        href={item.instagram || item.link_instagram || "https://www.instagram.com/vemprapenedo/"}
+                        href={item.instagramUrl || "https://www.instagram.com/vemprapenedo/"}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => pushInstagramClick({
                           business_id: item.id,
                           business_name: item.title,
                           business_category: item.category,
-                          is_premium: !!(item.isPremium || item.is_premium)
+                          is_premium: !!(item.isPremium)
                         })}
                         className="py-4 text-white font-bold rounded-2xl hover:opacity-90 transition-opacity flex items-center justify-center gap-2 text-sm"
                         style={{ background: 'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)' }}

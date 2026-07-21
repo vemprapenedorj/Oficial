@@ -7,19 +7,20 @@ import {
 } from 'lucide-react';
 import { Page, DetailItem } from '../types';
 import { DETAILS_DATA } from '../data/detailsData';
-import locaisData from '../locais.json';
 import { pushBusinessPageView, pushWhatsappClick, pushInstagramClick } from '../analytics/events';
 import { trackEvent } from '../analytics/tracking';
 import { generateSEO } from '../seo';
 import SEO from '../components/SEO';
 import { PartnerHeader } from '../components/PartnerHeader';
 import { getSubcategoryInfo } from '../seo/utils/seoUtils';
+import { Link, useParams } from 'react-router-dom';
+import Page404 from '../components/Page404';
 
 // Helper to extract video embed details
 function getVideoEmbedData(url: string): { url: string; platform: 'youtube' | 'instagram' | 'unknown' } {
   const cleanUrl = url.trim();
   if (cleanUrl.includes('instagram.com/p/') || cleanUrl.includes('instagram.com/reel/')) {
-    const cleanInsta = cleanUrl.split('?')[0].replace(/\/?$/, '');
+    const cleanInsta = cleanUrl.split('?')[0].replace(/\/$/, '');
     return { url: `${cleanInsta}/embed`, platform: 'instagram' };
   }
   let videoId = '';
@@ -37,13 +38,14 @@ function getVideoEmbedData(url: string): { url: string; platform: 'youtube' | 'i
   return { url: cleanUrl, platform: 'unknown' };
 }
 
-export function PremiumDetailPage({ slug, onNavigate, onOpenDetail }: { slug: string, onNavigate: (page: Page, slug?: string) => void, onOpenDetail?: (item: DetailItem) => void }) {
+export function PremiumDetailPage({ onNavigate, onOpenDetail }: { onNavigate: (page: Page, slug?: string) => void, onOpenDetail?: (item: DetailItem) => void }) {
+  const { slug = '' } = useParams<{ slug: string }>();
   const [selectedImgIndex, setSelectedImgIndex] = useState<number | null>(null);
   const [showMap, setShowMap] = useState(false);
 
   const item = React.useMemo(() => {
-    const allItems = [...Object.values(locaisData).flat(), ...Object.values(DETAILS_DATA).flat()];
-    return allItems.find((i: any) => (i.slug === slug || i.id === slug) && (i.is_premium || i.isPremium)) as any;
+    const allItems = Object.values(DETAILS_DATA).flat();
+    return allItems.find((i) => (i.slug === slug || i.id === slug) && i.isPremium);
   }, [slug]);
 
   useEffect(() => {
@@ -52,7 +54,7 @@ export function PremiumDetailPage({ slug, onNavigate, onOpenDetail }: { slug: st
         business_id: item.id,
         business_name: item.title,
         business_category: item.category,
-        is_premium: !!(item.isPremium || item.is_premium)
+        is_premium: !!(item.isPremium)
       });
     }
   }, [item]);
@@ -60,7 +62,7 @@ export function PremiumDetailPage({ slug, onNavigate, onOpenDetail }: { slug: st
   const galleryImages = React.useMemo(() => {
     if (!item) return [];
     
-    const isPremium = item.isPremium || item.is_premium;
+    const isPremium = item.isPremium;
     if (isPremium) {
       const folder = item.slug || item.id;
       let cleanFolder = folder.split('/').pop() || folder;
@@ -115,12 +117,6 @@ export function PremiumDetailPage({ slug, onNavigate, onOpenDetail }: { slug: st
   }, [item]);
 
   useEffect(() => {
-    if (!item) {
-      onNavigate('home');
-    }
-  }, [item, onNavigate]);
-
-  useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (selectedImgIndex === null) return;
       if (e.key === 'ArrowLeft') {
@@ -135,7 +131,19 @@ export function PremiumDetailPage({ slug, onNavigate, onOpenDetail }: { slug: st
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [selectedImgIndex, galleryImages.length]);
 
-  if (!item) return null;
+  if (!item) {
+    return (
+      <>
+        <SEO
+          title="Página Não Encontrada | Vem Pra Penedo"
+          description="O estabelecimento que você procura não foi encontrado."
+          canonical="https://vemprapenedo.com.br/404"
+          robots="noindex, follow"
+        />
+        <Page404 onNavigate={onNavigate} />
+      </>
+    );
+  }
 
   const getWhatsAppMessage = () => {
     const isLodging = item.category === 'Hospedagem';
@@ -164,22 +172,22 @@ export function PremiumDetailPage({ slug, onNavigate, onOpenDetail }: { slug: st
   };
 
   const whatsappMessage = encodeURIComponent(getWhatsAppMessage());
-  const whatsappUrl = item.link_whatsapp
-    ? `${item.link_whatsapp}?text=${whatsappMessage}`
+  const whatsappUrl = item.whatsappUrl
+    ? `${item.whatsappUrl}?text=${whatsappMessage}`
     : item.whatsapp
       ? `https://wa.me/55${item.whatsapp.replace(/\D/g, '')}?text=${whatsappMessage}`
       : `https://wa.me/5524992087767?text=${whatsappMessage}`;
 
-  const instagramUrl = item.link_instagram || item.instagram || "https://www.instagram.com/vemprapenedo/";
+  const instagramUrl = item.instagramUrl || "https://www.instagram.com/vemprapenedo/";
   const mapsUrl = (item.latitude && item.longitude)
     ? `https://www.google.com/maps?q=${item.latitude},${item.longitude}`
-    : (item.link_maps || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.title + ', Penedo, Itatiaia - RJ')}`);
+    : (item.mapsUrl || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.title + ', Penedo, Itatiaia - RJ')}`);
 
   const ActionButtons = ({ sticky = false }: { sticky?: boolean }) => {
-    const isPremium = item.isPremium || (item as any).is_premium;
+    const isPremium = item.isPremium;
     const isHospedagem = item.category === 'Hospedagem';
     const fallbackBookingUrl = 'https://www.booking.com/searchresults.pt-br.html?label=pt-br-booking-desktop-9_uvqir24qvA6x6xGiDvCQS652796015463%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-65526620%3Alp1031722%3Ali%3Adec%3Adm&gclid=Cj0KCQjwxvjRBhC2ARIsAI7KJa1ZHtRerJPfgkFeXecwrxjO7CkOzHPB6Gy0PC6H1ul-Q0ltXy90nk0aAiq6EALw_wcB&aid=2311236&dest_id=900048364&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&order=class';
-    const bookingUrl = item.link_booking || fallbackBookingUrl;
+    const bookingUrl = item.bookingUrl || fallbackBookingUrl;
 
     // Se for hospedagem e não for premium, exibe 2 colunas (Booking + Maps)
     // Caso contrário (Premium ou não-Hospedagem), exibe 3 colunas (WhatsApp + Insta + Maps)
@@ -188,7 +196,7 @@ export function PremiumDetailPage({ slug, onNavigate, onOpenDetail }: { slug: st
       : 'md:grid-cols-3';
 
     return (
-      <div className={`grid grid-cols-1 ${gridCols} gap-3 ${sticky ? 'fixed bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-md z-[100] md:hidden border-t shadow-[0_-10px_20px_rgba(0,0,0,0.1)]' : 'mt-8'}`}>
+      <div className={`grid grid-cols-1 ${gridCols} gap-3 ${sticky ? 'fixed bottom-0 left-0 right-0 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] bg-white/90 backdrop-blur-md z-[100] md:hidden border-t shadow-[0_-10px_20px_rgba(0,0,0,0.1)]' : 'mt-8'}`}>
         
         {isPremium || !isHospedagem ? (
           <a 
@@ -199,7 +207,7 @@ export function PremiumDetailPage({ slug, onNavigate, onOpenDetail }: { slug: st
               business_id: item.id,
               business_name: item.title,
               business_category: item.category,
-              is_premium: !!(item.isPremium || item.is_premium)
+              is_premium: !!(item.isPremium)
             })}
             className="flex items-center justify-center gap-2 py-3 bg-[#25D366] text-white font-bold rounded-xl hover:bg-[#128C7E] transition-all text-sm shadow-md"
           >
@@ -228,7 +236,7 @@ export function PremiumDetailPage({ slug, onNavigate, onOpenDetail }: { slug: st
                   business_id: item.id,
                   business_name: item.title,
                   business_category: item.category,
-                  is_premium: !!(item.isPremium || item.is_premium)
+                  is_premium: !!(item.isPremium)
                 })}
                 className="flex items-center justify-center gap-2 py-3 text-white font-bold rounded-xl hover:opacity-90 transition-all text-sm shadow-md"
                 style={{ background: 'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)' }}
@@ -237,18 +245,6 @@ export function PremiumDetailPage({ slug, onNavigate, onOpenDetail }: { slug: st
               </a>
             )}
             
-            {item.googleProfileUrl && (
-              <a 
-                href={item.googleProfileUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                onClick={() => trackEvent('google_profile', item.category, item.title)}
-                className="flex items-center justify-center gap-2 py-3 bg-white text-gray-700 border border-gray-200 font-bold rounded-xl hover:bg-gray-50 transition-all text-sm shadow-md"
-              >
-                <Star size={18} className="text-penedo-gold fill-penedo-gold" /> Avaliações no Google
-              </a>
-            )}
-
             <a 
               href={mapsUrl} 
               target="_blank" 
@@ -256,7 +252,7 @@ export function PremiumDetailPage({ slug, onNavigate, onOpenDetail }: { slug: st
               onClick={() => trackEvent('map_location', item.category, item.title)}
               className="flex items-center justify-center gap-2 py-3 bg-penedo-forest text-white font-bold rounded-xl hover:bg-black transition-all text-sm shadow-md"
             >
-              <Compass size={18} /> Ver no Google Maps
+              <Compass size={18} /> Como chegar
             </a>
           </>
         )}
@@ -303,11 +299,11 @@ export function PremiumDetailPage({ slug, onNavigate, onOpenDetail }: { slug: st
     
     const scoreCandidates = (cat: 'gastronomia' | 'onde-ficar' | 'o-que-fazer' | 'compras') => {
       return (DETAILS_DATA[cat] || [])
-        .filter(c => c.id !== item.id && (c as any).status !== 'draft')
+        .filter(c => c.id !== item.id)
         .map(c => {
           let score = getZoneScore(c.location || '');
           score += getSharedTagsCount(c.tags || []) * 2;
-          score += (c.isPremium || (c as any).is_premium) ? 5 : 0;
+          score += (c.isPremium) ? 5 : 0;
           return { item: c, score };
         })
         .sort((a, b) => b.score - a.score)
@@ -387,31 +383,29 @@ export function PremiumDetailPage({ slug, onNavigate, onOpenDetail }: { slug: st
       <section className="pt-10 md:pt-20 md:pt-32 pb-6 md:pb-12 bg-penedo-mint/10">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 md:mb-8 text-left">
-            <button 
-              onClick={() => onNavigate('home')}
+            <Link
+              to="/"
               className="flex items-center gap-2 text-penedo-emerald font-bold hover:gap-3 transition-all bg-transparent border-none outline-none cursor-pointer"
             >
               <ArrowRight className="rotate-180" size={20} /> Voltar ao Início
-            </button>
+            </Link>
             
             <nav className="text-xs font-semibold text-gray-500 uppercase tracking-widest flex items-center flex-wrap gap-y-1" aria-label="Breadcrumb">
-              <a href="/" onClick={(e) => { e.preventDefault(); onNavigate('home'); }} className="hover:text-penedo-emerald transition-colors">Início</a>
+              <Link to="/" className="hover:text-penedo-emerald transition-colors">Início</Link>
               <span className="mx-2 text-gray-400">/</span>
-              <a 
-                href={`/${categoryCleanPath}`} 
-                onClick={(e) => { e.preventDefault(); onNavigate(categoryCleanPath as Page); }}
+              <Link
+                to={`/${categoryCleanPath}`}
                 className="hover:text-penedo-emerald transition-colors"
               >
                 {categoryLabel}
-              </a>
+              </Link>
               <span className="mx-2 text-gray-400">/</span>
-              <a 
-                href={`/${categoryCleanPath}#${subSlug}`} 
-                onClick={(e) => { e.preventDefault(); onNavigate(categoryCleanPath as Page); }}
+              <Link
+                to={`/${categoryCleanPath}#${subSlug}`}
                 className="hover:text-penedo-emerald transition-colors"
               >
                 {subName}
-              </a>
+              </Link>
               <span className="mx-2 text-gray-400">/</span>
               <span className="text-penedo-forest line-clamp-1">{item.title}</span>
             </nav>
@@ -533,9 +527,9 @@ export function PremiumDetailPage({ slug, onNavigate, onOpenDetail }: { slug: st
           </div>
           
           <div className="prose prose-xl prose-penedo max-w-none text-gray-600 leading-relaxed space-y-6">
-            {item.link_video ? (
+            {item.videoUrl ? (
               (() => {
-                const videoData = getVideoEmbedData(item.link_video);
+                const videoData = getVideoEmbedData(item.videoUrl);
                 const isInstagram = videoData.platform === 'instagram';
                 return (
                   <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center mb-6 md:mb-12">
@@ -585,7 +579,7 @@ export function PremiumDetailPage({ slug, onNavigate, onOpenDetail }: { slug: st
                             className="absolute w-full h-[calc(100%+140px)] -top-[50px] left-0 border-none scale-[1.01]"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowFullScreen
-                          />
+                          ></iframe>
                         ) : (
                           <iframe
                             src={videoData.url}
@@ -594,7 +588,7 @@ export function PremiumDetailPage({ slug, onNavigate, onOpenDetail }: { slug: st
                             className="w-full h-full border-none"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowFullScreen
-                          />
+                          ></iframe>
                         )}
                       </div>
                     </div>
@@ -718,7 +712,7 @@ export function PremiumDetailPage({ slug, onNavigate, onOpenDetail }: { slug: st
                     <div 
                       key={place.id}
                       onClick={() => {
-                        const isPrem = place.isPremium || (place as any).is_premium;
+                        const isPrem = place.isPremium;
                         if (isPrem) {
                           onNavigate('premium-detail', place.slug || place.id);
                         } else if (onOpenDetail) {
@@ -758,7 +752,7 @@ export function PremiumDetailPage({ slug, onNavigate, onOpenDetail }: { slug: st
                     <div 
                       key={place.id}
                       onClick={() => {
-                        const isPrem = place.isPremium || (place as any).is_premium;
+                        const isPrem = place.isPremium;
                         if (isPrem) {
                           onNavigate('premium-detail', place.slug || place.id);
                         } else if (onOpenDetail) {
@@ -793,9 +787,9 @@ export function PremiumDetailPage({ slug, onNavigate, onOpenDetail }: { slug: st
                 <h3 className="text-xl font-bold text-penedo-forest border-b pb-2 border-gray-200">Dicas do Especialista</h3>
                 
                 {/* Blog Card */}
-                <div 
-                  onClick={() => onNavigate('blog', recommendations.blog.id)}
-                  className="p-6 bg-penedo-forest text-white rounded-3xl shadow-lg hover:shadow-xl transition-all cursor-pointer relative overflow-hidden group"
+                <Link
+                  to={`/blog/artigo/${recommendations.blog.id}`}
+                  className="block w-full p-6 bg-penedo-forest text-white rounded-3xl shadow-lg hover:shadow-xl transition-all cursor-pointer relative overflow-hidden group"
                 >
                   <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
                   <div className="relative z-10">
@@ -806,19 +800,19 @@ export function PremiumDetailPage({ slug, onNavigate, onOpenDetail }: { slug: st
                       Ler artigo completo <ArrowRight size={16} className="shrink-0" />
                     </div>
                   </div>
-                </div>
+                </Link>
 
                 {/* Category Link */}
-                <div 
-                  onClick={() => onNavigate(categoryCleanPath as Page)}
-                  className="p-6 bg-white border border-gray-100 rounded-3xl shadow-sm hover:shadow-md transition-all cursor-pointer text-center group"
+                <Link
+                  to={`/${categoryCleanPath}`}
+                  className="block w-full p-6 bg-white border border-gray-100 rounded-3xl shadow-sm hover:shadow-md transition-all cursor-pointer text-center group"
                 >
                   <h4 className="font-bold text-gray-800 mb-1">Quer ver a lista completa?</h4>
                   <p className="text-xs text-gray-400 mb-4">Veja todas as opções da categoria {item.category} em Penedo.</p>
                   <span className="inline-block px-6 py-2.5 bg-gray-50 group-hover:bg-penedo-emerald group-hover:text-white rounded-2xl font-bold text-xs text-penedo-emerald uppercase tracking-widest transition-all">
                     Ver {item.category}
                   </span>
-                </div>
+                </Link>
               </div>
             </div>
           </div>
@@ -830,4 +824,3 @@ export function PremiumDetailPage({ slug, onNavigate, onOpenDetail }: { slug: st
     </div>
   );
 }
-

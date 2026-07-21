@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { DetailItem } from '../types';
+import { Link } from 'react-router-dom';
 
 interface CarouselProps {
   items: DetailItem[];
@@ -8,6 +9,7 @@ interface CarouselProps {
   title: string;
   subtitle?: string;
   onNavigate?: () => void;
+  navigateHref?: string;
   itemsPerView?: {
     mobile: number;
     tablet: number;
@@ -19,13 +21,17 @@ export const Carousel = React.memo(function Carousel({
   items, 
   renderItem, 
   title, 
-  subtitle, 
+  subtitle,
   onNavigate,
+  navigateHref,
   itemsPerView = { mobile: 1, tablet: 2, desktop: 5 }
 }: CarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
-  const [currentItemsPerView, setCurrentItemsPerView] = useState(itemsPerView.desktop);
+  // The SSG preview uses the tablet breakpoint. Keeping that same deterministic
+  // value for the first client render prevents the resize effect from changing
+  // the pre-rendered DOM before hydration begins.
+  const [currentItemsPerView, setCurrentItemsPerView] = useState(itemsPerView.tablet);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -78,12 +84,13 @@ export const Carousel = React.memo(function Carousel({
             {subtitle && <p className="text-gray-500">{subtitle}</p>}
           </div>
           {onNavigate && (
-            <button 
+            <Link
+              to={navigateHref || '/'}
               onClick={onNavigate}
               className="hidden sm:flex items-center gap-2 text-penedo-emerald font-bold hover:gap-3 transition-all cursor-pointer"
             >
               Ver tudo <ChevronRight size={20} />
-            </button>
+            </Link>
           )}
         </div>
 

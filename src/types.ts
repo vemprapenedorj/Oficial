@@ -3,29 +3,24 @@ export interface DetailItem {
   title: string;
   category: string;
   image: string;
-  imagem_url?: string;
   description: string;
   fullInfo: string;
   location?: string;
   hours?: string;
   rating?: number;
-  mapUrl?: string;
+  mapsUrl?: string;
   whatsapp?: string;
-  instagram?: string;
+  instagramUrl?: string;
   tags?: string[];
   isPremium?: boolean;
-  is_premium?: boolean;
   badge?: string;
   tripadvisorUrl?: string;
   slug?: string;
   galeria?: string[];
   descricao_longa?: string;
-  link_whatsapp?: string;
-  link_instagram?: string;
-  link_maps?: string;
-  link_video?: string;
-  link_booking?: string;
-  tag_destaque?: string;
+  whatsappUrl?: string;
+  videoUrl?: string;
+  bookingUrl?: string;
   date?: string;
   latitude?: string;
   longitude?: string;
@@ -35,10 +30,9 @@ export interface DetailItem {
   paymentAccepted?: string;
   currenciesAccepted?: string;
   email?: string;
-  link_site?: string;
-  status?: string;
+  siteUrl?: string;
   seo_title?: string;
   seo_description?: string;
 }
 
-export type Page = 'home' | 'o-que-fazer' | 'onde-ficar' | 'gastronomia' | 'compras' | 'blog' | 'contato' | 'premium-detail' | '404';
+export type Page = 'home' | 'o-que-fazer' | 'onde-ficar' | 'gastronomia' | 'compras' | 'blog' | 'contato' | 'politica-de-privacidade' | 'politica-de-cookies' | 'premium-detail' | '404';

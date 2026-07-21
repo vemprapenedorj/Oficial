@@ -1,25 +1,21 @@
 import React from 'react';
 import { Star, ChevronLeft, ChevronRight, Compass } from 'lucide-react';
-import locaisData from '../locais.json';
 import { DETAILS_DATA } from '../data/detailsData';
 import { Carousel } from './Carousel';
 import { PartnerHeader } from './PartnerHeader';
 import { pushPremiumCardClick } from '../analytics/events';
+import { shuffleArray } from '../utils/shuffle';
+import { getBusinessPath } from '../routing/routeHelpers';
+import { Link } from 'react-router-dom';
 
-export function PremiumCarousel({ onNavigatePremium }: { onNavigatePremium: (slug: string) => void }) {
+export function PremiumCarousel() {
   const premiumItems = React.useMemo(() => {
-    const allowedCategories = ['onde-ficar', 'gastronomia', 'compras'];
-    const filteredPremium = allowedCategories.flatMap(cat => (locaisData as any)[cat] || [])
-      .filter((item: any) => item.is_premium);
-      
     const detailsPremium = Object.values(DETAILS_DATA).flat()
-      .filter((item: any) => item.is_premium || item.isPremium);
-      
-    const allPremium = [...filteredPremium, ...detailsPremium];
+      .filter((item) => item.isPremium);
     
     // De-duplicate by id or slug
     const uniquePremiumMap = new Map();
-    allPremium.forEach((item: any) => {
+    detailsPremium.forEach((item) => {
       const key = item.title;
       if (!uniquePremiumMap.has(key)) {
         uniquePremiumMap.set(key, item);
@@ -28,10 +24,8 @@ export function PremiumCarousel({ onNavigatePremium }: { onNavigatePremium: (slu
     
     const uniquePremium = Array.from(uniquePremiumMap.values());
       
-    // Always shuffle and slice to max 12
-    return uniquePremium
-      .sort(() => 0.5 - Math.random())
-      .slice(0, 12);
+    // Stable shuffle keeps the visual variety without changing between SSG and hydration.
+    return shuffleArray(uniquePremium).slice(0, 12);
   }, []);
 
   if (premiumItems.length === 0) return null;
@@ -56,16 +50,14 @@ export function PremiumCarousel({ onNavigatePremium }: { onNavigatePremium: (slu
           items={premiumItems as any}
           itemsPerView={{ mobile: 1, tablet: 2, desktop: 3 }}
           renderItem={(item, index) => (
-            <a
-              href={`#/detalhe/${(item as any).slug || item.id}`}
-              onClick={(e) => {
-                e.preventDefault();
+            <Link
+              to={getBusinessPath((item as any).slug || item.id)}
+              onClick={() => {
                 pushPremiumCardClick({
                   business_id: item.id,
                   business_name: item.title,
                   business_category: item.category
                 }, index + 1);
-                ((item as any).slug || item.id) && onNavigatePremium((item as any).slug || item.id);
               }}
               className="bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-gray-100 flex flex-col h-full group cursor-pointer block transition-transform duration-300 hover:-translate-y-2"
             >
@@ -88,14 +80,14 @@ export function PremiumCarousel({ onNavigatePremium }: { onNavigatePremium: (slu
                   width={400}
                   height={300}
                   className={`relative z-10 w-full h-full transition-transform duration-700 group-hover:scale-110 ${
-                    ['Hotel Girassol', 'Águia de Penedo', 'Rota dos Passeios', 'Trilhando Penedo Ecoturismo', 'Rodrigo Dione'].includes(item.title)
+                    ['Hotel Girassol', 'Águia de Penedo', 'Rota dos Passeios', 'Trilhando Penedo Ecoturismo'].includes(item.title)
                       ? 'object-contain object-center'
                       : 'object-cover'
                   }`}
                 />
                 <div className="absolute top-4 left-4 z-10">
                   <span className="bg-penedo-gold text-black font-black text-[9px] uppercase tracking-tighter px-3 py-1.5 rounded-full shadow-lg">
-                    {item.tag_destaque || (item as any).tag_destaque || "Destaque"}
+                    {item.badge || (item as any).badge || "Destaque"}
                   </span>
                 </div>
               </div>
@@ -115,7 +107,7 @@ export function PremiumCarousel({ onNavigatePremium }: { onNavigatePremium: (slu
                   SAIBA MAIS <ChevronRight size={14} />
                 </div>
               </div>
-            </a>
+            </Link>
           )}
         />
       </div>

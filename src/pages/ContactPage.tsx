@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Phone, Mail, MapPin, Send, CheckCircle, Instagram, Facebook, Handshake, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export function ContactPage({ onGoBack = () => {} }: { onGoBack?: () => void }) {
   return (
     <div>
       <div className="sticky top-[72px] z-40 bg-white/90 backdrop-blur-md border-b py-4 shadow-sm text-left">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <button onClick={onGoBack} className="flex items-center gap-2 text-penedo-emerald font-bold hover:gap-3 transition-all cursor-pointer bg-transparent border-none outline-none">
+          <Link to="/" className="flex items-center gap-2 text-penedo-emerald font-bold hover:gap-3 transition-all cursor-pointer bg-transparent border-none outline-none">
             <ArrowRight className="rotate-180" size={20} /> Voltar ao Início
-          </button>
+          </Link>
           
           <nav className="text-xs font-semibold text-gray-500 uppercase tracking-widest" aria-label="Breadcrumb">
-            <a href="/" onClick={(e) => { e.preventDefault(); onGoBack(); }} className="hover:text-penedo-emerald transition-colors">Início</a>
+            <Link to="/" className="hover:text-penedo-emerald transition-colors">Início</Link>
             <span className="mx-2 text-gray-400">/</span>
             <span className="text-penedo-forest">Contato</span>
           </nav>
@@ -21,7 +22,16 @@ export function ContactPage({ onGoBack = () => {} }: { onGoBack?: () => void }) 
 
       <header className="relative pt-40 pb-6 md:pb-12 md:pt-48 md:pb-16 bg-penedo-forest text-center text-white overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <img src="https://picsum.photos/seed/contact/1920/1080" className="w-full h-full object-cover" alt="Fale Conosco Vem Pra Penedo RJ contato oficial" referrerPolicy="no-referrer" />
+          <img
+            src="https://picsum.photos/seed/contact/1280/720"
+            srcSet="https://picsum.photos/seed/contact/768/432 768w, https://picsum.photos/seed/contact/1280/720 1280w"
+            sizes="100vw"
+            className="w-full h-full object-cover"
+            alt="Fale Conosco Vem Pra Penedo RJ contato oficial"
+            fetchPriority="high"
+            decoding="async"
+            referrerPolicy="no-referrer"
+          />
         </div>
         <div className="relative z-10 px-4 max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Fale <span className="text-penedo-gold">Conosco</span></h1>

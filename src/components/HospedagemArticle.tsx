@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowLeft, X, ArrowRight, Check } from 'lucide-react';
+import { ArrowLeft, X, ArrowRight, Check, Calendar, Clock, User } from 'lucide-react';
 import SEO from './SEO';
 import { generateSEO } from '../seo';
+import { DETAILS_DATA } from '../data/detailsData';
 
 interface HospedagemArticleProps {
   handleSelectArticle: (id: string | null) => void;
+  onNavigate: (page: string, premiumSlug?: string | null) => void;
 }
 
-const BlogPostCTA = ({ label, onClick, primary = true }: { label: string, onClick: () => void, primary?: boolean }) => (
-  <button
+const BlogPostCTA = ({ label, href, onClick, primary = true }: { label: string, href: string, onClick: () => void, primary?: boolean }) => (
+  <Link
+    to={href}
     onClick={onClick}
     className={`px-8 py-4 rounded-2xl font-bold text-sm uppercase tracking-widest transition-all transform hover:scale-105 active:scale-95 shadow-lg flex items-center gap-2 cursor-pointer ${
       primary 
@@ -18,7 +22,7 @@ const BlogPostCTA = ({ label, onClick, primary = true }: { label: string, onClic
     }`}
   >
     {label} <ArrowRight size={18} />
-  </button>
+  </Link>
 );
 
 const ImageWithFallback = ({ 
@@ -56,8 +60,55 @@ const ImageWithFallback = ({
   );
 };
 
-export function HospedagemArticle({ handleSelectArticle }: HospedagemArticleProps) {
+export function HospedagemArticle({ handleSelectArticle, onNavigate }: HospedagemArticleProps) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const blogPosts = React.useMemo(() => {
+    return [...(DETAILS_DATA['blog'] || [])].sort((a, b) => {
+      const parseDate = (d: string) => {
+        const [day, month, year] = d.split('/').map(Number);
+        return new Date(year, month - 1, day).getTime();
+      };
+      return parseDate(b.date) - parseDate(a.date);
+    });
+  }, []);
+
+  const currentIndex = blogPosts.findIndex(post => post.id === 'melhores-hospedagens');
+  const prevPost = currentIndex !== -1 && currentIndex + 1 < blogPosts.length ? blogPosts[currentIndex + 1] : null;
+  const nextPost = currentIndex > 0 ? blogPosts[currentIndex - 1] : null;
+
+  const handlePrevArticle = () => {
+    if (prevPost) {
+      const inlineArticleIds = ['roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'];
+      if (inlineArticleIds.includes(prevPost.id)) {
+        handleSelectArticle(prevPost.id);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        onNavigate('blog');
+      }
+    } else {
+      handleSelectArticle(null);
+      onNavigate('blog');
+    }
+  };
+
+  const handleContinueExploring = () => {
+    if (nextPost) {
+      const inlineArticleIds = ['roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'];
+      if (inlineArticleIds.includes(nextPost.id)) {
+        handleSelectArticle(nextPost.id);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+    }
+    const penedoGuiaExists = blogPosts.some(post => post.id === 'penedo-guia');
+    if (penedoGuiaExists) {
+      handleSelectArticle('penedo-guia');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      onNavigate('o-que-fazer');
+    }
+  };
 
   const hotels = [
     {
@@ -152,12 +203,12 @@ export function HospedagemArticle({ handleSelectArticle }: HospedagemArticleProp
       {/* Sticky Header Back Navigation */}
       <div className="sticky top-20 z-40 bg-white/90 backdrop-blur-md border-b py-4 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <button 
-            onClick={() => handleSelectArticle(null)} 
+          <Link
+            to="/blog"
             className="flex items-center gap-2 text-penedo-emerald font-bold hover:gap-3 transition-all cursor-pointer bg-transparent border-none outline-none"
           >
             <ArrowLeft size={20} /> Voltar para o Blog
-          </button>
+          </Link>
           <div className="hidden md:block text-xs font-black text-gray-400 uppercase tracking-widest">
             Lendo: <span className="text-penedo-forest">Onde se Hospedar em Penedo</span>
           </div>
@@ -190,6 +241,13 @@ export function HospedagemArticle({ handleSelectArticle }: HospedagemArticleProp
           >
             Onde se Hospedar em Penedo: Pousadas e Hotéis que <span className="text-penedo-gold italic">Encantam e Surpreendem</span>
           </motion.h1>
+          <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-bold text-white/85 uppercase tracking-widest mt-8">
+            <span className="flex items-center gap-1.5"><Calendar size={14} className="text-penedo-gold" /> 23/06/2026</span>
+            <span className="w-1.5 h-1.5 bg-penedo-gold rounded-full"></span>
+            <span className="flex items-center gap-1.5"><Clock size={14} className="text-penedo-gold" /> 9 MIN DE LEITURA</span>
+            <span className="w-1.5 h-1.5 bg-penedo-gold rounded-full"></span>
+            <span className="flex items-center gap-1.5"><User size={14} className="text-penedo-gold" /> PORTAL VEM PRA PENEDO</span>
+          </div>
         </div>
       </header>
 
@@ -325,7 +383,6 @@ export function HospedagemArticle({ handleSelectArticle }: HospedagemArticleProp
             <p className="text-lg leading-relaxed">
               Mais do que locais de repouso, as pousadas de Penedo oferecem cenários deslumbrantes, aconchego em cada pequeno detalhe e a amigável hospitalidade de serra para que você desfrute cada instante de sua estadia.
             </p>
-            <p className="text-gray-400 text-sm mt-6 italic">Publicado em 23/06/2026.</p>
           </div>
           
           <div className="mb-4 md:mb-8 md:mb-16 rounded-[3rem] overflow-hidden shadow-2xl relative w-full h-96 md:h-[32rem]">
@@ -340,6 +397,35 @@ export function HospedagemArticle({ handleSelectArticle }: HospedagemArticleProp
         </div>
       </section>
 
+      {/* Navigation buttons below conclusion */}
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-8 pt-8 border-t border-gray-100 max-w-4xl mx-auto w-full px-4 mb-12">
+        {prevPost ? (
+          <Link
+            to={`/blog/artigo/${prevPost.id}`}
+            className="px-6 h-[52px] w-full sm:w-[280px] rounded-2xl font-bold text-xs uppercase tracking-widest flex items-center justify-between transition-all bg-[#064E3B] hover:bg-[#0B6B50] text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer border-none outline-none"
+          >
+            <ArrowLeft size={16} className="shrink-0" />
+            <span className="flex-1 text-center pr-4">Artigo anterior</span>
+          </Link>
+        ) : (
+          <Link
+            to="/blog"
+            className="px-6 h-[52px] w-full sm:w-[280px] rounded-2xl font-bold text-xs uppercase tracking-widest flex items-center justify-between transition-all bg-[#064E3B] hover:bg-[#0B6B50] text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer border-none outline-none"
+          >
+            <ArrowLeft size={16} className="shrink-0" />
+            <span className="flex-1 text-center pr-4">Ver todos os artigos</span>
+          </Link>
+        )}
+        
+        <Link
+          to={nextPost ? `/blog/artigo/${nextPost.id}` : '/blog/artigo/penedo-guia'}
+          className="px-6 h-[52px] w-full sm:w-[280px] rounded-2xl font-bold text-xs uppercase tracking-widest flex items-center justify-between transition-all bg-[#064E3B] hover:bg-[#0B6B50] text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer border-none outline-none"
+        >
+          <span className="flex-grow text-center pl-4">Continue explorando Penedo</span>
+          <ArrowRight size={16} className="shrink-0" />
+        </Link>
+      </div>
+
       {/* CTA final section */}
       <section className="py-32 bg-penedo-forest relative overflow-hidden text-white">
         <div className="absolute inset-0 z-0 opacity-10">
@@ -351,6 +437,7 @@ export function HospedagemArticle({ handleSelectArticle }: HospedagemArticleProp
           <div className="flex justify-center">
             <BlogPostCTA 
               label="Falar no WhatsApp" 
+              href="https://api.whatsapp.com/send?phone=5524992087767&text=Olá!%20Gostaria%20de%20dicas%20sobre%20pousadas%20e%20hospedagem%20em%20Penedo!"
               onClick={() => window.open('https://api.whatsapp.com/send?phone=5524992087767&text=Olá!%20Gostaria%20de%20dicas%20sobre%20pousadas%20e%20hospedagem%20em%20Penedo!')} 
               primary={true} 
             />

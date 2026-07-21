@@ -6,20 +6,19 @@ import { SearchPromo } from '../components/SearchPromo';
 import { InfoCard } from '../components/InfoCard';
 import { pushSearch } from '../analytics/events';
 import { FAQ_DATA } from '../seo';
+import { Link } from 'react-router-dom';
 
 export function WhatToDoPage({ onOpenDetail, onGoBack }: { onOpenDetail: (item: DetailItem) => void, onGoBack: () => void }) {
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredItems = DETAILS_DATA['o-que-fazer'].filter(item => 
-    item.status !== 'draft' && (
-      item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      item.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      item.tags?.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
-    )
+    item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    item.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    item.tags?.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
   ).sort((a, b) => {
-    const aPremium = (a as any).is_premium || a.isPremium ? 1 : 0;
-    const bPremium = (b as any).is_premium || b.isPremium ? 1 : 0;
+    const aPremium = a.isPremium || a.isPremium ? 1 : 0;
+    const bPremium = b.isPremium || b.isPremium ? 1 : 0;
     if (aPremium !== bPremium) return bPremium - aPremium;
     return a.title.localeCompare(b.title);
   });
@@ -36,12 +35,12 @@ export function WhatToDoPage({ onOpenDetail, onGoBack }: { onOpenDetail: (item: 
     <div>
       <div className="sticky top-[72px] z-40 bg-white/90 backdrop-blur-md border-b py-4 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <button onClick={onGoBack} className="flex items-center gap-2 text-penedo-emerald font-bold hover:gap-3 transition-all cursor-pointer bg-transparent border-none outline-none">
+          <Link to="/" className="flex items-center gap-2 text-penedo-emerald font-bold hover:gap-3 transition-all cursor-pointer bg-transparent border-none outline-none">
             <ArrowRight className="rotate-180" size={20} /> Voltar ao Início
-          </button>
+          </Link>
           
           <nav className="text-xs font-semibold text-gray-500 uppercase tracking-widest" aria-label="Breadcrumb">
-            <a href="/" onClick={(e) => { e.preventDefault(); onGoBack(); }} className="hover:text-penedo-emerald transition-colors">Início</a>
+            <Link to="/" className="hover:text-penedo-emerald transition-colors">Início</Link>
             <span className="mx-2 text-gray-400">/</span>
             <span className="text-penedo-forest">O Que Fazer</span>
           </nav>
@@ -50,7 +49,10 @@ export function WhatToDoPage({ onOpenDetail, onGoBack }: { onOpenDetail: (item: 
 
       <header className="relative pt-40 pb-6 md:pb-12 md:pt-48 md:pb-16 bg-penedo-forest text-center text-white overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <img src="/assets/imagens/penedo_sightseeing.jpg" className="w-full h-full object-cover" alt="O Que Fazer em Penedo RJ turismo" referrerPolicy="no-referrer" />
+          <picture className="block w-full h-full">
+            <source media="(max-width: 767px)" srcSet="/assets/imagens/penedo_sightseeing-mobile.webp" type="image/webp" />
+            <img src="/assets/imagens/penedo_sightseeing.jpg" className="w-full h-full object-cover" alt="O Que Fazer em Penedo RJ turismo" fetchPriority="high" decoding="async" referrerPolicy="no-referrer" />
+          </picture>
         </div>
         <div className="relative z-10 px-4 max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">O Que Fazer em <span className="text-penedo-gold">Penedo</span></h1>

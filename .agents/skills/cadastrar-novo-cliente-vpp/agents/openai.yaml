@@ -1,0 +1,8 @@
+interface:
+  display_name: "Cadastrar Cliente Vem Pra Penedo"
+  short_description: "Cadastre parceiros seguindo o padrão do site."
+  default_prompt: "Use $cadastrar-novo-cliente-vpp para cadastrar este novo cliente no site Vem Pra Penedo com os dados fornecidos."
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+policy:
+  allow_implicit_invocation: true
