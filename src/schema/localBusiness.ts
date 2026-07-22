@@ -41,11 +41,10 @@ export const getLocalBusinessSchema = (item: DetailItem) => {
   }
 
   const sameAsUrls: string[] = [];
-  if (item.link_instagram) sameAsUrls.push(item.link_instagram);
-  if (item.instagram && item.instagram !== item.link_instagram) sameAsUrls.push(item.instagram);
+  if (item.instagramUrl) sameAsUrls.push(item.instagramUrl);
   if (item.googleProfileUrl) sameAsUrls.push(item.googleProfileUrl);
   if (item.tripadvisorUrl) sameAsUrls.push(item.tripadvisorUrl);
-  if (item.link_booking) sameAsUrls.push(item.link_booking);
+  if (item.bookingUrl) sameAsUrls.push(item.bookingUrl);
   
   if (sameAsUrls.length > 0) {
     baseSchema["sameAs"] = sameAsUrls;
@@ -87,7 +86,7 @@ export const getLocalBusinessSchema = (item: DetailItem) => {
     }
     baseSchema["servesCuisine"] = item.tags && item.tags.length > 0 ? item.tags.filter(t => t !== 'gastronomia').join(', ') : "Variada";
     if (!baseSchema["priceRange"]) {
-      baseSchema["priceRange"] = item.isPremium || item.is_premium ? "$$$" : "$$";
+      baseSchema["priceRange"] = item.isPremium ? "$$$" : "$$";
     }
   } else if (categoryLower === 'onde-ficar' || categoryLower === 'hospedagem') {
     if (titleLower.includes('pousada') || titleLower.includes('chalé') || titleLower.includes('chale')) {

@@ -3,14 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5Z02CCVEL0"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-5Z02CCVEL0');
-    </script>
     <meta name="theme-color" content="#064e3b" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -21,32 +13,48 @@
     <link rel="mask-icon" href="/assets/imagens/icons/safari-pinned-tab.svg" color="#064e3b" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/imagens/icons/apple-touch-icon.png" />
 
-    <!-- Preload Hero Image Responsively -->
-    <link rel="preload" as="image" href="/assets/imagens/hero-mobile.avif" media="(max-width: 767px)" type="image/avif" fetchpriority="high" />
-    <link rel="preload" as="image" href="/assets/imagens/hero-tablet.avif" media="(min-width: 768px) and (max-width: 1279px)" type="image/avif" fetchpriority="high" />
-    <link rel="preload" as="image" href="/assets/imagens/hero-desktop.avif" media="(min-width: 1280px)" type="image/avif" fetchpriority="high" />
-
     <!-- Preconnect & DNS Prefetch to speed up external fonts and analytics loads -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TTVH4RFS');</script>
+    <!-- Google Consent Mode v2: default seguro antes do GTM -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      (function () {
+        var choice = localStorage.getItem('cookie-consent');
+        var granted = choice === 'granted';
+        gtag('consent', 'default', {
+          ad_storage: granted ? 'granted' : 'denied',
+          analytics_storage: granted ? 'granted' : 'denied',
+          ad_user_data: granted ? 'granted' : 'denied',
+          ad_personalization: granted ? 'granted' : 'denied',
+          functionality_storage: granted ? 'granted' : 'denied',
+          personalization_storage: granted ? 'granted' : 'denied',
+          security_storage: 'granted',
+          wait_for_update: 500
+        });
+      })();
+    </script>
+    <!-- Google Tag Manager: ativo somente no domínio oficial -->
+    <script>
+      var analyticsHostname = window.location.hostname;
+      var isOfficialHostname = analyticsHostname === 'vemprapenedo.com.br'
+        || analyticsHostname === 'www.vemprapenedo.com.br';
+      if (isOfficialHostname) {
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TTVH4RFS');
+      }
+    </script>
     <!-- End Google Tag Manager -->
   </head>
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTVH4RFS"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

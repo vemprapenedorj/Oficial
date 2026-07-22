@@ -1,4 +1,5 @@
-import React, { useState, lazy, Suspense } from 'react';
+import React, { useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { 
   Calendar, User, Clock, ArrowRight, Camera, Mountain, Star, 
@@ -12,11 +13,101 @@ import { generateSEO } from '../seo';
 import { BlogPostCTA } from '../components/BlogPostCTA';
 import { getBreadcrumbSchema } from '../schema';
 
-// Lazy load heavy blog article components
-const RestaurantesArticle = lazy(() => import('../components/RestaurantesArticle').then(m => ({ default: m.RestaurantesArticle })));
-const HospedagemArticle = lazy(() => import('../components/HospedagemArticle').then(m => ({ default: m.HospedagemArticle })));
+import { RestaurantesArticle } from '../components/RestaurantesArticle';
+import { HospedagemArticle } from '../components/HospedagemArticle';
+import { Roteiro1DiaArticle } from '../components/Roteiro1DiaArticle';
+import Page404 from '../components/Page404';
 
-export function BlogPage({ onOpenDetail, onNavigate, activeArticle, onSelectArticle }: { onOpenDetail: (item: DetailItem) => void, onNavigate: (page: Page) => void, activeArticle: string | null, onSelectArticle: (id: string | null) => void }) {
+const MotionLink = motion.create(Link);
+
+export function BlogPage({ onOpenDetail, onNavigate, onSelectArticle }: { onOpenDetail: (item: DetailItem) => void, onNavigate: (page: Page, premiumSlug?: string | null) => void, onSelectArticle: (id: string | null) => void }) {
+  const { slug: activeArticle } = useParams<{ slug: string }>();
+  const blogPosts = React.useMemo(() => {
+    return [...(DETAILS_DATA['blog'] || [])].sort((a, b) => {
+      const parseDate = (d: string) => {
+        const [day, month, year] = d.split('/').map(Number);
+        return new Date(year, month - 1, day).getTime();
+      };
+      return parseDate(b.date) - parseDate(a.date);
+    });
+  }, []);
+
+  const getNavigationButtons = (articleId: string) => {
+    const currentIndex = blogPosts.findIndex(post => post.id === articleId);
+    const prevPost = currentIndex !== -1 && currentIndex + 1 < blogPosts.length ? blogPosts[currentIndex + 1] : null;
+    const nextPost = currentIndex > 0 ? blogPosts[currentIndex - 1] : null;
+
+    const handlePrev = () => {
+      if (prevPost) {
+        const inlineArticleIds = ['roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'];
+        if (inlineArticleIds.includes(prevPost.id)) {
+          handleSelectArticle(prevPost.id);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          onNavigate('blog');
+        }
+      } else {
+        handleSelectArticle(null);
+        onNavigate('blog');
+      }
+    };
+
+    const handleNext = () => {
+      if (nextPost) {
+        const inlineArticleIds = ['roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'];
+        if (inlineArticleIds.includes(nextPost.id)) {
+          handleSelectArticle(nextPost.id);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
+        }
+      }
+      const penedoGuiaExists = blogPosts.some(post => post.id === 'penedo-guia');
+      if (penedoGuiaExists && articleId !== 'penedo-guia') {
+        handleSelectArticle('penedo-guia');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        onNavigate('o-que-fazer');
+      }
+    };
+
+    const inlineArticleIds = ['roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'];
+    const prevHref = prevPost && inlineArticleIds.includes(prevPost.id) ? `/blog/artigo/${prevPost.id}` : '/blog';
+    const penedoGuiaExists = blogPosts.some(post => post.id === 'penedo-guia');
+    const nextHref = nextPost && inlineArticleIds.includes(nextPost.id)
+      ? `/blog/artigo/${nextPost.id}`
+      : (penedoGuiaExists && articleId !== 'penedo-guia' ? '/blog/artigo/penedo-guia' : '/o-que-fazer');
+
+    return (
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-8 pt-8 border-t border-gray-100 max-w-4xl mx-auto w-full px-4 mb-12">
+        {prevPost ? (
+          <Link
+            to={prevHref}
+            className="px-6 h-[52px] w-full sm:w-[280px] rounded-2xl font-bold text-xs uppercase tracking-widest flex items-center justify-between transition-all bg-[#064E3B] hover:bg-[#0B6B50] text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer border-none outline-none"
+          >
+            <ArrowRight className="rotate-180 shrink-0" size={16} />
+            <span className="flex-1 text-center pr-4">Artigo anterior</span>
+          </Link>
+        ) : (
+          <Link
+            to="/blog"
+            className="px-6 h-[52px] w-full sm:w-[280px] rounded-2xl font-bold text-xs uppercase tracking-widest flex items-center justify-between transition-all bg-[#064E3B] hover:bg-[#0B6B50] text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer border-none outline-none"
+          >
+            <ArrowRight className="rotate-180 shrink-0" size={16} />
+            <span className="flex-1 text-center pr-4">Ver todos os artigos</span>
+          </Link>
+        )}
+        
+        <Link
+          to={nextHref}
+          className="px-6 h-[52px] w-full sm:w-[280px] rounded-2xl font-bold text-xs uppercase tracking-widest flex items-center justify-between transition-all bg-[#064E3B] hover:bg-[#0B6B50] text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer border-none outline-none"
+        >
+          <span className="flex-grow text-center pl-4">Continue explorando Penedo</span>
+          <ArrowRight size={16} className="shrink-0" />
+        </Link>
+      </div>
+    );
+  };
+
   const scrollToAnchor = (id: string) => {
     // Timeout para garantir que o DOM esteja pronto e evitar conflitos com transições do motion
     setTimeout(() => {
@@ -100,6 +191,26 @@ export function BlogPage({ onOpenDetail, onNavigate, activeArticle, onSelectArti
     onSelectArticle(id);
   };
 
+  if (activeArticle && !blogPosts.some((post) => (post.slug || post.id) === activeArticle)) {
+    return (
+      <>
+        <SEO
+          title="Artigo Não Encontrado | Vem Pra Penedo"
+          description="O artigo que você procura não foi encontrado."
+          canonical="https://vemprapenedo.com.br/404"
+          robots="noindex, follow"
+        />
+        <Page404 onNavigate={onNavigate} />
+      </>
+    );
+  }
+
+  if (activeArticle === 'roteiro-1-dia-em-penedo') {
+    return (
+      <Roteiro1DiaArticle onOpenDetail={onOpenDetail} onNavigate={onNavigate} handleSelectArticle={handleSelectArticle} />
+    );
+  }
+
   if (activeArticle === 'cachoeiras-penedo') {
     return (
       <div className="bg-white">
@@ -115,9 +226,9 @@ export function BlogPage({ onOpenDetail, onNavigate, activeArticle, onSelectArti
         />
         <div className="sticky top-[72px] z-40 bg-white/90 backdrop-blur-md border-b py-4 shadow-sm">
           <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-            <button onClick={() => handleSelectArticle(null)} className="flex items-center gap-2 text-penedo-emerald font-bold hover:gap-3 transition-all cursor-pointer">
+            <Link to="/blog" className="flex items-center gap-2 text-penedo-emerald font-bold hover:gap-3 transition-all cursor-pointer">
               <ArrowRight className="rotate-180" size={20} /> Voltar para o Blog
-            </button>
+            </Link>
             <div className="hidden md:block text-xs font-black text-gray-400 uppercase tracking-widest">
               Lendo: <span className="text-penedo-forest">Cachoeiras em Penedo RJ</span>
             </div>
@@ -152,6 +263,13 @@ export function BlogPage({ onOpenDetail, onNavigate, activeArticle, onSelectArti
             >
               Um guia completo para refrescar o corpo e a alma nas águas mais cristalinas da Serra da Mantiqueira.
             </p>
+            <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-bold text-white/85 uppercase tracking-widest mt-8">
+              <span className="flex items-center gap-1.5"><Calendar size={14} className="text-penedo-gold" /> 21/06/2026</span>
+              <span className="w-1.5 h-1.5 bg-penedo-gold rounded-full"></span>
+              <span className="flex items-center gap-1.5"><Clock size={14} className="text-penedo-gold" /> 6 MIN DE LEITURA</span>
+              <span className="w-1.5 h-1.5 bg-penedo-gold rounded-full"></span>
+              <span className="flex items-center gap-1.5"><User size={14} className="text-penedo-gold" /> PORTAL VEM PRA PENEDO</span>
+            </div>
           </div>
         </header>
 
@@ -346,26 +464,30 @@ export function BlogPage({ onOpenDetail, onNavigate, activeArticle, onSelectArti
                 <p className="text-gray-600 mb-6 md:mb-12 text-xl max-w-2xl mx-auto">
                   Quer aproveitar ao máximo sua viagem e descobrir todos os segredos da Finlândia Brasileira?
                 </p>
-                <p className="text-gray-400 text-sm mb-8 italic">Publicado em 21/06/2026.</p>
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
-                  <button 
-                    onClick={() => handleSelectArticle('penedo-guia')}
+                  <Link
+                    to="/blog/artigo/penedo-guia"
                     className="w-full sm:w-auto px-10 py-5 bg-penedo-emerald text-white rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-penedo-forest transition-all shadow-xl shadow-penedo-emerald/30 transform hover:-translate-y-1"
                   >
                     Ver roteiro completo de Penedo
-                  </button>
-                  <button 
-                    onClick={() => window.open('https://api.whatsapp.com/send?phone=5524992087767&text=Olá,%20vim%20do%20site%20Vem%20Pra%20Penedo%20e%20gostaria%20de%20mais%20informações!')}
+                  </Link>
+                  <a
+                    href="https://api.whatsapp.com/send?phone=5524992087767&text=Olá,%20vim%20do%20site%20Vem%20Pra%20Penedo%20e%20gostaria%20de%20mais%20informações!"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-full sm:w-auto px-10 py-5 bg-white text-penedo-emerald border-2 border-penedo-emerald rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-penedo-mint transition-all shadow-lg transform hover:-translate-y-1"
                   >
                     Falar no WhatsApp
-                  </button>
+                  </a>
                 </div>
               </section>
 
             </div>
           </div>
         </section>
+
+        {/* Navigation buttons */}
+        {getNavigationButtons('cachoeiras-penedo')}
 
         {/* FOOTER CTA */}
         <section className="py-10 md:py-24 bg-penedo-forest relative overflow-hidden text-white border-t border-white/10">
@@ -378,6 +500,7 @@ export function BlogPage({ onOpenDetail, onNavigate, activeArticle, onSelectArti
             <div className="flex justify-center">
               <BlogPostCTA 
                 label="Falar com Especialista" 
+                href="https://api.whatsapp.com/send?phone=5524992087767&text=Olá,%20vim%20do%20site%20Vem%20Pra%20Penedo%20e%20gostaria%20de%20mais%20informações!"
                 onClick={() => window.open('https://api.whatsapp.com/send?phone=5524992087767&text=Olá,%20vim%20do%20site%20Vem%20Pra%20Penedo%20e%20gostaria%20de%20mais%20informações!')} 
                 primary={true} 
               />
@@ -403,9 +526,9 @@ export function BlogPage({ onOpenDetail, onNavigate, activeArticle, onSelectArti
         />
         <div className="sticky top-[72px] z-40 bg-white/90 backdrop-blur-md border-b py-4">
           <div className="max-w-7xl mx-auto px-4">
-            <button onClick={() => handleSelectArticle(null)} className="flex items-center gap-2 text-penedo-emerald font-bold hover:gap-3 transition-all cursor-pointer">
+            <Link to="/blog" className="flex items-center gap-2 text-penedo-emerald font-bold hover:gap-3 transition-all cursor-pointer">
               <ArrowRight className="rotate-180" size={20} /> Voltar para o Blog
-            </button>
+            </Link>
           </div>
         </div>
         {/* Full Guia Content */}
@@ -424,10 +547,17 @@ export function BlogPage({ onOpenDetail, onNavigate, activeArticle, onSelectArti
             >
               Descubra os encantos da Finlândia Brasileira. Um destino mágico na Serra da Mantiqueira esperando por você.
             </p>
+            <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-bold text-white/85 uppercase tracking-widest mt-8">
+              <span className="flex items-center gap-1.5"><Calendar size={14} className="text-penedo-gold" /> 20/06/2026</span>
+              <span className="w-1.5 h-1.5 bg-penedo-gold rounded-full"></span>
+              <span className="flex items-center gap-1.5"><Clock size={14} className="text-penedo-gold" /> 10 MIN DE LEITURA</span>
+              <span className="w-1.5 h-1.5 bg-penedo-gold rounded-full"></span>
+              <span className="flex items-center gap-1.5"><User size={14} className="text-penedo-gold" /> PORTAL VEM PRA PENEDO</span>
+            </div>
             <div
               className="mt-8 flex justify-center"
             >
-              <BlogPostCTA label="Ver hospedagens em Penedo" onClick={() => scrollToAnchor('onde-se-hospedar')} />
+              <BlogPostCTA label="Ver hospedagens em Penedo" href="#onde-se-hospedar" onClick={() => scrollToAnchor('onde-se-hospedar')} />
             </div>
           </div>
         </header>
@@ -529,7 +659,7 @@ export function BlogPage({ onOpenDetail, onNavigate, activeArticle, onSelectArti
                 <ul className="space-y-4">
                   <li className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-penedo-gold rounded-full" /> 
-                    <span><strong><button type="button" onClick={() => scrollToAnchor('secao-cachoeiras')} className="hover:text-penedo-gold transition-colors cursor-pointer outline-none border-b border-dotted border-penedo-gold/30">Trilhas e Cachoeiras</button></strong>: Explore trilhas que levam a mirantes e quedas escondidas.</span>
+                    <span><strong><a href="#secao-cachoeiras" onClick={(event) => { event.preventDefault(); scrollToAnchor('secao-cachoeiras'); }} className="hover:text-penedo-gold transition-colors cursor-pointer outline-none border-b border-dotted border-penedo-gold/30">Trilhas e Cachoeiras</a></strong>: Explore trilhas que levam a mirantes e quedas escondidas.</span>
                   </li>
                   <li className="flex items-center gap-3">
 <div className="w-2 h-2 bg-penedo-gold rounded-full" /> 
@@ -556,8 +686,8 @@ export function BlogPage({ onOpenDetail, onNavigate, activeArticle, onSelectArti
             <SectionHeader title="Roteiro: O que fazer em 1 Dia" icon={Clock} />
             <div className="space-y-6">
               {[
-                { time: "Manhã", plan: <>Comece pela <button type="button" onClick={() => scrollToAnchor('card-pequena-finlandia')} className="font-bold underline decoration-penedo-gold/30 hover:text-penedo-gold transition-colors cursor-pointer outline-none">Pequena Finlândia</button> e a <button type="button" onClick={() => scrollToAnchor('card-casa-do-papai-noel')} className="font-bold underline decoration-penedo-gold/30 hover:text-penedo-gold transition-colors cursor-pointer outline-none">Casa do Papai Noel</button>. Aproveite para tomar um café da manhã reforçado em uma das padarias locais.</> },
-                { time: "Tarde", plan: <>Visite as <button type="button" onClick={() => scrollToAnchor('desc-tres-cachoeiras')} className="font-bold underline decoration-penedo-gold/30 hover:text-penedo-gold transition-colors cursor-pointer outline-none">Três Cachoeiras</button> para um contato revigorante com a natureza. Se tiver tempo, almoce por lá apreciando a vista.</> },
+                { time: "Manhã", plan: <>Comece pela <a href="#card-pequena-finlandia" onClick={(event) => { event.preventDefault(); scrollToAnchor('card-pequena-finlandia'); }} className="font-bold underline decoration-penedo-gold/30 hover:text-penedo-gold transition-colors cursor-pointer outline-none">Pequena Finlândia</a> e a <a href="#card-casa-do-papai-noel" onClick={(event) => { event.preventDefault(); scrollToAnchor('card-casa-do-papai-noel'); }} className="font-bold underline decoration-penedo-gold/30 hover:text-penedo-gold transition-colors cursor-pointer outline-none">Casa do Papai Noel</a>. Aproveite para tomar um café da manhã reforçado em uma das padarias locais.</> },
+                { time: "Tarde", plan: <>Visite as <a href="#desc-tres-cachoeiras" onClick={(event) => { event.preventDefault(); scrollToAnchor('desc-tres-cachoeiras'); }} className="font-bold underline decoration-penedo-gold/30 hover:text-penedo-gold transition-colors cursor-pointer outline-none">Três Cachoeiras</a> para um contato revigorante com a natureza. Se tiver tempo, almoce por lá apreciando a vista.</> },
                 { time: "Noite", plan: "Jante em um dos restaurantes típicos da região e aproveite para comprar chocolates artesanais e souvenirs." }
               ].map((step, i) => (
                 <div key={i} className="flex flex-col sm:flex-row gap-4 sm:gap-8 items-start p-8 bg-penedo-mint/20 rounded-3xl border border-penedo-emerald/10 hover:border-penedo-gold transition-colors">
@@ -577,15 +707,15 @@ export function BlogPage({ onOpenDetail, onNavigate, activeArticle, onSelectArti
               <div className="p-10 bg-white/10 rounded-[3rem] border border-white/10 backdrop-blur-sm">
                 <h3 className="text-2xl font-bold mb-6 text-penedo-gold">Dia 1: Imersão Cultural</h3>
                 <div className="space-y-4 text-white/80 leading-relaxed">
-                  <p><strong className="text-penedo-gold">Manhã:</strong> Chegue cedo e explore as lojas da <button type="button" onClick={() => scrollToAnchor('card-pequena-finlandia')} className="text-penedo-gold underline font-bold transition-all cursor-pointer outline-none">Pequena Finlândia</button>. Almoce por lá.</p>
-                  <p><strong className="text-penedo-gold">Tarde:</strong> Visite a <button type="button" onClick={() => scrollToAnchor('card-casa-do-papai-noel')} className="text-penedo-gold underline font-bold transition-all cursor-pointer outline-none">Casa do Papai Noel</button> e o <button type="button" onClick={() => scrollToAnchor('card-museu-finlandes')} className="text-penedo-gold underline font-bold transition-all cursor-pointer outline-none">Museu Finlandês</button> para mergulhar na história local.</p>
+                  <p><strong className="text-penedo-gold">Manhã:</strong> Chegue cedo e explore as lojas da <a href="#card-pequena-finlandia" onClick={(event) => { event.preventDefault(); scrollToAnchor('card-pequena-finlandia'); }} className="text-penedo-gold underline font-bold transition-all cursor-pointer outline-none">Pequena Finlândia</a>. Almoce por lá.</p>
+                  <p><strong className="text-penedo-gold">Tarde:</strong> Visite a <a href="#card-casa-do-papai-noel" onClick={(event) => { event.preventDefault(); scrollToAnchor('card-casa-do-papai-noel'); }} className="text-penedo-gold underline font-bold transition-all cursor-pointer outline-none">Casa do Papai Noel</a> e o <a href="#card-museu-finlandes" onClick={(event) => { event.preventDefault(); scrollToAnchor('card-museu-finlandes'); }} className="text-penedo-gold underline font-bold transition-all cursor-pointer outline-none">Museu Finlandês</a> para mergulhar na história local.</p>
                   <p><strong className="text-penedo-gold">Noite:</strong> Desfrute de um jantar romântico em um dos renomados restaurantes de Penedo.</p>
                 </div>
               </div>
               <div className="p-10 bg-white/5 rounded-[3rem] border border-white/10 backdrop-blur-sm">
                 <h3 className="text-2xl font-bold mb-6 text-penedo-gold">Dia 2: Aventura e Natureza</h3>
                 <div className="space-y-4 text-white/80 leading-relaxed">
-                  <p><strong className="text-penedo-gold">Manhã:</strong> Dedique-se às cachoeiras. Visite as <button type="button" onClick={() => scrollToAnchor('desc-tres-cachoeiras')} className="text-penedo-gold underline font-bold transition-all cursor-pointer outline-none">Três Cachoeiras</button> ou faça a trilha até a <button type="button" onClick={() => scrollToAnchor('desc-cachoeira-de-deus')} className="text-penedo-gold underline font-bold transition-all cursor-pointer outline-none">Cachoeira de Deus</button>.</p>
+                  <p><strong className="text-penedo-gold">Manhã:</strong> Dedique-se às cachoeiras. Visite as <a href="#desc-tres-cachoeiras" onClick={(event) => { event.preventDefault(); scrollToAnchor('desc-tres-cachoeiras'); }} className="text-penedo-gold underline font-bold transition-all cursor-pointer outline-none">Três Cachoeiras</a> ou faça a trilha até a <a href="#desc-cachoeira-de-deus" onClick={(event) => { event.preventDefault(); scrollToAnchor('desc-cachoeira-de-deus'); }} className="text-penedo-gold underline font-bold transition-all cursor-pointer outline-none">Cachoeira de Deus</a>.</p>
                   <p><strong className="text-penedo-gold">Tarde:</strong> Almoce com vista para a serra e aproveite para comprar lembrancinhas no artesanato local.</p>
                   <p><strong className="text-penedo-gold">Noite:</strong> Despeça-se com um fondue ou jantar descontraído saboreando as delícias locais.</p>
                 </div>
@@ -629,7 +759,7 @@ export function BlogPage({ onOpenDetail, onNavigate, activeArticle, onSelectArti
                 </div>
               ))}
             </div>
-            <BlogPostCTA label="Ver mais restaurantes" onClick={() => onNavigate('gastronomia')} primary={true} />
+            <BlogPostCTA label="Ver mais restaurantes" href="/gastronomia" onClick={() => onNavigate('gastronomia')} primary={true} />
           </div>
         </section>
 
@@ -641,7 +771,7 @@ export function BlogPage({ onOpenDetail, onNavigate, activeArticle, onSelectArti
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p>Penedo, RJ, oferece uma variedade de opções de hospedagem para todos os estilos:</p>
                 <ul className="space-y-3">
-                  <li><strong><button type="button" onClick={() => scrollToAnchor('onde-se-hospedar')} className="hover:text-penedo-gold hover:underline transition-all cursor-pointer font-bold outline-none decoration-penedo-gold border-b border-dotted">Pousadas Românticas</button></strong>: Ideais para casais, muitas com lareira e hidromassagem.</li>
+                  <li><strong><a href="#onde-se-hospedar" onClick={(event) => { event.preventDefault(); scrollToAnchor('onde-se-hospedar'); }} className="hover:text-penedo-gold hover:underline transition-all cursor-pointer font-bold outline-none decoration-penedo-gold border-b border-dotted">Pousadas Românticas</a></strong>: Ideais para casais, muitas com lareira e hidromassagem.</li>
                   <li><strong>Chalés com Lareira:</strong> Perfeitos para o inverno, proporcionam ambiente acolhedor.</li>
                   <li><strong>Hotéis no Centro:</strong> Fornecendo praticidade e fácil acesso às principais atrações.</li>
                 </ul>
@@ -702,10 +832,12 @@ export function BlogPage({ onOpenDetail, onNavigate, activeArticle, onSelectArti
             <div className="prose prose-xl prose-penedo max-w-none text-gray-600 mb-4 md:mb-8 text-left">
               <p>Penedo, RJ, é um destino que realmente encanta e oferece experiências únicas para todos os tipos de viajantes. Seja para uma escapada romântica a dois, férias em família com muita diversão na natureza ou até mesmo um bate-volta para recarregar as energias, este pedacinho da Finlândia na serra fluminense tem tudo para tornar sua viagem inesquecível.</p>
               <p>Com sua atmosfera acolhedora, paisagens deslumbrantes e uma gastronomia de dar água na boca, <strong>Penedo RJ</strong> espera por você!</p>
-              <p className="text-gray-400 text-sm mt-6 italic">Publicado em 20/06/2026.</p>
             </div>
           </div>
         </section>
+
+        {/* Navigation buttons */}
+        {getNavigationButtons('penedo-guia')}
 
         {/* 14. CTA FINAL */}
         <section className="py-32 bg-penedo-forest relative overflow-hidden text-white">
@@ -718,6 +850,7 @@ export function BlogPage({ onOpenDetail, onNavigate, activeArticle, onSelectArti
             <div className="flex justify-center">
               <BlogPostCTA 
                 label="Falar no WhatsApp" 
+                href="https://api.whatsapp.com/send?phone=5524992087767&text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20Penedo!"
                 onClick={() => window.open('https://api.whatsapp.com/send?phone=5524992087767&text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20Penedo!')} 
                 primary={true} 
               />
@@ -729,11 +862,15 @@ export function BlogPage({ onOpenDetail, onNavigate, activeArticle, onSelectArti
   }
 
   if (activeArticle === 'restaurantes') {
-    return <RestaurantesArticle handleSelectArticle={handleSelectArticle} />;
+    return (
+      <RestaurantesArticle handleSelectArticle={handleSelectArticle} onNavigate={onNavigate} />
+    );
   }
 
   if (activeArticle === 'melhores-hospedagens') {
-    return <HospedagemArticle handleSelectArticle={handleSelectArticle} />;
+    return (
+      <HospedagemArticle handleSelectArticle={handleSelectArticle} onNavigate={onNavigate} />
+    );
   }
 
   return (
@@ -751,12 +888,12 @@ export function BlogPage({ onOpenDetail, onNavigate, activeArticle, onSelectArti
       />
       <div className="sticky top-[72px] z-40 bg-white/90 backdrop-blur-md border-b py-4 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <button onClick={() => onNavigate('home')} className="flex items-center gap-2 text-penedo-emerald font-bold hover:gap-3 transition-all cursor-pointer bg-transparent border-none outline-none">
+          <Link to="/" className="flex items-center gap-2 text-penedo-emerald font-bold hover:gap-3 transition-all cursor-pointer bg-transparent border-none outline-none">
             <ArrowRight className="rotate-180" size={20} /> Voltar ao Início
-          </button>
+          </Link>
           
           <nav className="text-xs font-semibold text-gray-500 uppercase tracking-widest" aria-label="Breadcrumb">
-            <a href="/" onClick={(e) => { e.preventDefault(); onNavigate('home'); }} className="hover:text-penedo-emerald transition-colors">Início</a>
+            <Link to="/" className="hover:text-penedo-emerald transition-colors">Início</Link>
             <span className="mx-2 text-gray-400">/</span>
             <span className="text-penedo-forest">Blog</span>
           </nav>
@@ -764,16 +901,7 @@ export function BlogPage({ onOpenDetail, onNavigate, activeArticle, onSelectArti
       </div>
       <header className="relative pt-40 pb-6 md:pb-12 md:pt-48 md:pb-16 bg-penedo-forest text-center text-white overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <img 
-            src="/assets/imagens/blog/penedo_blog_header.jpg" 
-            width="1408"
-            height="768"
-            className="w-full h-full object-cover" 
-            alt="Blog Portal" 
-            fetchPriority="high"
-            decoding="async"
-            referrerPolicy="no-referrer" 
-          />
+          <img src="/assets/imagens/blog/penedo_blog_header.jpg" className="w-full h-full object-cover" alt="Blog Portal" referrerPolicy="no-referrer" />
         </div>
         <div className="relative z-10 px-4 max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Blog de <span className="text-penedo-gold">Penedo RJ</span></h1>
@@ -783,30 +911,19 @@ export function BlogPage({ onOpenDetail, onNavigate, activeArticle, onSelectArti
 
       <section className="py-10 md:py-24 max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12">
-          {DETAILS_DATA['blog'].map((post) => (
-            <motion.div 
+          {DETAILS_DATA['blog'].map((post) => {
+            const hasArticlePage = ['roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'].includes(post.id);
+            const postHref = hasArticlePage ? `/blog/artigo/${post.id}` : '/onde-ficar';
+
+            return (
+            <MotionLink
               key={post.id} 
+              to={postHref}
               whileHover={{ y: -12 }}
-              onClick={() => {
-                if (post.id === 'penedo-guia' || post.id === 'cachoeiras-penedo' || post.id === 'restaurantes' || post.id === 'melhores-hospedagens') {
-                  handleSelectArticle(post.id);
-                } else {
-                  onNavigate('onde-ficar');
-                }
-              }}
               className="bg-white rounded-[3rem] overflow-hidden shadow-2xl border border-gray-100 flex flex-col h-full group cursor-pointer"
             >
               <div className="relative h-72 overflow-hidden">
-                <img 
-                  src={post.image} 
-                  width={400}
-                  height={300}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
-                  alt={post.title} 
-                  referrerPolicy="no-referrer" 
-                />
+                <img src={post.image} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt={post.title} referrerPolicy="no-referrer" />
                 <div className="absolute bottom-4 left-6">
                   <span className="bg-penedo-forest/80 backdrop-blur-md text-white font-black text-[10px] uppercase tracking-widest px-4 py-2 rounded-xl shadow-lg border border-white/20">
                     {post.category}
@@ -817,16 +934,16 @@ export function BlogPage({ onOpenDetail, onNavigate, activeArticle, onSelectArti
                 <div>
                   <h3 className="text-2xl font-black text-penedo-forest mb-4 tracking-tighter leading-tight group-hover:text-penedo-emerald transition-colors">{post.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed mb-4 md:mb-8">
-                    {post.description}
-                    {post.date && ` Publicado em ${post.date}.`}
+                    {`${post.description}${post.date ? ` Publicado em ${post.date}.` : ''}`}
                   </p>
                 </div>
                 <div className="w-full py-4 bg-gray-50 rounded-2xl flex items-center justify-center gap-3 text-penedo-emerald font-black text-xs uppercase tracking-widest group-hover:bg-penedo-emerald group-hover:text-white transition-all shadow-sm">
                   Ler artigo completo <ArrowRight size={18} />
                 </div>
               </div>
-            </motion.div>
-          ))}
+            </MotionLink>
+            );
+          })}
         </div>
       </section>
 
@@ -835,10 +952,9 @@ export function BlogPage({ onOpenDetail, onNavigate, activeArticle, onSelectArti
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl font-black text-white mb-6 uppercase tracking-widest">Quer anunciar aqui?</h2>
           <p className="text-penedo-gold/80 mb-6 md:mb-12 text-lg font-medium italic">Seja um parceiro do Vem Pra Penedo e alcance milhares de turistas.</p>
-          <BlogPostCTA label="Falar sobre parcerias" onClick={() => onNavigate('contato')} primary={true} />
+          <BlogPostCTA label="Falar sobre parcerias" href="/contato" onClick={() => onNavigate('contato')} primary={true} />
         </div>
       </section>
     </div>
   );
 }
-

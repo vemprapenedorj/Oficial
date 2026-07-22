@@ -1,11 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /dashboard/
-Disallow: /login/
-Disallow: /api/
-Disallow: /private/
-Disallow: /tmp/
-Disallow: /cache/
 
 Sitemap: https://vemprapenedo.com.br/sitemap.xml

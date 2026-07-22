@@ -28,10 +28,10 @@ export function FeaturedCard(props: { item: DetailItem, onClick: () => void }) {
           : 'shadow-xl shadow-gray-200/40 hover:shadow-2xl hover:shadow-gray-300/50'
       }`}
     >
-      {(item.isPremium || (item as any).is_premium) && (
+      {(item.isPremium) && (
         <div className="absolute top-4 left-4 z-20">
           <span className="bg-penedo-gold text-black font-black text-[9px] uppercase tracking-tighter px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1">
-            {item.tag_destaque || (item as any).tag_destaque || "Destaque"}
+            {item.badge || (item as any).badge || "Destaque"}
           </span>
         </div>
       )}
@@ -54,8 +54,12 @@ export function FeaturedCard(props: { item: DetailItem, onClick: () => void }) {
         <img 
           src={item.image} 
           alt={item.title}
+          loading="lazy"
+          decoding="async"
           className={`relative z-10 w-full h-full transition-transform duration-1000 group-hover:scale-110 ${
-            item.id === 'hotel-girassol'
+            item.id === 'enoteca-serrana'
+              ? 'object-cover object-[center_75%]'
+              : item.id === 'hotel-girassol'
               ? 'object-contain object-center'
               : ['pequena-finlandia', 'pequena-finlandia-shopping', 'lelu-museu', 'hotel-bertell', 'hotel-britannia', 'hotel-daniela', 'hotel-rio-penedo', 'hotel-do-sino', 'hotel-titanic', 'pousada-chez-nous', 'pousada-penedo', 'pousada-reserva-penedo', 'pousada-terraco', 'pousada-villa-luna', 'vila-francesa-hotel', 'aglio-e-olio', 'bazzini-pizzeria', 'borbulha-penedo', 'botegare', 'braseiro-gaucho', 'casa-do-fritz', 'enoteca-serrana', 'estancia-penedo', 'kaiten-sushi', 'loazo-resto', 'petit-gourmet', 'pizza-da-villa', 'querencia', 'rei-das-trutas', 'restaurante-finlandes', 'truta-viva', 'zero-a-zero'].includes(item.id) 
                 ? 'object-contain object-top' 
