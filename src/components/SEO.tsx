@@ -25,7 +25,12 @@ export default function SEO({
   schema,
 }: SEOProps) {
   const finalCanonical = canonical || url;
-  const testHostnames = ['vemprapenedo.com', 'www.vemprapenedo.com', 'homologacao.vemprapenedo.com'];
+  const testHostnames = [
+    'vemprapenedo.com',
+    'www.vemprapenedo.com',
+    'homologacao.vemprapenedo.com',
+    'homologacao.vemprapenedo.com.br',
+  ];
   const [effectiveRobots, setEffectiveRobots] = useState(robots);
 
   useEffect(() => {

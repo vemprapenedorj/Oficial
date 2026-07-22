@@ -15,12 +15,19 @@ também `SKIP_PRERENDER=true`. Sem essa variável, o build tenta pré-renderizar
 as páginas e, se o Chromium estiver indisponível, publica a versão SPA
 funcional como alternativa.
 
-Em homologação ou no domínio temporário `.com`, mantenha `ALLOW_INDEXING=false`.
+No subdomínio `homologacao.vemprapenedo.com.br`, mantenha
+`ALLOW_INDEXING=false`. As demais URLs podem continuar apontando para o domínio
+oficial nos metadados canônicos.
 
 ## Deploy automático pelo GitHub
 
 A integração da Hostinger do domínio oficial deve acompanhar a branch `main`, executar
 `npm ci` e depois `npm run build`, publicando a pasta `dist/`.
+
+A implantação de testes deve publicar em
+`homologacao.vemprapenedo.com.br`, com `ALLOW_INDEXING=false`. Na Hostinger,
+associe essa implantação à raiz de documentos do subdomínio, e não ao
+`public_html` do domínio oficial.
 
 No GitHub Desktop, revise os arquivos, crie um commit e use **Push origin**.
 A publicação será iniciada pela Hostinger após o push.

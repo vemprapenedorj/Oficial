@@ -30,10 +30,11 @@
 
 <IfModule mod_setenvif.c>
   SetEnvIfNoCase Host "^(homologacao\.)?vemprapenedo\.com(?::[0-9]+)?$" IS_TEST_ENV
+  SetEnvIfNoCase Host "^homologacao\.vemprapenedo\.com\.br(?::[0-9]+)?$" IS_TEST_ENV
 </IfModule>
 
 <IfModule mod_headers.c>
-  # Os ambientes temporários .com nunca devem ser indexados ou arquivados.
+  # Os ambientes de homologação nunca devem ser indexados ou arquivados.
   Header always set X-Robots-Tag "noindex, nofollow, noarchive" env=IS_TEST_ENV
 
   # Set strict cache policies for versioned build assets
@@ -54,9 +55,10 @@
     Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
   </FilesMatch>
 </IfModule>
-# Serve um robots.txt restritivo nos ambientes temporários .com.
+# Serve um robots.txt restritivo nos ambientes de homologação.
 RewriteEngine On
-RewriteCond %{HTTP_HOST} ^(homologacao\.)?vemprapenedo\.com$ [NC]
+RewriteCond %{HTTP_HOST} ^(homologacao\.)?vemprapenedo\.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^homologacao\.vemprapenedo\.com\.br$ [NC]
 RewriteRule ^robots\.txt$ /robots-staging.txt [L]
 
 # HTTPS preserva o host; somente hosts públicos são canonicalizados.
