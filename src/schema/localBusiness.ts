@@ -76,7 +76,7 @@ export const getLocalBusinessSchema = (item: DetailItem) => {
   const titleLower = (item.title || '').toLowerCase();
   const tagsStr = (item.tags || []).join(' ').toLowerCase();
   
-  if (categoryLower === 'gastronomia' || categoryLower === 'restaurantes' || categoryLower === 'carnes') {
+  if (categoryLower === 'gastronomia' || categoryLower === 'restaurantes' || categoryLower === 'carnes' || categoryLower === 'pizzaria') {
     if (tagsStr.includes('café') || tagsStr.includes('cafe') || tagsStr.includes('gelato') || tagsStr.includes('sorvete') || tagsStr.includes('chocolate') || titleLower.includes('café') || titleLower.includes('cafe') || titleLower.includes('chocolate')) {
       baseSchema["@type"] = "CafeOrCoffeeShop";
     } else if (tagsStr.includes('padaria') || tagsStr.includes('doces') || titleLower.includes('padaria')) {

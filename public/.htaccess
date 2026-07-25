@@ -83,8 +83,10 @@ RewriteRule ^hoteis/([^/]+)/?$ /onde-ficar/$1 [R=301,L,NC]
 RewriteRule ^detalhe/expedicao-raizes/?$ /o-que-fazer/expedicao-raizes [R=301,L,NC]
 RewriteRule ^detalhe/rodrigo-dione/?$ /o-que-fazer/rodrigo-dione [R=301,L,NC]
 RewriteRule ^detalhe/pousada-aurora-da-mantiqueira/?$ /onde-ficar/pousada-aurora-da-mantiqueira [R=301,L,NC]
+RewriteRule ^detalhe/pousada-villa-luna/?$ /onde-ficar/pousada-villa-luna [R=301,L,NC]
 RewriteRule ^detalhe/pousada-rainha-da-mata/?$ /onde-ficar/pousada-rainha-da-mata [R=301,L,NC]
 RewriteRule ^detalhe/casa-da-picanha/?$ /gastronomia/casa-da-picanha [R=301,L,NC]
+RewriteRule ^detalhe/pizza-da-villa/?$ /gastronomia/pizza-da-villa [R=301,L,NC]
 
 # Prioriza arquivos e páginas estáticas geradas; as demais URLs válidas são
 # entregues ao React Router pelo index.html.

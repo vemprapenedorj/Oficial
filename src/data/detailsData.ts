@@ -870,11 +870,14 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     },
     {
       "id": "pousada-villa-luna",
+      "slug": "pousada-villa-luna",
       "title": "Pousada Villa Luna",
       "category": "Hospedagem",
+      "isPremium": true,
       "image": "/assets/imagens/logos/logo-pousada-villa-luna.jpg",
-      "description": "Proposta romântica e boutique no coração de Penedo.",
-      "fullInfo": "Localizada na avenida principal, a apenas 200m do centro. Oferece um ambiente harmonioso com jardins, redes, árvores frutíferas e observação de aves. Conta com piscina, sauna, massagens relaxantes e acomodações confortáveis com formatos diferenciados. Atendimento personalizado e exclusivo para quem busca tranquilidade e proximidade do centro.",
+      "description": "O conforto de um hotel com o aconchego e o cuidado de uma pousada familiar.",
+      "descricao_longa": "Nascida em meados dos anos 90, quando a antiga chácara da família se transformou no Hotel Casa Country, a Pousada Villa Luna ganhou novo nome e um novo capítulo dez anos depois. Inspirado na disposição dos chalés e no céu da região, o projeto foi assumido por uma família que escolheu Penedo em busca de qualidade de vida e fez do cuidado com cada detalhe a essência da hospedagem. Hoje, a Villa Luna reúne o conforto de um hotel — com boas instalações, Wi-Fi, serviço de quarto e restaurante — ao aconchego de uma pousada familiar, com atendimento personalizado, enxovais especiais e ambientes pensados para que cada hóspede se sinta em casa.",
+      "fullInfo": "A Pousada Villa Luna nasceu da transformação de uma acolhedora chácara familiar e, ao longo dos anos, ganhou novos projetos sem perder sua essência. Seus chalés e bangalôs oferecem conforto e cuidado em cada detalhe, com colchões e travesseiros selecionados, lençóis de percal bordados à mão, toalhas e roupões macios. A estrutura conta com Wi-Fi, serviço de quarto e restaurante, além de atendimento próximo e personalizado. Localizada na avenida principal, a apenas 200 metros do centro de Penedo, é um refúgio aconchegante para quem valoriza bem-estar, hospitalidade e boas lembranças.",
       "location": "Av. das Mangueiras, 1457",
       "rating": 4.9,
       "whatsapp": "24993173956",
@@ -891,9 +894,18 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "exclusivo",
         "natureza"
       ],
-      "isPremium": false,
       "instagramUrl": "https://www.instagram.com/pousadavillaluna/",
-      "bookingUrl": "https://www.booking.com/hotel/br/pousada-villa-luna.pt-br.html"
+      "bookingUrl": "https://www.booking.com/hotel/br/pousada-villa-luna.pt-br.html",
+      "galeria": [
+        "/assets/imagens/premium/pousada-villa-luna/galeria-1.png",
+        "/assets/imagens/premium/pousada-villa-luna/galeria-2.jpg",
+        "/assets/imagens/premium/pousada-villa-luna/galeria-3.png",
+        "/assets/imagens/premium/pousada-villa-luna/galeria-4.png",
+        "/assets/imagens/premium/pousada-villa-luna/galeria-5.png",
+        "/assets/imagens/premium/pousada-villa-luna/galeria-6.jpg"
+      ],
+      "videoUrl": "https://www.instagram.com/reel/CWbxjbiphUT/",
+      "badge": "Recomendado"
     },
     {
       "id": "vert-hotel",
@@ -2070,14 +2082,18 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     },
     {
       "id": "pizza-da-villa",
+      "slug": "pizza-da-villa",
       "title": "Pizza da Villa",
       "category": "Pizzaria",
+      "isPremium": true,
       "image": "/assets/imagens/logos/logo-pizza-da-villa.jpg",
-      "description": "Pizzas de fermentação natural em forno a lenha.",
-      "fullInfo": "Localizada no coração turístico de Penedo, oferece pizzas com massa de fermentação natural, assadas em forno a lenha, com ingredientes de alta qualidade e sabores exclusivos da região.",
+      "description": "Há 19 anos em Penedo, uma casa onde a pizza é o pretexto e o afeto é o prato principal.",
+      "descricao_longa": "Há 19 anos, a Pizza da Villa escolheu Penedo para manter viva uma tradição familiar que atravessa mais de 150 anos. O segredo dessa história não está apenas nos ingredientes, mas no carinho que Marcelo, Maíla, Érico, Deleon, Joe e toda a equipe colocam em cada etapa. É uma casa feita de raízes, encontros e pessoas que sempre voltam — porque há lugares que se tornam o nosso porto seguro. Aqui, a pizza é o pretexto; o afeto é o prato principal.",
+      "fullInfo": "Há 19 anos em Penedo, a Pizza da Villa preserva uma tradição familiar com mais de 150 anos de história. Em um ambiente aconchegante, cada pizza é preparada com cuidado por uma equipe que transformou a casa em ponto de encontro para famílias e amigos. É o lugar ideal para aniversários, confraternizações e momentos especiais: a Villa cuida do ambiente e das pizzas para que você possa se dedicar ao que realmente importa — celebrar e compartilhar bons momentos com quem ama.",
       "location": "Av. das mangueiras, 1579",
       "hours": "Consulte horários",
       "rating": 4.9,
+      "whatsapp": "24993174013",
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Restaurant_Review-g2427181-d3607740-Reviews-Pizza_da_Villa-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
       "tags": [
         "pizza",
@@ -2091,8 +2107,17 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "família",
         "amigos"
       ],
-      "isPremium": false,
-      "instagramUrl": "https://www.instagram.com/pizzadavillapenedo/"
+      "instagramUrl": "https://www.instagram.com/pizzadavillapenedo/",
+      "galeria": [
+        "/assets/imagens/premium/pizza-da-villa/galeria-1.jpg",
+        "/assets/imagens/premium/pizza-da-villa/galeria-2.jpg",
+        "/assets/imagens/premium/pizza-da-villa/galeria-3.jpg",
+        "/assets/imagens/premium/pizza-da-villa/galeria-4.jpg",
+        "/assets/imagens/premium/pizza-da-villa/galeria-5.jpg",
+        "/assets/imagens/premium/pizza-da-villa/galeria-6.jpg"
+      ],
+      "videoUrl": "https://www.instagram.com/p/C3SuHJjOBVE/",
+      "badge": "Recomendado"
     },
     {
       "id": "querencia",
