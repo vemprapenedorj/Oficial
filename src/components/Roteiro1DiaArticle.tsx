@@ -440,7 +440,7 @@ export function Roteiro1DiaArticle({ onOpenDetail, onNavigate, handleSelectArtic
               As <EstablishmentLink id="tres-cachoeiras" label="Três Cachoeiras" onOpenDetail={onOpenDetail} onOpenConfirm={handleOpenConfirm} /> são indicadas para quem procura acesso simples e um passeio mais leve. Já a <EstablishmentLink id="cachoeira-deus" label="Cachoeira de Deus" onOpenDetail={onOpenDetail} onOpenConfirm={handleOpenConfirm} /> é uma das mais conhecidas da região e entrega uma experiência mais próxima da Mata Atlântica. Para visitá-la, use calçado firme, leve água e redobre a atenção em dias de chuva.
             </p>
             <p>
-              Quem prefere uma vista panorâmica pode incluir o <EstablishmentLink id="pico-do-penedinho" label="Pico do Penedinho" onOpenDetail={onOpenDetail} onOpenConfirm={handleOpenConfirm} /> no roteiro. A trilha exige disposição, mas a paisagem no alto compensa o esforço. Antes de ir, confirme os horários e condições de acesso.
+              Quem prefere uma vista panorâmica pode incluir o <EstablishmentLink id="pico-penedinho" label="Pico do Penedinho" onOpenDetail={onOpenDetail} onOpenConfirm={handleOpenConfirm} /> no roteiro. A trilha exige disposição, mas a paisagem no alto compensa o esforço. Antes de ir, confirme os horários e condições de acesso.
             </p>
 
             {/* Images Block — Natureza */}

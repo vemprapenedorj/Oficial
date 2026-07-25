@@ -180,6 +180,32 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "isPremium": false
     },
     {
+      "id": "pico-penedinho",
+      "title": "Pico do Penedinho",
+      "category": "Natureza",
+      "image": "/assets/imagens/logos/logo-pico-penedinho.jpg",
+      "description": "O mirante mais famoso de Penedo com vista panorâmica espetacular de toda a região.",
+      "fullInfo": "O Pico do Penedinho é um dos pontos turísticos mais emblemáticos de Penedo. Localizado a cerca de 600 metros de altitude, oferece uma vista panorâmica incrível de toda a região, do centro da vila e das montanhas da Serra da Mantiqueira. O acesso à trilha exige autorização prévia (retirada gratuitamente no centro de Penedo). A caminhada até o topo leva cerca de 30 a 40 minutos em trilha de nível moderado.",
+      "location": "Penedo, Itatiaia - RJ",
+      "hours": "09:00 - 15:00 (requer autorização)",
+      "rating": 4.8,
+      "tripadvisorUrl": "https://www.tripadvisor.com.br/Attraction_Review-g2427181-d6436835-Reviews-Pico_Penedinho-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
+      "tags": [
+        "pico",
+        "mirante",
+        "natureza",
+        "trilha",
+        "vista",
+        "montanha",
+        "panorâmica",
+        "penedo",
+        "fotografia",
+        "turismo"
+      ],
+      "isPremium": false,
+      "mapsUrl": "https://maps.app.goo.gl/2iYaNLhTM1zQX2dM8"
+    },
+    {
       "id": "expedicao-raizes",
       "title": "Expedição Raízes da Mantiqueira",
       "category": "Aventura",
@@ -232,7 +258,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "description": "Atendimento personalizado de massoterapia em hotéis e pousadas de Penedo.",
       "fullInfo": "Massagem personalizada em hotéis e pousadas de Penedo, com técnicas voltadas ao relaxamento, alívio das tensões e equilíbrio corporal. Cada atendimento é realizado com cuidado e acolhimento, respeitando as necessidades individuais para proporcionar uma experiência completa de bem-estar.",
       "descricao_longa": "Em Penedo, levo minha expertise em massoterapia aos hotéis e pousadas, proporcionando uma experiência de bem-estar que vai além da técnica. Cada atendimento é cuidadosamente personalizado, com protocolos voltados ao relaxamento, equilíbrio corporal e acolhimento, respeitando as necessidades de cada cliente.",
-      "location": "Atendimento em hotéis e pousadas, Penedo, Itatiaia - RJ",
+      "location": "Shopping dos Esquilos - Sala 104 - Penedo, Itatiaia - RJ",
       "hours": "Atendimento sob agendamento",
       "rating": 5,
       "whatsapp": "24988098075",
@@ -261,7 +287,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "seo_description": "Massoterapia personalizada em hotéis e pousadas de Penedo, com atendimento sob agendamento e foco em relaxamento e bem-estar.",
       "whatsappUrl": "https://wa.me/5524988098075",
       "instagramUrl": "https://www.instagram.com/rodrigodionemassoterapeuta/",
-      "mapsUrl": "https://share.google/Pqn3vUdjBaH7YgokN",
+      "mapsUrl": "https://maps.app.goo.gl/ZV7svHAus2GGK3oR9",
       "videoUrl": "https://www.instagram.com/reel/DUHtyTLDN4_/"
     },
     {
