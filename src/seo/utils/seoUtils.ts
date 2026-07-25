@@ -82,7 +82,7 @@ export function getSubcategoryInfo(item: DetailItem): { subName: string; subSlug
       subName = 'Chalés';
       subSlug = 'chales';
     }
-  } else if (catLower === 'gastronomia' || catLower === 'restaurantes' || catLower === 'carnes') {
+  } else if (catLower === 'gastronomia' || catLower === 'restaurantes' || catLower === 'carnes' || catLower === 'pizzaria') {
     if (titleLower.includes('café') || titleLower.includes('cafe') || tagsStr.includes('café') || tagsStr.includes('cafe') || tagsStr.includes('gelateria') || tagsStr.includes('sorvete') || titleLower.includes('patisserie')) {
       subName = 'Cafés';
       subSlug = 'cafes';

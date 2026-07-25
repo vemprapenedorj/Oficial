@@ -26,7 +26,7 @@ export const InfoCard = React.memo(function InfoCard({ item, onOpen }: InfoCardP
       } else if (cleanFolder === 'rodrigo-dione') {
         cleanFolder = 'rodrigo-massoterapeuta';
       }
-      return `/assets/imagens/premium/${cleanFolder}/galeria-1.jpg`;
+      return item.galeria?.[0] || item.image;
     }
     return item.image;
   }, [item, isPremium]);

@@ -102,8 +102,9 @@ export function PremiumDetailPage({ onNavigate, onOpenDetail }: { onNavigate: (p
         return img;
       });
 
-      // If no gallery images found, generate default galeria-1 to galeria-6
-      if (cleanImages.length === 0) {
+      // Legacy premium entries without an explicit gallery use the conventional
+      // filenames. An explicit empty gallery is intentional and stays empty.
+      if (cleanImages.length === 0 && item.galeria === undefined) {
         for (let i = 1; i <= 6; i++) {
           cleanImages.push(`${prefix}galeria-${i}.jpg`);
         }
@@ -289,7 +290,7 @@ export function PremiumDetailPage({ onNavigate, onOpenDetail }: { onNavigate: (p
     if (catLower === 'hospedagem' || catLower === 'onde-ficar') {
       nearPlacesCat = 'gastronomia';
       secondaryCat = 'o-que-fazer';
-    } else if (catLower === 'gastronomia' || catLower === 'restaurantes') {
+    } else if (catLower === 'gastronomia' || catLower === 'restaurantes' || catLower === 'carnes' || catLower === 'pizzaria') {
       nearPlacesCat = 'onde-ficar';
       secondaryCat = 'o-que-fazer';
     } else {
@@ -324,7 +325,7 @@ export function PremiumDetailPage({ onNavigate, onOpenDetail }: { onNavigate: (p
         title: 'As Melhores Hospedagens em Penedo RJ',
         description: 'Encontre pousadas charmosas, chalés privativos e hotéis incríveis para sua viagem.'
       };
-    } else if (catLower === 'gastronomia' || catLower === 'restaurantes') {
+    } else if (catLower === 'gastronomia' || catLower === 'restaurantes' || catLower === 'carnes' || catLower === 'pizzaria') {
       recommendedBlog = {
         id: 'restaurantes',
         title: 'Onde Comer em Penedo: Experiências Gastronômicas',
@@ -358,7 +359,7 @@ export function PremiumDetailPage({ onNavigate, onOpenDetail }: { onNavigate: (p
   const itemCategory = item.category?.toLowerCase() || '';
   const categoryCleanPath = (itemCategory === 'hospedagem' || itemCategory === 'onde-ficar')
     ? 'onde-ficar'
-    : (itemCategory === 'gastronomia' || itemCategory === 'carnes' || itemCategory === 'restaurantes')
+    : (itemCategory === 'gastronomia' || itemCategory === 'carnes' || itemCategory === 'restaurantes' || itemCategory === 'pizzaria')
       ? 'gastronomia'
       : (itemCategory === 'compras' || itemCategory === 'lojas')
         ? 'compras'
@@ -366,7 +367,7 @@ export function PremiumDetailPage({ onNavigate, onOpenDetail }: { onNavigate: (p
 
   const categoryLabel = (itemCategory === 'hospedagem' || itemCategory === 'onde-ficar')
     ? 'Onde Ficar'
-    : (itemCategory === 'gastronomia' || itemCategory === 'carnes' || itemCategory === 'restaurantes')
+    : (itemCategory === 'gastronomia' || itemCategory === 'carnes' || itemCategory === 'restaurantes' || itemCategory === 'pizzaria')
       ? 'Gastronomia'
       : (itemCategory === 'compras' || itemCategory === 'lojas')
         ? 'Compras'

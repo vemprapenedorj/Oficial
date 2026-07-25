@@ -80,7 +80,7 @@ export const getBusinessSEOTemplate = (item: DetailItem) => {
   const itemCategory = item.category?.toLowerCase() || '';
   const categoryCleanPath = (itemCategory === 'hospedagem' || itemCategory === 'onde-ficar')
     ? 'onde-ficar'
-    : (itemCategory === 'gastronomia' || itemCategory === 'carnes' || itemCategory === 'restaurantes')
+    : (itemCategory === 'gastronomia' || itemCategory === 'carnes' || itemCategory === 'restaurantes' || itemCategory === 'pizzaria')
       ? 'gastronomia'
       : (itemCategory === 'compras' || itemCategory === 'lojas')
         ? 'compras'
@@ -88,7 +88,7 @@ export const getBusinessSEOTemplate = (item: DetailItem) => {
 
   const categoryLabel = (itemCategory === 'hospedagem' || itemCategory === 'onde-ficar')
     ? 'Onde Ficar'
-    : (itemCategory === 'gastronomia' || itemCategory === 'carnes' || itemCategory === 'restaurantes')
+    : (itemCategory === 'gastronomia' || itemCategory === 'carnes' || itemCategory === 'restaurantes' || itemCategory === 'pizzaria')
       ? 'Gastronomia'
       : (itemCategory === 'compras' || itemCategory === 'lojas')
         ? 'Compras'
@@ -102,7 +102,7 @@ export const getBusinessSEOTemplate = (item: DetailItem) => {
   let prefix = 'Local';
   if (catLower === 'hospedagem' || catLower === 'onde-ficar') {
     prefix = name.toLowerCase().includes('pousada') ? 'Pousada em Penedo RJ' : 'Hotel em Penedo RJ';
-  } else if (catLower === 'gastronomia' || catLower === 'restaurantes' || catLower === 'carnes') {
+  } else if (catLower === 'gastronomia' || catLower === 'restaurantes' || catLower === 'carnes' || catLower === 'pizzaria') {
     prefix = 'Restaurante em Penedo RJ';
   } else if (catLower === 'compras' || catLower === 'lojas') {
     prefix = 'Compras em Penedo RJ';
