@@ -2116,7 +2116,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "/assets/imagens/premium/pizza-da-villa/galeria-5.jpg",
         "/assets/imagens/premium/pizza-da-villa/galeria-6.jpg"
       ],
-      "videoUrl": "https://www.instagram.com/p/C3SuHJjOBVE/",
+      "videoUrl": "https://www.instagram.com/reel/DWCCNWMjPOk/",
       "badge": "Recomendado"
     },
     {
