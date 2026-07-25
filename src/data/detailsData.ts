@@ -117,7 +117,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Attraction_Review-g2427181-d4706334-Reviews-Pequena_Finlandia-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
       "tags": [
         "papai noel",
-        "compras",
         "artesanato",
         "chocolate",
         "finlândia",
@@ -1710,7 +1709,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "borbulha-penedo",
       "title": "Borbulha de Penedo",
-      "category": "Gastronomia",
+      "category": "Contemporânea & Drinks",
       "image": "/assets/imagens/logos/logo-borbulha-penedo.jpg",
       "description": "Ambiente climatizado com tradicional coleção de discos de vinil.",
       "fullInfo": "Borbulha de Penedo foi inaugurado em 05 de junho de 2019. Possui vários ambientes, com serviço a la Carte. Ambiente climatizado e com a tradicional coleção de Discos de Vinil.",
@@ -1880,7 +1879,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "doces",
         "chocolates artesanais",
         "presentes",
-        "gastronomia",
         "centro de Penedo"
       ]
     },
@@ -2022,7 +2020,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "loazo-resto",
       "title": "Loazô Restô",
-      "category": "Gastronomia",
+      "category": "Contemporânea",
       "image": "/assets/imagens/logos/logo-loazo-resto.jpg",
       "description": "Restaurante familiar no Alto Penedo.",
       "fullInfo": "O Loazô Restô oferece um ambiente familiar e acolhedor no Alto Penedo. Aceita cartão de crédito e oferece serviços para levar e restaurante privativo.",
@@ -2152,7 +2150,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "restaurante-finlandes",
       "title": "Restaurante Korvapuusti",
-      "category": "Gastronomia",
+      "category": "Culinária Finlandesa",
       "image": "/assets/imagens/logos/logo-restaurante-finlandes.jpg",
       "description": "O melhor da culinária nórdica e trutas.",
       "fullInfo": "Especializado em trutas e pratos típicos finlandeses, o Korvapuusti é uma parada obrigatória para quem quer conhecer a história através do paladar.",
@@ -2233,7 +2231,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "tonttulakki-suklaat",
       "title": "Tonttulakki Suklaat",
-      "category": "Gastronomia",
+      "category": "Chocolateria",
       "image": "/assets/imagens/logos/logo-tonttulakki-suklaat.jpg",
       "description": "Chocolates artesanais com o verdadeiro sabor finlandês.",
       "fullInfo": "Chocolates artesanais com o verdadeiro sabor finlandês.",
@@ -2247,7 +2245,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "finlandês",
         "doces",
         "sobremesa",
-        "gastronomia",
         "centro"
       ],
       "isPremium": false,
@@ -2256,7 +2253,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "lugano-penedo",
       "title": "Lugano Penedo",
-      "category": "Gastronomia",
+      "category": "Chocolateria & Cafés",
       "image": "/assets/imagens/logos/logo-lugano-penedo.jpg",
       "description": "A tradição do chocolate de Gramado agora em Penedo.",
       "fullInfo": "A tradição do chocolate de Gramado agora em Penedo.",
@@ -2270,7 +2267,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "artesanal",
         "doces",
         "sobremesa",
-        "gastronomia",
         "café",
         "centro"
       ],
@@ -2280,7 +2276,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "lolita-penedo",
       "title": "Lolita Penedo",
-      "category": "Gastronomia",
+      "category": "Doces & Cafés",
       "image": "/assets/imagens/logos/logo-lolita-penedo.jpg",
       "description": "Cafeteria charmosa com doces e sobremesas inesquecíveis.",
       "fullInfo": "Cafeteria charmosa com doces e sobremesas inesquecíveis.",
@@ -2294,7 +2290,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "sobremesas",
         "café",
         "charmoso",
-        "gastronomia",
         "centro"
       ],
       "isPremium": false,
@@ -2303,7 +2298,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "kahvila-cafe",
       "title": "Kahvila Café",
-      "category": "Gastronomia",
+      "category": "Cafés",
       "image": "/assets/imagens/logos/logo-kahvila-cafe.jpg",
       "description": "Ambiente acolhedor para o seu café da tarde.",
       "fullInfo": "Ambiente acolhedor para o seu café da tarde.",
@@ -2315,7 +2310,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "cafeteria",
         "acolhedor",
         "café da tarde",
-        "gastronomia",
         "centro"
       ],
       "isPremium": false,
@@ -2324,7 +2318,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "santa-claus-burger",
       "title": "Santa Claus Burger",
-      "category": "Gastronomia",
+      "category": "Hamburgueria",
       "image": "/assets/imagens/logos/logo-santa-claus-burger.jpg",
       "description": "Hamburgueria de excelência ao lado da Pequena Finlândia. Sabor e qualidade com nota 4.8!",
       "fullInfo": "Localizada no coração de Penedo, a poucos passos da Casa do Papai Noel, o Santa Claus Burger é uma das hamburguerias mais bem avaliadas da região. Com um ambiente agradável (acessível para cadeirantes e com estacionamento gratuito), é o lugar perfeito para famílias e grupos. Eles oferecem opções para comer no local, delivery e retirada, além de um cardápio incrível de sobremesas e lanches que agradam adultos e crianças.",
@@ -2353,7 +2347,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "maria-cuisine",
       "title": "Maria Cuisine de Famille",
-      "category": "Gastronomia",
+      "category": "Contemporânea",
       "image": "/assets/imagens/logos/logo-maria-cuisine.jpg",
       "description": "Alta gastronomia, ambiente acolhedor e carta de vinhos selecionada na principal avenida de Penedo.",
       "fullInfo": "Localizado na Av. das Mangueiras, o Maria Cuisine de Famille é sinônimo de excelência em Penedo, ostentando uma avaliação quase perfeita (4.9 estrelas). O restaurante se destaca por oferecer pratos refinados de dar água na boca, excelentes opções vegetarianas, coquetéis artesanais e uma ótima carta de vinhos. O ambiente é acolhedor e impecável, ideal para jantares românticos a dois ou celebrações em família. Eles aceitam reservas e possuem estacionamento próprio gratuito no local.",
@@ -2383,7 +2377,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "vanilla-patisserie",
       "title": "Vanilla Pâtisserie",
-      "category": "Gastronomia",
+      "category": "Confeitaria & Cafés",
       "image": "/assets/imagens/logos/logo-vanilla-patisserie.jpg",
       "description": "Doces finos, artesanais e sobremesas irresistíveis. A parada perfeita para o seu café da tarde em Penedo.",
       "fullInfo": "Localizada de forma charmosa no subsolo do Maria Cuisine, na movimentada Av. das Mangueiras, a Vanilla Pâtisserie é um verdadeiro pedacinho da França em Penedo. Com uma avaliação de excelência (4.8 estrelas), o local encanta pelos doces finos, tortas, sobremesas delicadas e cafés deliciosos. É o ambiente perfeito para aquela pausa relaxante durante o seu passeio pela cidade. O espaço conta com ótimo atendimento e aceita diversas formas de pagamento, incluindo cartões e aproximação (NFC). Funciona de terça a domingo!",
@@ -2399,7 +2393,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "tortas",
         "subsolo",
         "frança",
-        "gastronomia",
         "chique"
       ],
       "isPremium": false,
@@ -2410,7 +2403,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "delicias-da-carol",
       "title": "Delicias da Carol",
-      "category": "Gastronomia",
+      "category": "Cafés & Doces",
       "image": "/assets/imagens/logos/logo-delicias-da-carol.jpg",
       "description": "Cafeteria charmosa e super bem avaliada na principal avenida de Penedo. Doces, cafés e muito sabor!",
       "fullInfo": "Localizada na movimentada Av. das Mangueiras, a Delicias da Carol é o refúgio perfeito para os amantes de um bom café. Com uma avaliação impressionante de 4.9 estrelas, o espaço é famoso por seu atendimento acolhedor, doces divinos e ambiente familiar (ótimo para ir com crianças). Além dos tradicionais cafés, eles também servem vinhos para relaxar no fim de tarde. O local conta com entrada com acessibilidade, aceita pagamentos via cartão e aproximação (NFC), e funciona todos os dias da semana (com horário estendido até às 23h aos sábados!).",
@@ -2427,7 +2420,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "kids",
         "acessível",
         "nfc",
-        "gastronomia",
         "av. das mangueiras"
       ],
       "isPremium": false,
@@ -2439,7 +2431,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "fue-gelateria",
       "title": "Fuê Gelateria",
-      "category": "Gastronomia",
+      "category": "Gelateria & Sorvetes",
       "image": "/assets/imagens/logos/logo-fue-gelateria.jpg",
       "description": "Gelatos artesanais deliciosos e cafés especiais no coração da Pequena Finlândia!",
       "fullInfo": "Localizada na charmosa Rua das Velas, bem no centro da Pequena Finlândia, a Fuê Gelateria é parada obrigatória para se refrescar e adoçar o passeio. Com quase mil avaliações positivas, o local é famoso por seus gelatos cremosos e artesanais, mas também serve ótimos cafés. O espaço é perfeito para famílias e crianças, conta com Wi-Fi gratuito e entrada acessível para cadeirantes. Funcionam todos os dias da semana, com horários estendidos até as 23h aos sábados. Aceitam todos os cartões e pagamentos por aproximação (NFC)!",
@@ -2458,8 +2450,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "família",
         "wi-fi",
         "acessível",
-        "nfc",
-        "gastronomia"
+        "nfc"
       ],
       "isPremium": false,
       "whatsappUrl": "https://wa.me/5524992494399",
@@ -2470,7 +2461,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "cafe-finlandes-penedo",
       "title": "Café Finlandês Penedo",
-      "category": "Gastronomia",
+      "category": "Cafés & Doces",
       "image": "/assets/imagens/logos/logo-cafe-finlandes-penedo.jpg",
       "description": "O autêntico sabor de Penedo! Cafés, doces, refeições completas e ambiente Pet Friendly na Av. das Mangueiras.",
       "fullInfo": "Localizado no fervo da Av. das Mangueiras (nº 1645), o Café Finlandês Penedo é um dos locais mais tradicionais e amados da cidade (com mais de 1.200 avaliações!). Muito mais que uma cafeteria, o espaço oferece um cardápio completo que vai do café da manhã até o jantar, incluindo deliciosas sobremesas, fondues, vinhos e drinks. O ambiente é super acolhedor, conta com agradáveis mesas ao ar livre, é totalmente acessível para cadeirantes e é Pet Friendly (seu cachorrinho é muito bem-vindo!). Aceitam reservas e funcionam todos os dias, das 08h30 às 22h.",
@@ -2489,8 +2480,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "pet friendly",
         "acessível",
         "av. das mangueiras",
-        "reservas",
-        "gastronomia"
+        "reservas"
       ],
       "isPremium": false,
       "whatsappUrl": "https://wa.me/5524998634222",
@@ -2501,7 +2491,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "andicaro-penedo-cafes-especiais",
       "title": "Andicarô Penedo - Cafés Especiais",
-      "category": "Cafeteria / Cafés Especiais",
+      "category": "Cafés Especiais",
       "isPremium": false,
       "rating": 4.8,
       "image": "/assets/imagens/logos/logo-andicaro-penedo.jpg",
@@ -2525,7 +2515,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "emporio-chamoun",
       "title": "Empório Chamoun",
-      "category": "Gastronomia",
+      "category": "Produtos Árabes",
       "image": "/assets/imagens/logos/logo-emporio-chamoun-hd.png",
       "description": "Empório com produtos árabes e iguarias artesanais selecionadas em Penedo.",
       "fullInfo": "O Empório Chamoun oferece uma seleção exclusiva de produtos árabes, iguarias selecionadas, temperos, azeites e acepipes especiais no coração de Penedo. Perfeito para apreciar sabores autênticos e levar produtos de alta qualidade.",
@@ -2538,17 +2528,15 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "tags": [
         "empório",
         "produtos árabes",
-        "gastronomia",
         "iguarias",
         "penedo",
-        "compras",
         "sabores"
       ]
     },
     {
       "id": "culto-cafe",
       "title": "Culto Café",
-      "category": "Cafeteria / Cafés Especiais",
+      "category": "Cafés Especiais",
       "image": "/assets/imagens/logos/logo-culto-cafe-hd.png",
       "description": "Cafés especiais, métodos de extração e doces artesanais em Penedo.",
       "fullInfo": "O Culto Café é um refúgio para apreciadores de boa gastronomia e cafés especiais em Penedo. Com grãos selecionados, variados métodos de preparo, tortas artesanais, salgados e ambiente super aconchegante, proporciona uma experiência sensorial única.",
@@ -2565,7 +2553,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "cafeteria",
         "doces",
         "tortas",
-        "gastronomia",
         "penedo",
         "aconchegante"
       ]
@@ -2573,7 +2560,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "cantinho-mineiro-tia-lili",
       "title": "Cantinho Mineiro da Tia Lili",
-      "category": "Comida Mineira / Gastronomia",
+      "category": "Comida Mineira",
       "image": "/assets/imagens/logos/logo-cantinho-mineiro-tia-lili-hd.png",
       "description": "Autêntica comida mineira no fogão a lenha, feita com carinho e tradição em Penedo.",
       "fullInfo": "O Cantinho Mineiro da Tia Lili é o refúgio perfeito para quem ama a verdadeira culinária mineira em Penedo. Pratos fartos, tempero caseiro inconfundível, quitutes tradicionais e sobremesas típicas servidas em um ambiente acolhedor e familiar.",
@@ -2588,7 +2575,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "comida mineira",
         "fogão a lenha",
         "almoço",
-        "gastronomia",
         "penedo",
         "família",
         "tempero caseiro"
@@ -2597,7 +2583,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "esquina-da-serra",
       "title": "Esquina da Serra Penedo",
-      "category": "Gastronomia / Restaurante",
+      "category": "Carnes & Petiscos",
       "image": "/assets/imagens/logos/logo-esquina-da-serra-hd.png",
       "description": "Restaurante acolhedor no coração de Penedo, com pratos variados, porções e bebidas geladas.",
       "fullInfo": "O Esquina da Serra reúne sabor, boa música e ambiente descontraído em Penedo. Com cardápio variado de pratos a la carte, carnes, petiscos e drinks especiais, é o ponto de encontro ideal para almoço ou jantar em família e amigos.",
@@ -2610,7 +2596,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "tripadvisorUrl": "https://www.tripadvisor.pt/Restaurant_Review-g2348871-d27227063-Reviews-Esquina_Da_Serra_Penedo-Itatiaia_State_of_Rio_de_Janeiro.html",
       "tags": [
         "restaurante",
-        "gastronomia",
         "almoço",
         "jantar",
         "drinks",
@@ -2621,7 +2606,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "quatro-marias-boulangerie",
       "title": "Quatro Marias Boulangerie",
-      "category": "Boulangerie & Cafeteria",
+      "category": "Boulangerie & Pães",
       "image": "/assets/imagens/logos/logo-quatro-marias-boulangerie.jpg",
       "description": "Padaria artesanal francesa com pães de fermentação natural, croissants e cafés em Penedo.",
       "fullInfo": "A Quatro Marias Boulangerie traz o verdadeiro charme das padarias francesas para Penedo. Pães artesanais de fermentação natural (levain), croissants folhados, quiches, doces finos e cafés especiais preparados na hora em um espaço sofisticado e aconchegante.",
@@ -2638,14 +2623,13 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "croissant",
         "café",
         "fermentação natural",
-        "gastronomia",
         "penedo"
       ]
     },
     {
       "id": "grao-padaria-penedo",
       "title": "Grão Padaria Penedo",
-      "category": "Padaria & Cafeteria / Gastronomia",
+      "category": "Padaria & Cafés",
       "image": "/assets/imagens/logos/logo-grao-padaria-penedo-hd.png",
       "description": "Padaria artesanal, pães frescos, cafés especiais e delícias matinais em Penedo.",
       "fullInfo": "A Grão Padaria Penedo oferece pães artesanais fresquinhos todos os dias, salgados saborosos, doces finos e cafés especiais selecionados. O lugar perfeito para um café da manhã reforçado ou um lanche da tarde aconchegante em Penedo.",
@@ -2661,14 +2645,13 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "pães artesanais",
         "cafeteria",
         "doces",
-        "gastronomia",
         "penedo"
       ]
     },
     {
       "id": "rei-da-villa",
       "title": "Rei da Villa",
-      "category": "Gastronomia / Restaurante",
+      "category": "Restaurante & Petiscos",
       "image": "/assets/imagens/logos/logo-rei-da-vila-hd.png",
       "description": "Restaurante saboroso com pratos artesanais, petiscos e bebidas em Penedo.",
       "fullInfo": "O Rei da Villa é uma excelente opção gastronômica em Penedo, servindo refeições completas, pratos a la carte variados, porções caprichadas e bebidas geladas em um ambiente acolhedor no coração da vila.",
@@ -2680,7 +2663,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "mapsUrl": "https://maps.app.goo.gl/y9AHZqVfEENSpsSg9",
       "tags": [
         "restaurante",
-        "gastronomia",
         "almoço",
         "jantar",
         "petiscos",
@@ -2705,7 +2687,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "natal",
         "arquitetura",
         "finlândia",
-        "compras",
         "artesanato",
         "turismo",
         "casa do papai noel"
@@ -2730,8 +2711,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "sombrinhas",
         "chocolates",
         "cachaça",
-        "lúdico",
-        "compras"
+        "lúdico"
       ],
       "isPremium": false,
       "instagramUrl": "https://www.instagram.com/vale_dos_duendes_penedorj/"
@@ -2752,7 +2732,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "elevador",
         "variedade",
         "centro",
-        "compras",
         "moda",
         "geek"
       ],
@@ -2770,9 +2749,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "rating": 4.5,
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Attraction_Review-g2427181-d15143761-Reviews-Shopping_Azul-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
       "tags": [
-        "compras",
         "artesanato",
-        "gastronomia",
         "presentes",
         "centro",
         "produtos típicos",
@@ -2792,13 +2769,11 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Attraction_Review-g2427181-d18344322-Reviews-Shopping_do_Esquilo-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
       "tags": [
         "esquilo",
-        "compras",
         "tradicional",
         "entrada",
         "artesanato",
         "esotérico",
         "moda",
-        "gastronomia",
         "estacionamento",
         "família"
       ],
@@ -2808,7 +2783,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "armazem-da-vila",
       "title": "Armazém da Vila",
-      "category": "Compras",
+      "category": "Sabores & Artesanato",
       "image": "/assets/imagens/logos/logo-armazem-da-vila.jpg",
       "description": "Loja charmosa localizada no coração da Pequena Finlândia. Perfeita para suas compras em Penedo.",
       "fullInfo": "O Armazém da Vila está estrategicamente localizado na Rua das Velas, dentro do icônico shopping Pequena Finlândia (pertinho da Casa do Papai Noel). É uma parada obrigatória no roteiro de quem deseja levar um pedacinho de Penedo para casa! O espaço é acessível para cadeirantes, possui ótimo atendimento (nota 4.5) e funciona todos os dias da semana, com horário estendido aos finais de semana para sua comodidade. A melhor Pasta de Truta da região 🧡\n🔸 + de 50 sabores\n🔸Fabricação Própria\n📍Penedo e Maringá - RJ",
@@ -2822,7 +2797,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "pequena finlândia",
         "centro",
         "artesanato",
-        "compras",
         "sabores",
         "fabricação própria",
         "turismo"
@@ -2836,7 +2810,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "geek-penedo",
       "title": "Geek Penedo",
-      "category": "Compras",
+      "category": "Colecionáveis & Geek",
       "image": "/assets/imagens/logos/logo-geek-penedo.jpg",
       "description": "O paraíso dos colecionáveis e presentes criativos! A melhor loja nerd e geek de Penedo.",
       "fullInfo": "Localizada na movimentada Av. das Mangueiras, bem pertinho da Casa do Papai Noel, a Geek Penedo é parada obrigatória para os fãs de cultura pop, animes, filmes e séries. É uma excelente opção para encontrar presentes super criativos e lembranças únicas na cidade. A loja oferece ótimo atendimento e aceita diversas formas de pagamento, incluindo cartões e aproximação (NFC). Eles funcionam de quinta a segunda-feira, com horários estendidos até mais tarde nos finais de semana!",
@@ -2854,7 +2828,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "séries",
         "presentes",
         "av. das mangueiras",
-        "compras",
         "nfc"
       ],
       "isPremium": false,
@@ -2865,7 +2838,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "astral-exotheryca",
       "title": "Astral Exothéryca",
-      "category": "Compras",
+      "category": "Esotérico & Cristais",
       "image": "/assets/imagens/logos/logo-astral-exotheryca.jpg",
       "description": "Loja mágica e mística na entrada de Penedo. Encontre cristais, incensos e presentes especiais.",
       "fullInfo": "Localizada logo na entrada de Penedo, a Astral Exothéryca é uma loja encantadora e super bem avaliada pelos visitantes. O espaço é totalmente dedicado a artigos esotéricos, cristais, incensos, peças indianas, decoração e produtos místicos. É o lugar perfeito para renovar as energias e encontrar presentes com muito significado. A loja oferece estacionamento acessível e aceita pagamentos via cartão e aproximação (NFC). Aberta de quarta a segunda, das 11h às 19h!",
@@ -2881,7 +2854,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "decoração",
         "peças indianas",
         "bem-estar",
-        "compras",
         "entrada",
         "estacionamento"
       ],
@@ -2894,7 +2866,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "via-lactea-balas",
       "title": "Via-Láctea Loja das Balas",
-      "category": "Compras",
+      "category": "Balas & Doces",
       "image": "/assets/imagens/logos/logo-via-lactea-balas.jpg",
       "description": "O paraíso das guloseimas na Pequena Finlândia! Uma infinidade de balas, chocolates e doces a granel.",
       "fullInfo": "Localizada na charmosa Rua das Velas, bem dentro da Pequena Finlândia, a Via-Láctea Loja das Balas é o verdadeiro paraíso para crianças e adultos. Com excelente avaliação dos visitantes, a loja oferece uma variedade incrível de balas, doces importados, chocolates e guloseimas a granel para você montar o seu próprio mix. O espaço é acessível para cadeirantes, possui ótimo atendimento e funciona todos os dias, com horário estendido até as 22h às sextas e sábados. Aceita cartões e pagamentos por aproximação (NFC). Uma parada obrigatória e doce no seu roteiro!",
@@ -2911,7 +2883,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "pequena finlândia",
         "kids",
         "crianças",
-        "compras",
         "acessível"
       ],
       "isPremium": false,
@@ -2922,7 +2893,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "arte-da-nossa-terra",
       "title": "Arte da Nossa Terra",
-      "category": "Compras",
+      "category": "Artesanato & Presentes",
       "image": "/assets/imagens/logos/logo-arte-da-nossa-terra.jpg",
       "description": "Loja charmosa na Rua das Velas. Encontre as melhores lembrancinhas e artesanatos locais de Penedo!",
       "fullInfo": "A \"Arte da Nossa Terra\" é uma loja de presentes encantadora localizada na famosa Rua das Velas, bem coladinha na Pequena Finlândia e na Casa do Papai Noel. É o local perfeito para você encontrar aquela lembrancinha especial, artigos de decoração e produtos de artesanato para levar como recordação de Penedo. Eles oferecem ótimo atendimento, aceitam pagamentos via cartões de crédito, débito e aproximação (NFC). A loja funciona de quinta a segunda-feira, com horário estendido até as 22h aos sábados para sua maior comodidade!",
@@ -2937,7 +2908,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "rua das velas",
         "pequena finlândia",
         "centro",
-        "compras",
         "nfc"
       ],
       "isPremium": false,
@@ -2949,7 +2919,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "reserva-da-mata",
       "title": "Reserva Da Mata",
-      "category": "Compras",
+      "category": "Moda & Vestuário",
       "image": "/assets/imagens/logos/logo-reserva-da-mata.jpg",
       "description": "Loja de roupas e acessórios com muito estilo, com localização privilegiada na Av. das Mangueiras.",
       "fullInfo": "Localizada no coração da Avenida das Mangueiras (bem em frente à Pequena Finlândia e ao lado da Casa do Fritz), a Reserva Da Mata é uma excelente loja de moda e vestuário em Penedo. Com ótima avaliação dos visitantes (4.6 estrelas), a loja oferece peças cheias de estilo, conforto e bom gosto, sendo uma parada perfeita para quem adora renovar o guarda-roupa ou comprar presentes durante a viagem. O espaço conta com excelente atendimento e aceita diversas formas de pagamento, incluindo cartões de débito e aproximação (NFC).",
@@ -2963,7 +2933,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "estilo",
         "presentes",
         "av. das mangueiras",
-        "compras",
         "nfc",
         "atendimento"
       ],
@@ -2976,7 +2945,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "meu-sonho",
       "title": "Meu Sonho",
-      "category": "Compras",
+      "category": "Presentes & Lembranças",
       "image": "/assets/imagens/logos/logo-meu-sonho-card.jpg",
       "description": "Loja encantadora no Shopping Vale dos Duendes, ideal para presentes e lembranças de Penedo.",
       "fullInfo": "Localizada no coração de Penedo, dentro do Shopping Vale dos Duendes (na movimentada Av. das Mangueiras), a loja \"Meu Sonho\" faz jus ao nome. O espaço é perfeito para quem busca opções de presentes, artigos locais e lembrancinhas encantadoras. Com uma localização privilegiada perto da Casa do Papai Noel, a loja abre todos os dias da semana e conta com horário de funcionamento estendido até as 22h aos sábados. Eles aceitam pagamentos via cartões de crédito, débito e aproximação (NFC).",
@@ -2988,7 +2957,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "lembrancinhas",
         "vale dos duendes",
         "shopping",
-        "compras",
         "av. das mangueiras",
         "nfc"
       ],
@@ -3001,7 +2969,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "artevelas",
       "title": "Artevelas",
-      "category": "Compras",
+      "category": "Velas Artesanais",
       "image": "/assets/imagens/logos/logo-artevelas.jpg",
       "description": "Loja especializada em velas artesanais e perfumadas na Av. das Mangueiras. O presente perfeito!",
       "fullInfo": "Localizada na movimentada Av. das Mangueiras, bem pertinho da Pequena Finlândia, a Artevelas é uma loja super tradicional de Penedo. O espaço é especializado na venda de velas artesanais, aromáticas, decorativas e artigos charmosos para a casa. É o lugar perfeito para encontrar um presente especial e perfumado para levar de lembrança da viagem! A loja funciona todos os dias da semana, com horários estendidos até as 22h nas sextas e sábados para sua comodidade. Aceitam diversas formas de pagamento, incluindo cartões e aproximação (NFC).",
@@ -3017,7 +2985,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "aromas",
         "presentes",
         "av. das mangueiras",
-        "compras",
         "nfc"
       ],
       "isPremium": false,
@@ -3029,7 +2996,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "raio-de-luz-decoracoes",
       "title": "Raio de Luz - Tapeçarias e Decorações",
-      "category": "Compras",
+      "category": "Tapeçaria & Decoração",
       "image": "/assets/imagens/logos/logo-raio-de-luz-decoracoes.jpg",
       "description": "Loja especializada em belíssimas tapeçarias, móveis e artigos de decoração na Av. das Mangueiras.",
       "fullInfo": "Localizada na movimentada Av. das Mangueiras (bem em frente ao Café Finlandês e pertinho da Pequena Finlândia), a Raio de Luz é a loja ideal para quem busca renovar o ambiente de casa. Com excelente avaliação dos clientes (4.5 estrelas), o espaço oferece uma curadoria incrível de tapeçarias exclusivas, móveis charmosos e artigos finos de decoração. É o lugar perfeito para comprar peças únicas e levar um pouco da elegância de Penedo para o seu lar. Aceitam diversas formas de pagamento, como cartões de crédito, débito e aproximação (NFC).",
@@ -3043,7 +3010,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "casa",
         "artigos finos",
         "av. das mangueiras",
-        "compras",
         "nfc"
       ],
       "isPremium": false,
@@ -3054,7 +3020,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "emporio-haru",
       "title": "Emporio Haru",
-      "category": "Empório / Produtos Orientais",
+      "category": "Produtos Orientais",
       "image": "/assets/imagens/logos/logo-emporio-haru.jpg",
       "description": "Loja de produtos orientais e importados em Penedo, com snacks, lámens, doces, balas e itens diferenciados para quem busca sabores asiáticos.",
       "fullInfo": "Loja de produtos orientais e importados em Penedo, com snacks, lámens, doces, balas e itens diferenciados para quem busca sabores asiáticos.",
@@ -3071,14 +3037,13 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "lámen",
         "doces",
         "balas",
-        "empório",
-        "compras"
+        "empório"
       ]
     },
     {
       "id": "rosana-balas-coco",
       "title": "Rosana Balas de Coco",
-      "category": "Doces & Lembranças",
+      "category": "Balas de Coco",
       "image": "/assets/imagens/logos/logo-rosana-balas-coco-hd.png",
       "description": "Famosas balas de coco artesanais recheadas e derretendo na boca em Penedo.",
       "fullInfo": "As tradicionais Balas de Coco da Rosana são um sucesso em Penedo. Feitas de forma 100% artesanal, super macias e com recheios variados e irresistíveis. Uma parada obrigatória para quem busca doces artesanais inesquecíveis e ótimas lembranças de Penedo.",
@@ -3093,7 +3058,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "doces artesanais",
         "sobremesa",
         "presentes",
-        "compras",
         "penedo",
         "lembranças"
       ]
@@ -3101,7 +3065,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "from-penedo-delicatessen",
       "title": "From Penedo Delicatessen",
-      "category": "Delicatessen & Presentes",
+      "category": "Delicatessen",
       "image": "/assets/imagens/logos/logo-from-penedo-delicatessen-hd.png",
       "description": "Loja conceito com vinhos, queijos, embutidos e produtos artesanais de Penedo.",
       "fullInfo": "From Penedo é uma delicatessen charmosa reunindo o melhor da gastronomia artesanal da serra: queijos selecionados, vinhos, charcutaria, geleias, licores e lembranças exclusivas da região. Perfeito para montar cestas e presentes especiais.",
@@ -3117,7 +3081,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "queijos",
         "produtos locais",
         "presentes",
-        "compras",
         "penedo"
       ]
     }
@@ -3180,7 +3143,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "fullInfo": "Onde comer bem na cidade: das trutas famosas aos cafés coloniais.",
       "tags": [
         "restaurantes",
-        "gastronomia",
         "comida"
       ],
       "date": "22/06/2026"

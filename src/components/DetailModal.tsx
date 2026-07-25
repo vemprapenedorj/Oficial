@@ -27,8 +27,8 @@ export function DetailModal({ item, onClose }: { item: DetailItem | null, onClos
 
   const getWhatsAppMessage = () => {
     const isLodging = item.category === 'Hospedagem';
-    const foodCategories = ['Gastronomia', 'Italiana', 'Pizzaria', 'Contemporânea', 'Churrasco', 'Carnes', 'Alemã', 'Peixes', 'Experiência', 'Choperia'];
-    const isFood = foodCategories.includes(item.category);
+    const foodCategories = ['Gastronomia', 'Italiana', 'Pizzaria', 'Contemporânea', 'Churrasco', 'Carnes', 'Alemã', 'Peixes', 'Experiência', 'Choperia', 'Chocolateria', 'Café', 'Hamburgueria', 'Finlandesa', 'Confeitaria', 'Gelateria', 'Boulangerie', 'Padaria', 'Comida Mineira', 'Árabes', 'Sabores', 'Doces'];
+    const isFood = foodCategories.some(cat => item.category.includes(cat));
     
     // Grammatical gender logic
     const titleLower = item.title.toLowerCase();
