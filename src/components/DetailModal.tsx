@@ -27,8 +27,8 @@ export function DetailModal({ item, onClose }: { item: DetailItem | null, onClos
 
   const getWhatsAppMessage = () => {
     const isLodging = item.category === 'Hospedagem';
-    const foodCategories = ['Gastronomia', 'Italiana', 'Pizzaria', 'Contemporânea', 'Churrasco', 'Carnes', 'Alemã', 'Peixes', 'Experiência', 'Choperia'];
-    const isFood = foodCategories.includes(item.category);
+    const foodCategories = ['Gastronomia', 'Italiana', 'Pizzaria', 'Contemporânea', 'Churrasco', 'Carnes', 'Alemã', 'Peixes', 'Experiência', 'Choperia', 'Chocolateria', 'Café', 'Hamburgueria', 'Finlandesa', 'Confeitaria', 'Gelateria', 'Boulangerie', 'Padaria', 'Comida Mineira', 'Árabes', 'Sabores', 'Doces'];
+    const isFood = foodCategories.some(cat => item.category.includes(cat));
     
     // Grammatical gender logic
     const titleLower = item.title.toLowerCase();
@@ -89,7 +89,7 @@ export function DetailModal({ item, onClose }: { item: DetailItem | null, onClos
                   ? 'object-cover object-[center_75%]'
                   : item.id === 'hotel-girassol'
                   ? 'object-contain object-center p-4'
-                  : ['pequena-finlandia', 'pequena-finlandia-shopping', 'lelu-museu', 'hotel-bertell', 'hotel-britannia', 'hotel-daniela', 'hotel-rio-penedo', 'hotel-do-sino', 'hotel-titanic', 'pousada-aurora-mantiqueira', 'pousada-chez-nous', 'pousada-penedo', 'pousada-reserva-penedo', 'pousada-terraco', 'pousada-villa-luna', 'pousada-rainha-da-mata', 'vila-francesa-hotel', 'aglio-e-olio', 'bazzini-pizzeria', 'borbulha-penedo', 'botegare', 'braseiro-gaucho', 'casa-da-picanha', 'casa-do-fritz', 'enoteca-serrana', 'estancia-penedo', 'kaiten-sushi', 'loazo-resto', 'petit-gourmet', 'pizza-da-villa', 'querencia', 'rei-das-trutas', 'restaurante-finlandes', 'truta-viva', 'zero-a-zero', 'tonttulakki-suklaat', 'lugano-penedo', 'lolita-penedo', 'kahvila-cafe', 'chocolate-do-papai-noel', 'emporio-haru'].includes(item.id) 
+                  : ['pequena-finlandia', 'pequena-finlandia-shopping', 'lelu-museu', 'hotel-bertell', 'hotel-britannia', 'hotel-daniela', 'hotel-rio-penedo', 'hotel-do-sino', 'hotel-titanic', 'pousada-aurora-mantiqueira', 'pousada-chez-nous', 'pousada-penedo', 'pousada-reserva-penedo', 'pousada-terraco', 'pousada-villa-luna', 'pousada-rainha-da-mata', 'vila-francesa-hotel', 'aglio-e-olio', 'bazzini-pizzeria', 'borbulha-penedo', 'botegare', 'braseiro-gaucho', 'casa-da-picanha', 'casa-do-fritz', 'enoteca-serrana', 'estancia-penedo', 'kaiten-sushi', 'loazo-resto', 'petit-gourmet', 'pizza-da-villa', 'querencia', 'rei-das-trutas', 'restaurante-finlandes', 'truta-viva', 'zero-a-zero', 'tonttulakki-suklaat', 'lugano-penedo', 'lolita-penedo', 'kahvila-cafe', 'chocolate-do-papai-noel', 'emporio-haru', 'emporio-chamoun', 'culto-cafe', 'rosana-balas-coco', 'from-penedo-delicatessen', 'cantinho-mineiro-tia-lili', 'esquina-da-serra', 'quatro-marias-boulangerie', 'grao-padaria-penedo', 'rei-da-vila'].includes(item.id) 
                     ? 'object-contain object-top p-4' 
                     : 'object-cover'
               }`} 
