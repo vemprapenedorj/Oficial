@@ -34,4 +34,5 @@ Use esta lista para extrair e conferir informações. Não exija campos que o sc
 - WhatsApp abre corretamente no formato aceito no projeto?
 - O card aponta para o comportamento correto (popup ou página exclusiva)?
 - Imagens existem e carregam no caminho usado?
+- Para cada logo novo, a imagem foi inspecionada e aparece inteira, alinhada ao topo, em card e modal (sem `object-cover` que recorte a arte)?
 - O cliente aparece apenas na categoria correta e na ordem definida pelo projeto?
