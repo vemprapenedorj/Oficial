@@ -14,9 +14,9 @@ export const getCollectionPageSchema = (
   return {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "@id": `${baseUrl}/${categorySlug}#collection`,
+    "@id": `${baseUrl}/${categorySlug}/#collection`,
     "name": `${categoryName} em Penedo RJ | Guia Oficial`,
-    "url": `${baseUrl}/${categorySlug}`,
+    "url": `${baseUrl}/${categorySlug}/`,
     "description": `Explore todos os estabelecimentos da categoria ${categoryName} listados no guia oficial de turismo do portal Vem Pra Penedo.`,
     "mainEntity": {
       "@type": "ItemList",
@@ -31,7 +31,7 @@ export const getCollectionPageSchema = (
         return {
           "@type": "ListItem",
           "position": index + 1,
-          "url": `${baseUrl}/${itemPath}`,
+          "url": `${baseUrl}/${itemPath}/`,
           "name": item.title
         };
       })

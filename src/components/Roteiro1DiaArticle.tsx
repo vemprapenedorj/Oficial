@@ -6,6 +6,7 @@ import SEO from './SEO';
 import { generateSEO } from '../seo';
 import { DETAILS_DATA } from '../data/detailsData';
 import { DetailItem, Page } from '../types';
+import { getBusinessPath } from '../routing/routeHelpers';
 
 interface Roteiro1DiaArticleProps {
   onOpenDetail: (item: DetailItem) => void;
@@ -25,11 +26,11 @@ const getItemPath = (item: DetailItem): string => {
     if (items.some(candidate => candidate.id === item.id)) {
       const itemSlug = item.slug || item.id;
       return item.isPremium
-        ? `/${category}/${itemSlug}`
-        : `/${category}#local=${encodeURIComponent(itemSlug)}`;
+        ? getBusinessPath(itemSlug)
+        : `/${category}/#local=${encodeURIComponent(itemSlug)}`;
     }
   }
-  return `/detalhe/${item.slug || item.id}`;
+  return `/detalhe/${item.slug || item.id}/`;
 };
 
 const EstablishmentLink: React.FC<EstablishmentLinkProps> = ({ id, label, onOpenDetail, onOpenConfirm }) => {
@@ -248,7 +249,7 @@ export function Roteiro1DiaArticle({ onOpenDetail, onNavigate, handleSelectArtic
 
       <div className="sticky top-[72px] z-40 bg-white/90 backdrop-blur-md border-b py-4 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <Link to="/blog" className="flex items-center gap-2 text-penedo-emerald font-bold hover:gap-3 transition-all cursor-pointer bg-transparent border-none outline-none">
+          <Link to="/blog/" className="flex items-center gap-2 text-penedo-emerald font-bold hover:gap-3 transition-all cursor-pointer bg-transparent border-none outline-none">
             <ArrowRight className="rotate-180" size={20} /> Voltar para o Blog
           </Link>
           <div className="hidden md:block text-xs font-black text-gray-400 uppercase tracking-widest">
@@ -538,11 +539,11 @@ export function Roteiro1DiaArticle({ onOpenDetail, onNavigate, handleSelectArtic
                 </p>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-items-center max-w-4xl mx-auto">
-                  <BlogPostCTA label="Ver hospedagens" href="/onde-ficar" onClick={() => onNavigate('onde-ficar')} />
-                  <BlogPostCTA label="Ver onde comer" href="/gastronomia" onClick={() => onNavigate('gastronomia')} />
-                  <BlogPostCTA label="Ver compras em Penedo" href="/compras" onClick={() => onNavigate('compras')} />
+                  <BlogPostCTA label="Ver hospedagens" href="/onde-ficar/" onClick={() => onNavigate('onde-ficar')} />
+                  <BlogPostCTA label="Ver onde comer" href="/gastronomia/" onClick={() => onNavigate('gastronomia')} />
+                  <BlogPostCTA label="Ver compras em Penedo" href="/compras/" onClick={() => onNavigate('compras')} />
                   <div className="sm:col-span-2 md:col-span-3 flex justify-center w-full">
-                    <BlogPostCTA label="Ver passeios e roteiros" href="/o-que-fazer" onClick={() => onNavigate('o-que-fazer')} />
+                    <BlogPostCTA label="Ver passeios e roteiros" href="/o-que-fazer/" onClick={() => onNavigate('o-que-fazer')} />
                   </div>
                 </div>
               </div>
@@ -552,7 +553,7 @@ export function Roteiro1DiaArticle({ onOpenDetail, onNavigate, handleSelectArtic
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-8 pt-8 border-t border-gray-100 max-w-4xl mx-auto w-full px-4 mb-12">
               {prevPost ? (
                 <Link
-                  to={`/blog/artigo/${prevPost.id}`}
+                  to={`/blog/artigo/${prevPost.id}/`}
                   className="px-6 h-[52px] w-full sm:w-[280px] rounded-2xl font-bold text-xs uppercase tracking-widest flex items-center justify-between transition-all bg-[#064E3B] hover:bg-[#0B6B50] text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer border-none outline-none"
                 >
                   <ArrowLeft size={16} className="shrink-0" />
@@ -560,7 +561,7 @@ export function Roteiro1DiaArticle({ onOpenDetail, onNavigate, handleSelectArtic
                 </Link>
               ) : (
                 <Link
-                  to="/blog"
+                  to="/blog/"
                   className="px-6 h-[52px] w-full sm:w-[280px] rounded-2xl font-bold text-xs uppercase tracking-widest flex items-center justify-between transition-all bg-[#064E3B] hover:bg-[#0B6B50] text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer border-none outline-none"
                 >
                   <ArrowLeft size={16} className="shrink-0" />
@@ -569,7 +570,7 @@ export function Roteiro1DiaArticle({ onOpenDetail, onNavigate, handleSelectArtic
               )}
               
               <Link
-                to="/blog/artigo/penedo-guia"
+                to="/blog/artigo/penedo-guia/"
                 className="px-6 h-[52px] w-full sm:w-[280px] rounded-2xl font-bold text-xs uppercase tracking-widest flex items-center justify-between transition-all bg-[#064E3B] hover:bg-[#0B6B50] text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer border-none outline-none"
               >
                 <span className="flex-grow text-center pl-4">Continue explorando Penedo</span>

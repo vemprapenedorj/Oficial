@@ -8,7 +8,7 @@ export const getWebSiteSchema = () => {
     "@type": "WebSite",
     "@id": "https://vemprapenedo.com.br/#website",
     "name": "Vem Pra Penedo",
-    "url": "https://vemprapenedo.com.br",
+    "url": "https://vemprapenedo.com.br/",
     "description": "Guia completo de Penedo RJ - Pousadas, Restaurantes e Passeios",
     "publisher": {
       "@id": "https://vemprapenedo.com.br/#organization"

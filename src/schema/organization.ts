@@ -8,7 +8,7 @@ export const getOrganizationSchema = () => {
     "@type": "Organization",
     "@id": "https://vemprapenedo.com.br/#organization",
     "name": "Vem Pra Penedo",
-    "url": "https://vemprapenedo.com.br",
+    "url": "https://vemprapenedo.com.br/",
     "logo": {
       "@type": "ImageObject",
       "@id": "https://vemprapenedo.com.br/#logo",
@@ -71,7 +71,7 @@ export const getPortalLocalBusinessSchema = () => {
     "@type": "TouristInformationCenter",
     "@id": "https://vemprapenedo.com.br/#portalbusiness",
     "name": "Vem Pra Penedo",
-    "url": "https://vemprapenedo.com.br",
+    "url": "https://vemprapenedo.com.br/",
     "logo": {
       "@type": "ImageObject",
       "@id": "https://vemprapenedo.com.br/#logo",

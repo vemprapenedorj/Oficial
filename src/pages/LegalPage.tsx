@@ -17,7 +17,7 @@ const pageContent = {
   privacidade: {
     title: 'Política de Privacidade',
     description: 'Saiba como o portal Vem Pra Penedo trata dados pessoais, contatos, métricas de navegação e direitos dos titulares.',
-    path: '/politica-de-privacidade',
+    path: '/politica-de-privacidade/',
     sections: [
       ['Quem somos', 'O Vem Pra Penedo é um portal de informações turísticas e comerciais sobre Penedo-RJ. Esta política explica como tratamos dados pessoais durante a utilização do site.'],
       ['Dados que podemos tratar', 'Podemos receber dados fornecidos voluntariamente em contatos, como nome, e-mail, telefone e conteúdo da mensagem. Também podemos tratar dados técnicos de navegação, como páginas acessadas, dispositivo, navegador, origem da visita e interações, conforme suas escolhas de consentimento.'],
@@ -31,7 +31,7 @@ const pageContent = {
   cookies: {
     title: 'Política de Cookies',
     description: 'Entenda quais tecnologias o Vem Pra Penedo utiliza e como aceitar ou recusar cookies de medição.',
-    path: '/politica-de-cookies',
+    path: '/politica-de-cookies/',
     sections: [
       ['O que são cookies', 'Cookies e tecnologias semelhantes são pequenos registros usados pelo navegador para manter preferências, proteger funcionalidades e, quando autorizado, medir a utilização do site.'],
       ['Cookies necessários', 'O portal registra sua escolha de consentimento no armazenamento local do navegador. Essa informação é necessária para respeitar a decisão de aceitar ou recusar tecnologias opcionais.'],

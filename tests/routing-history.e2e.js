@@ -48,8 +48,9 @@ test('histórico voltar e avançar mantém URL e conteúdo sincronizados', { tim
     stage = 'abrir página inicial';
     await page.goto(baseUrl, { waitUntil: 'domcontentloaded' });
     stage = 'navegar para O Que Fazer';
-    await page.click('a[href="/o-que-fazer"]');
-    await page.waitForFunction(() => location.pathname === '/o-que-fazer');
+    await page.click('a[href="/o-que-fazer/"]');
+    await page.waitForFunction(() => location.pathname === '/o-que-fazer/');
+    await page.waitForFunction(() => document.querySelector('h1')?.textContent?.includes('O Que Fazer'));
     assert.match(await page.$eval('h1', (element) => element.textContent || ''), /O Que Fazer/);
 
     stage = 'voltar para a home';
@@ -59,7 +60,8 @@ test('histórico voltar e avançar mantém URL e conteúdo sincronizados', { tim
 
     stage = 'avançar para O Que Fazer';
     await page.evaluate(() => history.forward());
-    await page.waitForFunction(() => location.pathname === '/o-que-fazer');
+    await page.waitForFunction(() => location.pathname === '/o-que-fazer/');
+    await page.waitForFunction(() => document.querySelector('h1')?.textContent?.includes('O Que Fazer'));
     assert.match(await page.$eval('h1', (element) => element.textContent || ''), /O Que Fazer/);
   } catch (error) {
     if (stage === 'abrir Chromium') {

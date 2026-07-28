@@ -4,13 +4,13 @@ import { DetailItem } from '../types';
  * LocalBusiness Schema Generator
  * Generates tailored LocalBusiness schemas based on the business category and tags.
  */
-export const getLocalBusinessSchema = (item: DetailItem) => {
+export const getLocalBusinessSchema = (item: DetailItem, canonicalUrl: string) => {
   const baseSchema: any = {
     "@context": "https://schema.org",
-    "@id": `https://vemprapenedo.com.br/detalhe/${item.slug || item.id}#business`,
+    "@id": `${canonicalUrl}#business`,
     "name": item.title,
     "description": item.description || item.fullInfo,
-    "url": `https://vemprapenedo.com.br/detalhe/${item.slug || item.id}`,
+    "url": canonicalUrl,
     "image": item.image ? (item.image.startsWith('http') ? item.image : `https://vemprapenedo.com.br${item.image.startsWith('/') ? '' : '/'}${item.image}`) : "https://vemprapenedo.com.br/assets/imagens/Logo.jpg",
     "address": {
       "@type": "PostalAddress",

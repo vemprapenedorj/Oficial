@@ -1,7 +1,5 @@
 import { execSync } from 'child_process';
 
-const skipPrerender = process.env.SKIP_PRERENDER === 'true';
-
 console.log('📡 [Build Pipeline] Preparando pacote para hospedagem estática.');
 
 try {
@@ -17,19 +15,11 @@ try {
   console.log('📦 Executando vite build...');
   execSync('npx vite build', { stdio: 'inherit' });
 
-  // 4. Pré-renderização é uma otimização de SEO. O pacote Vite já está apto
-  // para publicação, portanto a indisponibilidade do Chromium no servidor de
-  // build não deve interromper o deploy do site.
-  if (skipPrerender) {
-    console.log('⚡ SKIP_PRERENDER=true: pré-renderização estática ignorada.');
-  } else {
-    try {
-      console.log('🚀 Iniciando pré-renderização estática (SSG) com Puppeteer...');
-      execSync('node scripts/prerender.js', { stdio: 'inherit' });
-    } catch {
-      console.warn('⚠️ O Chromium não iniciou. O deploy continuará com a versão SPA funcional.');
-    }
-  }
+  // 4. A pré-renderização é obrigatória: as regras do servidor só publicam
+  // rotas válidas quando existe dist/rota/index.html. Nunca publique o fallback
+  // SPA, pois ele remove canonicals do HTML inicial e transforma 404 em soft 404.
+  console.log('🚀 Iniciando pré-renderização estática (SSG) com Puppeteer...');
+  execSync('node scripts/prerender.js', { stdio: 'inherit' });
   
   console.log('🎉 Pipeline de build finalizado com sucesso!');
 } catch (error) {

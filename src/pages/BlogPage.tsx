@@ -71,11 +71,11 @@ export function BlogPage({ onOpenDetail, onNavigate, onSelectArticle }: { onOpen
     };
 
     const inlineArticleIds = ['roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'];
-    const prevHref = prevPost && inlineArticleIds.includes(prevPost.id) ? `/blog/artigo/${prevPost.id}` : '/blog';
+    const prevHref = prevPost && inlineArticleIds.includes(prevPost.id) ? `/blog/artigo/${prevPost.id}/` : '/blog/';
     const penedoGuiaExists = blogPosts.some(post => post.id === 'penedo-guia');
     const nextHref = nextPost && inlineArticleIds.includes(nextPost.id)
-      ? `/blog/artigo/${nextPost.id}`
-      : (penedoGuiaExists && articleId !== 'penedo-guia' ? '/blog/artigo/penedo-guia' : '/o-que-fazer');
+      ? `/blog/artigo/${nextPost.id}/`
+      : (penedoGuiaExists && articleId !== 'penedo-guia' ? '/blog/artigo/penedo-guia/' : '/o-que-fazer/');
 
     return (
       <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-8 pt-8 border-t border-gray-100 max-w-4xl mx-auto w-full px-4 mb-12">
@@ -89,7 +89,7 @@ export function BlogPage({ onOpenDetail, onNavigate, onSelectArticle }: { onOpen
           </Link>
         ) : (
           <Link
-            to="/blog"
+            to="/blog/"
             className="px-6 h-[52px] w-full sm:w-[280px] rounded-2xl font-bold text-xs uppercase tracking-widest flex items-center justify-between transition-all bg-[#064E3B] hover:bg-[#0B6B50] text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer border-none outline-none"
           >
             <ArrowRight className="rotate-180 shrink-0" size={16} />
@@ -197,7 +197,7 @@ export function BlogPage({ onOpenDetail, onNavigate, onSelectArticle }: { onOpen
         <SEO
           title="Artigo Não Encontrado | Vem Pra Penedo"
           description="O artigo que você procura não foi encontrado."
-          canonical="https://vemprapenedo.com.br/404"
+          canonical="https://vemprapenedo.com.br/404/"
           robots="noindex, follow"
         />
         <Page404 onNavigate={onNavigate} />
@@ -226,7 +226,7 @@ export function BlogPage({ onOpenDetail, onNavigate, onSelectArticle }: { onOpen
         />
         <div className="sticky top-[72px] z-40 bg-white/90 backdrop-blur-md border-b py-4 shadow-sm">
           <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-            <Link to="/blog" className="flex items-center gap-2 text-penedo-emerald font-bold hover:gap-3 transition-all cursor-pointer">
+            <Link to="/blog/" className="flex items-center gap-2 text-penedo-emerald font-bold hover:gap-3 transition-all cursor-pointer">
               <ArrowRight className="rotate-180" size={20} /> Voltar para o Blog
             </Link>
             <div className="hidden md:block text-xs font-black text-gray-400 uppercase tracking-widest">
@@ -466,7 +466,7 @@ export function BlogPage({ onOpenDetail, onNavigate, onSelectArticle }: { onOpen
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
                   <Link
-                    to="/blog/artigo/penedo-guia"
+                    to="/blog/artigo/penedo-guia/"
                     className="w-full sm:w-auto px-10 py-5 bg-penedo-emerald text-white rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-penedo-forest transition-all shadow-xl shadow-penedo-emerald/30 transform hover:-translate-y-1"
                   >
                     Ver roteiro completo de Penedo
@@ -526,7 +526,7 @@ export function BlogPage({ onOpenDetail, onNavigate, onSelectArticle }: { onOpen
         />
         <div className="sticky top-[72px] z-40 bg-white/90 backdrop-blur-md border-b py-4">
           <div className="max-w-7xl mx-auto px-4">
-            <Link to="/blog" className="flex items-center gap-2 text-penedo-emerald font-bold hover:gap-3 transition-all cursor-pointer">
+            <Link to="/blog/" className="flex items-center gap-2 text-penedo-emerald font-bold hover:gap-3 transition-all cursor-pointer">
               <ArrowRight className="rotate-180" size={20} /> Voltar para o Blog
             </Link>
           </div>
@@ -759,7 +759,7 @@ export function BlogPage({ onOpenDetail, onNavigate, onSelectArticle }: { onOpen
                 </div>
               ))}
             </div>
-            <BlogPostCTA label="Ver mais restaurantes" href="/gastronomia" onClick={() => onNavigate('gastronomia')} primary={true} />
+            <BlogPostCTA label="Ver mais restaurantes" href="/gastronomia/" onClick={() => onNavigate('gastronomia')} primary={true} />
           </div>
         </section>
 
@@ -880,10 +880,10 @@ export function BlogPage({ onOpenDetail, onNavigate, onSelectArticle }: { onOpen
         description="Acompanhe o blog Vem Pra Penedo. Dicas exclusivas, roteiros completos, os melhores restaurantes e onde se hospedar na Finlândia Brasileira."
         image="https://vemprapenedo.com.br/assets/imagens/blog/penedo_blog_header.jpg"
         type="website"
-        canonical="https://vemprapenedo.com.br/blog"
+        canonical="https://vemprapenedo.com.br/blog/"
         schema={getBreadcrumbSchema([
           { name: 'Início', item: 'https://vemprapenedo.com.br/' },
-          { name: 'Blog', item: 'https://vemprapenedo.com.br/blog' }
+          { name: 'Blog', item: 'https://vemprapenedo.com.br/blog/' }
         ])}
       />
       <div className="sticky top-[72px] z-40 bg-white/90 backdrop-blur-md border-b py-4 shadow-sm">
@@ -913,7 +913,7 @@ export function BlogPage({ onOpenDetail, onNavigate, onSelectArticle }: { onOpen
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12">
           {DETAILS_DATA['blog'].map((post) => {
             const hasArticlePage = ['roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'].includes(post.id);
-            const postHref = hasArticlePage ? `/blog/artigo/${post.id}` : '/onde-ficar';
+            const postHref = hasArticlePage ? `/blog/artigo/${post.id}/` : '/onde-ficar/';
 
             return (
             <MotionLink
@@ -952,7 +952,7 @@ export function BlogPage({ onOpenDetail, onNavigate, onSelectArticle }: { onOpen
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl font-black text-white mb-6 uppercase tracking-widest">Quer anunciar aqui?</h2>
           <p className="text-penedo-gold/80 mb-6 md:mb-12 text-lg font-medium italic">Seja um parceiro do Vem Pra Penedo e alcance milhares de turistas.</p>
-          <BlogPostCTA label="Falar sobre parcerias" href="/contato" onClick={() => onNavigate('contato')} primary={true} />
+          <BlogPostCTA label="Falar sobre parcerias" href="/contato/" onClick={() => onNavigate('contato')} primary={true} />
         </div>
       </section>
     </div>

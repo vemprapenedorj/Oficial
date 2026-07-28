@@ -138,7 +138,7 @@ export function PremiumDetailPage({ onNavigate, onOpenDetail }: { onNavigate: (p
         <SEO
           title="Página Não Encontrada | Vem Pra Penedo"
           description="O estabelecimento que você procura não foi encontrado."
-          canonical="https://vemprapenedo.com.br/404"
+          canonical="https://vemprapenedo.com.br/404/"
           robots="noindex, follow"
         />
         <Page404 onNavigate={onNavigate} />
@@ -395,14 +395,14 @@ export function PremiumDetailPage({ onNavigate, onOpenDetail }: { onNavigate: (p
               <Link to="/" className="hover:text-penedo-emerald transition-colors">Início</Link>
               <span className="mx-2 text-gray-400">/</span>
               <Link
-                to={`/${categoryCleanPath}`}
+                to={`/${categoryCleanPath}/`}
                 className="hover:text-penedo-emerald transition-colors"
               >
                 {categoryLabel}
               </Link>
               <span className="mx-2 text-gray-400">/</span>
               <Link
-                to={`/${categoryCleanPath}#${subSlug}`}
+                to={`/${categoryCleanPath}/#${subSlug}`}
                 className="hover:text-penedo-emerald transition-colors"
               >
                 {subName}
@@ -789,7 +789,7 @@ export function PremiumDetailPage({ onNavigate, onOpenDetail }: { onNavigate: (p
                 
                 {/* Blog Card */}
                 <Link
-                  to={`/blog/artigo/${recommendations.blog.id}`}
+                  to={`/blog/artigo/${recommendations.blog.id}/`}
                   className="block w-full p-6 bg-penedo-forest text-white rounded-3xl shadow-lg hover:shadow-xl transition-all cursor-pointer relative overflow-hidden group"
                 >
                   <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
@@ -805,7 +805,7 @@ export function PremiumDetailPage({ onNavigate, onOpenDetail }: { onNavigate: (p
 
                 {/* Category Link */}
                 <Link
-                  to={`/${categoryCleanPath}`}
+                  to={`/${categoryCleanPath}/`}
                   className="block w-full p-6 bg-white border border-gray-100 rounded-3xl shadow-sm hover:shadow-md transition-all cursor-pointer text-center group"
                 >
                   <h4 className="font-bold text-gray-800 mb-1">Quer ver a lista completa?</h4>

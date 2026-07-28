@@ -18,6 +18,7 @@ export interface RouteResolution {
 
 const emptyRoute = (page: Page): RouteResolution => ({ page, premiumSlug: null, blogArticle: null });
 const removeTrailingSlash = (path: string): string => path === '/' ? path : path.replace(/\/$/, '');
+export const withTrailingSlash = (path: string): string => path === '/' ? '/' : `${path.replace(/\/+$/, '')}/`;
 
 export const getPremiumBusinesses = (): DetailItem[] => Object.values(DETAILS_DATA).flat().filter((item) => item.isPremium);
 export const getBlogArticles = (): DetailItem[] => DETAILS_DATA.blog || [];
@@ -28,12 +29,12 @@ export const premiumBusinessExists = (slug: string): boolean => getPremiumBusine
 export const getBusinessPath = (slug: string): string => {
   for (const [category, items] of Object.entries(DETAILS_DATA)) {
     const item = items.find((candidate) => candidate.slug === slug || candidate.id === slug);
-    if (item && category !== 'blog') return `/${category}/${item.slug || item.id}`;
+    if (item && category !== 'blog') return withTrailingSlash(`/${category}/${item.slug || item.id}`);
   }
-  return `${LEGACY_DETAIL_PREFIX}/${slug}`;
+  return withTrailingSlash(`${LEGACY_DETAIL_PREFIX}/${slug}`);
 };
 
-export const getBlogArticlePath = (slug: string): string => `${BLOG_ARTICLE_PREFIX}/${slug}`;
+export const getBlogArticlePath = (slug: string): string => withTrailingSlash(`${BLOG_ARTICLE_PREFIX}/${slug}`);
 
 export const parsePath = (rawPath: string): RouteResolution => {
   const path = removeTrailingSlash(rawPath || '/');
@@ -74,5 +75,5 @@ export const parsePath = (rawPath: string): RouteResolution => {
 export const buildPath = (page: Page, premiumSlug: string | null, blogArticle: string | null): string => {
   if (page === 'premium-detail' && premiumSlug) return getBusinessPath(premiumSlug);
   if (page === 'blog' && blogArticle) return getBlogArticlePath(blogArticle);
-  return getFixedRouteByPage(page)?.path || '/404';
+  return withTrailingSlash(getFixedRouteByPage(page)?.path || '/404');
 };
