@@ -25,6 +25,8 @@ export function DetailModal({ item, onClose }: { item: DetailItem | null, onClos
 
   if (!item) return null;
 
+  const shouldContainLogo = ['pousada-casa-do-bosque', 'pousada-flor-de-penedo', 'pousada-vale-das-flores', 'pousada-das-acerolas', 'paris-hostelli', 'restaurante-toa-toa', 'gute-passeios', 'rei-da-villa', 'meu-sonho'].includes(item.id);
+
   const getWhatsAppMessage = () => {
     const isLodging = item.category === 'Hospedagem';
     const foodCategories = ['Gastronomia', 'Italiana', 'Pizzaria', 'Contemporânea', 'Churrasco', 'Carnes', 'Alemã', 'Peixes', 'Experiência', 'Choperia', 'Chocolateria', 'Café', 'Hamburgueria', 'Finlandesa', 'Confeitaria', 'Gelateria', 'Boulangerie', 'Padaria', 'Comida Mineira', 'Árabes', 'Sabores', 'Doces'];
@@ -87,6 +89,8 @@ export function DetailModal({ item, onClose }: { item: DetailItem | null, onClos
               className={`relative z-10 w-full h-full ${
                 item.id === 'enoteca-serrana'
                   ? 'object-cover object-[center_75%]'
+                  : shouldContainLogo
+                  ? 'object-contain object-top'
                   : item.id === 'hotel-girassol'
                   ? 'object-contain object-center p-4'
                   : ['pequena-finlandia', 'pequena-finlandia-shopping', 'lelu-museu', 'hotel-bertell', 'hotel-britannia', 'hotel-daniela', 'hotel-rio-penedo', 'hotel-do-sino', 'hotel-titanic', 'pousada-aurora-mantiqueira', 'pousada-chez-nous', 'pousada-penedo', 'pousada-reserva-penedo', 'pousada-terraco', 'pousada-villa-luna', 'pousada-rainha-da-mata', 'vila-francesa-hotel', 'aglio-e-olio', 'bazzini-pizzeria', 'borbulha-penedo', 'botegare', 'braseiro-gaucho', 'casa-da-picanha', 'casa-do-fritz', 'enoteca-serrana', 'estancia-penedo', 'kaiten-sushi', 'loazo-resto', 'petit-gourmet', 'pizza-da-villa', 'querencia', 'rei-das-trutas', 'restaurante-finlandes', 'truta-viva', 'zero-a-zero', 'tonttulakki-suklaat', 'lugano-penedo', 'lolita-penedo', 'kahvila-cafe', 'chocolate-do-papai-noel', 'emporio-haru', 'emporio-chamoun', 'culto-cafe', 'rosana-balas-coco', 'from-penedo-delicatessen', 'cantinho-mineiro-tia-lili', 'esquina-da-serra', 'quatro-marias-boulangerie', 'grao-padaria-penedo', 'rei-da-vila'].includes(item.id) 
