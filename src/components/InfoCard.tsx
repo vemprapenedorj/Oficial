@@ -138,7 +138,7 @@ export const InfoCard = React.memo(function InfoCard({ item, onOpen }: InfoCardP
         <div className="flex items-center gap-2 mb-1">
           <div className="w-6 h-6 rounded-full overflow-hidden shrink-0 bg-white border border-white/20 flex items-center justify-center">
             <img 
-              src={`/assets/imagens/logos/logo-${item.id}.jpg`} 
+              src={item.image}
               alt={`Logotipo oficial do estabelecimento ${item.title} em Penedo RJ`} 
               width={24}
               height={24}
@@ -147,12 +147,7 @@ export const InfoCard = React.memo(function InfoCard({ item, onOpen }: InfoCardP
               decoding="async"
               referrerPolicy="no-referrer"
               onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                if (target.src !== item.image) {
-                  target.src = item.image;
-                } else {
-                  target.style.display = 'none';
-                }
+                (e.target as HTMLImageElement).style.display = 'none';
               }}
             />
           </div>

@@ -23,7 +23,7 @@ export function PartnerHeader({ item, size = 'large' }: PartnerHeaderProps) {
     <div className="flex items-center gap-4 text-left">
       <div className={`${containerSize} rounded-full border-2 border-penedo-gold shadow-md shrink-0 bg-white overflow-hidden flex items-center justify-center`}>
         <img 
-          src={`/assets/imagens/logos/logo-${item.id}.jpg`} 
+          src={item.image}
           alt={`Logotipo oficial do estabelecimento ${item.title} em Penedo RJ`} 
           width={imgSize}
           height={imgSize}
@@ -32,12 +32,7 @@ export function PartnerHeader({ item, size = 'large' }: PartnerHeaderProps) {
           className={`w-full h-full ${item.id === 'rodrigo-dione' ? 'object-contain object-center' : 'object-cover'}`}
           referrerPolicy="no-referrer"
           onError={(e) => {
-            const target = e.target as HTMLImageElement;
-            if (target.src !== item.image) {
-              target.src = item.image;
-            } else {
-              target.style.display = 'none';
-            }
+            (e.target as HTMLImageElement).style.display = 'none';
           }}
         />
       </div>
