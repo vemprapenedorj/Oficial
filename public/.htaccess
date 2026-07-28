@@ -59,41 +59,61 @@
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^(homologacao\.)?vemprapenedo\.com$ [NC,OR]
 RewriteCond %{HTTP_HOST} ^homologacao\.vemprapenedo\.com\.br$ [NC]
-RewriteRule ^robots\.txt$ /robots-staging.txt [L]
+RewriteRule ^robots\.txt$ /robots-staging.txt [END]
 
-# HTTPS preserva o host; somente hosts públicos são canonicalizados.
-RewriteCond %{HTTPS} !=on
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+# URLs públicas sem barra que possuem uma página SSG são normalizadas em um
+# único salto, consolidando ao mesmo tempo HTTPS, domínio sem www e barra final.
+RewriteCond %{HTTP_HOST} ^(?:www\.)?vemprapenedo\.com\.br$ [NC]
+RewriteCond %{REQUEST_URI} !/$
+RewriteCond %{REQUEST_FILENAME}/index.html -f
+RewriteRule ^(.+)$ https://vemprapenedo.com.br/$1/ [R=301,END,NE]
 
-RewriteCond %{HTTP_HOST} ^www\.vemprapenedo\.com$ [NC]
-RewriteRule ^ https://vemprapenedo.com%{REQUEST_URI} [R=301,L]
-
+# Consolida HTTPS e domínio nas demais URLs públicas (raiz, arquivos e URLs que
+# já possuem barra final).
+RewriteCond %{HTTP_HOST} ^(?:www\.)?vemprapenedo\.com\.br$ [NC]
+RewriteCond %{HTTPS} !=on [OR]
 RewriteCond %{HTTP_HOST} ^www\.vemprapenedo\.com\.br$ [NC]
-RewriteRule ^ https://vemprapenedo.com.br%{REQUEST_URI} [R=301,L]
+RewriteRule ^ https://vemprapenedo.com.br%{REQUEST_URI} [R=301,END,NE]
 
-# Redirects canônicos de rotas antigas.
-RewriteRule ^contatos/?$ /contato [R=301,L,NC]
-RewriteRule ^blog/(?!artigo/)([^/]+)/?$ /blog/artigo/$1 [R=301,L,NC]
-RewriteRule ^restaurantes/([^/]+)/?$ /gastronomia/$1 [R=301,L,NC]
-RewriteRule ^pousadas/([^/]+)/?$ /onde-ficar/$1 [R=301,L,NC]
-RewriteRule ^hoteis/([^/]+)/?$ /onde-ficar/$1 [R=301,L,NC]
+# A homologação preserva o próprio host e também consolida HTTPS + barra final
+# em um único redirecionamento para páginas SSG.
+RewriteCond %{HTTP_HOST} ^(?:homologacao\.)?vemprapenedo\.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^homologacao\.vemprapenedo\.com\.br$ [NC]
+RewriteCond %{REQUEST_URI} !/$
+RewriteCond %{REQUEST_FILENAME}/index.html -f
+RewriteRule ^(.+)$ https://%{HTTP_HOST}/$1/ [R=301,END,NE]
+
+RewriteCond %{HTTP_HOST} ^(?:homologacao\.)?vemprapenedo\.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^homologacao\.vemprapenedo\.com\.br$ [NC]
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,END,NE]
+
+# Redirects canônicos de rotas antigas. Todos os destinos já são as URLs finais.
+RewriteRule ^contatos/?$ /contato/ [R=301,END,NC,NE]
+RewriteCond %{DOCUMENT_ROOT}/blog/artigo/$1/index.html -f
+RewriteRule ^blog/(?!artigo/)([^/]+)/?$ /blog/artigo/$1/ [R=301,END,NC,NE]
+RewriteCond %{DOCUMENT_ROOT}/gastronomia/$1/index.html -f
+RewriteRule ^restaurantes/([^/]+)/?$ /gastronomia/$1/ [R=301,END,NC,NE]
+RewriteCond %{DOCUMENT_ROOT}/onde-ficar/$1/index.html -f
+RewriteRule ^pousadas/([^/]+)/?$ /onde-ficar/$1/ [R=301,END,NC,NE]
+RewriteCond %{DOCUMENT_ROOT}/onde-ficar/$1/index.html -f
+RewriteRule ^hoteis/([^/]+)/?$ /onde-ficar/$1/ [R=301,END,NC,NE]
 
 # /detalhe/:slug precisa de regras explícitas porque a categoria canônica
 # depende do estabelecimento cadastrado.
-RewriteRule ^detalhe/expedicao-raizes/?$ /o-que-fazer/expedicao-raizes [R=301,L,NC]
-RewriteRule ^detalhe/rodrigo-dione/?$ /o-que-fazer/rodrigo-dione [R=301,L,NC]
-RewriteRule ^detalhe/pousada-aurora-da-mantiqueira/?$ /onde-ficar/pousada-aurora-da-mantiqueira [R=301,L,NC]
-RewriteRule ^detalhe/pousada-villa-luna/?$ /onde-ficar/pousada-villa-luna [R=301,L,NC]
-RewriteRule ^detalhe/pousada-rainha-da-mata/?$ /onde-ficar/pousada-rainha-da-mata [R=301,L,NC]
-RewriteRule ^detalhe/casa-da-picanha/?$ /gastronomia/casa-da-picanha [R=301,L,NC]
-RewriteRule ^detalhe/pizza-da-villa/?$ /gastronomia/pizza-da-villa [R=301,L,NC]
+RewriteRule ^detalhe/expedicao-raizes/?$ /o-que-fazer/expedicao-raizes/ [R=301,END,NC,NE]
+RewriteRule ^detalhe/rodrigo-dione/?$ /o-que-fazer/rodrigo-dione/ [R=301,END,NC,NE]
+RewriteRule ^detalhe/pousada-aurora-da-mantiqueira/?$ /onde-ficar/pousada-aurora-da-mantiqueira/ [R=301,END,NC,NE]
+RewriteRule ^detalhe/pousada-villa-luna/?$ /onde-ficar/pousada-villa-luna/ [R=301,END,NC,NE]
+RewriteRule ^detalhe/pousada-rainha-da-mata/?$ /onde-ficar/pousada-rainha-da-mata/ [R=301,END,NC,NE]
+RewriteRule ^detalhe/casa-da-picanha/?$ /gastronomia/casa-da-picanha/ [R=301,END,NC,NE]
+RewriteRule ^detalhe/pizza-da-villa/?$ /gastronomia/pizza-da-villa/ [R=301,END,NC,NE]
 
-# Prioriza arquivos e páginas estáticas geradas; as demais URLs válidas são
-# entregues ao React Router pelo index.html.
+# Arquivos e diretórios físicos (incluindo as páginas SSG) são servidos
+# diretamente. Não há fallback SPA em produção: rota desconhecida é 404 real.
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^ - [L]
-
-RewriteRule ^ index.html [L]
+RewriteRule ^ - [END]
 
 ErrorDocument 404 /404.html
+RewriteRule ^ - [R=404,END]

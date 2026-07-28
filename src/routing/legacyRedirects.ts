@@ -11,7 +11,7 @@ export const LEGACY_ROUTES: LegacyRouteDefinition[] = [
   { pattern: '/restaurantes/:slug', behavior: 'compatibility', notes: 'Alias antigo aceito pelo parser atual.' },
   { pattern: '/pousadas/:slug', behavior: 'compatibility', notes: 'Alias antigo aceito pelo parser atual.' },
   { pattern: '/hoteis/:slug', behavior: 'compatibility', notes: 'Alias antigo aceito pelo parser atual.' },
-  { pattern: '/contatos', behavior: 'redirect', target: '/contato', notes: 'Redirect existente com destino canônico válido.' }
+  { pattern: '/contatos', behavior: 'redirect', target: '/contato/', notes: 'Redirect existente com destino canônico válido.' }
 ];
 
 export const checkRedirects = (path: string): string | null => {

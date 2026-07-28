@@ -204,7 +204,7 @@ export function HospedagemArticle({ handleSelectArticle, onNavigate }: Hospedage
       <div className="sticky top-20 z-40 bg-white/90 backdrop-blur-md border-b py-4 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           <Link
-            to="/blog"
+            to="/blog/"
             className="flex items-center gap-2 text-penedo-emerald font-bold hover:gap-3 transition-all cursor-pointer bg-transparent border-none outline-none"
           >
             <ArrowLeft size={20} /> Voltar para o Blog
@@ -401,7 +401,7 @@ export function HospedagemArticle({ handleSelectArticle, onNavigate }: Hospedage
       <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-8 pt-8 border-t border-gray-100 max-w-4xl mx-auto w-full px-4 mb-12">
         {prevPost ? (
           <Link
-            to={`/blog/artigo/${prevPost.id}`}
+            to={`/blog/artigo/${prevPost.id}/`}
             className="px-6 h-[52px] w-full sm:w-[280px] rounded-2xl font-bold text-xs uppercase tracking-widest flex items-center justify-between transition-all bg-[#064E3B] hover:bg-[#0B6B50] text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer border-none outline-none"
           >
             <ArrowLeft size={16} className="shrink-0" />
@@ -409,7 +409,7 @@ export function HospedagemArticle({ handleSelectArticle, onNavigate }: Hospedage
           </Link>
         ) : (
           <Link
-            to="/blog"
+            to="/blog/"
             className="px-6 h-[52px] w-full sm:w-[280px] rounded-2xl font-bold text-xs uppercase tracking-widest flex items-center justify-between transition-all bg-[#064E3B] hover:bg-[#0B6B50] text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer border-none outline-none"
           >
             <ArrowLeft size={16} className="shrink-0" />
@@ -418,7 +418,7 @@ export function HospedagemArticle({ handleSelectArticle, onNavigate }: Hospedage
         )}
         
         <Link
-          to={nextPost ? `/blog/artigo/${nextPost.id}` : '/blog/artigo/penedo-guia'}
+          to={nextPost ? `/blog/artigo/${nextPost.id}/` : '/blog/artigo/penedo-guia/'}
           className="px-6 h-[52px] w-full sm:w-[280px] rounded-2xl font-bold text-xs uppercase tracking-widest flex items-center justify-between transition-all bg-[#064E3B] hover:bg-[#0B6B50] text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer border-none outline-none"
         >
           <span className="flex-grow text-center pl-4">Continue explorando Penedo</span>

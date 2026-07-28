@@ -15,6 +15,7 @@ const BASE_URL = `http://localhost:${PORT}`;
 const PRODUCTION_URL = (process.env.SITE_URL || process.env.VITE_SITE_URL || 'https://vemprapenedo.com.br')
   .replace(/\/$/, '');
 const DIST_DIR = path.resolve(__dirname, '../dist');
+const PUPPETEER_PROFILE_DIR = path.join(DIST_DIR, '.puppeteer-profile');
 
 // --- 1. PORT POLLING HELPER ---
 const waitPort = async (port, timeout = 15000) => {
@@ -51,21 +52,23 @@ const compressFile = (filePath) => {
 const prerenderAndValidate = async (routes) => {
   console.log('🚀 Iniciando pré-renderização com Puppeteer...');
   const runsAsRoot = typeof process.getuid === 'function' && process.getuid() === 0;
+  fs.rmSync(PUPPETEER_PROFILE_DIR, { recursive: true, force: true });
   const browser = await puppeteer.launch({
     headless: true,
-    ...(runsAsRoot
-      ? {
-          args: [
+    timeout: 60_000,
+    userDataDir: PUPPETEER_PROFILE_DIR,
+    args: [
+      '--disable-crash-reporter',
+      ...(runsAsRoot
+        ? [
             '--no-sandbox',
             '--disable-setuid-sandbox',
             '--disable-dev-shm-usage',
-            '--disable-crash-reporter',
             '--no-zygote',
             '--single-process',
-          ],
-          userDataDir: process.env.PUPPETEER_USER_DATA_DIR || '/tmp/vem-pra-penedo-chrome',
-        }
-      : {}),
+          ]
+        : []),
+    ],
   });
   const page = await browser.newPage();
   
@@ -222,12 +225,10 @@ const prerenderAndValidate = async (routes) => {
     }
     
     // Canonical check (normalized trail checks)
-    const expectedCanonical = `${PRODUCTION_URL}${route === '/' ? '' : route}`;
-    const cleanExpected = expectedCanonical.replace(/\/$/, '').toLowerCase();
-    const cleanObtained = (pageSEO.canonical || '').replace(/\/$/, '').toLowerCase();
+    const expectedCanonical = `${PRODUCTION_URL}${route}`;
     if (!pageSEO.canonical) {
       errors.push('Canonical Link ausente');
-    } else if (cleanExpected !== cleanObtained) {
+    } else if (expectedCanonical.toLowerCase() !== pageSEO.canonical.toLowerCase()) {
       errors.push(`Canonical Link incorreto: esperado [${expectedCanonical}], obtido [${pageSEO.canonical}]`);
     }
 
@@ -243,7 +244,7 @@ const prerenderAndValidate = async (routes) => {
     if (!pageSEO.twitterDescription) errors.push('Twitter Description (twitter:description) ausente');
 
     // Schema.org check (exclude 404 page)
-    if (route !== '/404' && !pageSEO.hasJsonLd) {
+    if (route !== '/404/' && !pageSEO.hasJsonLd) {
       errors.push('Structured Data JSON-LD Schema.org ausente');
     }
 
@@ -257,18 +258,14 @@ const prerenderAndValidate = async (routes) => {
         const firstItem = items[0];
         const lastItem = items[items.length - 1];
         const expectedHome = `${PRODUCTION_URL}/`;
-        const cleanFirst = firstItem.replace(/\/$/, '').toLowerCase();
-        const cleanHome = expectedHome.replace(/\/$/, '').toLowerCase();
-        if (cleanFirst !== cleanHome) {
+        if (firstItem.toLowerCase() !== expectedHome.toLowerCase()) {
           errors.push(`Primeiro item do breadcrumb deve ser a home [${expectedHome}], obtido [${firstItem}]`);
         }
-        const cleanLast = lastItem.replace(/\/$/, '').toLowerCase();
-        const cleanExpectedCanonical = expectedCanonical.replace(/\/$/, '').toLowerCase();
-        if (cleanLast !== cleanExpectedCanonical) {
+        if (lastItem.toLowerCase() !== expectedCanonical.toLowerCase()) {
           errors.push(`Último item do breadcrumb deve ser a URL canônica da página [${expectedCanonical}], obtido [${lastItem}]`);
         }
       }
-    } else if (route !== '/404') {
+    } else if (route !== '/404/') {
       errors.push('BreadcrumbList schema ausente no JSON-LD');
     }
 
@@ -403,8 +400,8 @@ const main = async () => {
   
   // 2. Start Vite Preview server helper
   console.log('🔌 Iniciando servidor de preview do Vite...');
-  const previewProcess = spawn('npx', ['vite', 'preview', '--port', PORT.toString()], {
-    shell: true,
+  const viteEntry = path.resolve(__dirname, '../node_modules/vite/bin/vite.js');
+  const previewProcess = spawn(process.execPath, [viteEntry, 'preview', '--port', PORT.toString()], {
     stdio: 'ignore'
   });
   
@@ -426,6 +423,7 @@ const main = async () => {
   } finally {
     console.log('🔌 Encerrando servidor de preview do Vite...');
     previewProcess.kill();
+    fs.rmSync(PUPPETEER_PROFILE_DIR, { recursive: true, force: true });
   }
 };
 

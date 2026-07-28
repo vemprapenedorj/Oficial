@@ -5,7 +5,8 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const STATIC_ROUTES = ['/', '/blog', '/contato', '/politica-de-privacidade', '/politica-de-cookies', '/404'];
+const withTrailingSlash = (route) => route === '/' ? '/' : `${route.replace(/\/+$/, '')}/`;
+const STATIC_ROUTES = ['/', '/blog/', '/contato/', '/politica-de-privacidade/', '/politica-de-cookies/', '/404/'];
 
 const loadDetailsData = () => {
   const detailsPath = path.resolve(__dirname, '../src/data/detailsData.ts');
@@ -27,28 +28,29 @@ export const discoverSiteRoutes = () => {
     if (category === 'blog') {
       items.forEach((item) => {
         const slug = item.slug || item.id;
-        if (slug) routes.add(`/blog/artigo/${slug}`);
+        if (slug) routes.add(withTrailingSlash(`/blog/artigo/${slug}`));
       });
       return;
     }
-    routes.add(`/${category}`);
+    routes.add(withTrailingSlash(`/${category}`));
     items.forEach((item) => {
       const slug = item.slug || item.id;
-      if (slug && item.isPremium) routes.add(`/${category}/${slug}`);
+      if (slug && item.isPremium) routes.add(withTrailingSlash(`/${category}/${slug}`));
     });
   });
   return Array.from(routes);
 };
 
 export const getSitemapSettings = (route) => {
-  if (route === '/') return { changefreq: 'daily', priority: '1.0' };
-  if (['/o-que-fazer', '/onde-ficar', '/gastronomia', '/compras'].includes(route)) {
+  const normalizedRoute = route === '/' ? '/' : route.replace(/\/+$/, '');
+  if (normalizedRoute === '/') return { changefreq: 'daily', priority: '1.0' };
+  if (['/o-que-fazer', '/onde-ficar', '/gastronomia', '/compras'].includes(normalizedRoute)) {
     return { changefreq: 'weekly', priority: '0.9' };
   }
-  if (route === '/blog') return { changefreq: 'daily', priority: '0.8' };
-  if (route.startsWith('/blog/artigo/')) return { changefreq: 'weekly', priority: '0.7' };
-  if (route === '/contato') return { changefreq: 'monthly', priority: '0.5' };
-  if (route.startsWith('/politica-de-')) return { changefreq: 'yearly', priority: '0.3' };
-  if (route.split('/').filter(Boolean).length === 2) return { changefreq: 'weekly', priority: '0.8' };
+  if (normalizedRoute === '/blog') return { changefreq: 'daily', priority: '0.8' };
+  if (normalizedRoute.startsWith('/blog/artigo/')) return { changefreq: 'weekly', priority: '0.7' };
+  if (normalizedRoute === '/contato') return { changefreq: 'monthly', priority: '0.5' };
+  if (normalizedRoute.startsWith('/politica-de-')) return { changefreq: 'yearly', priority: '0.3' };
+  if (normalizedRoute.split('/').filter(Boolean).length === 2) return { changefreq: 'weekly', priority: '0.8' };
   return { changefreq: 'weekly', priority: '0.6' };
 };

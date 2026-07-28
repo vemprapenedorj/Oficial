@@ -27,13 +27,13 @@ export default function Page404({ onNavigate }: Page404Props) {
           
           <div className="grid grid-cols-2 gap-3">
             <Link
-              to="/o-que-fazer"
+              to="/o-que-fazer/"
               className="py-3 bg-white text-penedo-forest border border-gray-200 hover:border-penedo-emerald hover:bg-gray-50 rounded-2xl font-semibold text-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
             >
               <Compass size={14} /> O Que Fazer
             </Link>
             <Link
-              to="/onde-ficar"
+              to="/onde-ficar/"
               className="py-3 bg-white text-penedo-forest border border-gray-200 hover:border-penedo-emerald hover:bg-gray-50 rounded-2xl font-semibold text-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
             >
               <Compass size={14} /> Onde Ficar

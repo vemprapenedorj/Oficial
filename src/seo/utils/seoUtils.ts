@@ -5,15 +5,21 @@ import { BASE_URL, DEFAULT_SEO } from '../constants/seoDefaults';
  */
 export const cleanPath = (path: string): string => {
   if (!path) return '/';
-  let cleaned = path
-    .toLowerCase()
-    .replace(/\/+/g, '/') // remove duplicate slashes
-    .replace(/\/$/, '');  // remove trailing slash
+  const [, rawPathname = '/', suffix = ''] = path.match(/^([^?#]*)(.*)$/) || [];
+  let cleaned = rawPathname.replace(/\/+/g, '/');
 
   if (!cleaned.startsWith('/')) {
     cleaned = '/' + cleaned;
   }
-  return cleaned;
+
+  const isFile = /\/[^/]+\.[a-z0-9]+$/i.test(cleaned);
+  if (!isFile) {
+    cleaned = cleaned.toLowerCase();
+  }
+  if (cleaned !== '/' && !isFile) {
+    cleaned = `${cleaned.replace(/\/+$/, '')}/`;
+  }
+  return `${cleaned}${suffix}`;
 };
 
 /**

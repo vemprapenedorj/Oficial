@@ -4,6 +4,7 @@ import { DETAILS_DATA } from '../../data/detailsData';
 import { CANONICAL_ROUTES, KNOWN_ROUTING_GAPS, LEGACY_ROUTES } from '../routeInventory';
 import { buildPath, getBlogArticles, getBusinessPath, getPremiumBusinesses, parsePath } from '../routeHelpers';
 import { checkRedirects } from '../legacyRedirects';
+import { cleanPath, getCanonicalUrl } from '../../seo/utils/seoUtils';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -38,7 +39,7 @@ test('todo artigo cadastrado possui rota canônica reconhecida', () => {
     const route = parsePath(`/blog/artigo/${slug}`);
     assert.equal(route.page, 'blog');
     assert.equal(route.blogArticle, slug);
-    assert.equal(buildPath(route.page, null, route.blogArticle), `/blog/artigo/${slug}`);
+    assert.equal(buildPath(route.page, null, route.blogArticle), `/blog/artigo/${slug}/`);
   });
 });
 
@@ -50,7 +51,7 @@ test('toda empresa premium possui uma rota canônica correspondente à categoria
     if (category === 'blog') return;
     items.filter((item) => item.isPremium).forEach((item) => {
       const slug = item.slug || item.id;
-      const canonical = `/${category}/${slug}`;
+      const canonical = `/${category}/${slug}/`;
       const route = parsePath(canonical);
       assert.equal(route.page, 'premium-detail', canonical);
       assert.equal(route.premiumSlug, slug, canonical);
@@ -90,8 +91,8 @@ test('rota antiga /detalhe continua compatível somente para empresa existente',
 });
 
 test('redirects atuais e conflitos conhecidos permanecem inventariados', () => {
-  assert.equal(checkRedirects('/contatos'), '/contato');
-  assert.equal(checkRedirects('/contatos/'), '/contato');
+  assert.equal(checkRedirects('/contatos'), '/contato/');
+  assert.equal(checkRedirects('/contatos/'), '/contato/');
   assert.equal(checkRedirects('/old-about'), null);
   assert.equal(parsePath('/premium-detail').page, '404');
 });
@@ -108,4 +109,21 @@ test('cada empresa premium possui redirect HTTP da rota antiga no .htaccess', ()
     assert.match(htaccess, new RegExp(`\\^detalhe/${slug.replace(/[.*+?^${}()|[\\]\\]/g, '\\$&')}`));
     assert.ok(htaccess.includes(getBusinessPath(slug)), slug);
   });
+});
+
+test('URLs canônicas de páginas usam barra final sem alterar URLs de arquivos', () => {
+  assert.equal(getCanonicalUrl('/onde-ficar'), 'https://vemprapenedo.com.br/onde-ficar/');
+  assert.equal(getCanonicalUrl('/o-que-fazer/expedicao-raizes/'), 'https://vemprapenedo.com.br/o-que-fazer/expedicao-raizes/');
+  assert.equal(getCanonicalUrl('/onde-ficar#pousadas'), 'https://vemprapenedo.com.br/onde-ficar/#pousadas');
+  assert.equal(getCanonicalUrl('/assets/imagens/Logo.jpg'), 'https://vemprapenedo.com.br/assets/imagens/Logo.jpg');
+  assert.equal(cleanPath('/blog//artigo/penedo-guia'), '/blog/artigo/penedo-guia/');
+});
+
+test('.htaccess exige SSG, normaliza a barra e devolve 404 real sem fallback SPA', () => {
+  const htaccess = fs.readFileSync(path.resolve('public/.htaccess'), 'utf8');
+  assert.match(htaccess, /REQUEST_FILENAME\}\/index\.html -f/);
+  assert.match(htaccess, /https:\/\/vemprapenedo\.com\.br\/\$1\//);
+  assert.match(htaccess, /ErrorDocument 404 \/404\.html/);
+  assert.match(htaccess, /R=404/);
+  assert.doesNotMatch(htaccess, /RewriteRule \^ index\.html/);
 });

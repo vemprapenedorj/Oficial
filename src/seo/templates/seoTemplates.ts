@@ -115,7 +115,8 @@ export const getBusinessSEOTemplate = (item: DetailItem) => {
   const keywords = generateKeywords(name, item.category || 'Local', item.location, item.tags);
 
   const { subName, subSlug } = getSubcategoryInfo(item);
-  const businessSchema = getLocalBusinessSchema(item);
+  const canonical = getCanonicalUrl(`/${categoryCleanPath}/${item.slug || item.id}`);
+  const businessSchema = getLocalBusinessSchema(item, canonical);
   const penedoPlaceSchema = getPenedoDestinationSchema();
 
   const detailSchemas = [
@@ -132,7 +133,7 @@ export const getBusinessSEOTemplate = (item: DetailItem) => {
   return {
     title,
     description,
-    canonical: getCanonicalUrl(`/${categoryCleanPath}/${item.slug || item.id}`),
+    canonical,
     image,
     type: 'website',
     keywords,

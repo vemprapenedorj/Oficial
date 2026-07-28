@@ -19,7 +19,7 @@ export const getArticleSchema = (article: ArticleData) => {
     "@type": "BlogPosting",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://vemprapenedo.com.br/blog/artigo/${article.slug}`
+      "@id": `https://vemprapenedo.com.br/blog/artigo/${article.slug}/`
     },
     "headline": article.title,
     "description": article.description,
@@ -29,7 +29,7 @@ export const getArticleSchema = (article: ArticleData) => {
     "author": {
       "@type": "Organization",
       "name": "Vem Pra Penedo",
-      "url": "https://vemprapenedo.com.br"
+      "url": "https://vemprapenedo.com.br/"
     },
     "publisher": {
       "@type": "Organization",

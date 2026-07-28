@@ -134,13 +134,13 @@ export function HomePage({
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Link
-              to="/gastronomia"
+              to="/gastronomia/"
               className="px-8 py-4 bg-penedo-emerald hover:bg-penedo-forest text-white rounded-full font-bold transition-all transform hover:scale-105 flex items-center justify-center gap-2 cursor-pointer"
             >
               Explorar Agora <ArrowRight size={20} />
             </Link>
             <Link
-              to="/compras"
+              to="/compras/"
               className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-sm rounded-full font-bold transition-all transform hover:scale-105 flex items-center justify-center gap-2 cursor-pointer"
             >
               Onde Comprar
@@ -190,7 +190,7 @@ export function HomePage({
                 items={shuffledOQueFazer}
                 renderItem={(item) => <InfoCard item={item} onOpen={onOpenDetail} />}
                 onNavigate={() => onNavigate('o-que-fazer')}
-                navigateHref="/o-que-fazer"
+                navigateHref="/o-que-fazer/"
               />
           </DeferredSection>
 
@@ -202,7 +202,7 @@ export function HomePage({
                 items={shuffledOndeFicar}
                 renderItem={(item) => <InfoCard item={item} onOpen={onOpenDetail} />}
                 onNavigate={() => onNavigate('onde-ficar')}
-                navigateHref="/onde-ficar"
+                navigateHref="/onde-ficar/"
               />
           </DeferredSection>
 
@@ -214,7 +214,7 @@ export function HomePage({
                 items={shuffledGastronomia}
                 renderItem={(item) => <InfoCard item={item} onOpen={onOpenDetail} />}
                 onNavigate={() => onNavigate('gastronomia')}
-                navigateHref="/gastronomia"
+                navigateHref="/gastronomia/"
               />
           </DeferredSection>
 
@@ -226,7 +226,7 @@ export function HomePage({
                 items={shuffledCompras}
                 renderItem={(item) => <InfoCard item={item} onOpen={onOpenDetail} />}
                 onNavigate={() => onNavigate('compras')}
-                navigateHref="/compras"
+                navigateHref="/compras/"
               />
           </DeferredSection>
 
@@ -249,7 +249,7 @@ export function HomePage({
                   />
                 )}
                 onNavigate={() => onNavigate('blog')}
-                navigateHref="/blog"
+                navigateHref="/blog/"
               />
           </DeferredSection>
         </>

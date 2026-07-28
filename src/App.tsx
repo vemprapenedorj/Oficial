@@ -285,7 +285,7 @@ export default function App() {
               ].map((item) => (
                 <Link
                   key={item.id}
-                  to={item.id === 'home' ? '/' : `/${item.id}`}
+                  to={item.id === 'home' ? '/' : `/${item.id}/`}
                   onClick={() => { setIsMenuOpen(false); if (item.id === 'home') setHomeRefreshKey(prev => prev + 1); }}
                   className="font-medium text-sm transition-colors text-white/90 hover:text-white cursor-pointer"
                 >
@@ -326,7 +326,7 @@ export default function App() {
             ].map((item) => (
               <Link
                 key={item.id}
-                to={item.id === 'home' ? '/' : `/${item.id}`}
+                to={item.id === 'home' ? '/' : `/${item.id}/`}
                 onClick={() => { setIsMenuOpen(false); if (item.id === 'home') setHomeRefreshKey(prev => prev + 1); }}
                 className="block w-full text-left px-3 py-2 rounded-md text-white/90 font-medium hover:bg-penedo-emerald/20 transition-colors cursor-pointer"
               >
@@ -423,7 +423,7 @@ export default function App() {
                 <SEO 
                   title="Página Não Encontrada | Vem Pra Penedo"
                   description="A página que você procura não foi encontrada. Navegue pelo portal oficial para descobrir o melhor de Penedo RJ."
-                  canonical="https://vemprapenedo.com.br/404"
+                  canonical="https://vemprapenedo.com.br/404/"
                   robots="noindex, follow"
                 />
                 <Page404 onNavigate={navigate} />
@@ -458,14 +458,14 @@ export default function App() {
               <h4 className="font-bold text-penedo-gold mb-6 text-lg">Links Rápidos</h4>
               <ul className="space-y-2 text-white/50">
                 <li><Link to="/" className="hover:text-white transition-colors cursor-pointer">Início</Link></li>
-                <li><Link to="/o-que-fazer" className="hover:text-white transition-colors cursor-pointer">O Que Fazer</Link></li>
-                <li><Link to="/onde-ficar" className="hover:text-white transition-colors cursor-pointer">Onde Ficar</Link></li>
-                <li><Link to="/gastronomia" className="hover:text-white transition-colors cursor-pointer">Gastronomia</Link></li>
-                <li><Link to="/compras" className="hover:text-white transition-colors cursor-pointer">Compras</Link></li>
-                <li><Link to="/blog" className="hover:text-white transition-colors cursor-pointer">Blog</Link></li>
-                <li><Link to="/contato" className="hover:text-white transition-colors cursor-pointer">Contato</Link></li>
-                <li><Link to="/politica-de-privacidade" className="hover:text-white transition-colors cursor-pointer">Privacidade</Link></li>
-                <li><Link to="/politica-de-cookies" className="hover:text-white transition-colors cursor-pointer">Cookies</Link></li>
+                <li><Link to="/o-que-fazer/" className="hover:text-white transition-colors cursor-pointer">O Que Fazer</Link></li>
+                <li><Link to="/onde-ficar/" className="hover:text-white transition-colors cursor-pointer">Onde Ficar</Link></li>
+                <li><Link to="/gastronomia/" className="hover:text-white transition-colors cursor-pointer">Gastronomia</Link></li>
+                <li><Link to="/compras/" className="hover:text-white transition-colors cursor-pointer">Compras</Link></li>
+                <li><Link to="/blog/" className="hover:text-white transition-colors cursor-pointer">Blog</Link></li>
+                <li><Link to="/contato/" className="hover:text-white transition-colors cursor-pointer">Contato</Link></li>
+                <li><Link to="/politica-de-privacidade/" className="hover:text-white transition-colors cursor-pointer">Privacidade</Link></li>
+                <li><Link to="/politica-de-cookies/" className="hover:text-white transition-colors cursor-pointer">Cookies</Link></li>
               </ul>
             </div>
             <div>
@@ -527,7 +527,7 @@ export default function App() {
           <h4 className="font-bold text-penedo-graphite">Privacidade e Cookies</h4>
           <p className="text-sm text-gray-500 my-4">
             Utilizamos tecnologias necessárias e, com sua autorização, métricas para melhorar sua experiência.{' '}
-            <Link to="/politica-de-cookies" className="text-penedo-emerald font-semibold hover:underline">
+            <Link to="/politica-de-cookies/" className="text-penedo-emerald font-semibold hover:underline">
               Saiba mais
             </Link>.
           </p>
