@@ -13,11 +13,12 @@
     <link rel="mask-icon" href="/assets/imagens/icons/safari-pinned-tab.svg" color="#064e3b" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/imagens/icons/apple-touch-icon.png" />
 
-    <!-- Preconnect & DNS Prefetch to speed up external fonts and analytics loads -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <!-- The LCP image is discovered before JavaScript and matches picture's AVIF source. -->
+    <link rel="preload" as="image" href="/assets/imagens/hero-mobile.avif" type="image/avif" media="(max-width: 767px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="/assets/imagens/hero-tablet.avif" type="image/avif" media="(min-width: 768px) and (max-width: 1279px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="/assets/imagens/hero-desktop.avif" type="image/avif" media="(min-width: 1280px)" fetchpriority="high" />
+
+    <!-- DNS prefetch for the analytics script that is loaded after the initial content. -->
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <!-- Google Consent Mode v2: default seguro antes do GTM -->
     <script>
