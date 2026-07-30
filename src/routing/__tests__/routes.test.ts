@@ -16,6 +16,7 @@ const fixedCases = [
   ['/compras', 'compras'],
   ['/blog', 'blog'],
   ['/contato', 'contato'],
+  ['/divulgue-seu-negocio', 'divulgue-seu-negocio'],
   ['/politica-de-privacidade', 'politica-de-privacidade'],
   ['/politica-de-cookies', 'politica-de-cookies'],
   ['/404', '404']
@@ -100,6 +101,12 @@ test('redirects atuais e conflitos conhecidos permanecem inventariados', () => {
 test('inventário não repete padrões canônicos', () => {
   const patterns = CANONICAL_ROUTES.map((route) => route.pattern);
   assert.equal(new Set(patterns).size, patterns.length);
+});
+
+test('landing comercial é rota conhecida, mas não indexável', () => {
+  const route = CANONICAL_ROUTES.find((candidate) => candidate.pattern === '/divulgue-seu-negocio');
+  assert.ok(route);
+  assert.equal(route.indexable, false);
 });
 
 test('cada empresa premium possui redirect HTTP da rota antiga no .htaccess', () => {

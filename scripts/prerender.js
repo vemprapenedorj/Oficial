@@ -5,7 +5,7 @@ import { spawn } from 'child_process';
 import net from 'net';
 import zlib from 'zlib';
 import puppeteer from 'puppeteer';
-import { discoverSiteRoutes } from './site-routes.js';
+import { discoverPrerenderRoutes } from './site-routes.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -231,7 +231,11 @@ const prerenderAndValidate = async (routes) => {
     }
     
     // Canonical check (normalized trail checks)
-    const expectedCanonical = `${PRODUCTION_URL}${route}`;
+    // This campaign URL intentionally uses the exact canonical supplied for ads,
+    // while its static directory keeps the usual trailing-slash delivery URL.
+    const expectedCanonical = route === '/divulgue-seu-negocio/'
+      ? `${PRODUCTION_URL}/divulgue-seu-negocio`
+      : `${PRODUCTION_URL}${route}`;
     if (!pageSEO.canonical) {
       errors.push('Canonical Link ausente');
     } else if (expectedCanonical.toLowerCase() !== pageSEO.canonical.toLowerCase()) {
@@ -402,7 +406,7 @@ const main = async () => {
   console.log('🏁 Iniciando pipeline de Pré-renderização e Otimização SEO...');
   
   // 1. Discover all routes
-  const routes = discoverSiteRoutes();
+  const routes = discoverPrerenderRoutes();
   
   // 2. Start Vite Preview server helper
   console.log('🔌 Iniciando servidor de preview do Vite...');

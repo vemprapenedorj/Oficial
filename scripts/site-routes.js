@@ -7,6 +7,7 @@ const __dirname = path.dirname(__filename);
 
 const withTrailingSlash = (route) => route === '/' ? '/' : `${route.replace(/\/+$/, '')}/`;
 const STATIC_ROUTES = ['/', '/blog/', '/contato/', '/politica-de-privacidade/', '/politica-de-cookies/', '/404/'];
+const PRERENDER_ONLY_ROUTES = ['/divulgue-seu-negocio/'];
 
 const loadDetailsData = () => {
   const detailsPath = path.resolve(__dirname, '../src/data/detailsData.ts');
@@ -40,6 +41,12 @@ export const discoverSiteRoutes = () => {
   });
   return Array.from(routes);
 };
+
+// Commercial landing pages may be public and pre-rendered without becoming
+// navigational or sitemap content.
+export const discoverPrerenderRoutes = () => [
+  ...new Set([...discoverSiteRoutes(), ...PRERENDER_ONLY_ROUTES]),
+];
 
 export const getSitemapSettings = (route) => {
   const normalizedRoute = route === '/' ? '/' : route.replace(/\/+$/, '');

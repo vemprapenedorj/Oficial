@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Phone, Mail, MapPin, Send, CheckCircle, Instagram, Facebook, Handshake, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { getOfficialWhatsAppUrl } from '../config/contact';
 
 export function ContactPage({ onGoBack = () => {} }: { onGoBack?: () => void }) {
   return (
@@ -51,7 +52,7 @@ export function ContactPage({ onGoBack = () => {} }: { onGoBack?: () => void }) 
                 } 
                 label="WhatsApp" 
                 value="24 992087767" 
-                href="https://wa.me/5524992087767" 
+                href={getOfficialWhatsAppUrl()}
                 color="bg-[#25D366]"
               />
               <ContactCard 
@@ -106,7 +107,7 @@ export function ContactPage({ onGoBack = () => {} }: { onGoBack?: () => void }) 
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Seja um Parceiro</h2>
             <p className="text-white/80 text-lg mb-6 md:mb-10 max-w-2xl mx-auto">Tem um negócio em Penedo? Junte-se a nós para promover o melhor da nossa região para milhares de visitantes.</p>
             <a 
-              href="https://wa.me/5524992087767" 
+              href={getOfficialWhatsAppUrl()}
               target="_blank" 
               rel="noopener noreferrer"
               className="px-8 py-4 bg-penedo-gold text-penedo-forest font-bold rounded-full hover:bg-white transition-all inline-flex items-center gap-2"

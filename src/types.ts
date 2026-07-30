@@ -35,4 +35,4 @@ export interface DetailItem {
   seo_description?: string;
 }
 
-export type Page = 'home' | 'o-que-fazer' | 'onde-ficar' | 'gastronomia' | 'compras' | 'blog' | 'contato' | 'politica-de-privacidade' | 'politica-de-cookies' | 'premium-detail' | '404';
+export type Page = 'home' | 'o-que-fazer' | 'onde-ficar' | 'gastronomia' | 'compras' | 'blog' | 'contato' | 'divulgue-seu-negocio' | 'politica-de-privacidade' | 'politica-de-cookies' | 'premium-detail' | '404';

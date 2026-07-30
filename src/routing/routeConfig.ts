@@ -23,6 +23,7 @@ export const FIXED_ROUTES: FixedRouteConfig[] = [
   { page: 'compras', path: '/compras', label: 'Compras', indexable: true },
   { page: 'blog', path: '/blog', label: 'Blog', indexable: true },
   { page: 'contato', path: '/contato', label: 'Contato', indexable: true },
+  { page: 'divulgue-seu-negocio', path: '/divulgue-seu-negocio', label: 'Divulgue seu negócio', indexable: false },
   { page: 'politica-de-privacidade', path: '/politica-de-privacidade', label: 'Privacidade', indexable: true },
   { page: 'politica-de-cookies', path: '/politica-de-cookies', label: 'Cookies', indexable: true },
   { page: '404', path: '/404', label: 'Página não encontrada', indexable: false }
