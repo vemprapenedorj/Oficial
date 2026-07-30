@@ -71,6 +71,12 @@ const prerenderAndValidate = async (routes) => {
     ],
   });
   const page = await browser.newPage();
+  // This flag exists only in the browser's JavaScript context. It lets
+  // DeferredSection emit the full static page without making real visitors
+  // create every below-the-fold carousel during initial rendering.
+  await page.evaluateOnNewDocument(() => {
+    window.__PRERENDER__ = true;
+  });
   
   const validationReport = [];
   let hasFailed = false;

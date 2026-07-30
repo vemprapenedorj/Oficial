@@ -21,7 +21,7 @@ Se o caminho do projeto não estiver disponível no contexto, peça-o antes de e
 4. Classifique o cliente na categoria já existente mais adequada. Não crie categoria nova sem solicitação explícita.
 5. Cadastre todos os dados disponíveis, mantendo nomes de propriedades, formatação de telefones, links e convenções de imagem iguais aos dos exemplos equivalentes.
 6. Para clientes premium, replique a estrutura do premium mais semelhante: página exclusiva, galeria, CTA, SEO/metadados e JSON-LD apenas se o projeto já os utilizar. Para não premium, mantenha o fluxo e popup/card padrões da categoria.
-7. Use apenas imagens e logotipos disponibilizados pelo usuário ou que já existam no projeto. Salve-os na pasta e nomenclatura verificadas nos exemplos. Não gere nem baixe imagens sem autorização.
+7. Use apenas imagens e logotipos disponibilizados pelo usuário ou que já existam no projeto. Salve-os na pasta e nomenclatura verificadas nos exemplos. Não gere nem baixe imagens sem autorização. Execute a rotina de enquadramento de logo antes de concluir o cadastro.
 8. Atualize somente os arquivos necessários. Preserve mudanças preexistentes e não altere clientes não relacionados.
 9. Execute as verificações disponíveis no projeto (tipagem, lint e/ou build) em proporção às alterações. Corrija erros introduzidos pelo cadastro.
 10. Informe o que foi incluído, os arquivos alterados, o resultado da validação e qualquer pendência de informação, imagem ou publicação.
@@ -33,7 +33,18 @@ Se o caminho do projeto não estiver disponível no contexto, peça-o antes de e
 - Não marque um cliente como premium, recomendado/destaque ou parceiro pago sem indicação explícita do usuário ou dos dados fornecidos.
 - Não invente preço, descrição institucional, horários, redes sociais, coordenadas, fotos ou avaliações. Use uma descrição curta neutra apenas se o padrão do projeto exigir conteúdo e o usuário autorizar.
 - Ao receber imagens, inspecione dimensões e formato; preserve a proporção exigida pelo componente e evite textos/logos cortados.
+- Para logos de novos clientes, use `object-contain object-top` nas superfícies que exibem a imagem. Não use `object-cover` para preencher cards verticais, pois ele pode cortar arte ou texto.
 - Se houver falta material de dados, entregue uma lista curta e objetiva dos itens restantes em vez de tentar concluir o cadastro incompleto.
+
+## Rotina de enquadramento de logo
+
+Execute esta rotina para cada novo cadastro que use um logo.
+
+1. Confirme que o arquivo existe no caminho que será salvo nos dados e inspecione dimensões, formato e conteúdo com as ferramentas locais disponíveis. Verifique visualmente a imagem quando ela tiver texto, bordas ou marca próxima das extremidades.
+2. Localize as superfícies reais que usam `item.image`. No projeto Vem Pra Penedo, revise ao menos `InfoCard`, `DetailModal` e `FeaturedCard` quando existirem para a categoria.
+3. Cadastre o ID normalizado do cliente na convenção de exibição de logos usada pelos componentes e aplique `object-contain object-top`. Preserve a proporção e alinhe o logo ao topo; não recorte nem estique a imagem.
+4. Confirme, por inspeção do código, que cada superfície encontrada referencia o ID e usa o enquadramento de contenção no topo. Se o projeto tiver preview ou testes visuais disponíveis, valide o card e o modal neles também.
+5. Execute a validação de dados e a tipagem. No resumo final, informe que o logo foi verificado, onde foi ajustado e qualquer limitação visual restante.
 
 ## Saída esperada
 

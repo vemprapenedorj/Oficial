@@ -54,11 +54,17 @@ export const InfoCard = React.memo(function InfoCard({ item, onOpen }: InfoCardP
       classes += "object-contain object-top";
     } else if (item.id === 'shopping-roda-dagua') {
       classes += "object-cover object-right";
+    } else if (['pousada-casa-do-bosque', 'pousada-flor-de-penedo', 'pousada-vale-das-flores', 'pousada-das-acerolas', 'paris-hostelli', 'restaurante-toa-toa'].includes(item.id)) {
+      classes += "object-contain object-top";
     } else if (item.id === 'hotel-girassol') {
       classes += "object-contain object-center";
-    } else if (['gute-passeios', 'esquilo-passeios', 'pousada-vale-do-ermitao', 'andicaro-penedo-cafes-especiais'].includes(item.id)) {
+    } else if (item.id === 'gute-passeios') {
+      classes += "object-contain object-top";
+    } else if (['esquilo-passeios', 'pousada-vale-do-ermitao', 'andicaro-penedo-cafes-especiais'].includes(item.id)) {
       classes += "object-contain object-center";
-    } else if (['pequena-finlandia', 'pequena-finlandia-shopping', 'lelu-museu', 'hotel-bertell', 'hotel-britannia', 'hotel-daniela', 'hotel-rio-penedo', 'hotel-do-sino', 'hotel-titanic', 'pousada-aurora-mantiqueira', 'pousada-chez-nous', 'pousada-penedo', 'pousada-reserva-penedo', 'pousada-terraco', 'pousada-villa-luna', 'pousada-rainha-mata', 'pousada-rainha-da-mata', 'vila-francesa-hotel', 'hotel-casa-encantada', 'pousada-santa-fe', 'pousada-do-sol', 'vert-hotel', 'pousada-lago', 'hotel-terras-finlandia', 'aglio-e-olio', 'bazzini-pizzeria', 'borbulha-penedo', 'botegare', 'braseiro-gaucho', 'casa-da-picanha', 'casa-do-fritz', 'enoteca-serrana', 'estancia-penedo', 'kaiten-sushi', 'loazo-resto', 'petit-gourmet', 'pizza-da-villa', 'querencia', 'rei-das-trutas', 'restaurante-finlandes', 'truta-viva', 'zero-a-zero', 'expedicao-raizes', 'aguia-de-penedo', 'rota-dos-passeios', 'trilhando-penedo', 'tonttulakki-suklaat', 'lugano-penedo', 'lolita-penedo', 'kahvila-cafe', 'santa-claus-burger', 'maria-cuisine', 'armazem-da-vila', 'geek-penedo', 'astral-exotheryca', 'via-lactea-balas', 'casa-das-latas', 'vanilla-patisserie', 'delicias-da-carol', 'fue-gelateria', 'cafe-finlandes-penedo', 'arte-da-nossa-terra', 'reserva-da-mata', 'meu-sonho', 'artevelas', 'raio-de-luz-decoracoes', 'raio-de-luz', 'pousada-doce-mel', 'le-garden-pousada-boutique', 'pousada-viking', 'halloween-inn-penedo', 'pousada-nova-conquista', 'recanto-dos-passaros-penedo', 'pousada-laponia', 'vilar-hotel', 'hotel-penedo-inn', 'chale-na-roca-penedo', 'pousada-chicle-penedo-mc', 'pousada-estancia-penedo', 'casa-de-artista-suites-penedo', 'pousada-da-praca-penedo', 'pousada-bela-vista-penedo', 'pousada-chales-mon-desir', 'chales-laco-e-no', 'hotel-moradas-do-penedo', 'hotel-aromas-de-penedo', 'pousada-finlandia', 'city-park-hotel', 'hotel-do-papai-noel', 'pousada-penedo-house', 'pousada-nossa-senhora', 'hotel-pequena-suecia', 'chocolate-do-papai-noel', 'emporio-haru', 'emporio-chamoun', 'culto-cafe', 'rosana-balas-coco', 'from-penedo-delicatessen', 'cantinho-mineiro-tia-lili', 'esquina-da-serra', 'quatro-marias-boulangerie', 'grao-padaria-penedo', 'rei-da-vila'].includes(item.id)) {
+    } else if (['pousada-da-praca-penedo', 'pousada-bela-vista-penedo'].includes(item.id)) {
+      classes += "object-contain object-top";
+    } else if (['pequena-finlandia', 'pequena-finlandia-shopping', 'lelu-museu', 'hotel-bertell', 'hotel-britannia', 'hotel-daniela', 'hotel-rio-penedo', 'hotel-do-sino', 'hotel-titanic', 'pousada-aurora-mantiqueira', 'pousada-chez-nous', 'pousada-penedo', 'pousada-reserva-penedo', 'pousada-terraco', 'pousada-villa-luna', 'pousada-rainha-mata', 'pousada-rainha-da-mata', 'vila-francesa-hotel', 'hotel-casa-encantada', 'pousada-santa-fe', 'pousada-do-sol', 'vert-hotel', 'pousada-lago', 'hotel-terras-finlandia', 'aglio-e-olio', 'bazzini-pizzeria', 'borbulha-penedo', 'botegare', 'braseiro-gaucho', 'casa-da-picanha', 'casa-do-fritz', 'enoteca-serrana', 'estancia-penedo', 'kaiten-sushi', 'loazo-resto', 'petit-gourmet', 'pizza-da-villa', 'querencia', 'rei-das-trutas', 'restaurante-finlandes', 'truta-viva', 'zero-a-zero', 'expedicao-raizes', 'aguia-de-penedo', 'rota-dos-passeios', 'trilhando-penedo', 'tonttulakki-suklaat', 'lugano-penedo', 'lolita-penedo', 'kahvila-cafe', 'santa-claus-burger', 'maria-cuisine', 'armazem-da-vila', 'geek-penedo', 'astral-exotheryca', 'via-lactea-balas', 'casa-das-latas', 'vanilla-patisserie', 'delicias-da-carol', 'fue-gelateria', 'cafe-finlandes-penedo', 'arte-da-nossa-terra', 'reserva-da-mata', 'meu-sonho', 'artevelas', 'raio-de-luz-decoracoes', 'raio-de-luz', 'pousada-doce-mel', 'le-garden-pousada-boutique', 'pousada-viking', 'halloween-inn-penedo', 'pousada-nova-conquista', 'recanto-dos-passaros-penedo', 'pousada-laponia', 'vilar-hotel', 'hotel-penedo-inn', 'chale-na-roca-penedo', 'pousada-chicle-penedo-mc', 'pousada-estancia-penedo', 'casa-de-artista-suites-penedo', 'pousada-da-praca', 'pousada-bela-vista', 'pousada-chales-mon-desir', 'chales-laco-e-no', 'hotel-moradas-do-penedo', 'hotel-aromas-de-penedo', 'pousada-finlandia', 'city-park-hotel', 'hotel-do-papai-noel', 'pousada-penedo-house', 'pousada-nossa-senhora', 'hotel-pequena-suecia', 'chocolate-do-papai-noel', 'emporio-haru', 'emporio-chamoun', 'culto-cafe', 'rosana-balas-coco', 'from-penedo-delicatessen', 'cantinho-mineiro-tia-lili', 'esquina-da-serra', 'quatro-marias-boulangerie', 'grao-padaria-penedo', 'rei-da-vila', 'rei-da-villa'].includes(item.id)) {
       classes += "object-contain object-top";
     } else {
       classes += "object-cover";
@@ -119,8 +125,8 @@ export const InfoCard = React.memo(function InfoCard({ item, onOpen }: InfoCardP
         referrerPolicy="no-referrer" 
       />
       
-      {/* Badge/Tag de Destaque para itens Premium */}
-      {isPremium && (
+      {/* Badge/Tag de Destaque para itens Premium ou recomendados */}
+      {(isPremium || item.badge) && (
         <div className="absolute top-4 left-4 z-30">
           <span className="bg-penedo-gold text-black font-black text-[9px] uppercase tracking-tighter px-3 py-1.5 rounded-full shadow-lg">
             {item.badge || (item as any).badge || "Destaque"}

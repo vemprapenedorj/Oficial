@@ -5,6 +5,12 @@ import './index.css';
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter } from 'react-router-dom';
 
+declare global {
+  interface Window {
+    __PRERENDER__?: boolean;
+  }
+}
+
 const container = document.getElementById('root')!;
 const legacyHashPath = window.location.hash.startsWith('#/')
   ? window.location.hash.slice(1)
