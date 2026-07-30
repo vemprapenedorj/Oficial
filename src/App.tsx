@@ -39,6 +39,7 @@ const DetailModal = React.lazy(() => import('./components/DetailModal').then(mod
 import { trackEvent } from './analytics/tracking';
 import { buildPath, parsePath } from './routing/routeHelpers';
 import { getOfficialWhatsAppUrl } from './config/contact';
+import { getBreadcrumbSchema } from './schema';
 
 const COPYRIGHT_YEAR = 2026;
 
@@ -392,6 +393,10 @@ export default function App() {
                   canonical="https://vemprapenedo.com.br/divulgue-seu-negocio"
                   image="https://vemprapenedo.com.br/assets/imagens/penedo_sightseeing.jpg"
                   robots="noindex"
+                  schema={getBreadcrumbSchema([
+                    { name: 'Início', item: 'https://vemprapenedo.com.br/' },
+                    { name: 'Divulgue seu negócio', item: 'https://vemprapenedo.com.br/divulgue-seu-negocio' },
+                  ])}
                 />
                 <AdvertiseBusinessPage />
               </PageTransition>
