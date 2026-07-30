@@ -58,7 +58,7 @@ export function BackgroundLayer() {
   ];
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-[-10] overflow-hidden select-none bg-transparent">
+    <div className="fixed inset-0 pointer-events-none z-[-10] hidden overflow-hidden select-none bg-transparent md:block">
       {decorations.map((dec, i) => (
         <img
           key={i}

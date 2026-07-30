@@ -11,13 +11,10 @@ import { DeferredSection } from './components/performance/DeferredSection';
 import { PageTransition } from './components/PageTransition';
 
 
-import { DETAILS_DATA } from './data/detailsData';
-
 // Sub-components
 import { BackgroundLayer } from './components/BackgroundLayer';
 import { ScrollToTop } from './components/ScrollToTop';
 import Page404 from './components/Page404';
-import { DetailModal } from './components/DetailModal';
 
 // Analytical trackers
 import { 
@@ -36,6 +33,7 @@ const ContactPage = React.lazy(() => import('./pages/ContactPage').then(module =
 const BlogPage = React.lazy(() => import('./pages/BlogPage').then(module => ({ default: module.BlogPage })));
 const PremiumDetailPage = React.lazy(() => import('./pages/PremiumDetailPage').then(module => ({ default: module.PremiumDetailPage })));
 const LegalPage = React.lazy(() => import('./pages/LegalPage').then(module => ({ default: module.LegalPage })));
+const DetailModal = React.lazy(() => import('./components/DetailModal').then(module => ({ default: module.DetailModal })));
 
 import { trackEvent } from './analytics/tracking';
 import { buildPath, parsePath } from './routing/routeHelpers';
@@ -514,7 +512,9 @@ export default function App() {
       <ScrollToTop />
 
       {selectedItem && (
-        <DetailModal item={selectedItem} onClose={() => setSelectedItem(null)} />
+        <React.Suspense fallback={null}>
+          <DetailModal item={selectedItem} onClose={() => setSelectedItem(null)} />
+        </React.Suspense>
       )}
 
       {/* Cookie Consent banner with CSS transition */}

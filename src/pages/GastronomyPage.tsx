@@ -7,15 +7,17 @@ import { InfoCard } from '../components/InfoCard';
 import { pushSearch } from '../analytics/events';
 import { FAQ_DATA } from '../seo';
 import { Link } from 'react-router-dom';
+import { normalizeSearchText, searchIncludes } from '../utils/search';
 
 export function GastronomyPage({ onOpenDetail, onGoBack }: { onOpenDetail: (item: DetailItem) => void, onGoBack: () => void }) {
   const [searchQuery, setSearchQuery] = useState('');
+  const normalizedSearchQuery = normalizeSearchText(searchQuery);
 
   const filteredItems = DETAILS_DATA['gastronomia'].filter(item => 
-    item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    item.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    item.tags?.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+    searchIncludes(item.title, normalizedSearchQuery) ||
+    searchIncludes(item.description, normalizedSearchQuery) ||
+    searchIncludes(item.category, normalizedSearchQuery) ||
+    item.tags?.some(tag => searchIncludes(tag, normalizedSearchQuery))
   ).sort((a, b) => {
     const aPremium = a.isPremium || a.isPremium ? 1 : 0;
     const bPremium = b.isPremium || b.isPremium ? 1 : 0;

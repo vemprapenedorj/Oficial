@@ -7,10 +7,10 @@ import { PremiumCarousel } from '../components/PremiumCarousel';
 import { SearchPromo } from '../components/SearchPromo';
 import { pushSearch } from '../analytics/events';
 import { DeferredSection } from '../components/performance/DeferredSection';
-import { Helmet } from 'react-helmet-async';
 import { Carousel } from '../components/Carousel';
 import { InfoCard } from '../components/InfoCard';
 import { Link } from 'react-router-dom';
+import { normalizeSearchText, searchIncludes } from '../utils/search';
 
 export function HomePage({ 
   onNavigate, 
@@ -31,14 +31,15 @@ export function HomePage({
   const shuffledBlog = React.useMemo(() => shuffleArray(DETAILS_DATA['blog']), []);
 
   const allItems = Object.values(DETAILS_DATA).flat();
+  const normalizedSearchQuery = normalizeSearchText(searchQuery);
   const filteredResults = searchQuery.trim() === '' 
     ? [] 
     : allItems.filter(item => 
-        item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.fullInfo.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.tags?.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+        searchIncludes(item.title, normalizedSearchQuery) ||
+        searchIncludes(item.description, normalizedSearchQuery) ||
+        searchIncludes(item.category, normalizedSearchQuery) ||
+        searchIncludes(item.fullInfo, normalizedSearchQuery) ||
+        item.tags?.some(tag => searchIncludes(tag, normalizedSearchQuery))
       );
 
   useEffect(() => {
@@ -51,11 +52,6 @@ export function HomePage({
 
   return (
     <div>
-      <Helmet>
-        <link rel="preload" as="image" href="/assets/imagens/hero-mobile.webp" media="(max-width: 767px)" fetchPriority="high" />
-        <link rel="preload" as="image" href="/assets/imagens/hero-tablet.webp" media="(min-width: 768px) and (max-width: 1279px)" fetchPriority="high" />
-        <link rel="preload" as="image" href="/assets/imagens/hero-desktop.webp" media="(min-width: 1280px)" fetchPriority="high" />
-      </Helmet>
       {/* Hero */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -109,7 +105,7 @@ export function HomePage({
               className="w-full h-full object-cover" 
               alt="Penedo"
               fetchPriority="high"
-              decoding="async"
+              decoding="sync"
             />
           </picture>
           <div className="absolute inset-0 bg-black/40"></div>
@@ -150,10 +146,14 @@ export function HomePage({
       </section>
 
       {/* Premium Carousel Section */}
-      <PremiumCarousel />
+      <DeferredSection height={760}>
+        <PremiumCarousel />
+      </DeferredSection>
 
       {/* Search Promo */}
-      <SearchPromo query={searchQuery} onSearch={setSearchQuery} />
+      <DeferredSection height={390}>
+        <SearchPromo query={searchQuery} onSearch={setSearchQuery} />
+      </DeferredSection>
 
       {searchQuery.trim() !== '' ? (
         <section className="py-10 md:py-24 bg-white">
