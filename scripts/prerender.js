@@ -10,20 +10,32 @@ import { discoverPrerenderRoutes } from './site-routes.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const PORT = 4173;
-const BASE_URL = `http://localhost:${PORT}`;
 const PRODUCTION_URL = (process.env.SITE_URL || process.env.VITE_SITE_URL || 'https://vemprapenedo.com.br')
   .replace(/\/$/, '');
 const DIST_DIR = path.resolve(__dirname, '../dist');
 const PUPPETEER_PROFILE_DIR = path.join(DIST_DIR, '.puppeteer-profile');
 
 // --- 1. PORT POLLING HELPER ---
+const getAvailablePort = () => new Promise((resolve, reject) => {
+  const server = net.createServer();
+  server.once('error', reject);
+  server.listen(0, '127.0.0.1', () => {
+    const address = server.address();
+    if (!address || typeof address === 'string') {
+      server.close();
+      reject(new Error('Não foi possível reservar uma porta para o Vite Preview.'));
+      return;
+    }
+    server.close((error) => error ? reject(error) : resolve(address.port));
+  });
+});
+
 const waitPort = async (port, timeout = 15000) => {
   const start = Date.now();
   while (Date.now() - start < timeout) {
     try {
       await new Promise((resolve, reject) => {
-        const socket = net.createConnection(port, 'localhost');
+        const socket = net.createConnection(port, '127.0.0.1');
         socket.on('connect', () => { socket.end(); resolve(); });
         socket.on('error', reject);
       });
@@ -49,7 +61,7 @@ const compressFile = (filePath) => {
 };
 
 // --- 4. PRE-RENDERING AND VALIDATION ---
-const prerenderAndValidate = async (routes) => {
+const prerenderAndValidate = async (routes, baseUrl) => {
   console.log('🚀 Iniciando pré-renderização com Puppeteer...');
   const runsAsRoot = typeof process.getuid === 'function' && process.getuid() === 0;
   fs.rmSync(PUPPETEER_PROFILE_DIR, { recursive: true, force: true });
@@ -99,7 +111,7 @@ const prerenderAndValidate = async (routes) => {
   });
 
   for (const route of routes) {
-    const url = `${BASE_URL}${route}`;
+    const url = `${baseUrl}${route}`;
     console.log(`🔹 Processando rota: ${route}`);
     
     await page.goto(url, { waitUntil: 'networkidle0' });
@@ -410,29 +422,38 @@ const main = async () => {
   
   // 2. Start Vite Preview server helper
   console.log('🔌 Iniciando servidor de preview do Vite...');
-  const viteEntry = path.resolve(__dirname, '../node_modules/vite/bin/vite.js');
-  const previewProcess = spawn(process.execPath, [viteEntry, 'preview', '--port', PORT.toString()], {
-    stdio: 'ignore'
-  });
-  
+  let previewProcess;
+
   try {
-    // 3. Poll server until active
-    await waitPort(PORT);
-    console.log(`🔌 Servidor de preview ativo em localhost:${PORT}.`);
+    // Reserve a free port so shared build runners cannot serve another process.
+    const port = await getAvailablePort();
+    const baseUrl = `http://127.0.0.1:${port}`;
+    const viteEntry = path.resolve(__dirname, '../node_modules/vite/bin/vite.js');
+    previewProcess = spawn(process.execPath, [
+      viteEntry,
+      'preview',
+      '--host', '127.0.0.1',
+      '--port', port.toString(),
+      '--strictPort',
+    ], { stdio: 'ignore' });
+
+    // 3. Poll the exact preview process port before crawling.
+    await waitPort(port);
+    console.log(`🔌 Servidor de preview ativo em ${baseUrl}.`);
     
     // 4. Prerender routes and validate
-    await prerenderAndValidate(routes);
+    await prerenderAndValidate(routes, baseUrl);
     
     // 5. Generate sitemap
     
     console.log('🎉 Pipeline finalizado com sucesso absoluto!');
   } catch (error) {
     console.error('🚨 Erro crítico na pipeline de pré-renderização:', error);
-    previewProcess.kill();
+    previewProcess?.kill();
     process.exit(1);
   } finally {
     console.log('🔌 Encerrando servidor de preview do Vite...');
-    previewProcess.kill();
+    previewProcess?.kill();
     fs.rmSync(PUPPETEER_PROFILE_DIR, { recursive: true, force: true });
   }
 };
