@@ -25,20 +25,16 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       window.gtag = gtag;
-      (function () {
-        var choice = localStorage.getItem('cookie-consent');
-        var granted = choice === 'granted';
-        gtag('consent', 'default', {
-          ad_storage: granted ? 'granted' : 'denied',
-          analytics_storage: granted ? 'granted' : 'denied',
-          ad_user_data: granted ? 'granted' : 'denied',
-          ad_personalization: granted ? 'granted' : 'denied',
-          functionality_storage: granted ? 'granted' : 'denied',
-          personalization_storage: granted ? 'granted' : 'denied',
-          security_storage: 'granted',
-          wait_for_update: 500
-        });
-      })();
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        analytics_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        functionality_storage: 'denied',
+        personalization_storage: 'denied',
+        security_storage: 'granted',
+        wait_for_update: 500
+      });
     </script>
     <!-- Google Tag Manager: ativo somente no domínio oficial -->
     <script>

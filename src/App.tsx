@@ -40,6 +40,15 @@ import { trackEvent } from './analytics/tracking';
 import { buildPath, parsePath } from './routing/routeHelpers';
 import { getOfficialWhatsAppUrl } from './config/contact';
 import { getBreadcrumbSchema } from './schema';
+import {
+  ACCEPTED_CONSENT,
+  REJECTED_CONSENT,
+  type ConsentSettings,
+  createCustomConsent,
+  getStoredConsent,
+  persistConsent,
+  updateConsentMode,
+} from './analytics/consent';
 
 const COPYRIGHT_YEAR = 2026;
 
@@ -53,6 +62,10 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showCookies, setShowCookies] = useState(false);
+  const [showCookiePreferences, setShowCookiePreferences] = useState(false);
+  const [allowAnalyticsCookies, setAllowAnalyticsCookies] = useState(false);
+  const [allowMarketingCookies, setAllowMarketingCookies] = useState(false);
+  const [allowPreferenceCookies, setAllowPreferenceCookies] = useState(false);
   const [selectedItem, setSelectedItem] = useState<DetailItem | null>(null);
   const [homeRefreshKey, setHomeRefreshKey] = useState(0);
 
@@ -69,7 +82,10 @@ export default function App() {
     };
     window.addEventListener('scroll', handleScroll);
     
-    if (!localStorage.getItem('cookie-consent')) {
+    const storedConsent = getStoredConsent();
+    if (storedConsent) {
+      updateConsentMode(storedConsent.settings);
+    } else {
       setShowCookies(true);
     }
     
@@ -203,34 +219,16 @@ export default function App() {
     }
   };
 
-  const updateConsent = (granted: boolean) => {
-    const consent = granted ? 'granted' : 'denied';
-    localStorage.setItem('cookie-consent', consent);
+  const saveConsent = (choice: 'all' | 'rejected' | 'custom', settings: ConsentSettings) => {
+    persistConsent(choice, settings);
+    updateConsentMode(settings);
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: 'consent_update',
-      consent_choice: consent,
+      consent_choice: choice,
     });
-    if (typeof window.gtag === 'function') {
-      window.gtag('consent', 'update', {
-        ad_storage: consent,
-        analytics_storage: consent,
-        ad_user_data: consent,
-        ad_personalization: consent,
-        functionality_storage: consent,
-        personalization_storage: consent,
-      });
-    } else {
-      window.dataLayer.push(['consent', 'update', {
-        ad_storage: consent,
-        analytics_storage: consent,
-        ad_user_data: consent,
-        ad_personalization: consent,
-        functionality_storage: consent,
-        personalization_storage: consent,
-      }]);
-    }
     setShowCookies(false);
+    setShowCookiePreferences(false);
   };
 
   return (
@@ -542,18 +540,44 @@ export default function App() {
           showCookies ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0 pointer-events-none'
         }`}
       >
-        <div className="bg-white rounded-3xl shadow-2xl border p-6">
-          <h4 className="font-bold text-penedo-graphite">Privacidade e Cookies</h4>
+        <div className="bg-white rounded-3xl shadow-2xl border p-6" role="dialog" aria-modal="true" aria-labelledby="cookie-consent-title">
+          <h4 id="cookie-consent-title" className="font-bold text-penedo-graphite">Privacidade e Cookies</h4>
           <p className="text-sm text-gray-500 my-4">
-            Utilizamos tecnologias necessárias e, com sua autorização, métricas para melhorar sua experiência.{' '}
+            Usamos cookies necessários para a segurança do site e, com sua autorização, métricas e recursos opcionais.{' '}
             <Link to="/politica-de-cookies/" className="text-penedo-emerald font-semibold hover:underline">
               Saiba mais
             </Link>.
           </p>
-          <div className="flex gap-3">
-            <button onClick={() => updateConsent(true)} className="flex-grow py-3 bg-penedo-emerald text-white font-bold rounded-2xl text-sm hover:bg-penedo-forest transition-colors">Aceitar</button>
-            <button onClick={() => updateConsent(false)} className="px-6 py-3 bg-gray-100 text-gray-600 font-bold rounded-2xl text-sm hover:bg-gray-200 transition-colors">Recusar</button>
+
+          {showCookiePreferences && (
+            <fieldset className="mb-5 space-y-3 rounded-2xl bg-slate-50 p-4 text-sm text-penedo-graphite">
+              <legend className="px-1 font-bold">Preferências de cookies</legend>
+              <p className="text-xs text-slate-500">Os cookies essenciais de segurança permanecem sempre ativos.</p>
+              <label className="flex cursor-pointer items-start gap-3">
+                <input type="checkbox" checked={allowAnalyticsCookies} onChange={(event) => setAllowAnalyticsCookies(event.target.checked)} className="mt-1 h-4 w-4 accent-penedo-emerald" />
+                <span><strong>Medição e desempenho</strong><br /><span className="text-xs text-slate-500">Permite estatísticas de uso no Google Analytics.</span></span>
+              </label>
+              <label className="flex cursor-pointer items-start gap-3">
+                <input type="checkbox" checked={allowMarketingCookies} onChange={(event) => setAllowMarketingCookies(event.target.checked)} className="mt-1 h-4 w-4 accent-penedo-emerald" />
+                <span><strong>Marketing</strong><br /><span className="text-xs text-slate-500">Permite personalização e medição de anúncios.</span></span>
+              </label>
+              <label className="flex cursor-pointer items-start gap-3">
+                <input type="checkbox" checked={allowPreferenceCookies} onChange={(event) => setAllowPreferenceCookies(event.target.checked)} className="mt-1 h-4 w-4 accent-penedo-emerald" />
+                <span><strong>Funcionalidade e preferências</strong><br /><span className="text-xs text-slate-500">Permite lembrar preferências não essenciais.</span></span>
+              </label>
+              <button type="button" onClick={() => saveConsent('custom', createCustomConsent({ analytics: allowAnalyticsCookies, marketing: allowMarketingCookies, preferences: allowPreferenceCookies }))} className="w-full rounded-xl bg-penedo-forest py-3 font-bold text-white transition-colors hover:bg-penedo-emerald">
+                Salvar preferências
+              </button>
+            </fieldset>
+          )}
+
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <button type="button" onClick={() => saveConsent('all', ACCEPTED_CONSENT)} className="flex-grow py-3 bg-penedo-emerald text-white font-bold rounded-2xl text-sm hover:bg-penedo-forest transition-colors">Aceitar todos</button>
+            <button type="button" onClick={() => saveConsent('rejected', REJECTED_CONSENT)} className="px-6 py-3 bg-gray-100 text-gray-600 font-bold rounded-2xl text-sm hover:bg-gray-200 transition-colors">Recusar</button>
           </div>
+          <button type="button" onClick={() => setShowCookiePreferences((visible) => !visible)} aria-expanded={showCookiePreferences} className="mt-4 w-full text-center text-sm font-semibold text-penedo-emerald hover:underline">
+            Preferências de cookies
+          </button>
         </div>
       </div>
     </div>
