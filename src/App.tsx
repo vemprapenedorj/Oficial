@@ -67,7 +67,6 @@ export default function App() {
   const [allowMarketingCookies, setAllowMarketingCookies] = useState(false);
   const [allowPreferenceCookies, setAllowPreferenceCookies] = useState(false);
   const [selectedItem, setSelectedItem] = useState<DetailItem | null>(null);
-  const [homeRefreshKey, setHomeRefreshKey] = useState(0);
 
   useEffect(() => {
     const redirectTarget = checkRedirects(location.pathname);
@@ -190,10 +189,6 @@ export default function App() {
   }, [currentPage, selectedPremiumSlug, activeBlogArticle]);
 
   const navigate = (page: Page, premiumSlug: string | null = null) => {
-    if (page === 'home') {
-      setHomeRefreshKey(prev => prev + 1);
-    }
-
     const path = buildPath(
       page,
       page === 'premium-detail' ? premiumSlug : null,
@@ -204,6 +199,15 @@ export default function App() {
     
     // Always scroll to top on navigation
     window.scrollTo({ top: 0, behavior: 'auto' });
+  };
+
+  const handleHomeLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    setIsMenuOpen(false);
+
+    if (location.pathname === '/') {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   const selectBlogArticle = (slug: string | null) => {
@@ -247,7 +251,7 @@ export default function App() {
             <div className="flex items-center gap-3">
               <Link
                 to="/"
-                onClick={() => setHomeRefreshKey(prev => prev + 1)}
+                onClick={handleHomeLinkClick}
                 className="transition-colors group cursor-pointer"
               >
                 <img 
@@ -260,7 +264,7 @@ export default function App() {
               <div className="flex flex-col items-center selection:bg-transparent">
                 <Link
                   to="/"
-                  onClick={() => setHomeRefreshKey(prev => prev + 1)}
+                  onClick={handleHomeLinkClick}
                   className="text-2xl font-bold tracking-tighter leading-none mb-1 text-white select-none cursor-pointer hover:text-white"
                 >
                   VEM PRA PENEDO
@@ -285,7 +289,7 @@ export default function App() {
                 <Link
                   key={item.id}
                   to={item.id === 'home' ? '/' : `/${item.id}/`}
-                  onClick={() => { setIsMenuOpen(false); if (item.id === 'home') setHomeRefreshKey(prev => prev + 1); }}
+                  onClick={item.id === 'home' ? handleHomeLinkClick : () => setIsMenuOpen(false)}
                   className="font-medium text-sm transition-colors text-white/90 hover:text-white cursor-pointer"
                 >
                   {item.label}
@@ -326,7 +330,7 @@ export default function App() {
               <Link
                 key={item.id}
                 to={item.id === 'home' ? '/' : `/${item.id}/`}
-                onClick={() => { setIsMenuOpen(false); if (item.id === 'home') setHomeRefreshKey(prev => prev + 1); }}
+                onClick={item.id === 'home' ? handleHomeLinkClick : () => setIsMenuOpen(false)}
                 className="block w-full text-left px-3 py-2 rounded-md text-white/90 font-medium hover:bg-penedo-emerald/20 transition-colors cursor-pointer"
               >
                 {item.label}
@@ -472,7 +476,7 @@ export default function App() {
             <div>
               <h4 className="font-bold text-penedo-gold mb-6 text-lg">Links Rápidos</h4>
               <ul className="space-y-2 text-white/50">
-                <li><Link to="/" className="hover:text-white transition-colors cursor-pointer">Início</Link></li>
+                <li><Link to="/" onClick={handleHomeLinkClick} className="hover:text-white transition-colors cursor-pointer">Início</Link></li>
                 <li><Link to="/o-que-fazer/" className="hover:text-white transition-colors cursor-pointer">O Que Fazer</Link></li>
                 <li><Link to="/onde-ficar/" className="hover:text-white transition-colors cursor-pointer">Onde Ficar</Link></li>
                 <li><Link to="/gastronomia/" className="hover:text-white transition-colors cursor-pointer">Gastronomia</Link></li>
