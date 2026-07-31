@@ -1039,6 +1039,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "descricao_longa": "A Pousada Doce Mel está localizada em Penedo/RJ, próxima à Pequena Finlândia (1,8 km) e Cachoeira de Deus (3,2 km) e na Área de Proteção Ambiental da Serrinha do Alambari. Em um ambiente tranquilo, a pósada oferece quartos com ar-condicionado, TV, banheiro privativo, na parte de trás da pousada possui um jardim e estacionamento privativo. É uma ótima opção para casais - avaliado com nota 8.9 para viagem a dois. Nas proximidades encontram-se locais como o Jardim di Napoli e Le Café, além de atrações como o Centro Cultural de Itatiaia Campo Belo.",
       "location": "R. Harry Bertel, 278 - Penedo",
       "whatsapp": "24998490120",
+      "rating": 4.6,
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Hotel_Review-g2348871-d12449219-Reviews-Pousada_Doce_Mel-Itatiaia_State_of_Rio_de_Janeiro.html",
       "tags": [
         "jardim",
@@ -1065,6 +1066,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "descricao_longa": "A Le Garden Pousada Boutique, em Penedo/RJ, oferece uma experiência charmosa de hospedagem em suas acomodações e quartos com ar-condicionado e Wi-Fi gratuito. Próxima à Pequena Finlândia, a pousada combina conforto, tranquilidade e praticidade para quem deseja explorar os principais pontos turísticos. Conta com piscina, sauna, jardim, salão de jogos, bicicletário e café da manhã completo, sendo uma opção acolhedora para casais, famílias e viajantes na Serra da Mantiqueira.",
       "location": "Av. Dr. Alberto Sampaio, 69 - Penedo",
       "whatsapp": "2433512332",
+      "rating": 5,
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Hotel_Review-g2427181-d15002570-Reviews-Le_Garden_Pousada_Boutique-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
       "email": "reserva@legarden.com.br",
       "tags": [
@@ -1093,6 +1095,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "descricao_longa": "Com uma excelente localização na entrada de Penedo-RJ, a poucas quadras da Rodovia Dutra e com fácil acesso a restaurantes, lojas e atrações turísticas da cidade. Oferece quartos com ar-condicionado, Wi-Fi gratuito, banheiro privativo e opções com banheira de hidromassagem. A estrutura conta com piscina, sauna e uma acolhedora área de jardim, ideal para quem busca relaxamento e um ambiente agradável e familiar, além de um café da manhã artesanal. Uma ótima escolha para casais ou famílias que desejam aproveitar o melhor de Penedo com conforto e excelente localização.",
       "location": "R. Harry Bertel, 336 - Penedo",
       "whatsapp": "24992790711",
+      "rating": 4.4,
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Hotel_Review-g2348871-d3870747-Reviews-Pousada_Viking-Itatiaia_State_of_Rio_de_Janeiro.html",
       "email": "pousadavikingpenedo@gmail.com",
       "tags": [
@@ -1121,6 +1124,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "descricao_longa": "O Halloween Inn Penedo é uma pousada temática e única no centrinho de Penedo/RJ, oferecendo uma experiência divertida e inesquecível para todas as idades. Inspirada no tema do Halloween, a pousada dispõe de suítes decoradas com muito capricho, combinando conforto, criatividade e estilo. A estrutura de lazer conta com piscina ao ar livre, sauna, área verde e um delicioso café da manhã com opções típicas da culinária local. Além de possuir uma excelente localização, próxima à Pequena Finlândia e à Casa do Papai Noel, a pousada é uma ótima opção para casais, famílias e viajantes que buscam diversão, conforto e uma experiência diferente na Serra da Mantiqueira.",
       "location": "Av. Casa das Pedras, 1385 - Penedo",
       "whatsapp": "2433512332",
+      "rating": 3.8,
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Hotel_Review-g2427181-d25088273-Reviews-Halloween_Inn_Penedo-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
       "email": "contato@halloweeninn.com.br",
       "tags": [
@@ -1197,6 +1201,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "descricao_longa": "A Pousada Lapônia está localizada no centro de Penedo-RJ, na Avenida Brasil, a cerca de 400 metros da Pequena Finlândia, facilitando o acesso a pé às principais atrações da cidade. Com ambiente familiar e aconchegante, oferece suítes e chalés confortáveis, equipados com ar-condicionado e frigobar. A estrutura conta com piscina ao ar livre, sauna a vapor, salão de jogos, estacionamento e um café da manhã completo, sendo uma ótima opção para casais, famílias e viajantes que buscam aproveitar o melhor de Penedo com conforto e praticidade.",
       "location": "Av. Brasil, 836 - Penedo",
       "whatsapp": "24991547937",
+      "rating": 3.9,
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Hotel_Review-g2427181-d2478384-Reviews-Pousada_Laponia-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
       "email": "pousadalaponia@gmail.com",
       "tags": [
@@ -1224,6 +1229,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "descricao_longa": "A Pousada Vilar Rossi é uma opção charmosa e moderna em Penedo-RJ, ideal para quem busca uma hospedagem com conforto e lazer na Serra da Mantiqueira. A estrutura conta com piscina ao ar livre, sauna a vapor, salão de jogos, parquinho infantil e Wi-Fi gratuito. Os quartos e chalés são confortáveis e equipados com ar-condicionado e TV, além de um delicioso café da manhã completo, preparado com receitas locais. Excelente opção para casais, famílias e viajantes na região.",
       "location": "R. do Operário, 270 - Penedo",
       "whatsapp": "5524999912213",
+      "rating": 3.4,
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Hotel_Review-g2427181-d2262224-Reviews-Hotel_Vilar_Formoso-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
       "email": "reservas@vilarrossi.com.br",
       "tags": [
@@ -1298,6 +1304,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "descricao_longa": "Localizada no centro de Penedo, a Pousada Chiclé Penedo MC oferece aconchego e praticidade em chalés rústicos e equipados. Com estacionamento privativo, Wi-Fi grátis e jardim, a pousada é uma excelente opção para casais, famílias e viajantes que desejam aproveitar as principais atrações, lojas e restaurantes da região a pé.",
       "location": "Rua Resende, 128, Centro, Penedo - Itatiaia/RJ",
       "whatsapp": "24998367465",
+      "rating": 3.1,
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Hotel_Review-g2427181-d16841686-Reviews-Pousada_Chicle_Passeios-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
       "email": "chaledapenedo@gmail.com",
       "tags": [
@@ -1371,6 +1378,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "descricao_longa": "A Pousada da Praça Penedo oferece uma hospedagem charmosa e acolhedora no centro histórico de Penedo-RJ, a poucos passos das principais atrações, lojas e restaurantes da cidade. Com ambiente familiar e tranquilo, oferece suítes confortáveis e equipadas com ar-condicionado. A estrutura conta com piscina ao ar livre, jardim e Wi-Fi gratuito. Excelente opção para casais e famílias.",
       "location": "Rua das Palmeiras, 40 - Penedo",
       "whatsapp": "24978346758",
+      "rating": 4.4,
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Hotel_Review-g2427181-d3964174-Reviews-Pousada_da_Praca_Penedo-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
       "email": "contato@pousadadapraca.com.br",
       "tags": [
@@ -1395,6 +1403,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "descricao_longa": "A Pousada Bela Vista Penedo oferece uma hospedagem com muito conforto, hospitalidade e uma vista deslumbrante das montanhas. Com quartos aconchegantes e equipados com ar-condicionado, a pousada dispõe de piscina ao ar livre, sauna, jardim com redário e estacionamento gratuito. É uma ótima opção para casais e famílias que buscam tranquilidade e contato com a natureza na serra.",
       "location": "R. Aristides Barreto, 455 - África II - Penedo",
       "whatsapp": "24999338100",
+      "rating": 3.3,
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Hotel_Review-g2427181-d2178406-Reviews-Pousada_Bela_Vista-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
       "email": "reservas@pousadabelavista.com.br",
       "tags": [
@@ -1422,6 +1431,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "descricao_longa": "A Pousada Chalés Mon Desir está localizada no centro de Penedo, a poucos metros da Pequena Finlândia. Oferece chalés aconchegantes e equipados, cercados por jardins. A estrutura conta com piscina ao ar livre, sauna a vapor, salão de jogos e Wi-Fi gratuito. É uma ótima escolha para casais e famílias que desejam aproveitar o melhor da região com tranquilidade.",
       "location": "Av. Brasil, 605 - Centro, Penedo - Itatiaia/RJ",
       "whatsapp": "21992728885",
+      "rating": 3.8,
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Hotel_Review-g2427181-d2647318-Reviews-Pousada_Chales_Mon_Desir-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
       "tags": [
         "centro",
@@ -1447,6 +1457,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "descricao_longa": "Aconchego e paz definem uma hospedagem confortável em Penedo-RJ, ideal para casais e famílias que buscam tranquilidade e contato próximo ao centro histórico. As acomodações são aconchegantes e equipadas, facilitando o acesso aos restaurantes, lojas e atrativos locais. A estrutura conta com piscina, jardim e Wi-Fi gratuito.",
       "location": "Rua Harry Bertel, 47, Centro - Penedo",
       "whatsapp": "24991483869",
+      "rating": 4.1,
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Hotel_Review-g2348871-d2651849-Reviews-Chales_Laco_E_No-Itatiaia_State_of_Rio_de_Janeiro.html",
       "tags": [
         "chalés",
@@ -1471,6 +1482,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "descricao_longa": "O Hotel Moradas do Penedo oferece uma hospedagem confortável em uma ampla propriedade cercada por natureza e belos jardins. Próximo ao centro de Penedo, oferece quartos e chalés confortáveis, equipados com ar-condicionado. A estrutura conta com piscina ao ar livre, salão de jogos, área de convivência e Wi-Fi gratuito. Excelente opção para casais e famílias.",
       "location": "Av das Magueiras 791 Penedo,",
       "whatsapp": "24991203220",
+      "rating": 4.1,
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Hotel_Review-g2427181-d3170692-Reviews-Moradas_do_Penedo-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
       "email": "reservas@moradasdopenedo.com.br",
       "tags": [
@@ -1497,6 +1509,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "descricao_longa": "O Hotel Aromas de Penedo oferece uma hospedagem aconchegante e prática no centro de Penedo-RJ. Com ambiente familiar e acolhedor, oferece quartos confortáveis equipados com ar-condicionado. A estrutura conta com piscina ao ar livre, sauna, salão de jogos e Wi-Fi gratuito. Excelente opção para casais, famílias e viajantes.",
       "location": "Av. Casa das Pedras, 1240",
       "whatsapp": "24992424436",
+      "rating": 4.1,
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Hotel_Review-g2427181-d12247104-Reviews-Hotel_Aromas_de_Penedo-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
       "email": "reservas@hotelaromasdepenedo.com.br",
       "tags": [
@@ -1514,29 +1527,45 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     },
     {
       "id": "pousada-finlandia",
+      "slug": "pousada-finlandia",
       "title": "Pousada Finlândia",
       "category": "Hospedagem",
-      "isPremium": false,
+      "isPremium": true,
       "image": "/assets/imagens/logos/pousada finlandia.jpg",
-      "description": "Hospedagem aconchegante no centro com piscina, sauna e café da manhã.",
-      "fullInfo": "A Pousada Finlândia está localizada a poucos passos da Pequena Finlândia, no centro de Penedo-RJ. Oferece suítes aconchegantes e equipadas com ar-condicionado e frigobar. A estrutura de lazer conta com piscina ao ar livre, sauna, área verde e Wi-Fi gratuito. É uma ótima opção para quem busca boa localização com conforto e praticidade.",
-      "descricao_longa": "A Pousada Finlândia está localizada a poucos passos da Pequena Finlândia, no centro de Penedo-RJ. Oferece suítes aconchegantes e equipadas com ar-condicionado e frigobar. A estrutura de lazer conta com piscina ao ar livre, sauna, área verde e Wi-Fi gratuito. É uma ótima opção para quem busca boa localização com conforto e praticidade.",
-      "location": "Av. das Mangueiras, 1615, Centro - Penedo",
-      "whatsapp": "24993153286",
+      "description": "Hospedagem aconchegante a menos de 100 metros da Pequena Finlândia, com piscina, sauna e café da manhã colonial.",
+      "fullInfo": "A Pousada Finlândia está a menos de 100 metros da Pequena Finlândia, no centro de Penedo-RJ. Oferece acomodações amplas, piscina ao ar livre, sauna, jardim e café da manhã em estilo colonial. A estrutura também conta com Wi-Fi em todas as áreas, estacionamento seguro e gratuito, vigilância noturna e acessibilidade para cadeirantes e idosos. Pet friendly, é uma opção para quem quer aproveitar as principais atrações da cidade com conforto e praticidade.",
+      "descricao_longa": "A menos de 100 metros da charmosa Pequena Finlândia, conhecida pela Casa do Papai Noel, a Pousada Finlândia oferece acomodações amplas, piscina ao ar livre, sauna, jardim e um delicioso café da manhã. Com Wi-Fi gratuito, estacionamento privativo e vigilância noturna, proporciona segurança e bem-estar para sua estadia em Penedo.",
+      "location": "Av. das Mangueiras, 2000, Centro - Penedo",
+      "hours": "Recepção: diariamente, das 6h às 22h.",
+      "whatsapp": "24992113240",
+      "rating": 4.2,
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Hotel_Review-g2427181-d4858790-Reviews-Pousada_Finlandia-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
       "email": "pousadafinlandia@gmail.com",
+      "mapsUrl": "https://maps.app.goo.gl/cY57eiCPjrUMbaBx7",
+      "galeria": [
+        "/assets/imagens/premium/pousada-finlandia/galeria (1).jpg",
+        "/assets/imagens/premium/pousada-finlandia/galeria (1).png",
+        "/assets/imagens/premium/pousada-finlandia/galeria (2).jpg",
+        "/assets/imagens/premium/pousada-finlandia/galeria (2).png",
+        "/assets/imagens/premium/pousada-finlandia/galeria (3).jpg",
+        "/assets/imagens/premium/pousada-finlandia/galeria (3).png"
+      ],
       "tags": [
         "centro",
         "piscina",
         "sauna",
-        "wi-fi grátis",
+        "wi-fi",
         "estacionamento",
-        "café da manhã",
-        "praticidade"
+        "café da manhã colonial",
+        "pet friendly",
+        "acessível",
+        "segurança noturna"
       ],
-      "whatsappUrl": "https://wa.me/5524993153286",
+      "whatsappUrl": "https://wa.me/5524992113240",
       "instagramUrl": "https://www.instagram.com/pousadafinlandiapenedo/",
-      "siteUrl": "https://www.pousadafinlandia.com.br/"
+      "siteUrl": "https://www.pousadafinlandia.com.br/",
+      "videoUrl": "https://www.instagram.com/reel/DKUUGRnu7ve/",
+      "badge": "Recomendado"
     },
     {
       "id": "city-park-hotel",
@@ -1549,6 +1578,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "descricao_longa": "O City Park Hotel está localizado no centro de Penedo-RJ, próximo a restaurantes, lojas e atrativos turísticos da cidade. Conta com piscina ao ar livre, sauna, jardim com área de lazer e Wi-Fi gratuito. As acomodações são confortáveis e equipadas com ar-condicionado, sendo uma ótima opção para casais, famílias e viajantes.",
       "location": "Praça Toivo Uuskallio, 10 - Penedo",
       "whatsapp": "24998317797",
+      "rating": 3.4,
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Hotel_Review-g2348871-d2680428-Reviews-City_Park_Hotel-Itatiaia_State_of_Rio_de_Janeiro.html",
       "email": "reservas@cityparkhotel.com.br",
       "tags": [
@@ -1575,6 +1605,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "descricao_longa": "O Hotel do Papai Noel oferece uma hospedagem aconchegante e divertida para toda a família no centro de Penedo-RJ. Próximo à Pequena Finlândia, o hotel dispõe de piscina ao ar livre, sauna, salão de jogos, playground, ampla área verde e Wi-Fi gratuito. Excelente opção para quem viaja com crianças e busca lazer.",
       "location": "Av. Penedo, 688, Centro - Penedo",
       "whatsapp": "24978335122",
+      "rating": 3.9,
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Hotel_Review-g2427181-d2263433-Reviews-Hotel_do_Papai_Noel-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
       "email": "reservas@hoteldo-papainoel.com.br",
       "tags": [
@@ -1602,6 +1633,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "descricao_longa": "A Pousada Penedo House oferece acomodações com piscina ao ar livre, jardim e Wi-Fi gratuito. Localizada no centro de Penedo-RJ, a pousada é uma ótima opção para casais, famílias e viajantes que buscam proximidade com o centrinho histórico, lojas e restaurantes da região.",
       "location": "Rua Bela Vista, 304 - Penedo",
       "whatsapp": "2433511837",
+      "rating": 3.9,
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Hotel_Review-g2427181-d4308613-Reviews-Pousada_Penedo_House-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
       "email": "reservas@pousadapenedohouse.com.br",
       "tags": [
@@ -1627,6 +1659,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "descricao_longa": "A Pousada Nossa Senhora oferece uma hospedagem confortável e acolhedora em Penedo-RJ. Com ambiente familiar e tranquilo, dispõe de piscina ao ar livre, jardim com área de lazer e Wi-Fi gratuito. Os quartos são equipados com ar-condicionado, TV e frigobar. É uma ótima opção para quem busca descanso com excelente custo-benefício.",
       "location": "Rua Francisco José de Barros, 91 - Penedo",
       "whatsapp": "24998082123",
+      "rating": 4,
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Hotel_Review-g2427181-d2655670-Reviews-Pousada_Nossa_Senhora-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
       "email": "pousadanossasenhora@gmail.com",
       "tags": [
@@ -1652,6 +1685,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "descricao_longa": "O Hotel Pequena Suécia é uma das opções mais charmosas e tradicionais de Penedo-RJ. Com proposta cultural e de lazer, o hotel oferece piscina, sauna finlandesa, quadra de tênis, salão de jogos, playground e ampla área verde. O restaurante é famoso pelo buffet escandinavo e pratos da culinária nórdica contemporânea. Perfeito para casais, famílias e amantes da boa música (casa do Jazz Village).",
       "location": "Rua Toivo Suni, 33 - Centro, Penedo, RJ",
       "whatsapp": "2433511275",
+      "rating": 4.3,
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Hotel_Review-g2427181-d2639138-Reviews-Hotel_Pequena_Suecia-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
       "email": "reservas@pequenasuecia.com.br",
       "tags": [

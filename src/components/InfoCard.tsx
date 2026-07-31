@@ -162,7 +162,7 @@ export const InfoCard = React.memo(function InfoCard({ item, onOpen }: InfoCardP
         
         {item.tripadvisorUrl && (
           <div className="card-rating !text-white/70 mb-1">
-            {`⭐ ${item.rating || '4.5'} no `}
+            {item.rating && `⭐ ${item.rating} no `}
             <a href={item.tripadvisorUrl} target="_blank" rel="noopener noreferrer" className="!text-white hover:underline ml-1 pointer-events-auto relative z-40">
               Tripadvisor
             </a>

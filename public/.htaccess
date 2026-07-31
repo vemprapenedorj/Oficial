@@ -106,6 +106,7 @@ RewriteRule ^detalhe/rodrigo-dione/?$ /o-que-fazer/rodrigo-dione/ [R=301,END,NC,
 RewriteRule ^detalhe/pousada-aurora-da-mantiqueira/?$ /onde-ficar/pousada-aurora-da-mantiqueira/ [R=301,END,NC,NE]
 RewriteRule ^detalhe/pousada-villa-luna/?$ /onde-ficar/pousada-villa-luna/ [R=301,END,NC,NE]
 RewriteRule ^detalhe/pousada-rainha-da-mata/?$ /onde-ficar/pousada-rainha-da-mata/ [R=301,END,NC,NE]
+RewriteRule ^detalhe/pousada-finlandia/?$ /onde-ficar/pousada-finlandia/ [R=301,END,NC,NE]
 RewriteRule ^detalhe/casa-da-picanha/?$ /gastronomia/casa-da-picanha/ [R=301,END,NC,NE]
 RewriteRule ^detalhe/pizza-da-villa/?$ /gastronomia/pizza-da-villa/ [R=301,END,NC,NE]
 

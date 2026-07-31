@@ -61,6 +61,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://vemprapenedo.com.br/onde-ficar/pousada-finlandia/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://vemprapenedo.com.br/gastronomia/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
