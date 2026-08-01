@@ -684,7 +684,8 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "instagramUrl": "https://www.instagram.com/pousadaauroradamantiqueira/",
       "videoUrl": "https://www.instagram.com/reel/DQSV0FDAQf3/",
       "bookingUrl": "https://www.booking.com/hotel/br/pousada-aurora-da-mantiqueira.pt-br.html",
-      "badge": "Recomendado"
+      "badge": "Recomendado",
+      "whatsappUrl": "https://wa.me/5524992576384"
     },
     {
       "id": "pousada-casa-do-bosque",
@@ -934,7 +935,8 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "/assets/imagens/premium/pousada-villa-luna/galeria-6.jpg"
       ],
       "videoUrl": "https://www.instagram.com/reel/CWbxjbiphUT/",
-      "badge": "Recomendado"
+      "badge": "Recomendado",
+      "whatsappUrl": "https://wa.me/5524993173956"
     },
     {
       "id": "vert-hotel",
@@ -1026,7 +1028,8 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "instagramUrl": "https://www.instagram.com/pousadarainhadamata/",
       "videoUrl": "https://www.instagram.com/reel/DR43wyHEQVH/",
       "bookingUrl": "https://www.booking.com/hotel/br/pousada-rainha-da-mata.pt-br.html",
-      "badge": "Recomendado"
+      "badge": "Recomendado",
+      "whatsappUrl": "https://wa.me/5524993111367"
     },
     {
       "id": "pousada-doce-mel",
@@ -1845,6 +1848,32 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "pet friendly"
       ],
       "badge": "Recomendado"
+    },
+    {
+      "id": "pousada-recanto-de-moria",
+      "slug": "pousada-recanto-de-moria",
+      "title": "Pousada Recanto de Moriá",
+      "category": "Hospedagem",
+      "isPremium": false,
+      "image": "/assets/imagens/logos/logo-pousada-recanto-de-moria.jpg",
+      "description": "Pousada aconchegante em Penedo com ambiente tranquilo e acolhedor.",
+      "fullInfo": "A Pousada Recanto de Moriá oferece um refúgio de tranquilidade e aconchego em Penedo. Excelente atendimento, ambiente familiar e cercado pela natureza para relaxar em suas férias.",
+      "location": "Penedo, Itatiaia - RJ",
+      "whatsapp": "24999422282",
+      "whatsappUrl": "https://wa.me/5524999422282",
+      "instagramUrl": "https://www.instagram.com/pousadarecantodemoria/",
+      "siteUrl": "http://pousadarecantodemoria.com",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pousada+Recanto+de+Mori%C3%A1+Penedo",
+      "tags": [
+        "pousada",
+        "hospedagem",
+        "penedo",
+        "natureza",
+        "aconchego",
+        "tranquilidade",
+        "família",
+        "suítes"
+      ]
     }
   ],
   "gastronomia": [
@@ -1873,7 +1902,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "centro"
       ],
       "isPremium": false,
-      "instagramUrl": "https://www.instagram.com/aglioeoliopenedo/"
+      "instagramUrl": "https://www.instagram.com/aglioeoliopenedo/",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "bazzini-pizzeria",
@@ -1899,7 +1930,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       ],
       "isPremium": false,
       "instagramUrl": "https://www.instagram.com/bazzinipizzeria/",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Bazzini+Pizzeria+Penedo+Av.+das+Mangueiras+1849"
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Bazzini+Pizzeria+Penedo+Av.+das+Mangueiras+1849",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "borbulha-penedo",
@@ -1924,7 +1957,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       ],
       "isPremium": false,
       "instagramUrl": "https://www.instagram.com/borbulha.penedo/",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Borbulha+de+Penedo+Av.+das+Mangueiras+1771"
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Borbulha+de+Penedo+Av.+das+Mangueiras+1771",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "botegare",
@@ -1956,7 +1991,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       ],
       "isPremium": false,
       "instagramUrl": "https://www.instagram.com/botegarepenedo/",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Botegare+Penedo+Av.+Casa+das+Pedras+991"
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Botegare+Penedo+Av.+Casa+das+Pedras+991",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "braseiro-gaucho",
@@ -1983,7 +2020,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "centro"
       ],
       "isPremium": false,
-      "instagramUrl": "https://www.instagram.com/braseirogaucho/"
+      "instagramUrl": "https://www.instagram.com/braseirogaucho/",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "casa-da-picanha",
@@ -2025,7 +2064,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       ],
       "instagramUrl": "https://www.instagram.com/casadapicanhapenedo_rj/",
       "videoUrl": "https://www.instagram.com/reel/DZyAR9NDaJH/",
-      "badge": "Recomendado"
+      "badge": "Recomendado",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "casa-do-fritz",
@@ -2051,7 +2092,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "centro"
       ],
       "isPremium": false,
-      "instagramUrl": "https://www.instagram.com/casadofritz/"
+      "instagramUrl": "https://www.instagram.com/casadofritz/",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "chocolate-do-papai-noel",
@@ -2062,8 +2105,8 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "fullInfo": "Tradicional chocolateria de Penedo com chocolates finos, produtos artesanais e opções para presentear. Uma parada clássica para quem visita o centro turístico.",
       "location": "Rua das Velas, 106 - Penedo, Itatiaia - RJ",
       "hours": "Consulte horários",
-      "whatsapp": "5524999550711",
-      "whatsappUrl": "https://wa.me/5524999550711",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767",
       "instagramUrl": "https://www.instagram.com/chocolatedopapainoel/",
       "mapsUrl": "https://www.google.com/maps/place/Chocolate+do+Papai+Noel/@-22.4394816,-44.5280813,1066m/data=!3m2!1e3!4b1!4m6!3m5!1s0x9e79916ce40d57:0x883191a952a39c06!8m2!3d-22.4394866!4d-44.5255064!16s%2Fg%2F11clzh7q_q?entry=tts",
       "isPremium": false,
@@ -2100,7 +2143,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       ],
       "isPremium": false,
       "instagramUrl": "https://www.instagram.com/enotecaserrana/",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Enoteca+Serrana+Penedo+Av.+Casa+das+Pedras+490"
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Enoteca+Serrana+Penedo+Av.+Casa+das+Pedras+490",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "estancia-penedo",
@@ -2130,7 +2175,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       ],
       "isPremium": false,
       "instagramUrl": "https://www.instagram.com/estanciapenedo/",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Estância+Penedo+Av.+das+Mangueiras+1775"
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Estância+Penedo+Av.+das+Mangueiras+1775",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "jardim-secreto",
@@ -2157,7 +2204,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "luxo"
       ],
       "isPremium": false,
-      "instagramUrl": "https://www.instagram.com/restaurante_jardimsecreto/"
+      "instagramUrl": "https://www.instagram.com/restaurante_jardimsecreto/",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "jazz-village",
@@ -2184,7 +2233,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "show"
       ],
       "isPremium": false,
-      "instagramUrl": "https://www.instagram.com/jazzvillagepenedo/"
+      "instagramUrl": "https://www.instagram.com/jazzvillagepenedo/",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "kaiten-sushi",
@@ -2210,7 +2261,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       ],
       "isPremium": false,
       "instagramUrl": "https://www.instagram.com/kaitensushipenedo/",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Kaiten+Sushi+Penedo+Av.+Casa+de+Pedra+785"
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Kaiten+Sushi+Penedo+Av.+Casa+de+Pedra+785",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "loazo-resto",
@@ -2235,7 +2288,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       ],
       "isPremium": false,
       "instagramUrl": "https://www.instagram.com/loazoresto/",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Loazô+Restô+Penedo+Rua+K+Alto+Penedo"
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Loazô+Restô+Penedo+Rua+K+Alto+Penedo",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "petit-gourmet",
@@ -2261,7 +2316,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "romântico"
       ],
       "isPremium": false,
-      "instagramUrl": "https://www.instagram.com/petitgourmet.penedo/"
+      "instagramUrl": "https://www.instagram.com/petitgourmet.penedo/",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "pizza-da-villa",
@@ -2276,7 +2333,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "location": "Av. das mangueiras, 1579",
       "hours": "Consulte horários",
       "rating": 4.9,
-      "whatsapp": "24993174013",
+      "whatsapp": "24993017228",
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Restaurant_Review-g2427181-d3607740-Reviews-Pizza_da_Villa-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
       "tags": [
         "pizza",
@@ -2300,7 +2357,8 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "/assets/imagens/premium/pizza-da-villa/galeria-6.jpg"
       ],
       "videoUrl": "https://www.instagram.com/reel/DWCCNWMjPOk/",
-      "badge": "Recomendado"
+      "badge": "Recomendado",
+      "whatsappUrl": "https://wa.me/5524993017228"
     },
     {
       "id": "querencia",
@@ -2328,7 +2386,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       ],
       "isPremium": false,
       "instagramUrl": "https://www.instagram.com/restaurantequerencia/",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Restaurante+Querência+Penedo+Av.+das+Mangueiras+2510"
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Restaurante+Querência+Penedo+Av.+das+Mangueiras+2510",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "rei-das-trutas",
@@ -2353,7 +2413,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "clássico"
       ],
       "isPremium": false,
-      "instagramUrl": "https://www.instagram.com/reidastrutas/"
+      "instagramUrl": "https://www.instagram.com/reidastrutas/",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "restaurante-finlandes",
@@ -2379,7 +2441,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "cultura"
       ],
       "isPremium": false,
-      "instagramUrl": "https://www.instagram.com/korvapuustipenedo/"
+      "instagramUrl": "https://www.instagram.com/korvapuustipenedo/",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "restaurante-toa-toa",
@@ -2394,7 +2458,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "descricao_longa": "O Tô a Tôa Restaurante é uma opção gastronômica em Penedo para quem busca comida brasileira, grelhados e pratos bem servidos. O espaço conta com atendimento para famílias, mesas ao ar livre, bar e estacionamento, além de opções para consumo no local, retirada e entrega.",
       "location": "Estrada Rubens Tramujas Mader, s/n - após o Posto BR, Penedo",
       "hours": "Domingo: 11h às 16h30; segunda: fechado; terça a sexta: 18h às 22h; sábado: 11h às 22h.",
-      "whatsapp": "24999977550",
+      "whatsapp": "24992087767",
       "instagramUrl": "https://www.instagram.com/toatoapenedo/",
       "mapsUrl": "https://maps.app.goo.gl/9vLWx8rTPtA8fxRc8",
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Restaurant_Review-g2348871-d10716235-Reviews-Restaurante_Toa_Toa-Itatiaia_State_of_Rio_de_Janeiro.html",
@@ -2408,7 +2472,8 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "família",
         "estacionamento"
       ],
-      "badge": "Recomendado"
+      "badge": "Recomendado",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "truta-viva",
@@ -2435,7 +2500,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "almoço"
       ],
       "isPremium": false,
-      "instagramUrl": "https://www.instagram.com/restaurantetrutaviva/"
+      "instagramUrl": "https://www.instagram.com/restaurantetrutaviva/",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "zero-a-zero",
@@ -2463,7 +2530,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       ],
       "isPremium": false,
       "instagramUrl": "https://www.instagram.com/zeroazerochoperia/",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Zero+a+Zero+Penedo+Rua+das+Velas+120"
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Zero+a+Zero+Penedo+Rua+das+Velas+120",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "tonttulakki-suklaat",
@@ -2485,7 +2554,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "centro"
       ],
       "isPremium": false,
-      "instagramUrl": "https://www.instagram.com/chocolatestonttulakki/"
+      "instagramUrl": "https://www.instagram.com/chocolatestonttulakki/",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "lugano-penedo",
@@ -2508,7 +2579,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "centro"
       ],
       "isPremium": false,
-      "instagramUrl": "https://www.instagram.com/chocolatelugano.penedo"
+      "instagramUrl": "https://www.instagram.com/chocolatelugano.penedo",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "lolita-penedo",
@@ -2530,7 +2603,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "centro"
       ],
       "isPremium": false,
-      "instagramUrl": "https://www.instagram.com/lolitapenedo/"
+      "instagramUrl": "https://www.instagram.com/lolitapenedo/",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "kahvila-cafe",
@@ -2550,7 +2625,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "centro"
       ],
       "isPremium": false,
-      "instagramUrl": "https://www.instagram.com/kahvilacafe.br/"
+      "instagramUrl": "https://www.instagram.com/kahvilacafe.br/",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "santa-claus-burger",
@@ -2576,10 +2653,11 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "acessível"
       ],
       "isPremium": false,
-      "whatsappUrl": "https://wa.me/5524993017228",
+      "whatsappUrl": "https://wa.me/5524992087767",
       "instagramUrl": "https://www.instagram.com/santaclausburger",
       "mapsUrl": "https://maps.google.com/?cid=17037218314129758382",
-      "badge": "Top Avaliação"
+      "badge": "Top Avaliação",
+      "whatsapp": "24992087767"
     },
     {
       "id": "maria-cuisine",
@@ -2606,10 +2684,11 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "jantar"
       ],
       "isPremium": false,
-      "whatsappUrl": "https://wa.me/5524993194229",
+      "whatsappUrl": "https://wa.me/5524992087767",
       "instagramUrl": "https://www.instagram.com/mariacuisinedefamille/",
       "mapsUrl": "https://maps.google.com/?cid=11898708662588849032",
-      "badge": "Excelente Avaliação"
+      "badge": "Excelente Avaliação",
+      "whatsapp": "24992087767"
     },
     {
       "id": "vanilla-patisserie",
@@ -2635,7 +2714,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "isPremium": false,
       "instagramUrl": "https://www.instagram.com/vanilla.penedo/?hl=pt",
       "mapsUrl": "https://maps.google.com/?cid=16059561874423453573",
-      "badge": "Confeitaria Fina"
+      "badge": "Confeitaria Fina",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "delicias-da-carol",
@@ -2660,10 +2741,11 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "av. das mangueiras"
       ],
       "isPremium": false,
-      "whatsappUrl": "https://wa.me/5524999716592",
+      "whatsappUrl": "https://wa.me/5524992087767",
       "instagramUrl": "https://www.instagram.com/deliciascarolpenedo/",
       "mapsUrl": "https://maps.google.com/?cid=15927698586743302151",
-      "badge": "Top Avaliação"
+      "badge": "Top Avaliação",
+      "whatsapp": "24992087767"
     },
     {
       "id": "fue-gelateria",
@@ -2690,10 +2772,11 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "nfc"
       ],
       "isPremium": false,
-      "whatsappUrl": "https://wa.me/5524992494399",
+      "whatsappUrl": "https://wa.me/5524992087767",
       "instagramUrl": "https://www.instagram.com/fuegelatoechocolate/",
       "mapsUrl": "https://maps.google.com/?cid=7155249969189648547",
-      "badge": "Imperdível"
+      "badge": "Imperdível",
+      "whatsapp": "24992087767"
     },
     {
       "id": "cafe-finlandes-penedo",
@@ -2720,10 +2803,11 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "reservas"
       ],
       "isPremium": false,
-      "whatsappUrl": "https://wa.me/5524998634222",
+      "whatsappUrl": "https://wa.me/5524992087767",
       "instagramUrl": "https://www.instagram.com/cafefinlandes/",
       "mapsUrl": "https://maps.google.com/?cid=2866118961007667073",
-      "badge": "Tradição & Sabor"
+      "badge": "Tradição & Sabor",
+      "whatsapp": "24992087767"
     },
     {
       "id": "andicaro-penedo-cafes-especiais",
@@ -2747,7 +2831,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "av. das mangueiras"
       ],
       "instagramUrl": "https://www.instagram.com/andicaropenedo/",
-      "mapsUrl": "https://maps.app.goo.gl/n7cWpnk4jpentLS89"
+      "mapsUrl": "https://maps.app.goo.gl/n7cWpnk4jpentLS89",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "emporio-chamoun",
@@ -2768,7 +2854,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "iguarias",
         "penedo",
         "sabores"
-      ]
+      ],
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "culto-cafe",
@@ -2792,7 +2880,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "tortas",
         "penedo",
         "aconchegante"
-      ]
+      ],
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "cantinho-mineiro-tia-lili",
@@ -2815,7 +2905,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "penedo",
         "família",
         "tempero caseiro"
-      ]
+      ],
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "esquina-da-serra",
@@ -2838,7 +2930,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "drinks",
         "penedo",
         "petiscos"
-      ]
+      ],
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "quatro-marias-boulangerie",
@@ -2861,7 +2955,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "café",
         "fermentação natural",
         "penedo"
-      ]
+      ],
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "grao-padaria-penedo",
@@ -2883,7 +2979,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "cafeteria",
         "doces",
         "penedo"
-      ]
+      ],
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "rei-da-villa",
@@ -2905,7 +3003,167 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "petiscos",
         "bebidas",
         "penedo"
+      ],
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
+    },
+    {
+      "id": "azia-sushi-lounge",
+      "slug": "azia-sushi-lounge",
+      "title": "Azia Sushi Lounge",
+      "category": "Japonesa",
+      "isPremium": false,
+      "image": "/assets/imagens/logos/logo-azia-sushi.jpg",
+      "description": "Feito como Arte, direto para a sua mesa.",
+      "fullInfo": "O Azia Sushi Lounge oferece o melhor da culinária japonesa artesanal em Penedo. Pratos preparados como arte, ingredientes frescos e um ambiente acolhedor e requintado.",
+      "location": "Avenida das Mangueiras, 1849, Penedo",
+      "hours": "Terça a Sexta: 18h às 23:30h | Fim de semana e Feriados: 18h às 23:30h",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767",
+      "instagramUrl": "https://www.instagram.com/aziasushilounge/",
+      "mapsUrl": "https://maps.app.goo.gl/yGrv396CeWwxRQ5q6",
+      "rating": 4.9,
+      "tags": [
+        "sushi",
+        "japonesa",
+        "comida japonesa",
+        "sashimi",
+        "jantar",
+        "restaurante",
+        "penedo",
+        "lounge"
       ]
+    },
+    {
+      "id": "bistro-du-cheff",
+      "slug": "bistro-du-cheff",
+      "title": "Bistrô Du Cheff",
+      "category": "Bistrô",
+      "isPremium": false,
+      "image": "/assets/imagens/logos/logo-bistro-du-cheff.jpg",
+      "description": "Bom atendimento, preços honestos e especialidades de Truta e Parmegianas.",
+      "fullInfo": "O Bistrô Du Cheff oferece pratos fartos e saborosos em ambiente acolhedor em Penedo. Destaques para as Especialidades de Truta (à Belle Meunière, alcaparras, champignon, alho ou amêndoas), Parmegiana, Strogonoff, Pratos Executivos e Menu Kids. Estrutura com acessibilidade e mesas ao ar livre.",
+      "location": "Penedo, Itatiaia - RJ",
+      "rating": 4.8,
+      "tripadvisorUrl": "https://www.tripadvisor.com.br/Restaurant_Review-g2427181-d15516049-Reviews-Bistro_Du_Cheff-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
+      "instagramUrl": "https://www.instagram.com/bducheff/",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Bistr%C3%B4+Du+Cheff+Penedo",
+      "tags": [
+        "bistrô",
+        "truta",
+        "parmegiana",
+        "strogonoff",
+        "executivo",
+        "menu kids",
+        "almoço",
+        "jantar",
+        "penedo"
+      ],
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
+    },
+    {
+      "id": "sorvete-de-penedo",
+      "slug": "sorvete-de-penedo",
+      "title": "Sorvete de Penedo",
+      "category": "Gelateria",
+      "isPremium": false,
+      "image": "/assets/imagens/logos/logo-sorvete-de-penedo.jpg",
+      "description": "Sorvetes artesanais de alta qualidade, sabores exclusivos e cafés especiais.",
+      "fullInfo": "A Sorveteria & Cafeteria Sorvete de Penedo produz sorvetes artesanais exclusivos de altíssima qualidade, além de cafés especiais e sobremesas irresistíveis no coração de Penedo.",
+      "location": "Penedo, Itatiaia - RJ",
+      "hours": "Todos os dias",
+      "rating": 4.8,
+      "instagramUrl": "https://www.instagram.com/sorvetedepenedo/",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Sorvete+de+Penedo",
+      "tags": [
+        "sorvete",
+        "gelateria",
+        "café",
+        "sobremesas",
+        "artesanal",
+        "doces",
+        "penedo"
+      ],
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
+    },
+    {
+      "id": "sorvete-finlandes",
+      "slug": "sorvete-finlandes",
+      "title": "Sorvete Finlandês",
+      "category": "Gelateria",
+      "isPremium": false,
+      "image": "/assets/imagens/logos/logo-sorvete-finlandes.jpg",
+      "description": "Desde 1992 criando experiências gastronômicas memoráveis em Penedo.",
+      "fullInfo": "Desde 1992, o Sorvete Finlandês é referência em sorvetes artesanais em Penedo. Receitas próprias, refinadas e equilibradas para um paladar exigente.",
+      "location": "Rua das Velas, 32 - Penedo, Itatiaia - RJ",
+      "rating": 4.9,
+      "tripadvisorUrl": "https://www.tripadvisor.com.br/Restaurant_Review-g2427181-d3261474-Reviews-Sorvete_Finlandes-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
+      "instagramUrl": "https://www.instagram.com/sorvetefinlandes_oficial/",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Sorvete+Finland%C3%AAs+Rua+das+Velas+32+Penedo",
+      "tags": [
+        "sorvete",
+        "finlandês",
+        "gelateria",
+        "rua das velas",
+        "artesanal",
+        "tradição",
+        "penedo"
+      ],
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
+    },
+    {
+      "id": "acailandia-penedo",
+      "slug": "acailandia-penedo",
+      "title": "Açailândia Penedo",
+      "category": "Gelateria",
+      "isPremium": false,
+      "image": "/assets/imagens/logos/logo-acailandia-penedo.jpg",
+      "description": "Açaí, sorvetes e sobremesas deliciosas com atendimento diário.",
+      "fullInfo": "O Açailândia Penedo oferece deliciosos copos de açaí, sorvetes variados e sobremesas. Atendimento no local, para viagem e delivery todos os dias.",
+      "location": "Av. das Mangueiras, 1660 - Rio das Pedras Shopping, Penedo",
+      "hours": "Todos os dias",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=A%C3%A7ail%C3%A2ndia+Penedo+Rio+das+Pedras+Shopping",
+      "tags": [
+        "açaí",
+        "sorvete",
+        "sobremesas",
+        "delivery",
+        "rio das pedras shopping",
+        "penedo"
+      ],
+      "instagramUrl": "https://www.instagram.com/acailandiaoficial11/"
+    },
+    {
+      "id": "pe-de-canela-buteco",
+      "slug": "pe-de-canela-buteco",
+      "title": "Pé de Canela Buteco",
+      "category": "Gastronomia",
+      "isPremium": false,
+      "image": "/assets/imagens/logos/logo-pe-de-canela.jpg",
+      "description": "Um buteco de alma, sabor e coração com hambúrgueres, petiscos e música ao vivo.",
+      "fullInfo": "O Pé de Canela Buteco é um espaço vibrante e acolhedor no centro de Penedo. Hambúrgueres artesanais, petiscos tradicionais de buteco, chopp gelado e música ao vivo. Funcionamento de quarta a segunda.",
+      "location": "Av. das Mangueiras, 1660 - Penedo",
+      "hours": "Quarta a Segunda",
+      "rating": 4.7,
+      "tripadvisorUrl": "https://www.tripadvisor.com.br/Restaurant_Review-g2427181-d7187535-Reviews-Pe_de_Canela-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
+      "instagramUrl": "https://www.instagram.com/pedecanelabuteco/",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=P%C3%A9+de+Canela+Buteco+Penedo",
+      "tags": [
+        "buteco",
+        "hambúrguer",
+        "petiscos",
+        "música ao vivo",
+        "gastronomia",
+        "chopp",
+        "penedo"
+      ],
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     }
   ],
   "compras": [
@@ -2929,7 +3187,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "casa do papai noel"
       ],
       "isPremium": false,
-      "instagramUrl": "https://www.instagram.com/pequenafinlandia.oficial/"
+      "instagramUrl": "https://www.instagram.com/pequenafinlandia.oficial/",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "shopping-vale-duendes",
@@ -2951,7 +3211,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "lúdico"
       ],
       "isPremium": false,
-      "instagramUrl": "https://www.instagram.com/vale_dos_duendes_penedorj/"
+      "instagramUrl": "https://www.instagram.com/vale_dos_duendes_penedorj/",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "shopping-roda-dagua",
@@ -2973,7 +3235,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "geek"
       ],
       "isPremium": false,
-      "instagramUrl": "https://www.instagram.com/shoppingrodadaguaoficial/"
+      "instagramUrl": "https://www.instagram.com/shoppingrodadaguaoficial/",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "shopping-azul",
@@ -2992,7 +3256,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "produtos típicos",
         "região"
       ],
-      "isPremium": false
+      "isPremium": false,
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "shopping-do-esquilo",
@@ -3015,7 +3281,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "família"
       ],
       "isPremium": false,
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Shopping+do+Esquilo+Penedo+Av.+Dr.+Arnaldo+Marzoto+Jardim+Martineli+Itatiaia+RJ+27580-000"
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Shopping+do+Esquilo+Penedo+Av.+Dr.+Arnaldo+Marzoto+Jardim+Martineli+Itatiaia+RJ+27580-000",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "armazem-da-vila",
@@ -3039,10 +3307,11 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "turismo"
       ],
       "isPremium": false,
-      "whatsappUrl": "https://wa.me/5524992206446",
+      "whatsappUrl": "https://wa.me/5524992087767",
       "instagramUrl": "https://www.instagram.com/armazemdavilapenedo",
       "mapsUrl": "https://maps.google.com/?cid=11204016888187024292",
-      "badge": "Ótima Opção"
+      "badge": "Ótima Opção",
+      "whatsapp": "24992087767"
     },
     {
       "id": "geek-penedo",
@@ -3070,7 +3339,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "isPremium": false,
       "instagramUrl": "https://www.instagram.com/geek_penedo/",
       "mapsUrl": "https://maps.google.com/?cid=7913696677775624844",
-      "badge": "Cultura Pop e Geek"
+      "badge": "Cultura Pop e Geek",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "astral-exotheryca",
@@ -3095,10 +3366,11 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "estacionamento"
       ],
       "isPremium": false,
-      "whatsappUrl": "https://wa.me/5524981556773",
+      "whatsappUrl": "https://wa.me/5524992087767",
       "instagramUrl": "https://www.instagram.com/astralexotheryca/",
       "mapsUrl": "https://maps.google.com/?cid=1293510098541823076",
-      "badge": "Energia e Bem-estar"
+      "badge": "Energia e Bem-estar",
+      "whatsapp": "24992087767"
     },
     {
       "id": "via-lactea-balas",
@@ -3125,7 +3397,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "isPremium": false,
       "instagramUrl": "https://www.instagram.com/vialacteabalas/",
       "mapsUrl": "https://maps.google.com/?cid=7311349378174178394",
-      "badge": "Paraíso dos Doces"
+      "badge": "Paraíso dos Doces",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "arte-da-nossa-terra",
@@ -3148,10 +3422,11 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "nfc"
       ],
       "isPremium": false,
-      "whatsappUrl": "https://wa.me/5524992275712",
+      "whatsappUrl": "https://wa.me/5524992087767",
       "instagramUrl": "https://www.instagram.com/artedanossaterra/",
       "mapsUrl": "https://maps.google.com/?cid=9047201911561872295",
-      "badge": "Artesanato e Presentes"
+      "badge": "Artesanato e Presentes",
+      "whatsapp": "24992087767"
     },
     {
       "id": "reserva-da-mata",
@@ -3174,10 +3449,11 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "atendimento"
       ],
       "isPremium": false,
-      "whatsappUrl": "https://wa.me/552433513066",
+      "whatsappUrl": "https://wa.me/5524992087767",
       "instagramUrl": "https://www.instagram.com/reservadamata/",
       "mapsUrl": "https://maps.google.com/?cid=6753522909305314682",
-      "badge": "Moda e Estilo"
+      "badge": "Moda e Estilo",
+      "whatsapp": "24992087767"
     },
     {
       "id": "meu-sonho",
@@ -3198,10 +3474,11 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "nfc"
       ],
       "isPremium": false,
-      "whatsappUrl": "https://wa.me/5524998485245",
+      "whatsappUrl": "https://wa.me/5524992087767",
       "instagramUrl": "https://www.instagram.com/loja.meusonho/",
       "mapsUrl": "https://maps.google.com/?cid=3640453365322855656",
-      "badge": "Lembranças e Presentes"
+      "badge": "Lembranças e Presentes",
+      "whatsapp": "24992087767"
     },
     {
       "id": "artevelas",
@@ -3225,10 +3502,11 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "nfc"
       ],
       "isPremium": false,
-      "whatsappUrl": "https://wa.me/5521999167676",
+      "whatsappUrl": "https://wa.me/5524992087767",
       "instagramUrl": "https://www.instagram.com/artevelaspenedo/",
       "mapsUrl": "https://maps.google.com/?cid=17080737747191518978",
-      "badge": "Decoração e Aromas"
+      "badge": "Decoração e Aromas",
+      "whatsapp": "24992087767"
     },
     {
       "id": "raio-de-luz-decoracoes",
@@ -3252,7 +3530,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "isPremium": false,
       "instagramUrl": "https://www.instagram.com/raiodeluz_penedo/",
       "mapsUrl": "https://maps.google.com/?cid=3706962587581718413",
-      "badge": "Casa e Decoração"
+      "badge": "Casa e Decoração",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "emporio-haru",
@@ -3275,7 +3555,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "doces",
         "balas",
         "empório"
-      ]
+      ],
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "rosana-balas-coco",
@@ -3297,7 +3579,9 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "presentes",
         "penedo",
         "lembranças"
-      ]
+      ],
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
       "id": "from-penedo-delicatessen",
@@ -3318,6 +3602,33 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "queijos",
         "produtos locais",
         "presentes",
+        "penedo"
+      ],
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
+    },
+    {
+      "id": "unica-arte-para-voce",
+      "slug": "unica-arte-para-voce",
+      "title": "Única Arte para Você",
+      "category": "Artesanato",
+      "isPremium": false,
+      "image": "/assets/imagens/logos/logo-loja-unica.jpg",
+      "description": "Peças artesanais exclusivas e artigos de decoração com carinho em Penedo.",
+      "fullInfo": "A Única Arte para Você traz peças exclusivas de artesanato, decorações e presentes encantadores em Penedo. Produtos selecionados com todo carinho para registrar sua visita à vila.",
+      "location": "Penedo, Itatiaia - RJ",
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767",
+      "email": "contatounicapenedo@gmail.com",
+      "instagramUrl": "https://www.instagram.com/lojaunica_rj",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=%C3%9Anica+Arte+para+Voc%C3%AA+Penedo",
+      "tags": [
+        "artesanato",
+        "compras",
+        "presentes",
+        "decoração",
+        "lembranças",
+        "arte",
         "penedo"
       ]
     }
