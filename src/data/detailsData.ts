@@ -3198,6 +3198,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "hours": "Segunda a quinta: 18h às 23h\nSexta a domingo: 12h às 23h",
       "whatsapp": "24999243600",
       "whatsappUrl": "https://wa.me/5524999243600",
+      "instagramUrl": "https://www.instagram.com/guelasecapenedo/",
       "mapsUrl": "https://maps.app.goo.gl/ejYrA1FY69acBc326",
       "tags": [
         "bar",
