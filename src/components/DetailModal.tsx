@@ -25,7 +25,7 @@ export function DetailModal({ item, onClose }: { item: DetailItem | null, onClos
 
   if (!item) return null;
 
-  const shouldContainLogo = ['pousada-casa-do-bosque', 'pousada-flor-de-penedo', 'pousada-vale-das-flores', 'pousada-das-acerolas', 'paris-hostelli', 'restaurante-toa-toa', 'gute-passeios', 'rei-da-villa', 'meu-sonho'].includes(item.id);
+  const shouldContainLogo = ['jipe-tour', 'casa-das-pedras', 'casa-dos-cristais', 'bufallo-couros', 'guela-seca'].includes(item.id) || ['pousada-casa-do-bosque', 'pousada-flor-de-penedo', 'pousada-vale-das-flores', 'pousada-das-acerolas', 'paris-hostelli', 'restaurante-toa-toa', 'gute-passeios', 'rei-da-villa', 'meu-sonho'].includes(item.id);
 
   const getWhatsAppMessage = () => {
     const isLodging = item.category === 'Hospedagem';

@@ -338,6 +338,27 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "mapsUrl": "https://maps.app.goo.gl/kxyQCf7WKuQjWuet6"
     },
     {
+      "id": "jipe-tour",
+      "title": "Jipe Tour",
+      "category": "Passeios de Aventura",
+      "isPremium": false,
+      "image": "/assets/imagens/logos/logo-jipe-tour.jpg",
+      "description": "Há 16 anos em Penedo, a Jipe Tour oferece passeios de jipe, UTV, trenzinho e cavalo para toda a família.",
+      "fullInfo": "Há 16 anos em Penedo, a Jipe Tour proporciona experiências para todas as idades com passeios de jipe, UTV, trenzinho e cavalo, unindo aventura, segurança e conforto.",
+      "tags": [
+        "jipe",
+        "utv",
+        "trenzinho",
+        "cavalo",
+        "aventura",
+        "passeios",
+        "trilhas",
+        "cachoeiras",
+        "família"
+      ],
+      "instagramUrl": "https://www.instagram.com/jipetourpenedo/"
+    },
+    {
       "id": "aguia-de-penedo",
       "title": "Águia de Penedo",
       "category": "Aventura",
@@ -1175,7 +1196,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "title": "Recanto dos Pássaros Penedo",
       "category": "Hospedagem",
       "isPremium": false,
-      "image": "/assets/imagens/logos/Pousada recanto dos passaros.jpg",
+      "image": "/assets/imagens/logos/logo-pousada-recanto-dos-passaros.jpg",
       "description": "Ambiente familiar e aconchegante com piscina ao ar livre, jardim e Wi-Fi.",
       "fullInfo": "O Recanto dos Pássaros Penedo oferece uma hospedagem aconchegante e familiar em uma propriedade com características de Penedo-RJ. Localizado a poucos minutos do centro histórico, oferece quartos com ar-condicionado, TV e banheiro privativo. A estrutura de lazer conta com piscina ao ar livre, jardim, área de convivência e Wi-Fi gratuito. É uma ótima opção para famílias e casais que buscam um ambiente familiar e tranquilo, facilitando o acesso aos principais atrativos da região.",
       "descricao_longa": "O Recanto dos Pássaros Penedo oferece uma hospedagem aconchegante e familiar em uma propriedade com características de Penedo-RJ. Localizado a poucos minutos do centro histórico, oferece quartos com ar-condicionado, TV e banheiro privativo. A estrutura de lazer conta com piscina ao ar livre, jardim, área de convivência e Wi-Fi gratuito. É uma ótima opção para famílias e casais que buscam um ambiente familiar e tranquilo, facilitando o acesso aos principais atrativos da região.",
@@ -1198,7 +1219,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "title": "Pousada Lapônia",
       "category": "Hospedagem",
       "isPremium": false,
-      "image": "/assets/imagens/logos/pousada laponia.jpg",
+      "image": "/assets/imagens/logos/logo-pousada-laponia.jpg",
       "description": "Localização privilegiada na Avenida Brasil, com piscina, sauna e salão de jogos.",
       "fullInfo": "A Pousada Lapônia está localizada no centro de Penedo-RJ, na Avenida Brasil, a cerca de 400 metros da Pequena Finlândia, facilitando o acesso a pé às principais atrações da cidade. Com ambiente familiar e aconchegante, oferece suítes e chalés confortáveis, equipados com ar-condicionado e frigobar. A estrutura conta com piscina ao ar livre, sauna a vapor, salão de jogos, estacionamento e um café da manhã completo, sendo uma ótima opção para casais, famílias e viajantes que buscam aproveitar o melhor de Penedo com conforto e praticidade.",
       "descricao_longa": "A Pousada Lapônia está localizada no centro de Penedo-RJ, na Avenida Brasil, a cerca de 400 metros da Pequena Finlândia, facilitando o acesso a pé às principais atrações da cidade. Com ambiente familiar e aconchegante, oferece suítes e chalés confortáveis, equipados com ar-condicionado e frigobar. A estrutura conta com piscina ao ar livre, sauna a vapor, salão de jogos, estacionamento e um café da manhã completo, sendo uma ótima opção para casais, famílias e viajantes que buscam aproveitar o melhor de Penedo com conforto e praticidade.",
@@ -1301,7 +1322,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "title": "Pousada Chiclé Penedo MC",
       "category": "Hospedagem",
       "isPremium": false,
-      "image": "/assets/imagens/logos/Pousada Chicle.jpg",
+      "image": "/assets/imagens/logos/logo-pousada-chicle.jpg",
       "description": "Chalés rústicos e equipados no Centro de Penedo com excelente localização.",
       "fullInfo": "Localizada no centro de Penedo, a Pousada Chiclé Penedo MC oferece aconchego e praticidade em chalés rústicos e equipados. Com estacionamento privativo, Wi-Fi grátis e jardim, a pousada é uma excelente opção para casais, famílias e viajantes que desejam aproveitar as principais atrações, lojas e restaurantes da região a pé.",
       "descricao_longa": "Localizada no centro de Penedo, a Pousada Chiclé Penedo MC oferece aconchego e praticidade em chalés rústicos e equipados. Com estacionamento privativo, Wi-Fi grátis e jardim, a pousada é uma excelente opção para casais, famílias e viajantes que desejam aproveitar as principais atrações, lojas e restaurantes da região a pé.",
@@ -1351,7 +1372,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "title": "Casa de Artista Suítes Penedo",
       "category": "Hospedagem",
       "isPremium": false,
-      "image": "/assets/imagens/logos/pousada casa do artista.jpg",
+      "image": "/assets/imagens/logos/logo-pousada-casa-do-artista.jpg",
       "description": "Localização reservada e charmosa próxima ao centrinho de Penedo.",
       "fullInfo": "A Casa de Artista Suítes Penedo oferece uma estadia charmosa e reservada em Penedo-RJ. Próxima ao centrinho, a pousada dispõe de suítes decoradas com muito capricho, equipadas com ar-condicionado, TV de tela plana e frigobar. A estrutura conta com piscina ao ar livre, jardim, área de lazer e Wi-Fi gratuito. É uma ótima escolha para casais e famílias que buscam tranquilidade e proximidade das atrações locais.",
       "descricao_longa": "A Casa de Artista Suítes Penedo oferece uma estadia charmosa e reservada in Penedo-RJ. Próxima ao centrinho, a pousada dispõe de suítes decoradas com muito capricho, equipadas com ar-condicionado, TV de tela plana e frigobar. A estrutura conta com piscina ao ar livre, jardim, área de lazer e Wi-Fi gratuito. É uma ótima escolha para casais e famílias que buscam tranquilidade e proximidade das atrações locais.",
@@ -1400,7 +1421,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "title": "Pousada Bela Vista Penedo",
       "category": "Hospedagem",
       "isPremium": false,
-      "image": "/assets/imagens/logos/Pousada bela vista.jpg",
+      "image": "/assets/imagens/logos/logo-pousada-bela-vista.jpg",
       "description": "Vista panorâmica das montanhas da Serra da Mantiqueira e excelente estrutura.",
       "fullInfo": "A Pousada Bela Vista Penedo oferece uma hospedagem com muito conforto, hospitalidade e uma vista deslumbrante das montanhas. Com quartos aconchegantes e equipados com ar-condicionado, a pousada dispõe de piscina ao ar livre, sauna, jardim com redário e estacionamento gratuito. É uma ótima opção para casais e famílias que buscam tranquilidade e contato com a natureza na serra.",
       "descricao_longa": "A Pousada Bela Vista Penedo oferece uma hospedagem com muito conforto, hospitalidade e uma vista deslumbrante das montanhas. Com quartos aconchegantes e equipados com ar-condicionado, a pousada dispõe de piscina ao ar livre, sauna, jardim com redário e estacionamento gratuito. É uma ótima opção para casais e famílias que buscam tranquilidade e contato com a natureza na serra.",
@@ -1454,7 +1475,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "title": "Chalés Laço e Nó",
       "category": "Hospedagem",
       "isPremium": false,
-      "image": "/assets/imagens/logos/pousada laco e no.jpg",
+      "image": "/assets/imagens/logos/logo-pousada-laco-e-no.jpg",
       "description": "Aconchego e paz em chalés próximos ao centro histórico.",
       "fullInfo": "Aconchego e paz definem uma hospedagem confortável em Penedo-RJ, ideal para casais e famílias que buscam tranquilidade e contato próximo ao centro histórico. As acomodações são aconchegantes e equipadas, facilitando o acesso aos restaurantes, lojas e atrativos locais. A estrutura conta com piscina, jardim e Wi-Fi gratuito.",
       "descricao_longa": "Aconchego e paz definem uma hospedagem confortável em Penedo-RJ, ideal para casais e famílias que buscam tranquilidade e contato próximo ao centro histórico. As acomodações são aconchegantes e equipadas, facilitando o acesso aos restaurantes, lojas e atrativos locais. A estrutura conta com piscina, jardim e Wi-Fi gratuito.",
@@ -1534,7 +1555,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "title": "Pousada Finlândia",
       "category": "Hospedagem",
       "isPremium": true,
-      "image": "/assets/imagens/logos/pousada finlandia.jpg",
+      "image": "/assets/imagens/logos/logo-pousada-finlandia.jpg",
       "description": "Hospedagem aconchegante a menos de 100 metros da Pequena Finlândia, com piscina, sauna e café da manhã colonial.",
       "fullInfo": "A Pousada Finlândia está a menos de 100 metros da Pequena Finlândia, no centro de Penedo-RJ. Oferece acomodações amplas, piscina ao ar livre, sauna, jardim e café da manhã em estilo colonial. A estrutura também conta com Wi-Fi em todas as áreas, estacionamento seguro e gratuito, vigilância noturna e acessibilidade para cadeirantes e idosos. Pet friendly, é uma opção para quem quer aproveitar as principais atrações da cidade com conforto e praticidade.",
       "descricao_longa": "A menos de 100 metros da charmosa Pequena Finlândia, conhecida pela Casa do Papai Noel, a Pousada Finlândia oferece acomodações amplas, piscina ao ar livre, sauna, jardim e um delicioso café da manhã. Com Wi-Fi gratuito, estacionamento privativo e vigilância noturna, proporciona segurança e bem-estar para sua estadia em Penedo.",
@@ -1630,7 +1651,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "title": "Pousada Penedo House",
       "category": "Hospedagem",
       "isPremium": false,
-      "image": "/assets/imagens/logos/pousada penedo house.jpg",
+      "image": "/assets/imagens/logos/logo-pousada-penedo-house.jpg",
       "description": "Hospedagem confortável com piscina e Wi-Fi no centro de Penedo.",
       "fullInfo": "A Pousada Penedo House oferece acomodações com piscina ao ar livre, jardim e Wi-Fi gratuito. Localizada no centro de Penedo-RJ, a pousada é uma ótima opção para casais, famílias e viajantes que buscam proximidade com o centrinho histórico, lojas e restaurantes da região.",
       "descricao_longa": "A Pousada Penedo House oferece acomodações com piscina ao ar livre, jardim e Wi-Fi gratuito. Localizada no centro de Penedo-RJ, a pousada é uma ótima opção para casais, famílias e viajantes que buscam proximidade com o centrinho histórico, lojas e restaurantes da região.",
@@ -1656,7 +1677,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "title": "Pousada Nossa Senhora",
       "category": "Hospedagem",
       "isPremium": false,
-      "image": "/assets/imagens/logos/Pousada nossa senhora.jpg",
+      "image": "/assets/imagens/logos/logo-pousada-nossa-senhora.jpg",
       "description": "Hospedagem acolhedora com piscina, café da manhã e Wi-Fi gratuito.",
       "fullInfo": "A Pousada Nossa Senhora oferece uma hospedagem confortável e acolhedora em Penedo-RJ. Com ambiente familiar e tranquilo, dispõe de piscina ao ar livre, jardim com área de lazer e Wi-Fi gratuito. Os quartos são equipados com ar-condicionado, TV e frigobar. É uma ótima opção para quem busca descanso com excelente custo-benefício.",
       "descricao_longa": "A Pousada Nossa Senhora oferece uma hospedagem confortável e acolhedora em Penedo-RJ. Com ambiente familiar e tranquilo, dispõe de piscina ao ar livre, jardim com área de lazer e Wi-Fi gratuito. Os quartos são equipados com ar-condicionado, TV e frigobar. É uma ótima opção para quem busca descanso com excelente custo-benefício.",
@@ -3164,6 +3185,28 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       ],
       "whatsapp": "24992087767",
       "whatsappUrl": "https://wa.me/5524992087767"
+    },
+    {
+      "id": "guela-seca",
+      "title": "Guela Seca",
+      "category": "Gastronomia",
+      "isPremium": false,
+      "image": "/assets/imagens/logos/logo-guela-seca.jpg",
+      "description": "Bar e restaurante tradicional no centro de Penedo, com ambiente simples e acolhedor.",
+      "fullInfo": "A Guela Seca é um tradicional bar e restaurante no centro de Penedo, ideal para quem busca uma refeição farta e excelente custo-benefício em um ambiente simples, despretensioso e acolhedor.",
+      "location": "Av. das Mangueiras, 1274 - Penedo, Itatiaia - RJ",
+      "hours": "Segunda a quinta: 18h às 23h\nSexta a domingo: 12h às 23h",
+      "whatsapp": "24999243600",
+      "whatsappUrl": "https://wa.me/5524999243600",
+      "mapsUrl": "https://maps.app.goo.gl/ejYrA1FY69acBc326",
+      "tags": [
+        "bar",
+        "restaurante",
+        "gastronomia",
+        "refeição farta",
+        "custo-benefício",
+        "centro"
+      ]
     }
   ],
   "compras": [
@@ -3373,6 +3416,27 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "whatsapp": "24992087767"
     },
     {
+      "id": "casa-dos-cristais",
+      "title": "Casa dos Cristais",
+      "category": "Esotérico & Cristais",
+      "isPremium": false,
+      "image": "/assets/imagens/logos/logo-casa-dos-cristais.jpg",
+      "description": "Especialista em pedras e cristais raros, com elixires e terapias energéticas em Penedo.",
+      "fullInfo": "A Casa dos Cristais é especializada em pedras e cristais raros e especiais. Também oferece tratamentos com elixires, mesa radiônica e apometria.",
+      "location": "Av. Casa das Pedras, 873 A - Penedo, Itatiaia - RJ",
+      "tags": [
+        "cristais",
+        "pedras",
+        "elixires",
+        "mesa radiônica",
+        "apometria",
+        "esotérico",
+        "bem-estar"
+      ],
+      "instagramUrl": "https://www.instagram.com/casadoscristaispenedo/",
+      "mapsUrl": "https://maps.app.goo.gl/QLE54tFdWXcc8VNRA"
+    },
+    {
       "id": "via-lactea-balas",
       "title": "Via-Láctea Loja das Balas",
       "category": "Balas & Doces",
@@ -3429,6 +3493,30 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "whatsapp": "24992087767"
     },
     {
+      "id": "casa-das-pedras",
+      "title": "Casa das Pedras",
+      "category": "Artesanato & Presentes",
+      "isPremium": false,
+      "image": "/assets/imagens/logos/logo-casa-das-pedras.jpg",
+      "description": "Loja tradicional de artesanatos, decoração e souvenires no centro de Penedo.",
+      "fullInfo": "Há mais de 20 anos na avenida principal de Penedo, a Casa das Pedras reúne artesanatos, decorações e souvenires. A loja oferece bijuterias, fontes de água corrente, estátuas de animais e pequenos artigos decorativos feitos de pedras e pedra-sabão. Na entrada, a icônica árvore da sorte é um ponto muito procurado para fotos.",
+      "location": "Av. das Mangueiras, 220 - Penedo, Itatiaia - RJ",
+      "hours": "Aberto todos os dias",
+      "tripadvisorUrl": "https://www.tripadvisor.com.br/Attraction_Review-g2427181-d8857773-Reviews-Casa_das_Pedras-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
+      "tags": [
+        "artesanato",
+        "decoração",
+        "souvenires",
+        "pedras",
+        "pedra-sabão",
+        "presentes",
+        "av. das mangueiras",
+        "centro"
+      ],
+      "instagramUrl": "https://www.instagram.com/casadaspedrasoficial/",
+      "mapsUrl": "https://maps.app.goo.gl/r1XXbPv63WN2Raqo9"
+    },
+    {
       "id": "reserva-da-mata",
       "title": "Reserva Da Mata",
       "category": "Moda & Vestuário",
@@ -3454,6 +3542,26 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "mapsUrl": "https://maps.google.com/?cid=6753522909305314682",
       "badge": "Moda e Estilo",
       "whatsapp": "24992087767"
+    },
+    {
+      "id": "bufallo-couros",
+      "title": "Bufallo Couros",
+      "category": "Moda & Vestuário",
+      "isPremium": false,
+      "image": "/assets/imagens/logos/logo-bufallo-couros.jpg",
+      "description": "Moda em couro legítimo com elegância atemporal no centro de Penedo.",
+      "fullInfo": "A Bufallo Couros oferece peças em couro legítimo para quem busca estilo, qualidade e elegância atemporal.",
+      "location": "Av. Casa das Pedras, 852 - Penedo, Itatiaia - RJ",
+      "tags": [
+        "couro legítimo",
+        "moda",
+        "vestuário",
+        "acessórios",
+        "elegância",
+        "compras"
+      ],
+      "instagramUrl": "https://www.instagram.com/bufallocourosoficial/",
+      "mapsUrl": "https://maps.app.goo.gl/zbFj6jPfsjw3WUg47"
     },
     {
       "id": "meu-sonho",
