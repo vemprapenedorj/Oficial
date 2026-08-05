@@ -3747,7 +3747,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "id": "roteiro-2-dias-em-penedo",
       "title": "Penedo, RJ: o roteiro perfeito de 2 dias na Pequena Finlândia brasileira",
       "category": "Destaque",
-      "image": "/assets/imagens/blog/roteiro-1-dia-penedo/capa.jpg",
+      "image": "/assets/imagens/blog/roteiro-2-dias-penedo/intro.jpg",
       "description": "Planeje 2 dias em Penedo, RJ, com Pequena Finlândia, cachoeiras, museu, gastronomia, hospedagens, passeios e dicas práticas.",
       "fullInfo": "Um roteiro completo de 2 dias em Penedo para combinar cultura finlandesa, natureza, gastronomia, compras e descanso.",
       "tags": [
