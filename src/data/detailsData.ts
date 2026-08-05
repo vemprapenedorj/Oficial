@@ -90,6 +90,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "hours": "Consulte horários de funcionamento",
       "rating": 4.8,
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Attraction_Review-g2427181-d2424412-Reviews-Museu_Finlandes_Dona_Eva-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
+      "instagramUrl": "https://www.instagram.com/museufinlandes/",
       "tags": [
         "museu",
         "história",
