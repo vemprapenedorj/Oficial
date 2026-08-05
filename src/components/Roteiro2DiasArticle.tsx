@@ -37,6 +37,8 @@ const getPublicPath = (item: DetailItem, group: string): string =>
 
 const CARD_IMAGES: Record<string, string> = {
   'pousada-villa-luna': '/assets/imagens/premium/pousada-villa-luna/galeria-1.png',
+  'hotel-da-cachoeira': '/assets/imagens/blog/roteiro-2-dias-penedo/hotel-da-cachoeira.jpg',
+  'pousada-serra-da-india': '/assets/imagens/blog/roteiro-2-dias-penedo/serra-da-india.png',
   'pequena-finlandia': '/assets/imagens/blog/roteiro-2-dias-penedo/pequena-finlandia.jpg',
   'expedicao-raizes': '/assets/imagens/premium/expedicao-raizes/galeria-1.jpg',
   'rei-das-trutas': '/assets/imagens/blog/roteiro-2-dias-penedo/rei-das-trutas.jpg',
@@ -282,7 +284,7 @@ export function Roteiro2DiasArticle({ onOpenDetail, onNavigate }: Roteiro2DiasAr
             <ul className="space-y-3">
               <li><strong>Como chegar:</strong> o acesso principal é pela Rodovia Presidente Dutra (BR-116), utilizando a saída 311. Penedo fica a aproximadamente 170 km do Rio de Janeiro e 270 km de São Paulo.</li>
               <li><strong>Melhor época:</strong> de março a agosto, no outono e inverno, o clima frio é o protagonista, perfeito para fondues e lareiras. Entre setembro e fevereiro, na primavera e no verão, o calor convida a banhos nas águas geladas das cachoeiras.</li>
-              <li><strong>Deslocamento:</strong> embora o centrinho da Pequena Finlândia possa ser explorado a pé, o terreno de Penedo é marcado por ladeiras íngremes. Se a hospedagem ficar fora do miolo central — como na região do Hotel da Cachoeira, a cerca de 2 km —, o uso de carro ou táxi é recomendável para evitar cansaço excessivo.</li>
+              <li><strong>Deslocamento:</strong> embora o centrinho da Pequena Finlândia possa ser explorado a pé, o terreno de Penedo é marcado por ladeiras íngremes. Se a hospedagem ficar fora do miolo central — como na região do <EstablishmentLink id="hotel-da-cachoeira" {...linkProps} />, a cerca de 2 km —, o uso de carro ou táxi é recomendável para evitar cansaço excessivo.</li>
             </ul>
             <div className="not-prose my-8 flex items-start gap-4 rounded-3xl border border-penedo-mint bg-penedo-mint/20 p-6">
               <MapPin className="mt-1 shrink-0 text-penedo-emerald" aria-hidden="true" />
@@ -348,14 +350,16 @@ export function Roteiro2DiasArticle({ onOpenDetail, onNavigate }: Roteiro2DiasAr
             <SectionTitle id="recomendacoes">5. Guia de recomendações</SectionTitle>
             <PeriodTitle>Hospedagem</PeriodTitle>
             <ul className="space-y-3">
-              <li><strong>Hotel da Cachoeira:</strong> excelente custo-benefício para quem busca contato direto com a natureza e uma cachoeira privativa, embora tenha um estilo mais rústico.</li>
-              <li><strong>Pousada Serra da Índia:</strong> focada em casais, oferece uma vista deslumbrante para as montanhas e total privacidade.</li>
+              <li><EstablishmentLink id="hotel-da-cachoeira" {...linkProps} />: excelente infraestrutura em 20 mil m² cercado por Mata Atlântica e pelo Rio das Pedras.</li>
+              <li><EstablishmentLink id="pousada-serra-da-india" {...linkProps} />: refúgio de charme focada em casais, oferecendo vista deslumbrante no alto de uma colina e total privacidade.</li>
               <li><EstablishmentLink id="pousada-vale-das-flores" {...linkProps} />: a cerca de 1,5 km do centro de Penedo, combina áreas verdes, piscina e sauna para quem busca descanso próximo às principais atrações.</li>
               <li><EstablishmentLink id="pousada-villa-luna" {...linkProps} />: na Avenida das Mangueiras, oferece uma atmosfera boutique, jardins, piscina e atendimento personalizado para uma estadia confortável perto do centrinho.</li>
             </ul>
             <CardGrid
-              ids={['pousada-villa-luna', 'pousada-vale-das-flores']}
+              ids={['hotel-da-cachoeira', 'pousada-serra-da-india', 'pousada-villa-luna', 'pousada-vale-das-flores']}
               descriptions={{
+                'hotel-da-cachoeira': 'Tradição hoteleira há mais de 40 anos cercado por Mata Atlântica e pelo Rio das Pedras.',
+                'pousada-serra-da-india': 'Refúgio de charme e exclusividade no alto da colina com vista panorâmica.',
                 'pousada-villa-luna': 'Hospedagem Premium com página exclusiva ativa, a cerca de 200 metros do centro de Penedo.',
                 'pousada-vale-das-flores': 'Áreas verdes, piscina, jardim e sauna para uma estadia tranquila em Penedo.',
               }}

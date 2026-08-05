@@ -519,6 +519,35 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "bookingUrl": "https://www.booking.com/hotel/br/casa-encantada.pt-br.html"
     },
     {
+      "id": "hotel-da-cachoeira",
+      "title": "Hotel da Cachoeira",
+      "category": "Hospedagem",
+      "image": "/assets/imagens/logos/logo-hotel-da-cachoeira.jpg",
+      "description": "Tradição hoteleira há mais de 40 anos cercado por Mata Atlântica e pelo Rio das Pedras.",
+      "fullInfo": "Inaugurado em 1975 na Colônia Finlandesa de Penedo. A 2 km do centro, está localizado em uma área de 20 mil m² cercada por Mata Atlântica e permeada pelo Rio das Pedras. Conta com 2 piscinas (uma aquecida), saunas seca e a vapor, terapias bem-estar e 40 quartos equipados com lareira, ar-condicionado, TV Sky, frigobar e opções com hidromassagem.",
+      "location": "R. Santa Rita, Penedo - RJ",
+      "rating": 4.7,
+      "whatsapp": "24999654165",
+      "tripadvisorUrl": "https://www.tripadvisor.com.br/Hotel_Review-g2427181-d2686224-Reviews-Hotel_da_Cachoeira-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
+      "tags": [
+        "piscina",
+        "piscina aquecida",
+        "sauna",
+        "rio",
+        "natureza",
+        "lareira",
+        "hidromassagem",
+        "terapias",
+        "tranquilidade",
+        "família",
+        "romântico"
+      ],
+      "isPremium": false,
+      "instagramUrl": "https://www.instagram.com/hoteldacachoeira/",
+      "bookingUrl": "https://www.booking.com/hotel/br/cachoeira.pt-br.html",
+      "mapsUrl": "https://maps.app.goo.gl/yAJoo7sm7GQFhG8QA"
+    },
+    {
       "id": "hotel-daniela",
       "title": "Hotel Daniela",
       "category": "Hospedagem",
@@ -869,6 +898,35 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "isPremium": false,
       "instagramUrl": "https://www.instagram.com/santafepenedo/",
       "bookingUrl": "https://www.booking.com/hotel/br/pousada-santa-fe-penedo.pt-br.html"
+    },
+    {
+      "id": "pousada-serra-da-india",
+      "title": "Pousada Serra da Índia",
+      "category": "Hospedagem",
+      "image": "/assets/imagens/logos/logo-pousada-serra-da-india.jpg",
+      "description": "Refúgio de charme e exclusividade no alto da colina com vista panorâmica e ambiente intimista.",
+      "fullInfo": "Refúgio de charme e exclusividade no alto de uma colina a 3 km do centro de Penedo, ideal para casais. Oferece vista panorâmica para as montanhas, ambiente intimista, piscina, sauna, lounge acolhedor, café da manhã especial, Wi-Fi em todas as acomodações, estacionamento gratuito e gerador próprio.",
+      "location": "Estr. Vale do Ermitão, Km 2 - Penedo",
+      "rating": 4.8,
+      "whatsapp": "24998355021",
+      "tripadvisorUrl": "https://www.tripadvisor.com.br/Hotel_Review-g2427181-d2661272-Reviews-Pousada_Serra_da_India-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
+      "tags": [
+        "pousada",
+        "refúgio",
+        "romântico",
+        "casais",
+        "vista panorâmica",
+        "piscina",
+        "sauna",
+        "lounge",
+        "natureza",
+        "tranquilidade",
+        "estacionamento"
+      ],
+      "isPremium": false,
+      "instagramUrl": "https://www.instagram.com/pousadaserradaindiaoficial/",
+      "bookingUrl": "https://www.booking.com/hotel/br/pousada-serra-da-india.pt-br.html",
+      "mapsUrl": "https://maps.app.goo.gl/msDq5VWsVmk1DMoK8"
     },
     {
       "id": "pousada-do-sol",
