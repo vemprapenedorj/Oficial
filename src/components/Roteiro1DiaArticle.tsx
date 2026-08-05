@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowLeft, X, ArrowRight, Check, MapPin, ExternalLink, Calendar, Clock, User, Droplets, Utensils, ShoppingBag } from 'lucide-react';
+import { ArrowLeft, X, ArrowRight, Check, MapPin, Calendar, Clock, User, Droplets, Utensils, ShoppingBag } from 'lucide-react';
 import SEO from './SEO';
 import { generateSEO } from '../seo';
 import { DETAILS_DATA } from '../data/detailsData';
 import { DetailItem, Page } from '../types';
 import { getBusinessPath } from '../routing/routeHelpers';
+import { ArticlePremiumDialog } from './ArticlePremiumDialog';
 
 interface Roteiro1DiaArticleProps {
   onOpenDetail: (item: DetailItem) => void;
@@ -186,29 +187,13 @@ export function Roteiro1DiaArticle({ onOpenDetail, onNavigate, handleSelectArtic
   const currentIndex = blogPosts.findIndex(post => post.id === 'roteiro-1-dia-em-penedo');
   const prevPost = currentIndex !== -1 && currentIndex + 1 < blogPosts.length ? blogPosts[currentIndex + 1] : null;
 
-  React.useEffect(() => {
-    if (confirmPremiumItem) {
-      document.body.style.overflow = 'hidden';
-      const handleKeyDown = (e: KeyboardEvent) => {
-        if (e.key === 'Escape') {
-          setConfirmPremiumItem(null);
-        }
-      };
-      window.addEventListener('keydown', handleKeyDown);
-      return () => {
-        document.body.style.overflow = '';
-        window.removeEventListener('keydown', handleKeyDown);
-      };
-    }
-  }, [confirmPremiumItem]);
-
   const handleOpenConfirm = (item: DetailItem) => {
     setConfirmPremiumItem(item);
   };
 
   const handlePrevArticle = () => {
     if (prevPost) {
-      const inlineArticleIds = ['roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'];
+      const inlineArticleIds = ['roteiro-2-dias-em-penedo', 'roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'];
       if (inlineArticleIds.includes(prevPost.id)) {
         handleSelectArticle(prevPost.id);
       } else {
@@ -582,63 +567,7 @@ export function Roteiro1DiaArticle({ onOpenDetail, onNavigate, handleSelectArtic
         </article>
       </main>
 
-      {/* Confirmation Modal for Premium Establishments */}
-      <AnimatePresence>
-        {confirmPremiumItem && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[110] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm cursor-pointer"
-            onClick={() => setConfirmPremiumItem(null)}
-          >
-            <motion.div
-              initial={{ scale: 0.9, y: 20 }}
-              animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.9, y: 20 }}
-              className="bg-white rounded-[2.5rem] p-8 max-w-md w-full shadow-2xl text-center border border-gray-100 relative"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button 
-                onClick={() => setConfirmPremiumItem(null)}
-                className="absolute top-5 right-5 text-gray-400 hover:text-gray-600 transition-colors p-2 rounded-full hover:bg-gray-50 cursor-pointer border-none bg-transparent"
-                aria-label="Fechar"
-              >
-                <X size={20} />
-              </button>
-
-              <div className="w-16 h-16 bg-penedo-mint/40 text-penedo-emerald rounded-full flex items-center justify-center mx-auto mb-6">
-                <ExternalLink size={28} />
-              </div>
-
-              <h3 className="text-xl md:text-2xl font-black text-penedo-forest mb-3 leading-snug">
-                Você será direcionado para uma página exclusiva
-              </h3>
-              <p className="text-gray-500 text-sm leading-relaxed mb-8">
-                Deseja conhecer mais detalhes sobre <span className="font-bold text-gray-800">{confirmPremiumItem.title}</span>?
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <button 
-                  onClick={() => setConfirmPremiumItem(null)}
-                  className="py-3 px-6 bg-gray-100 text-gray-700 font-black rounded-2xl hover:bg-gray-200 transition-colors text-xs uppercase tracking-wider cursor-pointer flex-1 border-none"
-                >
-                  Permanecer no roteiro
-                </button>
-                <Link
-                  to={getItemPath(confirmPremiumItem)}
-                  onClick={() => {
-                    setConfirmPremiumItem(null);
-                  }}
-                  className="py-3 px-6 bg-penedo-emerald text-white font-black rounded-2xl hover:bg-penedo-forest transition-colors text-xs uppercase tracking-wider cursor-pointer shadow-lg shadow-penedo-emerald/20 flex-1 border-none"
-                >
-                  Conhecer estabelecimento
-                </Link>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <ArticlePremiumDialog item={confirmPremiumItem} onClose={() => setConfirmPremiumItem(null)} />
     </motion.div>
   );
 }

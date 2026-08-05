@@ -16,7 +16,9 @@ import { getBreadcrumbSchema } from '../schema';
 import { RestaurantesArticle } from '../components/RestaurantesArticle';
 import { HospedagemArticle } from '../components/HospedagemArticle';
 import { Roteiro1DiaArticle } from '../components/Roteiro1DiaArticle';
+import { Roteiro2DiasArticle } from '../components/Roteiro2DiasArticle';
 import Page404 from '../components/Page404';
+import { getBlogArticlePath } from '../routing/routeHelpers';
 
 const MotionLink = motion.create(Link);
 
@@ -39,7 +41,7 @@ export function BlogPage({ onOpenDetail, onNavigate, onSelectArticle }: { onOpen
 
     const handlePrev = () => {
       if (prevPost) {
-        const inlineArticleIds = ['roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'];
+        const inlineArticleIds = ['roteiro-2-dias-em-penedo', 'roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'];
         if (inlineArticleIds.includes(prevPost.id)) {
           handleSelectArticle(prevPost.id);
           window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -54,7 +56,7 @@ export function BlogPage({ onOpenDetail, onNavigate, onSelectArticle }: { onOpen
 
     const handleNext = () => {
       if (nextPost) {
-        const inlineArticleIds = ['roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'];
+        const inlineArticleIds = ['roteiro-2-dias-em-penedo', 'roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'];
         if (inlineArticleIds.includes(nextPost.id)) {
           handleSelectArticle(nextPost.id);
           window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -70,7 +72,7 @@ export function BlogPage({ onOpenDetail, onNavigate, onSelectArticle }: { onOpen
       }
     };
 
-    const inlineArticleIds = ['roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'];
+    const inlineArticleIds = ['roteiro-2-dias-em-penedo', 'roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'];
     const prevHref = prevPost && inlineArticleIds.includes(prevPost.id) ? `/blog/artigo/${prevPost.id}/` : '/blog/';
     const penedoGuiaExists = blogPosts.some(post => post.id === 'penedo-guia');
     const nextHref = nextPost && inlineArticleIds.includes(nextPost.id)
@@ -203,6 +205,10 @@ export function BlogPage({ onOpenDetail, onNavigate, onSelectArticle }: { onOpen
         <Page404 onNavigate={onNavigate} />
       </>
     );
+  }
+
+  if (activeArticle === 'roteiro-2-dias-em-penedo') {
+    return <Roteiro2DiasArticle onOpenDetail={onOpenDetail} onNavigate={onNavigate} />;
   }
 
   if (activeArticle === 'roteiro-1-dia-em-penedo') {
@@ -912,8 +918,7 @@ export function BlogPage({ onOpenDetail, onNavigate, onSelectArticle }: { onOpen
       <section className="py-10 md:py-24 max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12">
           {DETAILS_DATA['blog'].map((post) => {
-            const hasArticlePage = ['roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'].includes(post.id);
-            const postHref = hasArticlePage ? `/blog/artigo/${post.id}/` : '/onde-ficar/';
+            const postHref = getBlogArticlePath(post.slug || post.id);
 
             return (
             <MotionLink

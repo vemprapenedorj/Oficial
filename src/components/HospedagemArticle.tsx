@@ -79,7 +79,7 @@ export function HospedagemArticle({ handleSelectArticle, onNavigate }: Hospedage
 
   const handlePrevArticle = () => {
     if (prevPost) {
-      const inlineArticleIds = ['roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'];
+      const inlineArticleIds = ['roteiro-2-dias-em-penedo', 'roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'];
       if (inlineArticleIds.includes(prevPost.id)) {
         handleSelectArticle(prevPost.id);
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -94,7 +94,7 @@ export function HospedagemArticle({ handleSelectArticle, onNavigate }: Hospedage
 
   const handleContinueExploring = () => {
     if (nextPost) {
-      const inlineArticleIds = ['roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'];
+      const inlineArticleIds = ['roteiro-2-dias-em-penedo', 'roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'];
       if (inlineArticleIds.includes(nextPost.id)) {
         handleSelectArticle(nextPost.id);
         window.scrollTo({ top: 0, behavior: 'smooth' });
