@@ -63,23 +63,17 @@ const compressFile = (filePath) => {
 // --- 4. PRE-RENDERING AND VALIDATION ---
 const prerenderAndValidate = async (routes, baseUrl) => {
   console.log('🚀 Iniciando pré-renderização com Puppeteer...');
-  const runsAsRoot = typeof process.getuid === 'function' && process.getuid() === 0;
   fs.rmSync(PUPPETEER_PROFILE_DIR, { recursive: true, force: true });
   const browser = await puppeteer.launch({
     headless: true,
     timeout: 60_000,
     userDataDir: PUPPETEER_PROFILE_DIR,
     args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
       '--disable-crash-reporter',
-      ...(runsAsRoot
-        ? [
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-            '--disable-dev-shm-usage',
-            '--no-zygote',
-            '--single-process',
-          ]
-        : []),
+      '--no-zygote',
     ],
   });
   const page = await browser.newPage();
