@@ -3267,6 +3267,37 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "custo-benefício",
         "centro"
       ]
+    },
+    {
+      "id": "janela-divino",
+      "slug": "janela-divino",
+      "title": "Janela Divino",
+      "category": "Vinho & Bebidas",
+      "image": "/assets/imagens/logos/logo-janela-divino.jpg",
+      "description": "A 1ª Janela de Vinho do RJ no Shopping Pequena Finlândia. Inspirada nas tradicionais buchette del vino italianas.",
+      "fullInfo": "Inspirada nas tradicionais buchette del vino da Toscana do século XVI, a Janela Divino é a 1ª janela de vinho do Estado do Rio de Janeiro, situada no Shopping Pequena Finlândia. Toque o sino, peça seu vinho favorito pela janelinha e receba sua taça personalizada para passear pelo charme de Penedo de um jeito único e inesquecível.",
+      "descricao_longa": "Você já imaginou pedir uma taça de vinho por uma janelinha? Essa ideia charmosa nasceu na Toscana, na Itália, no século XVI, com as famosas buchette del vino. Pequenas aberturas nos palácios permitiam que o vinho fosse vendido de forma prática e charmosa diretamente ao público. Em Penedo, você pode viver essa experiência na Janela Divino, dentro do Shopping Pequena Finlândia. Toque o sino, faça seu pedido e receba sua taça para passear e curtir o dia em Penedo.",
+      "location": "Shopping Pequena Finlândia - Rua das Velas, 100, Penedo",
+      "hours": "Quinta a domingo: 12h às 21h",
+      "rating": 5,
+      "isPremium": false,
+      "tripadvisorUrl": "https://www.tripadvisor.com.br/ShowUserReviews-g2348871-d33998587-r1044173968-Janela_DiVino-Itatiaia_State_of_Rio_de_Janeiro.html",
+      "instagramUrl": "https://www.instagram.com/janeladivino/",
+      "mapsUrl": "https://maps.app.goo.gl/qFNwoWi168T5daxVA",
+      "tags": [
+        "vinho",
+        "janela de vinho",
+        "buchette del vino",
+        "pequena finlândia",
+        "taça de vinho",
+        "bebidas",
+        "experiência",
+        "shopping pequena finlândia",
+        "penedo",
+        "itália"
+      ],
+      "whatsapp": "24992087767",
+      "whatsappUrl": "https://wa.me/5524992087767"
     }
   ],
   "compras": [
