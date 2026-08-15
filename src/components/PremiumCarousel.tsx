@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Star, ChevronLeft, ChevronRight, Compass } from 'lucide-react';
 import { DETAILS_DATA } from '../data/detailsData';
 import { Carousel } from './Carousel';
@@ -7,14 +7,29 @@ import { pushPremiumCardClick } from '../analytics/events';
 import { shuffleArray } from '../utils/shuffle';
 import { getBusinessPath } from '../routing/routeHelpers';
 import { Link } from 'react-router-dom';
+import { DetailItem } from '../types';
+
+/**
+ * Embaralha os elementos de um array utilizando o algoritmo Fisher-Yates.
+ * Retorna uma nova cópia sem modificar o array original.
+ */
+function shuffleItems<T>(items: T[]): T[] {
+  const shuffled = [...items];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
 
 export function PremiumCarousel() {
-  const premiumItems = React.useMemo(() => {
+  // Lista determinística estável inicial para garantir 100% de compatibilidade com SSG
+  const initialItems = useMemo(() => {
     const detailsPremium = Object.values(DETAILS_DATA).flat()
       .filter((item) => item.isPremium);
     
-    // De-duplicate by id or slug
-    const uniquePremiumMap = new Map();
+    // De-duplicate by title
+    const uniquePremiumMap = new Map<string, DetailItem>();
     detailsPremium.forEach((item) => {
       const key = item.title;
       if (!uniquePremiumMap.has(key)) {
@@ -24,11 +39,19 @@ export function PremiumCarousel() {
     
     const uniquePremium = Array.from(uniquePremiumMap.values());
       
-    // Stable shuffle keeps the visual variety without changing between SSG and hydration.
+    // Stable shuffle inicial para garantir hidratação 100% livre de mismatch
     return shuffleArray(uniquePremium).slice(0, 12);
   }, []);
 
-  if (premiumItems.length === 0) return null;
+  // Estado que recebe o sorteio aleatório no cliente
+  const [displayedItems, setDisplayedItems] = useState<DetailItem[]>(initialItems);
+
+  // Executa o sorteio aleatório apenas uma vez por carregamento/montagem da página no navegador
+  useEffect(() => {
+    setDisplayedItems(shuffleItems(initialItems));
+  }, [initialItems]);
+
+  if (displayedItems.length === 0) return null;
 
   return (
     <section className="py-10 md:py-24 bg-white relative overflow-hidden">
@@ -47,7 +70,7 @@ export function PremiumCarousel() {
 
         <Carousel 
           title=""
-          items={premiumItems as any}
+          items={displayedItems}
           itemsPerView={{ mobile: 1, tablet: 2, desktop: 3 }}
           renderItem={(item, index) => (
             <Link
