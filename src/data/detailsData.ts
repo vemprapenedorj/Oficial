@@ -2211,7 +2211,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "faq": [
         {
           "question": "Onde fica o restaurante Casa da Picanha?",
-          "answer": "Fica na Av. das Mangueiras, contando com 2 unidades no centro de Penedo para atendimento."
+          "answer": "A Casa da Picanha possui 2 unidades em Penedo: a primeira unidade fica na Avenida Brasil e a segunda unidade fica na esquina da Rua Resende com a Avenida das Mangueiras."
         },
         {
           "question": "O restaurante conta com espaço kids?",
