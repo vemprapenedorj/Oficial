@@ -414,9 +414,12 @@ export function BlogPage({ onOpenDetail, onNavigate, onSelectArticle }: { onOpen
                         onError={(e) => { (e.target as HTMLImageElement).src = "https://picsum.photos/seed/poco-ceu/1000/600"; }}
                       />
                     </div>
-                    <div className="p-6 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20">
+                    <div className="p-6 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 space-y-3">
                       <p className="text-penedo-gold font-bold flex items-center gap-2">
                         <Info size={20} /> 💡 Dica: Chegue cedo para aproveitar as cachoeiras mais vazias e com água mais limpa.
+                      </p>
+                      <p className="text-white/90 text-sm leading-relaxed">
+                        Para conhecer os poços mais preservados da Serrinha do Alambari e trilhas com conforto e guia especializado, conheça os roteiros 4x4 da <Link to="/o-que-fazer/expedicao-raizes/" className="text-penedo-gold font-bold underline hover:text-white transition-colors">Expedição Raízes da Mantiqueira</Link>.
                       </p>
                     </div>
                   </div>

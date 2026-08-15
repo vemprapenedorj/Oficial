@@ -314,12 +314,64 @@ export function PremiumDetailPage({ onNavigate, onOpenDetail }: { onNavigate: (p
     const recommendedNearPlaces = scoreCandidates(nearPlacesCat).slice(0, 3);
     const recommendedSecondary = scoreCandidates(secondaryCat).slice(0, 2);
     
+    const itemId = item.id;
+    const itemSlug = item.slug || item.id;
+
     let recommendedBlog = {
       id: 'penedo-guia',
       title: 'Penedo RJ: Guia Completo de Viagem',
       description: 'Descubra como aproveitar o melhor de Penedo, a colônia finlandesa no Rio de Janeiro.'
     };
-    if (catLower === 'hospedagem' || catLower === 'onde-ficar') {
+
+    if (itemId === 'pousada-villa-luna' || itemSlug === 'pousada-villa-luna') {
+      recommendedBlog = {
+        id: 'roteiro-2-dias-em-penedo',
+        title: 'Roteiro de 2 Dias em Penedo RJ',
+        description: 'Veja como combinar a estadia na Pousada Villa Luna com um roteiro completo pela Pequena Finlândia e cachoeiras.'
+      };
+    } else if (itemId === 'casa-da-picanha') {
+      recommendedBlog = {
+        id: 'restaurantes',
+        title: 'Gastronomia em Penedo: Onde Comer Bem',
+        description: 'Conheça os melhores restaurantes, carnes nobres e tradições gastronômicas de Penedo.'
+      };
+    } else if (itemId === 'expedicao-raizes') {
+      recommendedBlog = {
+        id: 'cachoeiras-penedo',
+        title: 'Guia de Cachoeiras e Trilhas em Penedo RJ',
+        description: 'Descubra as melhores cachoeiras e poços cristalinos da região para explorar em passeios de aventura.'
+      };
+    } else if (itemId === 'pousada-aurora-mantiqueira' || itemSlug === 'pousada-aurora-da-mantiqueira') {
+      recommendedBlog = {
+        id: 'roteiro-1-dia-em-penedo',
+        title: 'Roteiro de 1 Dia em Penedo RJ',
+        description: 'Planeje um fim de semana acolhedor aproveitando o café da manhã artesanal e o silêncio da serra.'
+      };
+    } else if (itemId === 'pousada-finlandia' || itemSlug === 'pousada-finlandia') {
+      recommendedBlog = {
+        id: 'melhores-hospedagens',
+        title: 'Onde se Hospedar em Penedo: Guia de Pousadas',
+        description: 'Encontre pousadas charmosas e confortáveis no centro de Penedo para fazer tudo caminhando.'
+      };
+    } else if (itemId === 'pousada-rainha-da-mata') {
+      recommendedBlog = {
+        id: 'roteiro-2-dias-em-penedo',
+        title: 'Roteiro de 2 Dias em Penedo RJ',
+        description: 'Aproveite o sossego da Pousada Rainha da Mata junto à natureza e planeje seus dias de serra.'
+      };
+    } else if (itemId === 'pizza-da-villa' || itemSlug === 'pizza-da-villa') {
+      recommendedBlog = {
+        id: 'restaurantes',
+        title: 'Onde Comer em Penedo: Guia Gastronômico',
+        description: 'Descubra experiências gastronômicas imperdíveis e onde saborear as melhores pizzas da serra.'
+      };
+    } else if (itemId === 'rodrigo-dione' || itemSlug === 'rodrigo-dione') {
+      recommendedBlog = {
+        id: 'penedo-guia',
+        title: 'Penedo RJ: Guia Completo com Dicas Imperdíveis',
+        description: 'Dicas de bem-estar, passeios e atrativos para renovar as energias durante sua viagem a Penedo.'
+      };
+    } else if (catLower === 'hospedagem' || catLower === 'onde-ficar') {
       recommendedBlog = {
         id: 'melhores-hospedagens',
         title: 'As Melhores Hospedagens em Penedo RJ',
@@ -683,6 +735,44 @@ export function PremiumDetailPage({ onNavigate, onOpenDetail }: { onNavigate: (p
                   </button>
                 </div>
               )}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* FAQ Section (Perguntas Frequentes) */}
+      {item.faq && item.faq.length > 0 && (
+        <section className="py-12 md:py-16 bg-white border-t border-gray-100 text-left">
+          <div className="max-w-4xl mx-auto px-4">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-10 h-10 rounded-xl bg-penedo-mint/40 text-penedo-forest flex items-center justify-center font-bold text-lg shrink-0">
+                ?
+              </div>
+              <div>
+                <h2 className="text-2xl md:text-3xl font-black text-penedo-forest tracking-tight">
+                  Perguntas Frequentes sobre {item.title}
+                </h2>
+                <p className="text-gray-500 text-xs md:text-sm">Respostas para as dúvidas mais comuns sobre este estabelecimento em Penedo</p>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              {item.faq.map((faqItem, idx) => (
+                <details 
+                  key={idx} 
+                  className="group bg-gray-50 rounded-2xl p-5 md:p-6 border border-gray-200/80 transition-all duration-200 open:bg-penedo-mint/10 open:border-penedo-emerald/30 shadow-sm"
+                >
+                  <summary className="font-bold text-base md:text-lg text-gray-800 cursor-pointer list-none flex items-center justify-between gap-4 select-none group-hover:text-penedo-forest">
+                    <span>{faqItem.question}</span>
+                    <span className="shrink-0 w-6 h-6 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-500 text-xs font-black transition-transform duration-200 group-open:rotate-180 group-open:bg-penedo-emerald group-open:text-white group-open:border-penedo-emerald">
+                      ▼
+                    </span>
+                  </summary>
+                  <div className="mt-3 text-sm md:text-base text-gray-600 leading-relaxed pt-2 border-t border-gray-200/60">
+                    <p>{faqItem.answer}</p>
+                  </div>
+                </details>
+              ))}
             </div>
           </div>
         </section>

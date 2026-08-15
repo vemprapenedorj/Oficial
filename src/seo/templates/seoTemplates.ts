@@ -130,6 +130,10 @@ export const getBusinessSEOTemplate = (item: DetailItem) => {
     ])
   ];
 
+  if (item.faq && item.faq.length > 0) {
+    detailSchemas.push(getFAQSchema(item.faq));
+  }
+
   return {
     title,
     description,

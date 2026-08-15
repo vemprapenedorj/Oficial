@@ -57,7 +57,7 @@ export function WhereToStayPage({ onOpenDetail, onGoBack }: { onOpenDetail: (ite
           </picture>
         </div>
         <div className="relative z-10 px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Onde <span className="text-penedo-gold">Ficar</span></h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">Pousadas em Penedo RJ: <span className="text-penedo-gold">Onde Ficar</span></h1>
           <p className="text-white font-medium text-lg md:text-xl max-w-3xl mx-auto leading-relaxed shadow-black/20 drop-shadow-sm">Das pousadas românticas aos hotéis fazenda com lazer completo. Encontre o refúgio perfeito para recarregar as energias com o ar puro da Serra da Mantiqueira.</p>
         </div>
       </header>

@@ -359,6 +359,14 @@ export function RestaurantesArticle({ handleSelectArticle, onNavigate }: Restaur
             <p className="text-lg leading-relaxed">
               Mais do que simples refeições, os renomados restaurantes de Penedo proporcionam momentos especiais em família ou a dois, unindo sabores autênticos, hospitalidade serrana exemplar e cenários inesquecíveis.
             </p>
+            <div className="not-prose my-8 p-6 bg-gray-50 rounded-2xl border border-gray-200/80">
+              <h3 className="text-base font-bold text-penedo-forest mb-3 flex items-center gap-2">
+                🍴 Mais experiências gastronômicas imperdíveis:
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Para os apreciadores de carnes nobres e refeições fartas na chapa em ambiente familiar, conheça a <Link to="/gastronomia/casa-da-picanha/" className="text-penedo-emerald font-bold hover:underline">Casa da Picanha</Link>. E para quem busca pizzas artesanais de longa fermentação natural assadas em forno a lenha, visite a <Link to="/gastronomia/pizza-da-villa/" className="text-penedo-emerald font-bold hover:underline">Pizza da Villa</Link>.
+              </p>
+            </div>
           </div>
           
           <div className="mb-4 md:mb-8 md:mb-16 rounded-[3rem] overflow-hidden shadow-2xl relative w-full h-96 md:h-[32rem]">

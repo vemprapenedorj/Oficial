@@ -247,6 +247,16 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "instagramUrl": "https://www.instagram.com/expedicaoraizesdamantiqueira/",
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Expedi%C3%A7%C3%A3o+Ra%C3%ADzes+da+Mantiqueira+Penedo",
       "videoUrl": "https://www.instagram.com/reel/DTawltXkhlC/",
+      "faq": [
+        {
+          "question": "Onde fica o ponto de atendimento da Expedição Raízes?",
+          "answer": "Fica na Rua das Velas, 100, em Penedo - RJ."
+        },
+        {
+          "question": "Como funciona o agendamento dos passeios 4x4?",
+          "answer": "O agendamento é realizado diretamente pelo WhatsApp oficial (24) 99911-6542, com opções de roteiros para cachoeiras e trilhas ecológicas."
+        }
+      ],
       "badge": "Recomendado"
     },
     {
@@ -288,7 +298,17 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "whatsappUrl": "https://wa.me/5524988098075",
       "instagramUrl": "https://www.instagram.com/rodrigodionemassoterapeuta/",
       "mapsUrl": "https://maps.app.goo.gl/ZV7svHAus2GGK3oR9",
-      "videoUrl": "https://www.instagram.com/reel/DUHtyTLDN4_/"
+      "videoUrl": "https://www.instagram.com/reel/DUHtyTLDN4_/",
+      "faq": [
+        {
+          "question": "Onde são realizados os atendimentos de massoterapia?",
+          "answer": "Os atendimentos são realizados no Shopping dos Esquilos (Sala 104) ou em hotéis e pousadas de Penedo."
+        },
+        {
+          "question": "Como agendar uma sessão com Rodrigo Dione?",
+          "answer": "O atendimento funciona mediante agendamento prévio pelo WhatsApp oficial (24) 98809-8075."
+        }
+      ]
     },
     {
       "id": "gute-passeios",
@@ -735,6 +755,20 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "instagramUrl": "https://www.instagram.com/pousadaauroradamantiqueira/",
       "videoUrl": "https://www.instagram.com/reel/DQSV0FDAQf3/",
       "bookingUrl": "https://www.booking.com/hotel/br/pousada-aurora-da-mantiqueira.pt-br.html",
+      "faq": [
+        {
+          "question": "A Pousada Aurora da Mantiqueira aceita pets?",
+          "answer": "Sim, a pousada é pet friendly para viajantes com seus cães."
+        },
+        {
+          "question": "A pousada oferece café da manhã e estacionamento?",
+          "answer": "Sim, inclui café da manhã artesanal preparado com receitas de família e estacionamento privativo gratuito."
+        },
+        {
+          "question": "Qual é a distância da Pousada Aurora até o centro de Penedo?",
+          "answer": "A pousada fica a 1,2 km do centrinho de Penedo, na Rua Francisco José de Barros, 220."
+        }
+      ],
       "badge": "Recomendado",
       "whatsappUrl": "https://wa.me/5524992576384"
     },
@@ -1015,6 +1049,16 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "/assets/imagens/premium/pousada-villa-luna/galeria-6.jpg"
       ],
       "videoUrl": "https://www.instagram.com/reel/CWbxjbiphUT/",
+      "faq": [
+        {
+          "question": "Onde fica localizada a Pousada Villa Luna?",
+          "answer": "A pousada fica na Av. das Mangueiras, 1457, a cerca de 200 metros da Pequena Finlândia."
+        },
+        {
+          "question": "Quais comodidades a Pousada Villa Luna oferece?",
+          "answer": "A pousada conta com área verde de 7.000 m², chalés e bangalôs, piscina, sauna, serviço de quarto e restaurante."
+        }
+      ],
       "badge": "Recomendado",
       "whatsappUrl": "https://wa.me/5524993173956"
     },
@@ -1108,6 +1152,16 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "instagramUrl": "https://www.instagram.com/pousadarainhadamata/",
       "videoUrl": "https://www.instagram.com/reel/DR43wyHEQVH/",
       "bookingUrl": "https://www.booking.com/hotel/br/pousada-rainha-da-mata.pt-br.html",
+      "faq": [
+        {
+          "question": "Onde fica localizada a Pousada Rainha da Mata?",
+          "answer": "Está localizada na Rua Canto Verde, 120, a cerca de 800 metros do centro de Penedo, com área verde e rio na propriedade."
+        },
+        {
+          "question": "A pousada possui piscina e café da manhã?",
+          "answer": "Sim, oferece piscina com cascata, sauna a vapor e café da manhã artesanal."
+        }
+      ],
       "badge": "Recomendado",
       "whatsappUrl": "https://wa.me/5524993111367"
     },
@@ -1647,6 +1701,16 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "whatsappUrl": "https://wa.me/5524992113240",
       "instagramUrl": "https://www.instagram.com/pousadafinlandiapenedo/",
       "siteUrl": "https://www.pousadafinlandia.com.br/",
+      "faq": [
+        {
+          "question": "Qual é a localização da Pousada Finlândia?",
+          "answer": "Fica na Av. das Mangueiras, 2000, a menos de 100 metros da Pequena Finlândia no centro de Penedo."
+        },
+        {
+          "question": "A Pousada Finlândia aceita pets e possui estacionamento?",
+          "answer": "Sim, a pousada é pet friendly, oferece estacionamento gratuito com vigilância noturna, piscina, sauna e café da manhã colonial."
+        }
+      ],
       "videoUrl": "https://www.instagram.com/reel/DKUUGRnu7ve/",
       "badge": "Recomendado"
     },
@@ -2144,6 +2208,16 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       ],
       "instagramUrl": "https://www.instagram.com/casadapicanhapenedo_rj/",
       "videoUrl": "https://www.instagram.com/reel/DZyAR9NDaJH/",
+      "faq": [
+        {
+          "question": "Onde fica o restaurante Casa da Picanha?",
+          "answer": "Fica na Av. das Mangueiras, contando com 2 unidades no centro de Penedo para atendimento."
+        },
+        {
+          "question": "O restaurante conta com espaço kids?",
+          "answer": "Sim, o ambiente é familiar e dispõe de espaço kids dedicado às crianças."
+        }
+      ],
       "badge": "Recomendado",
       "whatsapp": "24992087767",
       "whatsappUrl": "https://wa.me/5524992087767"
@@ -2437,6 +2511,16 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "/assets/imagens/premium/pizza-da-villa/galeria-6.jpg"
       ],
       "videoUrl": "https://www.instagram.com/reel/DWCCNWMjPOk/",
+      "faq": [
+        {
+          "question": "Onde fica localizada a Pizza da Villa?",
+          "answer": "Está localizada na Av. das Mangueiras, 1579, no polo gastronômico de Penedo."
+        },
+        {
+          "question": "A pizzaria é indicada para comemorações e famílias?",
+          "answer": "Sim, a casa acolhe famílias e grupos de amigos em ambiente acolhedor com tradição de 19 anos em Penedo."
+        }
+      ],
       "badge": "Recomendado",
       "whatsappUrl": "https://wa.me/5524993017228"
     },

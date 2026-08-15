@@ -33,6 +33,7 @@ export interface DetailItem {
   siteUrl?: string;
   seo_title?: string;
   seo_description?: string;
+  faq?: { question: string; answer: string }[];
 }
 
 export type Page = 'home' | 'o-que-fazer' | 'onde-ficar' | 'gastronomia' | 'compras' | 'blog' | 'contato' | 'divulgue-seu-negocio' | 'politica-de-privacidade' | 'politica-de-cookies' | 'premium-detail' | '404';

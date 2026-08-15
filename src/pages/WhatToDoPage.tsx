@@ -57,7 +57,7 @@ export function WhatToDoPage({ onOpenDetail, onGoBack }: { onOpenDetail: (item: 
           </picture>
         </div>
         <div className="relative z-10 px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">O Que Fazer em <span className="text-penedo-gold">Penedo</span></h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">O Que Fazer em <span className="text-penedo-gold">Penedo RJ</span>: Passeios e Atrações</h1>
           <p className="text-white font-medium text-lg md:text-xl max-w-3xl mx-auto leading-relaxed shadow-black/20 drop-shadow-sm">Descubra cachoeiras cristalinas, trilhas deslumbrantes e o charme único da Pequena Finlândia. O melhor do lazer e da cultura em um só lugar para você aproveitar.</p>
         </div>
       </header>

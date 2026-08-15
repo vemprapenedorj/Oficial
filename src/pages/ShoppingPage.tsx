@@ -63,7 +63,7 @@ export function ShoppingPage({ onOpenDetail, onGoBack }: { onOpenDetail: (item: 
           />
         </div>
         <div className="relative z-10 px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Compras em <span className="text-penedo-gold">Penedo</span></h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">Compras em Penedo RJ: <span className="text-penedo-gold">Lojas, Artesanato e Chocolates</span></h1>
           <p className="text-white font-medium text-lg md:text-xl max-w-3xl mx-auto leading-relaxed shadow-black/20 drop-shadow-sm">Leve um pedaço de Penedo com você. Explore lojas de chocolates artesanais, decorações exclusivas e artesanatos locais de alta qualidade.</p>
         </div>
       </header>

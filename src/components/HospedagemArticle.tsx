@@ -304,6 +304,16 @@ export function HospedagemArticle({ handleSelectArticle, onNavigate }: Hospedage
                   <p className="text-penedo-emerald font-bold tracking-widest text-xs uppercase mb-4">
                     {hotel.tagline}
                   </p>
+                  {hotel.id === 'villa-luna' && (
+                    <div className="mt-3 mb-2">
+                      <Link
+                        to="/onde-ficar/pousada-villa-luna/"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-penedo-mint/20 hover:bg-penedo-mint/40 text-penedo-forest font-bold rounded-xl text-xs uppercase tracking-wider transition-all border border-penedo-mint shadow-sm cursor-pointer"
+                      >
+                        Ver perfil completo e fotos da Pousada Villa Luna <ArrowRight size={14} />
+                      </Link>
+                    </div>
+                  )}
                 </div>
                 
                 <div className="text-gray-600 space-y-4 mb-6 text-lg">
@@ -382,6 +392,14 @@ export function HospedagemArticle({ handleSelectArticle, onNavigate }: Hospedage
             <p className="text-lg leading-relaxed">
               Mais do que locais de repouso, as pousadas de Penedo oferecem cenários deslumbrantes, aconchego em cada pequeno detalhe e a amigável hospitalidade de serra para que você desfrute cada instante de sua estadia.
             </p>
+            <div className="not-prose my-8 p-6 bg-gray-50 rounded-2xl border border-gray-200/80">
+              <h3 className="text-base font-bold text-penedo-forest mb-3 flex items-center gap-2">
+                🏡 Outras hospedagens recomendadas para sua estadia:
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Para quem busca exclusividade com vista panorâmica da serra e café da manhã artesanal, conheça a <Link to="/onde-ficar/pousada-aurora-da-mantiqueira/" className="text-penedo-emerald font-bold hover:underline">Pousada Aurora da Mantiqueira</Link>. Se preferir ficar a poucos passos da Pequena Finlândia com estrutura completa, confira a <Link to="/onde-ficar/pousada-finlandia/" className="text-penedo-emerald font-bold hover:underline">Pousada Finlândia</Link>. E para quem busca sossego e contato direto com a natureza e rio cristalino, explore a <Link to="/onde-ficar/pousada-rainha-da-mata/" className="text-penedo-emerald font-bold hover:underline">Pousada Rainha da Mata</Link>.
+              </p>
+            </div>
           </div>
           
           <div className="mb-4 md:mb-8 md:mb-16 rounded-[3rem] overflow-hidden shadow-2xl relative w-full h-96 md:h-[32rem]">
