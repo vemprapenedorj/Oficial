@@ -51,6 +51,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://vemprapenedo.com.br/onde-ficar/pousada-reserva-penedo/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://vemprapenedo.com.br/onde-ficar/pousada-villa-luna/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

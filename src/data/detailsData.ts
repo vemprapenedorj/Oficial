@@ -882,15 +882,27 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     },
     {
       "id": "pousada-reserva-penedo",
+      "slug": "pousada-reserva-penedo",
       "title": "Pousada Reserva Penedo",
       "category": "Hospedagem",
+      "isPremium": true,
       "image": "/assets/imagens/logos/logo-pousada-reserva-penedo.jpg",
       "description": "Paz e sossego em meio a 160 metros de margem de rio.",
-      "fullInfo": "Lugar perfeito para quem busca fugir da agitação urbana e experimentar sensações de paz e liberdade. Oferece fácil acesso a pé ao centro e gastronomia local. Destaque para o café da manhã artesanal e área de lazer com piscina com cascata, sauna a vapor e lounge descontraído. Possui uma belíssima passagem de rio dentro da propriedade.",
-      "location": "Rua Alberto João Saad, 99",
+      "descricao_longa": "Localizada a apenas 900 metros do centro de Penedo, a Pousada Reserva Penedo é o refúgio perfeito para quem busca desconexão e descanso. Integrada a uma área verde exuberante com mais de 160 metros de extensão de passagem do rio cristalino em sua propriedade, a pousada atrai diversos pássaros e oferece um ambiente relaxante de pura paz. Ao mesmo tempo, sua localização estratégica permite acessar a pé os charmosos restaurantes e atrativos turísticos da região.",
+      "fullInfo": "A Pousada Reserva Penedo combina perfeitamente o som suave do rio e a exuberância da Mata Atlântica com uma estrutura de lazer e bem-estar completa. Os hóspedes podem desfrutar de piscina externa com cascata, piscina coberta aquecida, sauna a vapor, salão de jogos e um farto buffet de café da manhã artesanal. Suas acomodações em chalés privativos garantem total conforto com opções que contam com lareira, banheira de hidromassagem dupla e varanda voltada para o jardim.",
+      "location": "Travessa Alberto João Saad, 99, Penedo, Itatiaia - RJ",
       "rating": 4.8,
       "whatsapp": "24981783018",
-      "tripadvisorUrl": "https://www.tripadvisor.com.br/Hotel_Review-g2427181-d2669276-Reviews-Pousada_Reserva_Penedo-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
+      "tripadvisorUrl": "https://www.tripadvisor.com.br/Hotel_Review-g1376878-d15024760-Reviews-Pousada_Reserva_Penedo-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
+      "googleProfileUrl": "https://www.google.com/maps/place/Pousada+Reserva+Penedo/@-22.4357773,-44.5323985,17z/",
+      "galeria": [
+        "/assets/imagens/premium/pousada-reserva-penedo/galeria-1.png",
+        "/assets/imagens/premium/pousada-reserva-penedo/galeria-2.png",
+        "/assets/imagens/premium/pousada-reserva-penedo/galeria-3.png",
+        "/assets/imagens/premium/pousada-reserva-penedo/galeria-4.png",
+        "/assets/imagens/premium/pousada-reserva-penedo/galeria-5.png",
+        "/assets/imagens/premium/pousada-reserva-penedo/galeria-6.png"
+      ],
       "tags": [
         "natureza",
         "rio",
@@ -899,11 +911,32 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "piscina",
         "sauna",
         "café da manhã",
-        "silêncio"
+        "silêncio",
+        "piscina aquecida",
+        "romântico",
+        "chalés",
+        "hidromassagem",
+        "lareira"
       ],
-      "isPremium": false,
       "instagramUrl": "https://www.instagram.com/pousadareservapenedo/",
-      "bookingUrl": "https://www.booking.com/hotel/br/pousada-reserva-penedo.pt-br.html"
+      "videoUrl": "https://www.instagram.com/reel/C-SkgFisXLV/",
+      "bookingUrl": "https://www.booking.com/hotel/br/pousada-reserva-penedo.pt-br.html",
+      "faq": [
+        {
+          "question": "A Pousada Reserva Penedo possui piscina aquecida?",
+          "answer": "Sim, além da piscina externa com cascata, a pousada conta com uma piscina coberta aquecida para uso dos hóspedes."
+        },
+        {
+          "question": "Os chalés possuem lareira e hidromassagem?",
+          "answer": "Sim, a pousada oferece opções de chalés aconchegantes equipados com lareira e banheira de hidromassagem dupla."
+        },
+        {
+          "question": "Qual a distância da pousada até o centro de Penedo?",
+          "answer": "A pousada está a cerca de 900 metros da Pequena Finlândia, permitindo ir a pé com tranquilidade aos principais atrativos e restaurantes."
+        }
+      ],
+      "badge": "Recomendado",
+      "whatsappUrl": "https://wa.me/5524981783018"
     },
     {
       "id": "pousada-santa-fe",
