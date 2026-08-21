@@ -1535,7 +1535,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "casal"
       ],
       "whatsappUrl": "https://wa.me/5524992567542",
-      "instagramUrl": "https://www.instagram.com/casadeartistasuitespenedo/"
+      "instagramUrl": "https://www.instagram.com/casadoartistapenedo/"
     },
     {
       "id": "pousada-da-praca-penedo",
@@ -1639,14 +1639,14 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "ambiente tranquilo"
       ],
       "whatsappUrl": "https://wa.me/5524991483869",
-      "instagramUrl": "https://www.instagram.com/chaleslacoeno/"
+      "instagramUrl": "https://www.instagram.com/pousadalocoenorj/"
     },
     {
       "id": "hotel-moradas-do-penedo",
       "title": "Hotel Moradas do Penedo",
       "category": "Hospedagem",
       "isPremium": false,
-      "image": "/assets/imagens/logos/hote moradas do penedo.jpg",
+      "image": "/assets/imagens/logos/logo-hotel-moradas-do-penedo.jpg",
       "description": "Hospedagem confortável cercada por belos jardins com piscina ao ar livre.",
       "fullInfo": "O Hotel Moradas do Penedo oferece uma hospedagem confortável em uma ampla propriedade cercada por natureza e belos jardins. Próximo ao centro de Penedo, oferece quartos e chalés confortáveis, equipados com ar-condicionado. A estrutura conta com piscina ao ar livre, salão de jogos, área de convivência e Wi-Fi gratuito. Excelente opção para casais e famílias.",
       "descricao_longa": "O Hotel Moradas do Penedo oferece uma hospedagem confortável em uma ampla propriedade cercada por natureza e belos jardins. Próximo ao centro de Penedo, oferece quartos e chalés confortáveis, equipados com ar-condicionado. A estrutura conta com piscina ao ar livre, salão de jogos, área de convivência e Wi-Fi gratuito. Excelente opção para casais e famílias.",
@@ -1673,7 +1673,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "title": "Hotel Aromas de Penedo",
       "category": "Hospedagem",
       "isPremium": false,
-      "image": "/assets/imagens/logos/hotel aromas de penedo.jpg",
+      "image": "/assets/imagens/logos/logo-hotel-aromas-de-penedo.jpg",
       "description": "Hospedagem com piscina, sauna e salão de jogos no Centro de Penedo.",
       "fullInfo": "O Hotel Aromas de Penedo oferece uma hospedagem aconchegante e prática no centro de Penedo-RJ. Com ambiente familiar e acolhedor, oferece quartos confortáveis equipados com ar-condicionado. A estrutura conta com piscina ao ar livre, sauna, salão de jogos e Wi-Fi gratuito. Excelente opção para casais, famílias e viajantes.",
       "descricao_longa": "O Hotel Aromas de Penedo oferece uma hospedagem aconchegante e prática no centro de Penedo-RJ. Com ambiente familiar e acolhedor, oferece quartos confortáveis equipados com ar-condicionado. A estrutura conta com piscina ao ar livre, sauna, salão de jogos e Wi-Fi gratuito. Excelente opção para casais, famílias e viajantes.",
@@ -1752,7 +1752,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "title": "City Park Hotel",
       "category": "Hospedagem",
       "isPremium": false,
-      "image": "/assets/imagens/logos/hotel city park.jpg",
+      "image": "/assets/imagens/logos/logo-hotel-city-park.jpg",
       "description": "Hospedagem com piscina, sauna e ampla área verde no centro.",
       "fullInfo": "O City Park Hotel está localizado no centro de Penedo-RJ, próximo a restaurantes, lojas e atrativos turísticos da cidade. Conta com piscina ao ar livre, sauna, jardim com área de lazer e Wi-Fi gratuito. As acomodações são confortáveis e equipadas com ar-condicionado, sendo uma ótima opção para casais, famílias e viajantes.",
       "descricao_longa": "O City Park Hotel está localizado no centro de Penedo-RJ, próximo a restaurantes, lojas e atrativos turísticos da cidade. Conta com piscina ao ar livre, sauna, jardim com área de lazer e Wi-Fi gratuito. As acomodações são confortáveis e equipadas com ar-condicionado, sendo uma ótima opção para casais, famílias e viajantes.",
@@ -1779,7 +1779,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "title": "Hotel do Papai Noel",
       "category": "Hospedagem",
       "isPremium": false,
-      "image": "/assets/imagens/logos/Hotel do papai noel.jpg",
+      "image": "/assets/imagens/logos/logo-hotel-do-papai-noel.jpg",
       "description": "Hospedagem com piscina, sauna, salão de jogos e playground no centrinho.",
       "fullInfo": "O Hotel do Papai Noel oferece uma hospedagem aconchegante e divertida para toda a família no centro de Penedo-RJ. Próximo à Pequena Finlândia, o hotel dispõe de piscina ao ar livre, sauna, salão de jogos, playground, ampla área verde e Wi-Fi gratuito. Excelente opção para quem viaja com crianças e busca lazer.",
       "descricao_longa": "O Hotel do Papai Noel oferece uma hospedagem aconchegante e divertida para toda a família no centro de Penedo-RJ. Próximo à Pequena Finlândia, o hotel dispõe de piscina ao ar livre, sauna, salão de jogos, playground, ampla área verde e Wi-Fi gratuito. Excelente opção para quem viaja com crianças e busca lazer.",
@@ -1859,7 +1859,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "title": "Hotel Pequena Suécia",
       "category": "Hospedagem",
       "isPremium": false,
-      "image": "/assets/imagens/logos/hotel pequena suecia.jpg",
+      "image": "/assets/imagens/logos/logo-hotel-pequena-suecia.jpg",
       "description": "Charme, conforto e tradição sueca no coração de Penedo.",
       "fullInfo": "O Hotel Pequena Suécia é uma das opções mais charmosas e tradicionais de Penedo-RJ. Com proposta cultural e de lazer, o hotel oferece piscina, sauna finlandesa, quadra de tênis, salão de jogos, playground e ampla área verde. O restaurante é famoso pelo buffet escandinavo e pratos da culinária nórdica contemporânea. Perfeito para casais, famílias e amantes da boa música (casa do Jazz Village).",
       "descricao_longa": "O Hotel Pequena Suécia é uma das opções mais charmosas e tradicionais de Penedo-RJ. Com proposta cultural e de lazer, o hotel oferece piscina, sauna finlandesa, quadra de tênis, salão de jogos, playground e ampla área verde. O restaurante é famoso pelo buffet escandinavo e pratos da culinária nórdica contemporânea. Perfeito para casais, famílias e amantes da boa música (casa do Jazz Village).",
