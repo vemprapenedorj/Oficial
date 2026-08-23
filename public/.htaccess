@@ -29,8 +29,7 @@
 </IfModule>
 
 <IfModule mod_setenvif.c>
-  SetEnvIfNoCase Host "^(homologacao\.)?vemprapenedo\.com(?::[0-9]+)?$" IS_TEST_ENV
-  SetEnvIfNoCase Host "^homologacao\.vemprapenedo\.com\.br(?::[0-9]+)?$" IS_TEST_ENV
+  SetEnvIfNoCase Host "^homologacao\.vemprapenedo\.(com|com\.br)(?::[0-9]+)?$" IS_TEST_ENV
 </IfModule>
 
 <IfModule mod_headers.c>
@@ -57,9 +56,12 @@
 </IfModule>
 # Serve um robots.txt restritivo nos ambientes de homologação.
 RewriteEngine On
-RewriteCond %{HTTP_HOST} ^(homologacao\.)?vemprapenedo\.com$ [NC,OR]
-RewriteCond %{HTTP_HOST} ^homologacao\.vemprapenedo\.com\.br$ [NC]
+RewriteCond %{HTTP_HOST} ^homologacao\.vemprapenedo\.(com|com\.br)$ [NC]
 RewriteRule ^robots\.txt$ /robots-staging.txt [END]
+
+# Redireciona vemprapenedo.com e www.vemprapenedo.com para https://vemprapenedo.com.br
+RewriteCond %{HTTP_HOST} ^(?:www\.)?vemprapenedo\.com$ [NC]
+RewriteRule ^ https://vemprapenedo.com.br%{REQUEST_URI} [R=301,END,NE]
 
 # URLs públicas sem barra que possuem uma página SSG são normalizadas em um
 # único salto, consolidando ao mesmo tempo HTTPS, domínio sem www e barra final.
@@ -77,14 +79,12 @@ RewriteRule ^ https://vemprapenedo.com.br%{REQUEST_URI} [R=301,END,NE]
 
 # A homologação preserva o próprio host e também consolida HTTPS + barra final
 # em um único redirecionamento para páginas SSG.
-RewriteCond %{HTTP_HOST} ^(?:homologacao\.)?vemprapenedo\.com$ [NC,OR]
-RewriteCond %{HTTP_HOST} ^homologacao\.vemprapenedo\.com\.br$ [NC]
+RewriteCond %{HTTP_HOST} ^homologacao\.vemprapenedo\.(com|com\.br)$ [NC]
 RewriteCond %{REQUEST_URI} !/$
 RewriteCond %{REQUEST_FILENAME}/index.html -f
 RewriteRule ^(.+)$ https://%{HTTP_HOST}/$1/ [R=301,END,NE]
 
-RewriteCond %{HTTP_HOST} ^(?:homologacao\.)?vemprapenedo\.com$ [NC,OR]
-RewriteCond %{HTTP_HOST} ^homologacao\.vemprapenedo\.com\.br$ [NC]
+RewriteCond %{HTTP_HOST} ^homologacao\.vemprapenedo\.(com|com\.br)$ [NC]
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,END,NE]
 

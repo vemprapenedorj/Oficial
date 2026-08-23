@@ -26,8 +26,6 @@ export default function SEO({
 }: SEOProps) {
   const finalCanonical = canonical || url;
   const testHostnames = [
-    'vemprapenedo.com',
-    'www.vemprapenedo.com',
     'homologacao.vemprapenedo.com',
     'homologacao.vemprapenedo.com.br',
   ];
