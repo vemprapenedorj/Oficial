@@ -65,6 +65,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "hours": "Consulte horários sazonais",
       "rating": 4.9,
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Attraction_Review-g2427181-d23853110-Reviews-Lellumuseo-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
+      "instagramUrl": "https://www.instagram.com/lelumuseobrinquedos/",
       "tags": [
         "museu",
         "brinquedos",
@@ -116,6 +117,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "hours": "10:00 - 22:00",
       "rating": 4.7,
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Attraction_Review-g2427181-d4706334-Reviews-Pequena_Finlandia-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
+      "instagramUrl": "https://www.instagram.com/pequenafinlandia.oficial/",
       "tags": [
         "papai noel",
         "artesanato",
