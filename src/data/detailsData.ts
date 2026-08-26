@@ -1461,7 +1461,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "estacionamento",
         "custo-benefício"
       ],
-      "instagramUrl": "https://www.instagram.com/chalenoregatopenedo/"
+      "instagramUrl": "https://www.instagram.com/chalenarocapenedo/"
     },
     {
       "id": "pousada-chicle-penedo-mc",
