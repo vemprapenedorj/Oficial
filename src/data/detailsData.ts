@@ -2138,6 +2138,33 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Deck+Pizzaria+e+Choperia+Rua+das+Velas+34+Penedo"
     },
     {
+      "id": "farm-pizzaria",
+      "title": "Farm Pizzaria",
+      "category": "Pizzaria",
+      "image": "/assets/imagens/logos/logo-farm-pizzaria.jpg",
+      "description": "Rodízio de pizzas no forno a lenha em ambiente rústico com transporte gratuito a partir do centro.",
+      "fullInfo": "A Farm Pizzaria oferece um ambiente rústico, intimista e acolhedor, com iluminação baixa e música agradável de fundo. O destaque da casa é o rodízio de pizzas assadas no forno a lenha com massa fininha e bem recheada. Um diferencial exclusivo é o serviço de transporte móvel sem custo para os clientes, buscando no centro de Penedo e trazendo de volta ao final da refeição. O local aceita cartões de crédito, débito, dinheiro e oferece desconto para pagamento via PIX, além de contar com espaço kids.",
+      "location": "Av. das Mangueiras, 2510 - Penedo",
+      "hours": "Consulte horários",
+      "rating": 4.1,
+      "tripadvisorUrl": "https://www.tripadvisor.com.br/Restaurant_Review-g2427181-d28045053-Reviews-Farm_Pizzaria_E_Restaurante-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
+      "instagramUrl": "https://www.instagram.com/farmrestaurante/",
+      "mapsUrl": "https://maps.app.goo.gl/ghXnge8oQdByeDwm7",
+      "tags": [
+        "pizza",
+        "pizzaria",
+        "rodízio",
+        "forno a lenha",
+        "rústico",
+        "intimista",
+        "transporte gratuito",
+        "espaço kids",
+        "jantar",
+        "penedo"
+      ],
+      "isPremium": false
+    },
+    {
       "id": "borbulha-penedo",
       "title": "Borbulha de Penedo",
       "category": "Contemporânea & Drinks",
