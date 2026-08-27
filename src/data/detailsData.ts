@@ -2114,6 +2114,30 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
+      "id": "deck-pizzaria-e-choperia",
+      "title": "Deck Pizzaria e Choperia",
+      "category": "Pizzaria",
+      "image": "/assets/imagens/logos/logo-deck-pizzaria-choperia.jpg",
+      "description": "Pizzas assadas no forno a lenha, criações gourmet, chopes e vinhos no centro de Penedo.",
+      "fullInfo": "A Deck Pizzaria e Choperia fica no segundo andar de um prédio com arquitetura finlandesa e varanda voltada para o centro de Penedo. A casa serve pizzas de massa fina e crocante, assadas no forno a lenha, com sabores tradicionais e combinações gourmet, além de chopes e vinhos.",
+      "location": "Rua das Velas, 34 - Penedo",
+      "tags": [
+        "pizza",
+        "pizzaria",
+        "choperia",
+        "forno a lenha",
+        "massa fina",
+        "gourmet",
+        "chopes",
+        "vinhos",
+        "varanda",
+        "centro"
+      ],
+      "isPremium": false,
+      "instagramUrl": "https://www.instagram.com/deckpizzariaechoperia/",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Deck+Pizzaria+e+Choperia+Rua+das+Velas+34+Penedo"
+    },
+    {
       "id": "borbulha-penedo",
       "title": "Borbulha de Penedo",
       "category": "Contemporânea & Drinks",
@@ -2482,6 +2506,32 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
+      "id": "oh-baba-pizza-e-esfiha",
+      "title": "Oh Baba Pizza e Esfiha",
+      "category": "Pizzaria",
+      "image": "/assets/imagens/logos/logo-oh-baba-pizzaria.jpg",
+      "description": "Pizzas, esfihas, quibe, chopes e drinks, com destaque para as bordas.",
+      "fullInfo": "A Oh Baba Pizza e Esfiha reúne pizzas, esfihas, quibe e outras opções, com destaque para as bordas. A casa também serve chopes e drinks na Avenida das Mangueiras, no centro de Penedo.",
+      "location": "Av. das Mangueiras, 1658 - Penedo",
+      "hours": "Segunda a quinta: 18h às 23h\nSexta a domingo: 12h às 23h",
+      "tripadvisorUrl": "https://www.tripadvisor.com.br/Restaurant_Review-g2427181-d23837106-Reviews-Oh_Baba_Pizzaria_e_Esfiharia-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
+      "tags": [
+        "pizza",
+        "pizzaria",
+        "esfiha",
+        "quibe",
+        "bordas",
+        "chopes",
+        "drinks",
+        "almoço",
+        "jantar",
+        "centro"
+      ],
+      "isPremium": false,
+      "instagramUrl": "https://www.instagram.com/oh_babapenedo/",
+      "mapsUrl": "https://maps.app.goo.gl/k78PmtfAncjikspQA"
+    },
+    {
       "id": "petit-gourmet",
       "title": "Petit Gourmet",
       "category": "Contemporânea",
@@ -2519,7 +2569,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "description": "Há 19 anos em Penedo, uma casa onde a pizza é o pretexto e o afeto é o prato principal.",
       "descricao_longa": "Há 19 anos, a Pizza da Villa escolheu Penedo para manter viva uma tradição familiar que atravessa mais de 150 anos. O segredo dessa história não está apenas nos ingredientes, mas no carinho que Marcelo, Maíla, Érico, Deleon, Joe e toda a equipe colocam em cada etapa. É uma casa feita de raízes, encontros e pessoas que sempre voltam — porque há lugares que se tornam o nosso porto seguro. Aqui, a pizza é o pretexto; o afeto é o prato principal.",
       "fullInfo": "Há 19 anos em Penedo, a Pizza da Villa preserva uma tradição familiar com mais de 150 anos de história. Em um ambiente aconchegante, cada pizza é preparada com cuidado por uma equipe que transformou a casa em ponto de encontro para famílias e amigos. É o lugar ideal para aniversários, confraternizações e momentos especiais: a Villa cuida do ambiente e das pizzas para que você possa se dedicar ao que realmente importa — celebrar e compartilhar bons momentos com quem ama.",
-      "location": "Av. das mangueiras, 1579",
+      "location": "Av. das Mangueiras, 1457",
       "hours": "Consulte horários",
       "rating": 4.9,
       "whatsapp": "24993017228",
@@ -2536,7 +2586,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "família",
         "amigos"
       ],
-      "instagramUrl": "https://www.instagram.com/pizzadavillapenedo/",
+      "instagramUrl": "https://www.instagram.com/pizzadavilla/",
       "galeria": [
         "/assets/imagens/premium/pizza-da-villa/galeria-1.jpg",
         "/assets/imagens/premium/pizza-da-villa/galeria-2.jpg",
@@ -2549,7 +2599,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "faq": [
         {
           "question": "Onde fica localizada a Pizza da Villa?",
-          "answer": "Está localizada na Av. das Mangueiras, 1579, no polo gastronômico de Penedo."
+          "answer": "Está localizada na Av. das Mangueiras, 1457, no polo gastronômico de Penedo."
         },
         {
           "question": "A pizzaria é indicada para comemorações e famílias?",
@@ -3188,8 +3238,8 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "category": "Restaurante & Petiscos",
       "image": "/assets/imagens/logos/logo-rei-da-vila-hd.jpg",
       "description": "Restaurante saboroso com pratos artesanais, petiscos e bebidas em Penedo.",
-      "fullInfo": "O Rei da Villa é uma excelente opção gastronômica em Penedo, servindo refeições completas, pratos a la carte variados, porções caprichadas e bebidas geladas em um ambiente acolhedor no coração da vila.",
-      "location": "Penedo, Itatiaia - RJ",
+      "fullInfo": "O Rei da Villa é uma excelente opção gastronômica em Penedo, servindo refeições completas, pratos a la carte variados, porções caprichadas e bebidas geladas em um ambiente acolhedor na Avenida das Mangueiras, em frente à Pousada do Lago.",
+      "location": "Av. das Mangueiras, 1579 - em frente à Pousada do Lago",
       "hours": "Consulte horários de funcionamento",
       "rating": 4.7,
       "isPremium": false,
@@ -3952,6 +4002,22 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     }
   ],
   "blog": [
+    {
+      "id": "melhores-pizzarias-de-penedo",
+      "title": "As 5 Melhores Pizzarias de Penedo RJ",
+      "category": "Pizzaria",
+      "image": "/assets/imagens/blog/melhores-pizzarias/intro.jpg",
+      "description": "Um guia com cinco pizzarias de Penedo para saborear massas artesanais, rodízios, opções gourmet e programas em família.",
+      "fullInfo": "Conheça cinco pizzarias muito recomendadas em Penedo RJ, seus ambientes, diferenciais e sabores que merecem entrar no roteiro.",
+      "tags": [
+        "pizzarias em penedo",
+        "pizza em penedo rj",
+        "onde comer em penedo",
+        "gastronomia em penedo",
+        "forno a lenha"
+      ],
+      "date": "27/08/2026"
+    },
     {
       "id": "roteiro-2-dias-em-penedo",
       "title": "Penedo, RJ: o roteiro perfeito de 2 dias na Pequena Finlândia brasileira",

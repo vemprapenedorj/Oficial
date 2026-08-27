@@ -193,7 +193,7 @@ export function Roteiro1DiaArticle({ onOpenDetail, onNavigate, handleSelectArtic
 
   const handlePrevArticle = () => {
     if (prevPost) {
-      const inlineArticleIds = ['roteiro-2-dias-em-penedo', 'roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'];
+      const inlineArticleIds = ['melhores-pizzarias-de-penedo', 'roteiro-2-dias-em-penedo', 'roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'];
       if (inlineArticleIds.includes(prevPost.id)) {
         handleSelectArticle(prevPost.id);
       } else {
