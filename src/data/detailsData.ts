@@ -2586,7 +2586,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "família",
         "amigos"
       ],
-      "instagramUrl": "https://www.instagram.com/pizzadavilla/",
+      "instagramUrl": "https://www.instagram.com/pizzadavillapenedo/",
       "galeria": [
         "/assets/imagens/premium/pizza-da-villa/galeria-1.jpg",
         "/assets/imagens/premium/pizza-da-villa/galeria-2.jpg",
