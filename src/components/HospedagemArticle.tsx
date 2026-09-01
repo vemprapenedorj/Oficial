@@ -304,16 +304,7 @@ export function HospedagemArticle({ handleSelectArticle, onNavigate }: Hospedage
                   <p className="text-penedo-emerald font-bold tracking-widest text-xs uppercase mb-4">
                     {hotel.tagline}
                   </p>
-                  {hotel.id === 'villa-luna' && (
-                    <div className="mt-3 mb-2">
-                      <Link
-                        to="/onde-ficar/pousada-villa-luna/"
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-penedo-mint/20 hover:bg-penedo-mint/40 text-penedo-forest font-bold rounded-xl text-xs uppercase tracking-wider transition-all border border-penedo-mint shadow-sm cursor-pointer"
-                      >
-                        Ver perfil completo e fotos da Pousada Villa Luna <ArrowRight size={14} />
-                      </Link>
-                    </div>
-                  )}
+
                 </div>
                 
                 <div className="text-gray-600 space-y-4 mb-6 text-lg">
@@ -397,7 +388,7 @@ export function HospedagemArticle({ handleSelectArticle, onNavigate }: Hospedage
                 🏡 Outras hospedagens recomendadas para sua estadia:
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Para quem busca exclusividade com vista panorâmica da serra e café da manhã artesanal, conheça a <Link to="/onde-ficar/pousada-aurora-da-mantiqueira/" className="text-penedo-emerald font-bold hover:underline">Pousada Aurora da Mantiqueira</Link>. Se preferir ficar a poucos passos da Pequena Finlândia com estrutura completa, confira a <Link to="/onde-ficar/pousada-finlandia/" className="text-penedo-emerald font-bold hover:underline">Pousada Finlândia</Link>. E para quem busca sossego e contato direto com a natureza e rio cristalino, explore a <Link to="/onde-ficar/pousada-rainha-da-mata/" className="text-penedo-emerald font-bold hover:underline">Pousada Rainha da Mata</Link>.
+                Para quem busca exclusividade com vista panorâmica da serra e café da manhã artesanal, conheça a <Link to="/onde-ficar/pousada-aurora-da-mantiqueira/" className="text-penedo-emerald font-bold hover:underline">Pousada Aurora da Mantiqueira</Link>. Se preferir ficar a poucos passos da Pequena Finlândia com estrutura completa, confira a <strong className="text-penedo-forest font-bold">Pousada Finlândia</strong>. E para quem busca sossego e contato direto com a natureza e rio cristalino, explore a <Link to="/onde-ficar/pousada-rainha-da-mata/" className="text-penedo-emerald font-bold hover:underline">Pousada Rainha da Mata</Link>.
               </p>
             </div>
           </div>

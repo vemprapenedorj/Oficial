@@ -360,7 +360,7 @@ export function Roteiro2DiasArticle({ onOpenDetail, onNavigate }: Roteiro2DiasAr
               descriptions={{
                 'hotel-da-cachoeira': 'Tradição hoteleira há mais de 40 anos cercado por Mata Atlântica e pelo Rio das Pedras.',
                 'pousada-serra-da-india': 'Refúgio de charme e exclusividade no alto da colina com vista panorâmica.',
-                'pousada-villa-luna': 'Hospedagem Premium com página exclusiva ativa, a cerca de 200 metros do centro de Penedo.',
+                'pousada-villa-luna': 'Hospedagem aconchegante a cerca de 200 metros do centro de Penedo.',
                 'pousada-vale-das-flores': 'Áreas verdes, piscina, jardim e sauna para uma estadia tranquila em Penedo.',
               }}
               {...linkProps}

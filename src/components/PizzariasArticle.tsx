@@ -125,7 +125,6 @@ const pizzerias: Pizzeria[] = [
     intro: 'Com 19 anos de atuação em Penedo, a Pizza da Villa mantém viva uma tradição familiar de origem italiana que atravessa mais de 150 anos. Na consulta feita em agosto de 2026, a pizzaria tinha nota 4,5 no Tripadvisor.',
     environment: 'O espaço é amplo, rústico e muito acolhedor, contando com um lindo jardim externo e estacionamento privado gratuito. Outro grande diferencial é que o local é totalmente pet-friendly, recebendo os animais de estimação com muito carinho na área da varanda.',
     menu: 'As pizzas possuem massa fininha, bordas crocantes e são assadas lentamente no forno a lenha. Entre os sabores mencionados pelos visitantes estão a Villa Rezende — mussarela de búfala, presunto de parma e rúcula — e a Villa Capelinha, de quatro queijos.',
-    href: '/gastronomia/pizza-da-villa/',
     images: PIZZA_DA_VILLA_IMAGES,
     imageAlts: [
       'Pizza artesanal da Pizza da Villa',

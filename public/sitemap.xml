@@ -56,17 +56,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vemprapenedo.com.br/onde-ficar/pousada-villa-luna/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://vemprapenedo.com.br/onde-ficar/pousada-rainha-da-mata/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vemprapenedo.com.br/onde-ficar/pousada-finlandia/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -77,11 +67,6 @@
   </url>
   <url>
     <loc>https://vemprapenedo.com.br/gastronomia/casa-da-picanha/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://vemprapenedo.com.br/gastronomia/pizza-da-villa/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

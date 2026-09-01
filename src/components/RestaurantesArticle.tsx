@@ -364,7 +364,7 @@ export function RestaurantesArticle({ handleSelectArticle, onNavigate }: Restaur
                 🍴 Mais experiências gastronômicas imperdíveis:
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Para os apreciadores de carnes nobres e refeições fartas na chapa em ambiente familiar, conheça a <Link to="/gastronomia/casa-da-picanha/" className="text-penedo-emerald font-bold hover:underline">Casa da Picanha</Link>. E para quem busca pizzas artesanais de longa fermentação natural assadas em forno a lenha, visite a <Link to="/gastronomia/pizza-da-villa/" className="text-penedo-emerald font-bold hover:underline">Pizza da Villa</Link>.
+                Para os apreciadores de carnes nobres e refeições fartas na chapa em ambiente familiar, conheça a <Link to="/gastronomia/casa-da-picanha/" className="text-penedo-emerald font-bold hover:underline">Casa da Picanha</Link>. E para quem busca pizzas artesanais de longa fermentação natural assadas em forno a lenha, visite a <strong className="text-penedo-forest font-bold">Pizza da Villa</strong>.
               </p>
             </div>
           </div>
