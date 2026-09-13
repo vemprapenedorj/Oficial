@@ -28,10 +28,10 @@ export function FeaturedCard(props: { item: DetailItem, onClick: () => void }) {
           : 'shadow-xl shadow-gray-200/40 hover:shadow-2xl hover:shadow-gray-300/50'
       }`}
     >
-      {(item.isPremium || item.badge) && (
+      {item.isPremium && (
         <div className="absolute top-4 left-4 z-20">
           <span className="bg-penedo-gold text-black font-black text-[9px] uppercase tracking-tighter px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1">
-            {item.badge || (item as any).badge || "Destaque"}
+            RECOMENDADO
           </span>
         </div>
       )}
@@ -102,8 +102,8 @@ export function FeaturedCard(props: { item: DetailItem, onClick: () => void }) {
       </div>
 
       <div className="p-5 flex-grow flex flex-col justify-between bg-white cursor-pointer" onClick={onClick}>
-        <p className="text-gray-400 text-xs leading-relaxed mb-4 line-clamp-1 italic opacity-80">
-          "{item.description}"
+        <p className="mb-4 h-[3.75rem] line-clamp-3 text-xs leading-5 text-gray-600">
+          {item.description}
         </p>
         <div className="mt-2 flex items-center gap-2 text-penedo-emerald text-xs font-bold transition-opacity">
           <Info size={14} /> Mais Informações

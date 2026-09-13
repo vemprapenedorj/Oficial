@@ -8,6 +8,8 @@ import { pushSearch } from '../analytics/events';
 import { FAQ_DATA } from '../seo';
 import { Link } from 'react-router-dom';
 import { normalizeSearchText, searchIncludes } from '../utils/search';
+import { CategoryScrollLeaves } from '../components/CategoryScrollLeaves';
+import { SectionDividerLeaf } from '../components/SectionDividerLeaf';
 
 export function WhereToStayPage({ onOpenDetail, onGoBack }: { onOpenDetail: (item: DetailItem) => void, onGoBack: () => void }) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -64,25 +66,29 @@ export function WhereToStayPage({ onOpenDetail, onGoBack }: { onOpenDetail: (ite
 
       <SearchPromo query={searchQuery} onSearch={setSearchQuery} minimal={true} />
 
-      <section className="py-10 md:py-24 max-w-7xl mx-auto px-4">
-        <h2 className="sr-only">Lista de Hotéis e Pousadas Aconchegantes em Penedo RJ</h2>
+      <section className="category-section w-full overflow-hidden bg-white py-10 md:py-24">
+        <CategoryScrollLeaves itemCount={filteredItems.length} />
+        <div className="category-grid mx-auto max-w-7xl px-4">
+          <h2 className="sr-only">Lista de Hotéis e Pousadas Aconchegantes em Penedo RJ</h2>
 
-        {filteredItems.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-            {filteredItems.map((item) => (
-              <InfoCard key={item.id} item={item} onOpen={onOpenDetail} />
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-8 md:py-20">
-            <p className="text-gray-500 text-xl">Nenhum resultado encontrado para "{searchQuery}"</p>
-          </div>
-        )}
+          {filteredItems.length > 0 ? (
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8 lg:grid-cols-3">
+              {filteredItems.map((item) => (
+                <InfoCard key={item.id} item={item} onOpen={onOpenDetail} />
+              ))}
+            </div>
+          ) : (
+            <div className="py-8 text-center md:py-20">
+              <p className="text-xl text-gray-500">Nenhum resultado encontrado para "{searchQuery}"</p>
+            </div>
+          )}
+        </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-12 md:py-24 bg-gray-50 border-t border-gray-100">
-        <div className="max-w-4xl mx-auto px-4 text-left">
+      <section className="section-with-leaf border-t border-gray-100 bg-nature-soft py-12 md:py-24">
+        <SectionDividerLeaf position="bottom-left" color="#174C35" opacity={0.24} size={135} variant="slow" />
+        <div className="mx-auto max-w-4xl px-4 text-left">
           <h2 className="text-3xl font-black text-penedo-forest mb-8 text-center uppercase tracking-tight">Perguntas Frequentes</h2>
           <div className="space-y-6">
             {FAQ_DATA['onde-ficar']?.map((faq, idx) => (

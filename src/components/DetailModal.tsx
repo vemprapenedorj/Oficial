@@ -5,6 +5,37 @@ import { DetailItem, Page } from '../types';
 import { trackEvent } from '../analytics/tracking';
 import { pushWhatsappClick, pushInstagramClick } from '../analytics/events';
 
+export function formatModalLocation(location: string): string {
+  const trimmed = location.trim();
+  if (!trimmed) return '';
+
+  if (/rio de janeiro$/i.test(trimmed)) {
+    return trimmed;
+  }
+
+  if (/^penedo(?:,\s*itatiaia)?\s*-?\s*rj$/i.test(trimmed)) {
+    return 'Penedo, Rio de Janeiro';
+  }
+
+  const withoutState = trimmed
+    .replace(/,\s*itatiaia\s*-\s*rj$/i, '')
+    .replace(/\s*-\s*rj$/i, '')
+    .trim();
+  const withoutPenedoSuffix = withoutState
+    .replace(/\s*[-,]\s*penedo$/i, '')
+    .trim();
+
+  if (withoutPenedoSuffix !== withoutState) {
+    return `${withoutPenedoSuffix} — Penedo, Rio de Janeiro`;
+  }
+
+  if (/penedo/i.test(withoutState)) {
+    return `${withoutState}, Rio de Janeiro`;
+  }
+
+  return `${withoutState} — Penedo, Rio de Janeiro`;
+}
+
 export function DetailModal({ item, onClose }: { item: DetailItem | null, onClose: () => void }) {
   React.useEffect(() => {
     if (item) {
@@ -24,6 +55,10 @@ export function DetailModal({ item, onClose }: { item: DetailItem | null, onClos
   }, [item, onClose]);
 
   if (!item) return null;
+
+  const mapsUrl = item.mapsUrl || item.googleProfileUrl || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.title + ' ' + (item.location || 'Penedo Itatiaia RJ'))}`;
+  const description = item.fullInfo || item.descricao_longa || item.description;
+  const hasRating = typeof item.rating === 'number';
 
   const shouldContainLogo = ['jipe-tour', 'casa-das-pedras', 'casa-dos-cristais', 'bufallo-couros', 'guela-seca', 'oh-baba-pizza-e-esfiha', 'deck-pizzaria-e-choperia'].includes(item.id) || ['pousada-casa-do-bosque', 'pousada-flor-de-penedo', 'pousada-vale-das-flores', 'pousada-das-acerolas', 'paris-hostelli', 'restaurante-toa-toa', 'gute-passeios', 'rei-da-villa', 'meu-sonho'].includes(item.id);
 
@@ -115,46 +150,46 @@ export function DetailModal({ item, onClose }: { item: DetailItem | null, onClos
             </div>
           </div>
           
-          <div className="p-8 space-y-6">
-            <div className="flex flex-wrap gap-6 text-sm text-gray-500">
+          <div className="space-y-6 p-6 sm:p-8">
+            <div className="space-y-3 text-sm text-gray-600">
               {item.location && (
-                <div className="flex items-center gap-2">
-                  <MapPin size={18} className="text-penedo-emerald" />
-                  <span>{item.location}</span>
+                <div className="flex items-start gap-3">
+                  <MapPin size={18} className="mt-0.5 shrink-0 text-penedo-emerald" aria-hidden="true" />
+                  <span className="leading-relaxed">{formatModalLocation(item.location)}</span>
                 </div>
               )}
               {item.hours && (
-                <div className="flex items-center gap-2">
-                  <Clock size={18} className="text-penedo-emerald" />
-                  <span>{item.hours}</span>
+                <div className="flex items-start gap-3">
+                  <Clock size={18} className="mt-0.5 shrink-0 text-penedo-emerald" aria-hidden="true" />
+                  <span className="whitespace-pre-line leading-relaxed">{item.hours}</span>
                 </div>
               )}
-              <div className="flex flex-wrap items-center gap-4">
-                {item.rating && (
-                  <div className="flex items-center gap-2">
-                    <Star size={18} className="text-penedo-gold fill-penedo-gold" />
-                    <span className="font-bold text-penedo-graphite">{item.rating}</span>
-                  </div>
-                )}
+              {(hasRating || item.tripadvisorUrl) && (
+                <div className="flex min-h-6 flex-wrap items-center gap-2">
+                  {hasRating && (
+                    <>
+                      <Star size={18} className="shrink-0 fill-penedo-gold text-penedo-gold" aria-hidden="true" />
+                      <span className="font-bold text-penedo-graphite">{item.rating}</span>
+                    </>
+                  )}
                 {item.tripadvisorUrl && (
-                  <div className="flex items-center gap-2">
-                    <a href={item.tripadvisorUrl} target="_blank" rel="noopener noreferrer" className="text-penedo-emerald hover:underline font-semibold flex items-center gap-1">
-                      <span>Ver no Tripadvisor</span>
+                    <a href={item.tripadvisorUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-6 items-center font-semibold text-penedo-emerald underline-offset-2 hover:underline">
+                      Tripadvisor
                     </a>
-                  </div>
                 )}
-              </div>
+                </div>
+              )}
             </div>
             
             <div className="prose prose-sm max-w-none">
               <p className="text-gray-600 leading-relaxed text-lg">
-                {item.fullInfo}
+                {description}
               </p>
             </div>
             
             <div className="pt-6 border-t grid grid-cols-1 sm:grid-cols-3 gap-3">
               <a 
-                href={item.mapsUrl || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.title + ' ' + (item.location || 'Penedo Itatiaia RJ'))}`}
+                href={mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackEvent('map_location', item.category, item.title)}

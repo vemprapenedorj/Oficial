@@ -11,6 +11,7 @@ import { Carousel } from '../components/Carousel';
 import { InfoCard } from '../components/InfoCard';
 import { Link } from 'react-router-dom';
 import { normalizeSearchText, searchIncludes } from '../utils/search';
+import { SectionDividerLeaf } from '../components/SectionDividerLeaf';
 
 export function HomePage({ 
   onNavigate, 
@@ -146,9 +147,12 @@ export function HomePage({
       </section>
 
       {/* Premium Carousel Section */}
-      <DeferredSection height={760}>
-        <PremiumCarousel />
-      </DeferredSection>
+      <div className="section-with-leaf">
+        <SectionDividerLeaf position="top-right" color="#174C35" opacity={0.8} size={150} variant="slow" />
+        <DeferredSection height={760}>
+          <PremiumCarousel />
+        </DeferredSection>
+      </div>
 
       {/* Search Promo */}
       <DeferredSection height={390}>
@@ -183,7 +187,9 @@ export function HomePage({
       ) : (
         <>
           {/* O Que Fazer Section */}
-          <DeferredSection height={450}>
+          <div className="section-with-leaf bg-white">
+            <SectionDividerLeaf position="left" color="#2E6B34" opacity={0.8} size={140} />
+            <DeferredSection height={520}>
               <Carousel 
                 title="O Que Fazer"
                 subtitle="Descubra as melhores atrações e passeios."
@@ -192,10 +198,13 @@ export function HomePage({
                 onNavigate={() => onNavigate('o-que-fazer')}
                 navigateHref="/o-que-fazer/"
               />
-          </DeferredSection>
+            </DeferredSection>
+          </div>
 
           {/* Onde Ficar Section */}
-          <DeferredSection height={450}>
+          <div className="section-with-leaf bg-nature-soft">
+            <SectionDividerLeaf position="right" color="#6F9568" opacity={0.75} size={140} variant="subtle" />
+            <DeferredSection height={520}>
               <Carousel 
                 title="Onde Ficar"
                 subtitle="Pousadas e hotéis para o seu descanso."
@@ -204,10 +213,13 @@ export function HomePage({
                 onNavigate={() => onNavigate('onde-ficar')}
                 navigateHref="/onde-ficar/"
               />
-          </DeferredSection>
+            </DeferredSection>
+          </div>
 
           {/* Gastronomia Section */}
-          <DeferredSection height={450}>
+          <div className="section-with-leaf bg-white">
+            <SectionDividerLeaf position="left" color="#174C35" opacity={0.8} size={135} variant="slow" />
+            <DeferredSection height={520}>
               <Carousel 
                 title="Gastronomia"
                 subtitle="Os melhores sabores de Penedo."
@@ -216,10 +228,13 @@ export function HomePage({
                 onNavigate={() => onNavigate('gastronomia')}
                 navigateHref="/gastronomia/"
               />
-          </DeferredSection>
+            </DeferredSection>
+          </div>
 
           {/* Compras Section */}
-          <DeferredSection height={450}>
+          <div className="section-with-leaf bg-nature-cream">
+            <SectionDividerLeaf position="bottom-right" color="#6F9568" opacity={0.75} size={145} />
+            <DeferredSection height={520}>
               <Carousel 
                 title="Compras & Lojas"
                 subtitle="Artesanato e produtos exclusivos."
@@ -228,10 +243,13 @@ export function HomePage({
                 onNavigate={() => onNavigate('compras')}
                 navigateHref="/compras/"
               />
-          </DeferredSection>
+            </DeferredSection>
+          </div>
 
           {/* Blog Section */}
-          <DeferredSection height={450}>
+          <div className="section-with-leaf bg-white">
+            <SectionDividerLeaf position="left" color="#2E6B34" opacity={0.7} size={135} variant="subtle" />
+            <DeferredSection height={520}>
               <Carousel 
                 title="Blog & Dicas"
                 subtitle="Fique por dentro das novidades e curiosidades."
@@ -251,7 +269,8 @@ export function HomePage({
                 onNavigate={() => onNavigate('blog')}
                 navigateHref="/blog/"
               />
-          </DeferredSection>
+            </DeferredSection>
+          </div>
         </>
       ) /* End of searchQuery conditional */}
     </div>

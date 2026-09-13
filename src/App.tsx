@@ -201,13 +201,22 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'auto' });
   };
 
-  const handleHomeLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleNavigationLinkClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    targetPath: string
+  ) => {
     setIsMenuOpen(false);
 
-    if (location.pathname === '/') {
+    const normalizePath = (path: string) => path === '/' ? '/' : `/${path.replace(/^\/+|\/+$/g, '')}/`;
+
+    if (normalizePath(location.pathname) === normalizePath(targetPath)) {
       event.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+  };
+
+  const handleHomeLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    handleNavigationLinkClick(event, '/');
   };
 
   const selectBlogArticle = (slug: string | null) => {
@@ -289,7 +298,10 @@ export default function App() {
                 <Link
                   key={item.id}
                   to={item.id === 'home' ? '/' : `/${item.id}/`}
-                  onClick={item.id === 'home' ? handleHomeLinkClick : () => setIsMenuOpen(false)}
+                  onClick={(event) => handleNavigationLinkClick(
+                    event,
+                    item.id === 'home' ? '/' : `/${item.id}/`
+                  )}
                   className="font-medium text-sm transition-colors text-white/90 hover:text-white cursor-pointer"
                 >
                   {item.label}
@@ -330,7 +342,10 @@ export default function App() {
               <Link
                 key={item.id}
                 to={item.id === 'home' ? '/' : `/${item.id}/`}
-                onClick={item.id === 'home' ? handleHomeLinkClick : () => setIsMenuOpen(false)}
+                onClick={(event) => handleNavigationLinkClick(
+                  event,
+                  item.id === 'home' ? '/' : `/${item.id}/`
+                )}
                 className="block w-full text-left px-3 py-2 rounded-md text-white/90 font-medium hover:bg-penedo-emerald/20 transition-colors cursor-pointer"
               >
                 {item.label}

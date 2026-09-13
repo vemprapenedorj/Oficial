@@ -110,7 +110,7 @@ export function PremiumCarousel() {
                 />
                 <div className="absolute top-4 left-4 z-10">
                   <span className="bg-penedo-gold text-black font-black text-[9px] uppercase tracking-tighter px-3 py-1.5 rounded-full shadow-lg">
-                    {item.badge || (item as any).badge || "Destaque"}
+                    RECOMENDADO
                   </span>
                 </div>
               </div>
@@ -118,7 +118,7 @@ export function PremiumCarousel() {
                 <div>
                   <div className="flex items-center gap-2 mb-2">
                     <div className="h-1 w-6 bg-penedo-gold rounded-full"></div>
-                    <span className="text-gray-400 text-[10px] font-bold uppercase tracking-widest">{(item as any).badge || item.category}</span>
+                    <span className="text-gray-400 text-[10px] font-bold uppercase tracking-widest">{item.category}</span>
                   </div>
                   <div className="mb-4">
                     <PartnerHeader item={item} size="small" />

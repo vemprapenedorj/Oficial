@@ -16,6 +16,7 @@ html {
 
 body {
   @apply bg-white text-penedo-graphite antialiased;
+  overflow-x: clip;
 }
 
 img {
@@ -128,5 +129,94 @@ a {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* Superfícies naturais da versão visual de referência. */
+.bg-nature-cream {
+  background-color: #F8F8F2;
+}
+
+.bg-nature-soft {
+  background-color: #F2F5EE;
+}
+
+.bg-nature-light {
+  background-color: #EAF1E8;
+}
+
+@keyframes leaf-float {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(calc(var(--leaf-rotation, 0deg) - 4deg));
+  }
+
+  50% {
+    transform: translate3d(0, -14px, 0) rotate(calc(var(--leaf-rotation, 0deg) + 5deg));
+  }
+}
+
+.monstera-leaf {
+  width: min(var(--leaf-size), max(0px, calc((100vw - 80rem) / 2 - 3.5rem)));
+  aspect-ratio: 2 / 3;
+  animation: leaf-float 7s ease-in-out infinite;
+  transform-origin: center;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.monstera-leaf--slow {
+  animation-duration: 9s;
+  animation-delay: -2s;
+}
+
+.monstera-leaf--subtle {
+  animation-duration: 8s;
+  animation-delay: -4s;
+}
+
+.section-with-leaf,
+.category-section {
+  position: relative;
+  isolation: isolate;
+}
+
+.section-with-leaf > :not(.section-divider-leaf) {
+  position: relative;
+  z-index: 2;
+}
+
+.category-grid {
+  position: relative;
+  z-index: 10;
+}
+
+.category-leaf {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.category-leaf--left {
+  left: clamp(12px, 3vw, 56px);
+}
+
+.category-leaf--right {
+  right: clamp(12px, 3vw, 56px);
+}
+
+@media (max-width: 1279px) {
+  .category-leaf-wrapper,
+  .section-divider-leaf {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .monstera-leaf,
+  .monstera-leaf--slow,
+  .monstera-leaf--subtle {
+    animation: none !important;
+    transform: rotate(var(--leaf-rotation, 0deg)) !important;
+    will-change: auto;
   }
 }

@@ -122,7 +122,7 @@ const BlockImage: React.FC<BlockImageProps> = ({ id, src, alt }) => {
           />
           {item?.isPremium && (
             <div className="absolute top-3 right-3 bg-penedo-gold text-penedo-forest font-black text-[9px] uppercase tracking-widest px-3 py-1.5 rounded-xl shadow-md border border-white/20">
-              Premium
+              RECOMENDADO
             </div>
           )}
         </div>
