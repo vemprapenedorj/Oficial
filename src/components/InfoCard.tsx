@@ -37,7 +37,7 @@ export const InfoCard = React.memo(function InfoCard({ item, onOpen }: InfoCardP
     if (logoPresentation) {
       return classes + logoPresentation.imageClassName;
     }
-    
+
     // Scale / Zoom logic specifically for horizontal logos with empty margins like Pousada do Sol
     if (item.id === 'pousada-do-sol') {
       classes += "scale-[1.35] origin-center group-hover:scale-[1.45] ";
@@ -46,7 +46,7 @@ export const InfoCard = React.memo(function InfoCard({ item, onOpen }: InfoCardP
     } else {
       classes += "group-hover:scale-110 ";
     }
-    
+
     if (logoBackgroundColor) {
       classes += "max-h-full max-w-full object-contain object-center p-4 m-auto";
     } else if (item.id === 'rodrigo-dione') {
@@ -66,7 +66,7 @@ export const InfoCard = React.memo(function InfoCard({ item, onOpen }: InfoCardP
     } else {
       classes += "w-full h-full object-cover";
     }
-    
+
     return classes;
   }, [item.id, isPremium, logoBackgroundColor, logoPresentation]);
 
@@ -137,9 +137,9 @@ export const InfoCard = React.memo(function InfoCard({ item, onOpen }: InfoCardP
 
         <div className="mb-2 flex min-w-0 items-center gap-2">
           <div className="flex h-6 w-6 shrink-0 items-center justify-center overflow-hidden rounded-full border border-gray-200 bg-white shadow-xs">
-            <img 
+            <img
               src={item.image}
-              alt={`Logotipo oficial do estabelecimento ${item.title} em Penedo RJ`} 
+              alt={`Logotipo oficial do estabelecimento ${item.title} em Penedo RJ`}
               width={24}
               height={24}
               className={`h-full w-full ${item.id === 'sorvete-de-penedo' ? 'object-contain p-0.5' : 'object-cover'}`}
@@ -165,7 +165,7 @@ export const InfoCard = React.memo(function InfoCard({ item, onOpen }: InfoCardP
           )}
         </div>
 
-        <p className="h-[3.75rem] line-clamp-3 text-xs leading-5 text-gray-600">{item.description}</p>
+        <p className="h-[5.25rem] line-clamp-3 text-lg leading-7 text-gray-600">{item.description}</p>
       </div>
     </article>
   );

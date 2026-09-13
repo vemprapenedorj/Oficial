@@ -156,7 +156,7 @@ function PlaceCard({ id, description, onOpenDetail, onOpenPremium }: PlaceCardPr
       <div className="flex flex-1 flex-col p-5">
         <p className="mb-1 text-[10px] font-black uppercase tracking-widest text-penedo-emerald">{item.category}</p>
         <h4 className="mb-2 text-lg font-black leading-tight text-penedo-forest">{item.title}</h4>
-        <p className="h-[3.75rem] line-clamp-3 text-xs leading-5 text-gray-600">{description || item.description}</p>
+        <p className="h-[5.25rem] line-clamp-3 text-lg leading-7 text-gray-600">{description || item.description}</p>
         <span className="mt-auto inline-flex items-center gap-2 pt-4 text-xs font-black uppercase tracking-wider text-penedo-emerald">
           Conhecer <ArrowRight size={14} aria-hidden="true" />
         </span>
