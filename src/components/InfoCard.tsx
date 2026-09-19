@@ -34,6 +34,10 @@ export const InfoCard = React.memo(function InfoCard({ item, onOpen }: InfoCardP
   const imgClass = React.useMemo(() => {
     let classes = "relative z-10 transition-transform duration-700 ";
 
+    if (isPremium) {
+      return classes + "w-full h-full object-cover group-hover:scale-110";
+    }
+
     if (logoPresentation) {
       return classes + logoPresentation.imageClassName;
     }
@@ -53,8 +57,6 @@ export const InfoCard = React.memo(function InfoCard({ item, onOpen }: InfoCardP
       classes += "w-full h-full object-contain object-center";
     } else if (item.id === 'hotel-girassol') {
       classes += "w-full h-full object-contain object-center p-3";
-    } else if (isPremium) {
-      classes += "w-full h-full object-cover";
     } else if (['jipe-tour', 'casa-das-pedras', 'casa-dos-cristais', 'bufallo-couros', 'guela-seca', 'deck-pizzaria-e-choperia'].includes(item.id)) {
       classes += "w-full h-full object-contain object-top";
     } else if (item.id === 'enoteca-serrana') {
@@ -101,7 +103,7 @@ export const InfoCard = React.memo(function InfoCard({ item, onOpen }: InfoCardP
       )}
       <div
         className="relative flex aspect-[3/4] w-full shrink-0 items-center justify-center overflow-hidden bg-gray-100"
-        style={{ backgroundColor: logoBackgroundColor || '#F9FAFB' }}
+        style={{ backgroundColor: isPremium ? '#F9FAFB' : (logoBackgroundColor || '#F9FAFB') }}
       >
         {!logoBackgroundColor && !isPremium && imgClass.includes('object-contain') && (
           <div

@@ -19,6 +19,8 @@ export function FeaturedCard(props: { item: DetailItem, onClick: () => void }) {
     ? `https://wa.me/55${item.whatsapp.replace(/\D/g, '')}?text=${whatsappMessage}`
     : `https://wa.me/5524992087767?text=${whatsappMessage}`;
 
+  const cardImage = item.isPremium ? (item.galeria?.[0] || item.image) : item.image;
+
   return (
     <motion.div
       whileHover={{ y: -8 }}
@@ -40,7 +42,7 @@ export function FeaturedCard(props: { item: DetailItem, onClick: () => void }) {
         onClick={onClick}
       >
         {/* Blurred Background Layer for Contained Images */}
-        {['pequena-finlandia', 'pequena-finlandia-shopping', 'lelu-museu', 'hotel-girassol', 'hotel-bertell', 'hotel-britannia', 'hotel-daniela', 'hotel-da-cachoeira', 'pousada-serra-da-india', 'hotel-rio-penedo', 'hotel-do-sino', 'hotel-titanic', 'pousada-chez-nous', 'pousada-penedo', 'pousada-reserva-penedo', 'pousada-terraco', 'pousada-villa-luna', 'vila-francesa-hotel', 'aglio-e-olio', 'bazzini-pizzeria', 'borbulha-penedo', 'botegare', 'braseiro-gaucho', 'casa-do-fritz', 'enoteca-serrana', 'estancia-penedo', 'kaiten-sushi', 'loazo-resto', 'petit-gourmet', 'pizza-da-villa', 'querencia', 'rei-das-trutas', 'restaurante-finlandes', 'truta-viva', 'zero-a-zero', 'emporio-chamoun', 'culto-cafe', 'rosana-balas-coco', 'from-penedo-delicatessen', 'pousada-recanto-de-moria', 'unica-arte-para-voce', 'azia-sushi-lounge', 'bistro-du-cheff', 'sorvete-de-penedo', 'sorvete-finlandes', 'acailandia-penedo', 'pe-de-canela-buteco', 'janela-divino', 'pousada-bela-vista-penedo', 'pousada-vale-do-ermitao', 'pousada-das-acerolas'].includes(item.id) && (
+        {!item.isPremium && ['pequena-finlandia', 'pequena-finlandia-shopping', 'lelu-museu', 'hotel-girassol', 'hotel-bertell', 'hotel-britannia', 'hotel-daniela', 'hotel-da-cachoeira', 'pousada-serra-da-india', 'hotel-rio-penedo', 'hotel-do-sino', 'hotel-titanic', 'pousada-chez-nous', 'pousada-penedo', 'pousada-reserva-penedo', 'pousada-terraco', 'pousada-villa-luna', 'vila-francesa-hotel', 'aglio-e-olio', 'bazzini-pizzeria', 'borbulha-penedo', 'botegare', 'braseiro-gaucho', 'casa-do-fritz', 'enoteca-serrana', 'estancia-penedo', 'kaiten-sushi', 'loazo-resto', 'petit-gourmet', 'pizza-da-villa', 'querencia', 'rei-das-trutas', 'restaurante-finlandes', 'truta-viva', 'zero-a-zero', 'emporio-chamoun', 'culto-cafe', 'rosana-balas-coco', 'from-penedo-delicatessen', 'pousada-recanto-de-moria', 'unica-arte-para-voce', 'azia-sushi-lounge', 'bistro-du-cheff', 'sorvete-de-penedo', 'sorvete-finlandes', 'acailandia-penedo', 'pe-de-canela-buteco', 'janela-divino', 'pousada-bela-vista-penedo', 'pousada-vale-do-ermitao', 'pousada-das-acerolas'].includes(item.id) && (
           <div
             className="absolute inset-0 z-0 opacity-40 scale-110 blur-xl font-sans"
             style={{
@@ -51,19 +53,21 @@ export function FeaturedCard(props: { item: DetailItem, onClick: () => void }) {
           />
         )}
         <img
-          src={item.image}
+          src={cardImage}
           alt={item.title}
           loading="lazy"
           decoding="async"
-          className={`relative z-10 w-full h-full transition-transform duration-1000 group-hover:scale-110 ${item.id === 'enoteca-serrana'
-              ? 'object-cover object-[center_75%]'
-              : (['jipe-tour', 'casa-das-pedras', 'casa-dos-cristais', 'bufallo-couros', 'guela-seca', 'oh-baba-pizza-e-esfiha', 'deck-pizzaria-e-choperia'].includes(item.id) || ['pousada-casa-do-bosque', 'pousada-flor-de-penedo', 'pousada-vale-das-flores', 'pousada-das-acerolas', 'paris-hostelli', 'restaurante-toa-toa', 'gute-passeios', 'rei-da-villa', 'meu-sonho'].includes(item.id))
-                ? 'object-contain object-top'
-                : item.id === 'hotel-girassol'
-                  ? 'object-contain object-center p-3'
-                  : ['pequena-finlandia', 'pequena-finlandia-shopping', 'lelu-museu', 'hotel-bertell', 'hotel-britannia', 'hotel-daniela', 'hotel-da-cachoeira', 'pousada-serra-da-india', 'hotel-rio-penedo', 'hotel-do-sino', 'hotel-titanic', 'pousada-chez-nous', 'pousada-penedo', 'pousada-reserva-penedo', 'pousada-terraco', 'pousada-villa-luna', 'vila-francesa-hotel', 'aglio-e-olio', 'bazzini-pizzeria', 'borbulha-penedo', 'botegare', 'braseiro-gaucho', 'casa-do-fritz', 'enoteca-serrana', 'estancia-penedo', 'farm-pizzaria', 'kaiten-sushi', 'loazo-resto', 'petit-gourmet', 'pizza-da-villa', 'querencia', 'rei-das-trutas', 'restaurante-finlandes', 'truta-viva', 'zero-a-zero', 'emporio-chamoun', 'culto-cafe', 'rosana-balas-coco', 'from-penedo-delicatessen', 'cantinho-mineiro-tia-lili', 'esquina-da-serra', 'quatro-marias-boulangerie', 'grao-padaria-penedo', 'rei-da-vila', 'pousada-recanto-de-moria', 'unica-arte-para-voce', 'azia-sushi-lounge', 'bistro-du-cheff', 'sorvete-de-penedo', 'sorvete-finlandes', 'acailandia-penedo', 'pe-de-canela-buteco', 'andicaro-penedo-cafes-especiais', 'clube-finlandia', 'expedicao-raizes', 'esquilo-passeios', 'gute-passeios', 'restaurante-toa-toa', 'janela-divino', 'pousada-bela-vista-penedo', 'pousada-vale-do-ermitao', 'pousada-das-acerolas'].includes(item.id)
-                    ? 'object-contain object-top'
-                    : 'object-cover'
+          className={`relative z-10 w-full h-full transition-transform duration-1000 group-hover:scale-110 ${item.isPremium
+              ? 'object-cover'
+              : item.id === 'enoteca-serrana'
+                ? 'object-cover object-[center_75%]'
+                : (['jipe-tour', 'casa-das-pedras', 'casa-dos-cristais', 'bufallo-couros', 'guela-seca', 'oh-baba-pizza-e-esfiha', 'deck-pizzaria-e-choperia'].includes(item.id) || ['pousada-casa-do-bosque', 'pousada-flor-de-penedo', 'pousada-vale-das-flores', 'pousada-das-acerolas', 'paris-hostelli', 'restaurante-toa-toa', 'gute-passeios', 'rei-da-villa', 'meu-sonho'].includes(item.id))
+                  ? 'object-contain object-top'
+                  : item.id === 'hotel-girassol'
+                    ? 'object-contain object-center p-3'
+                    : ['pequena-finlandia', 'pequena-finlandia-shopping', 'lelu-museu', 'hotel-bertell', 'hotel-britannia', 'hotel-daniela', 'hotel-da-cachoeira', 'pousada-serra-da-india', 'hotel-rio-penedo', 'hotel-do-sino', 'hotel-titanic', 'pousada-chez-nous', 'pousada-penedo', 'pousada-reserva-penedo', 'pousada-terraco', 'pousada-villa-luna', 'vila-francesa-hotel', 'aglio-e-olio', 'bazzini-pizzeria', 'borbulha-penedo', 'botegare', 'braseiro-gaucho', 'casa-do-fritz', 'enoteca-serrana', 'estancia-penedo', 'farm-pizzaria', 'kaiten-sushi', 'loazo-resto', 'petit-gourmet', 'pizza-da-villa', 'querencia', 'rei-das-trutas', 'restaurante-finlandes', 'truta-viva', 'zero-a-zero', 'emporio-chamoun', 'culto-cafe', 'rosana-balas-coco', 'from-penedo-delicatessen', 'cantinho-mineiro-tia-lili', 'esquina-da-serra', 'quatro-marias-boulangerie', 'grao-padaria-penedo', 'rei-da-vila', 'pousada-recanto-de-moria', 'unica-arte-para-voce', 'azia-sushi-lounge', 'bistro-du-cheff', 'sorvete-de-penedo', 'sorvete-finlandes', 'acailandia-penedo', 'pe-de-canela-buteco', 'andicaro-penedo-cafes-especiais', 'clube-finlandia', 'expedicao-raizes', 'esquilo-passeios', 'gute-passeios', 'restaurante-toa-toa', 'janela-divino', 'pousada-bela-vista-penedo', 'pousada-vale-do-ermitao', 'pousada-das-acerolas'].includes(item.id)
+                      ? 'object-contain object-top'
+                      : 'object-cover'
             }`}
           referrerPolicy="no-referrer"
         />
