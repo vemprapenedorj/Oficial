@@ -72,6 +72,8 @@ export function PremiumDetailPage({ onNavigate, onOpenDetail }: { onNavigate: (p
         cleanFolder = 'pousada-rainha-da-mata';
       } else if (cleanFolder === 'rodrigo-dione') {
         cleanFolder = 'rodrigo-massoterapeuta';
+      } else if (cleanFolder === 'jipe-tour') {
+        cleanFolder = 'jipe-tour-penedo';
       }
       const prefix = `/assets/imagens/premium/${cleanFolder}/`;
       
@@ -335,7 +337,7 @@ export function PremiumDetailPage({ onNavigate, onOpenDetail }: { onNavigate: (p
         title: 'Gastronomia em Penedo: Onde Comer Bem',
         description: 'Conheça os melhores restaurantes, carnes nobres e tradições gastronômicas de Penedo.'
       };
-    } else if (itemId === 'expedicao-raizes') {
+    } else if (itemId === 'jipe-tour' || itemId === 'expedicao-raizes') {
       recommendedBlog = {
         id: 'cachoeiras-penedo',
         title: 'Guia de Cachoeiras e Trilhas em Penedo RJ',

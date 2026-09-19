@@ -338,22 +338,65 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "id": "jipe-tour",
       "title": "Jipe Tour",
       "category": "Passeios de Aventura",
-      "isPremium": false,
+      "isPremium": true,
       "image": "/assets/imagens/logos/logo-jipe-tour.jpg",
-      "description": "Há 16 anos em Penedo, a Jipe Tour oferece passeios de jipe, UTV, trenzinho e cavalo para toda a família.",
-      "fullInfo": "Há 16 anos em Penedo, a Jipe Tour proporciona experiências para todas as idades com passeios de jipe, UTV, trenzinho e cavalo, unindo aventura, segurança e conforto.",
+      "description": "Há 16 anos em Penedo, a Jipe Tour oferece experiências inesquecíveis em passeios de Jipe 4x4 e UTV por trilhas, mirantes e cachoeiras.",
+      "fullInfo": "Com mais de 16 anos de história em Penedo, a Jipe Tour proporciona experiências completas de aventura e ecoturismo para toda a família. Oferecemos emocionantes passeios de UTV para você mesmo pilotar em trilhas fechadas na Serra da Índia, além de tours clássicos de Jipe 4x4 guiados pelas principais cachoeiras da região.",
+      "descricao_longa": "Há mais de 16 anos transformando viagens a Penedo em memórias inesquecíveis, a Jipe Tour oferece experiências completas de ecoturismo e aventura off-road para toda a família.\n\nNo eletrizante Passeio de UTV (aproximadamente 1h30min de duração), você tem a experiência única de pilotar um veículo automático com super potência por trilhas exclusivas dentro de uma propriedade particular aos pés da Serra da Índia. O roteiro conta com veículos de 2 e 4 lugares (necessário ser habilitado para pilotar) e inclui paradas especiais na Cachoeira da Lontra (considerada a mais limpa de Penedo) e no Mirante, com vista panorâmica para a cidade de Resende e para a Serra da Índia.\n\nJá no clássico Passeio de Jipe 4x4 (2 horas de duração), você realiza um tour guiado pela parte alta de Penedo conhecendo três cachoeiras imperdíveis: Cachoeira de Deus, Três Bacias e Poço das Esmeraldas, com paradas de 20 minutos em cada para banho e fotos. O passeio também inclui parada no Mirante com vista privilegiada para a Serra da Índia. É um passeio coletivo, guiado por motorista experiente, com capacidade para acomodar até 9 pessoas com total conforto e segurança.",
+      "location": "Avenida das Mangueiras, 2000, Loja 1 - Penedo, Itatiaia - RJ",
+      "hours": "Todos os dias sob agendamento",
+      "rating": 5,
+      "whatsapp": "24999639390",
+      "badge": "Recomendado",
+      "slug": "jipe-tour",
+      "galeria": [
+        "/assets/imagens/premium/jipe-tour-penedo/galeria-1.png",
+        "/assets/imagens/premium/jipe-tour-penedo/galeria-2.png",
+        "/assets/imagens/premium/jipe-tour-penedo/galeria-3.png",
+        "/assets/imagens/premium/jipe-tour-penedo/galeria-4.png",
+        "/assets/imagens/premium/jipe-tour-penedo/galeria-5.png",
+        "/assets/imagens/premium/jipe-tour-penedo/galeria-6.png"
+      ],
       "tags": [
         "jipe",
         "utv",
-        "trenzinho",
-        "cavalo",
-        "aventura",
-        "passeios",
-        "trilhas",
+        "passeios 4x4",
         "cachoeiras",
-        "família"
+        "trilhas",
+        "aventura",
+        "ecoturismo",
+        "mirante",
+        "cachoeira de deus",
+        "tres bacias",
+        "poco das esmeraldas",
+        "cachoeira da lontra",
+        "família",
+        "penedo"
       ],
-      "instagramUrl": "https://www.instagram.com/jipetourpenedo/"
+      "seo_title": "Jipe Tour Penedo | Passeios de Jipe 4x4 e UTV em Penedo RJ",
+      "seo_description": "Passeios de Jipe 4x4 e UTV em Penedo RJ com a Jipe Tour. Trilhas exclusivas na Serra da Índia, Cachoeira de Deus, Três Bacias e Mirantes.",
+      "whatsappUrl": "https://wa.me/5524999639390",
+      "instagramUrl": "https://www.instagram.com/jipetourpenedo/",
+      "mapsUrl": "https://maps.google.com/?q=Avenida%20das%20mangueiras,%202000-%20loja%201",
+      "videoUrl": "https://www.instagram.com/reel/CmXrZfLpFcr/",
+      "faq": [
+        {
+          "question": "Como funciona o passeio de UTV da Jipe Tour?",
+          "answer": "O passeio de UTV dura cerca de 1h30min em trilhas particulares aos pés da Serra da Índia. Você mesmo pilota o veículo automático (necessário CNH), com opções de 2 e 4 lugares, parando na Cachoeira da Lontra e no Mirante com vista para Resende e a serra."
+        },
+        {
+          "question": "Quais cachoeiras são visitadas no passeio de Jipe 4x4?",
+          "answer": "O passeio de jipe dura 2 horas e visita a Cachoeira de Deus, Três Bacias e Poço das Esmeraldas (com parada de 20 min em cada para banho e fotos), além de uma parada no Mirante da Serra da Índia."
+        },
+        {
+          "question": "Qual a capacidade do Jipe e como agendar?",
+          "answer": "O Jipe acomoda confortavelmente até 9 pessoas em um tour coletivo guiado por motorista profissional. O agendamento pode ser feito pelo WhatsApp oficial (24) 99963-9390."
+        },
+        {
+          "question": "Onde fica o ponto de atendimento da Jipe Tour?",
+          "answer": "A Jipe Tour fica na Avenida das Mangueiras, 2000, Loja 1, em Penedo - RJ."
+        }
+      ]
     },
     {
       "id": "aguia-de-penedo",
