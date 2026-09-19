@@ -210,30 +210,17 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
     {
       "id": "expedicao-raizes",
       "title": "Expedição Raízes da Mantiqueira",
-      "category": "Aventura",
-      "isPremium": true,
+      "category": "Passeios de Aventura",
+      "isPremium": false,
       "image": "/assets/imagens/logos/logo-expedicao-raizes.jpg",
       "description": "Passeios 4x4 em Penedo, trilhas e cachoeiras exclusivas. Prêmio TripAdvisor Travellers' Choice 2026.",
       "fullInfo": "Empresa credenciada Ministério do turismo Cadastur realizando Turismo Legal. Guia credenciado Mtur Cadastur. Nosso compromisso é proporcionar a conectividade com a natureza de maneira sustentável. Não vendemos apenas um serviço proporcionamos experiências.",
       "descricao_longa": "Embarque inesquecível pelo coração de Penedo. Com nossos passeios off-road 4x4, você terá acesso a trilhas escondidas e cachoeiras exclusivas que poucos têm a chance de conhecer. Somos guiados por profissionais apaixonados e garantimos a máxima segurança através do Turismo Legal, certificados pelo Cadastur. Mais do que vender passeios, nossa missão na Expedição Raízes da Mantiqueira é proporcionar uma verdadeira conexão sustentável com a natureza, entregando as experiências enriquecedoras e autênticas que nos garantiram o Prêmio TripAdvisor Travellers' Choice 2026.",
-      "location": "Rua das velas, 100",
+      "location": "Rua das Velas, 100, Penedo - RJ",
       "hours": "Agendamento prévio",
       "rating": 5,
       "whatsapp": "24999116542",
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Attraction_Review-g2427181-d23280155-Reviews-Expedicao_Raizes_da_Mantiqueira-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
-      "googleProfileUrl": "https://www.google.com/maps/place/Expedi%C3%A7%C3%A3o+Ra%C3%ADzes+da+Mantiqueira/@-22.4332997,-44.5249454,17z/",
-      "reviewCount": 384,
-      "priceRange": "$$",
-      "paymentAccepted": "Cash, Credit Card, Debit Card, Pix",
-      "currenciesAccepted": "BRL",
-      "galeria": [
-        "/assets/imagens/premium/expedicao-raizes/galeria-1.jpg",
-        "/assets/imagens/premium/expedicao-raizes/galeria-2.jpg",
-        "/assets/imagens/premium/expedicao-raizes/galeria-3.jpg",
-        "/assets/imagens/premium/expedicao-raizes/galeria-4.jpg",
-        "/assets/imagens/premium/expedicao-raizes/galeria-5.jpg",
-        "/assets/imagens/premium/expedicao-raizes/galeria-6.jpg"
-      ],
       "tags": [
         "4x4",
         "passeios",
@@ -245,21 +232,8 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "família",
         "guia"
       ],
-      "whatsappUrl": "https://wa.me/5524999116542",
       "instagramUrl": "https://www.instagram.com/expedicaoraizesdamantiqueira/",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Expedi%C3%A7%C3%A3o+Ra%C3%ADzes+da+Mantiqueira+Penedo",
-      "videoUrl": "https://www.instagram.com/reel/DTawltXkhlC/",
-      "faq": [
-        {
-          "question": "Onde fica o ponto de atendimento da Expedição Raízes?",
-          "answer": "Fica na Rua das Velas, 100, em Penedo - RJ."
-        },
-        {
-          "question": "Como funciona o agendamento dos passeios 4x4?",
-          "answer": "O agendamento é realizado diretamente pelo WhatsApp oficial (24) 99911-6542, com opções de roteiros para cachoeiras e trilhas ecológicas."
-        }
-      ],
-      "badge": "Recomendado"
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Expedi%C3%A7%C3%A3o+Ra%C3%ADzes+da+Mantiqueira+Penedo"
     },
     {
       "id": "rodrigo-dione",

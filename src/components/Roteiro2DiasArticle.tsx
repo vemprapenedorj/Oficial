@@ -309,7 +309,7 @@ export function Roteiro2DiasArticle({ onOpenDetail, onNavigate }: Roteiro2DiasAr
               Contrate um passeio de buggy pelo circuito clássico. A primeira parada é a <EstablishmentLink id="cachoeira-deus" {...linkProps} />, uma das maiores da região. Aqui, o destaque é o escorrega natural, uma diversão imperdível. Atenção: o acesso envolve degraus de pedra que podem ser íngremes e escorregadios. Siga para as Três Bacias, perfeitas para uma hidromassagem natural, e finalize no <EstablishmentLink id="poco-esmeraldas" label="Poço das Esmeraldas" {...linkProps} />, cujo tom esverdeado da água é um espetáculo à parte sob a luz do sol.
             </p>
             <p>
-              Entre os operadores cadastrados no portal, a <EstablishmentLink id="expedicao-raizes" {...linkProps} /> possui página Premium exclusiva e realiza experiências 4x4 em trilhas e cachoeiras. O <EstablishmentLink id="esquilo-passeios" {...linkProps} /> também informa opções de bugre, jipe e quadriciclo.
+              Entre os operadores cadastrados no portal, a <EstablishmentLink id="expedicao-raizes" {...linkProps} /> realiza experiências 4x4 em trilhas e cachoeiras. O <EstablishmentLink id="esquilo-passeios" {...linkProps} /> também informa opções de bugre, jipe e quadriciclo.
             </p>
             <CardGrid ids={['expedicao-raizes', 'cachoeira-deus']} {...linkProps} />
 

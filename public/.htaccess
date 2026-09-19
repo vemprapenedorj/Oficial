@@ -101,7 +101,7 @@ RewriteRule ^hoteis/([^/]+)/?$ /onde-ficar/$1/ [R=301,END,NC,NE]
 
 # /detalhe/:slug precisa de regras explícitas porque a categoria canônica
 # depende do estabelecimento cadastrado.
-RewriteRule ^detalhe/expedicao-raizes/?$ /o-que-fazer/expedicao-raizes/ [R=301,END,NC,NE]
+RewriteRule ^detalhe/expedicao-raizes/?$ /o-que-fazer/ [R=301,END,NC,NE]
 RewriteRule ^detalhe/rodrigo-dione/?$ /o-que-fazer/rodrigo-dione/ [R=301,END,NC,NE]
 RewriteRule ^detalhe/pousada-aurora-da-mantiqueira/?$ /onde-ficar/pousada-aurora-da-mantiqueira/ [R=301,END,NC,NE]
 RewriteRule ^detalhe/pousada-villa-luna/?$ /onde-ficar/pousada-villa-luna/ [R=301,END,NC,NE]

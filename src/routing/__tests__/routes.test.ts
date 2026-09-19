@@ -120,7 +120,7 @@ test('cada empresa premium possui redirect HTTP da rota antiga no .htaccess', ()
 
 test('URLs canônicas de páginas usam barra final sem alterar URLs de arquivos', () => {
   assert.equal(getCanonicalUrl('/onde-ficar'), 'https://vemprapenedo.com.br/onde-ficar/');
-  assert.equal(getCanonicalUrl('/o-que-fazer/expedicao-raizes/'), 'https://vemprapenedo.com.br/o-que-fazer/expedicao-raizes/');
+  assert.equal(getCanonicalUrl('/o-que-fazer/rodrigo-dione/'), 'https://vemprapenedo.com.br/o-que-fazer/rodrigo-dione/');
   assert.equal(getCanonicalUrl('/onde-ficar#pousadas'), 'https://vemprapenedo.com.br/onde-ficar/#pousadas');
   assert.equal(getCanonicalUrl('/assets/imagens/Logo.jpg'), 'https://vemprapenedo.com.br/assets/imagens/Logo.jpg');
   assert.equal(cleanPath('/blog//artigo/penedo-guia'), '/blog/artigo/penedo-guia/');

@@ -2,6 +2,7 @@ export const LOGO_BACKGROUND_BY_ID: Readonly<Record<string, string>> = {
   'clube-finlandia': '#FFFFFF',
   'lelu-museu': '#FFFFFF',
   'gute-passeios': '#FCED1E',
+  'expedicao-raizes': '#000000',
   'esquilo-passeios': '#000000',
   'jipe-tour': '#FDFDFD',
   'aguia-de-penedo': '#FEFEFE',
