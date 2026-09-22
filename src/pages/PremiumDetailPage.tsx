@@ -674,7 +674,17 @@ export function PremiumDetailPage({ onNavigate, onOpenDetail }: { onNavigate: (p
                     <h4 className="font-bold text-penedo-forest mb-3 flex items-center gap-2">
                       <Clock size={18} className="text-penedo-emerald" /> Horário
                     </h4>
-                    <p className="text-gray-500 text-sm leading-snug">{item.hours}</p>
+                    {item.bookingUrl ? (
+                      <a
+                        href={item.bookingUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => trackEvent('booking_lead', item.category, item.title)}
+                        className="text-gray-500 text-sm leading-snug underline decoration-penedo-emerald/40 underline-offset-4 hover:text-penedo-emerald transition-colors"
+                      >{item.hours}</a>
+                    ) : (
+                      <p className="text-gray-500 text-sm leading-snug">{item.hours}</p>
+                    )}
                   </div>
                 )}
                 

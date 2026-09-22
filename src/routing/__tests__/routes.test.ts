@@ -7,6 +7,11 @@ import { checkRedirects } from '../legacyRedirects';
 import { cleanPath, getCanonicalUrl } from '../../seo/utils/seoUtils';
 import fs from 'node:fs';
 import path from 'node:path';
+import React from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
+import { HelmetProvider } from 'react-helmet-async';
+import { MemoryRouter, Route, Routes } from 'react-router-dom';
+import { PremiumDetailPage } from '../../pages/PremiumDetailPage';
 
 const fixedCases = [
   ['/', 'home'],
@@ -59,6 +64,32 @@ test('toda empresa premium possui uma rota canônica correspondente à categoria
       assert.equal(buildPath(route.page, route.premiumSlug, null), canonical);
     });
   });
+});
+
+test('o horário da Jipe Tour direciona para o agendamento online', () => {
+  const html = renderToStaticMarkup(
+    React.createElement(
+      HelmetProvider,
+      null,
+      React.createElement(
+        MemoryRouter,
+        { initialEntries: ['/o-que-fazer/jipe-tour/'] },
+        React.createElement(
+          Routes,
+          null,
+          React.createElement(Route, {
+            path: '/o-que-fazer/:slug/',
+            element: React.createElement(PremiumDetailPage, { onNavigate: () => undefined })
+          })
+        )
+      )
+    )
+  );
+
+  assert.match(
+    html,
+    /href="https:\/\/app\.mymento\.com\.br\/jipe-tour-ltda\/passeio-de-jipe-4463"[^>]*>Todos os dias sob agendamento<\/a>/
+  );
 });
 
 test('empresa inexistente resolve para 404 nas rotas canônica e antiga', () => {

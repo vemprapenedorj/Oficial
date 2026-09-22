@@ -375,6 +375,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       ],
       "seo_title": "Jipe Tour Penedo | Passeios de Jipe 4x4 e UTV em Penedo RJ",
       "seo_description": "Passeios de Jipe 4x4 e UTV em Penedo RJ com a Jipe Tour. Trilhas exclusivas na Serra da Índia, Cachoeira de Deus, Três Bacias e Mirantes.",
+      "bookingUrl": "https://app.mymento.com.br/jipe-tour-ltda/passeio-de-jipe-4463",
       "whatsappUrl": "https://wa.me/5524999639390",
       "instagramUrl": "https://www.instagram.com/jipetourpenedo/",
       "mapsUrl": "https://maps.google.com/?q=Avenida%20das%20mangueiras,%202000-%20loja%201",
