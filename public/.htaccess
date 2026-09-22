@@ -110,6 +110,7 @@ RewriteRule ^detalhe/pousada-rainha-da-mata/?$ /onde-ficar/pousada-rainha-da-mat
 RewriteRule ^detalhe/pousada-finlandia/?$ /onde-ficar/pousada-finlandia/ [R=301,END,NC,NE]
 RewriteRule ^detalhe/pousada-reserva-penedo/?$ /onde-ficar/pousada-reserva-penedo/ [R=301,END,NC,NE]
 RewriteRule ^detalhe/casa-da-picanha/?$ /gastronomia/casa-da-picanha/ [R=301,END,NC,NE]
+RewriteRule ^detalhe/pizzaria-forno-e-lenha/?$ /gastronomia/pizzaria-forno-e-lenha/ [R=301,END,NC,NE]
 RewriteRule ^detalhe/pizza-da-villa/?$ /gastronomia/pizza-da-villa/ [R=301,END,NC,NE]
 
 # Arquivos e diretórios físicos (incluindo as páginas SSG) são servidos

@@ -92,6 +92,48 @@ test('o horário da Jipe Tour direciona para o agendamento online', () => {
   );
 });
 
+test('a página premium da Pizzaria Forno e Lenha publica contatos, vídeo e galeria', () => {
+  const business = DETAILS_DATA.gastronomia.find((item) => item.id === 'pizzaria-forno-e-lenha');
+  assert.ok(business, 'cadastro da Pizzaria Forno e Lenha não encontrado');
+  assert.equal(business.isPremium, true);
+  assert.equal(business.whatsappUrl, 'https://wa.me/5524999874642');
+  assert.equal(business.instagramUrl, 'https://www.instagram.com/pizzariafornoelenha/');
+  assert.equal(business.videoUrl, 'https://www.instagram.com/reel/DSEFuKegicO/');
+  assert.equal(business.galeria?.length, 6);
+
+  business.galeria?.forEach((imagePath) => {
+    assert.equal(
+      fs.existsSync(path.join(process.cwd(), 'public', imagePath.replace('/assets/', 'assets/'))),
+      true,
+      imagePath
+    );
+  });
+
+  const html = renderToStaticMarkup(
+    React.createElement(
+      HelmetProvider,
+      null,
+      React.createElement(
+        MemoryRouter,
+        { initialEntries: ['/gastronomia/pizzaria-forno-e-lenha/'] },
+        React.createElement(
+          Routes,
+          null,
+          React.createElement(Route, {
+            path: '/gastronomia/:slug/',
+            element: React.createElement(PremiumDetailPage, { onNavigate: () => undefined })
+          })
+        )
+      )
+    )
+  );
+
+  assert.match(html, /Pizzaria Forno e Lenha/);
+  assert.match(html, /href="https:\/\/wa\.me\/5524999874642\?text=/);
+  assert.match(html, /href="https:\/\/www\.instagram\.com\/pizzariafornoelenha\/"/);
+  assert.match(html, /src="https:\/\/www\.instagram\.com\/reel\/DSEFuKegicO\/embed\?muted=1"/);
+});
+
 test('empresa inexistente resolve para 404 nas rotas canônica e antiga', () => {
   assert.equal(parsePath('/gastronomia/empresa-inexistente').page, '404');
   assert.equal(parsePath('/detalhe/empresa-inexistente').page, '404');

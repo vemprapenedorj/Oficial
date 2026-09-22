@@ -2606,6 +2606,66 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "whatsappUrl": "https://wa.me/5524992087767"
     },
     {
+      "id": "pizzaria-forno-e-lenha",
+      "slug": "pizzaria-forno-e-lenha",
+      "title": "Pizzaria Forno e Lenha",
+      "category": "Pizzaria",
+      "isPremium": true,
+      "image": "/assets/imagens/premium/pizzaria-forno-e-lenha/galeria-1.jpg",
+      "description": "Pizzas artesanais assadas em forno a lenha e massas frescas em um ambiente familiar no centro de Penedo.",
+      "descricao_longa": "Tradicional opção gastronômica de Penedo, a Pizzaria Forno e Lenha reúne pizzas artesanais e massas frescas preparadas com o sabor clássico do forno a lenha. O ambiente familiar, acolhedor e descontraído torna a casa uma ótima escolha para compartilhar uma refeição no centro turístico da cidade.",
+      "fullInfo": "A Pizzaria Forno e Lenha é conhecida pelas pizzas artesanais assadas em forno a lenha, pelas massas frescas e pelo ambiente simples e acolhedor. Localizada no centro de Penedo, oferece uma experiência familiar e elogiada pelo bom custo-benefício.",
+      "location": "Av. Brasil, 333, Loja 2 - Penedo, Itatiaia - RJ, 27598-970",
+      "hours": "Consulte os horários de funcionamento",
+      "rating": 4.5,
+      "whatsapp": "24999874642",
+      "whatsappUrl": "https://wa.me/5524999874642",
+      "instagramUrl": "https://www.instagram.com/pizzariafornoelenha/",
+      "mapsUrl": "https://maps.app.goo.gl/gdcBZykT5jwEptM18",
+      "googleProfileUrl": "https://www.google.com/maps/place/Restaurante+e+Pizzaria+Forno+%26+Lenha+%2F+Penedo/@-22.4406371,-44.5261058,19z/",
+      "latitude": "-22.4405509",
+      "longitude": "-44.5259548",
+      "galeria": [
+        "/assets/imagens/premium/pizzaria-forno-e-lenha/galeria-1.jpg",
+        "/assets/imagens/premium/pizzaria-forno-e-lenha/galeria-2.jpg",
+        "/assets/imagens/premium/pizzaria-forno-e-lenha/galeria-3.jpg",
+        "/assets/imagens/premium/pizzaria-forno-e-lenha/galeria-4.jpg",
+        "/assets/imagens/premium/pizzaria-forno-e-lenha/galeria-5.jpg",
+        "/assets/imagens/premium/pizzaria-forno-e-lenha/galeria-6.jpg"
+      ],
+      "tags": [
+        "pizza",
+        "pizzaria",
+        "pizza artesanal",
+        "forno a lenha",
+        "massas frescas",
+        "ambiente familiar",
+        "acolhedor",
+        "bom custo-benefício",
+        "jantar",
+        "centro",
+        "penedo"
+      ],
+      "seo_title": "Pizzaria Forno e Lenha em Penedo RJ | Pizzas Artesanais",
+      "seo_description": "Conheça a Pizzaria Forno e Lenha em Penedo RJ: pizzas artesanais no forno a lenha, massas frescas e ambiente familiar no centro da cidade.",
+      "videoUrl": "https://www.instagram.com/reel/DSEFuKegicO/",
+      "faq": [
+        {
+          "question": "Onde fica a Pizzaria Forno e Lenha?",
+          "answer": "A pizzaria fica na Avenida Brasil, 333, Loja 2, no centro de Penedo, Itatiaia - RJ."
+        },
+        {
+          "question": "Quais são os destaques do cardápio?",
+          "answer": "Os destaques são as pizzas artesanais assadas em forno a lenha e as massas frescas."
+        },
+        {
+          "question": "Como entrar em contato com a pizzaria?",
+          "answer": "O contato pode ser feito pelo WhatsApp (24) 99987-4642 ou pelo Instagram oficial @pizzariafornoelenha."
+        }
+      ],
+      "badge": "Recomendado"
+    },
+    {
       "id": "pizza-da-villa",
       "slug": "pizza-da-villa",
       "title": "Pizza da Villa",
