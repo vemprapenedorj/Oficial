@@ -36,6 +36,11 @@
   # Os ambientes de homologação nunca devem ser indexados ou arquivados.
   Header always set X-Robots-Tag "noindex, nofollow, noarchive" env=IS_TEST_ENV
 
+  # Garante que agentes e navegadores interpretem corretamente o conteúdo GEO.
+  <Files "llms.txt">
+    Header set Content-Type "text/plain; charset=UTF-8"
+  </Files>
+
   # Set strict cache policies for versioned build assets
   <FilesMatch "\.(css|js|woff2?)$">
     Header set Cache-Control "max-age=31536000, public, immutable"

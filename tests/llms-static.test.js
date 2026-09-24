@@ -21,3 +21,9 @@ test('publica o arquivo llms.txt como recurso estatico', async () => {
     assert.ok(content.includes(link), `Link ausente: ${link}`);
   }
 });
+
+test('declara UTF-8 no Content-Type de llms.txt', async () => {
+  const htaccess = await readFile(new URL('../public/.htaccess', import.meta.url), 'utf8');
+
+  assert.match(htaccess, /<Files "llms\.txt">[\s\S]*Header set Content-Type "text\/plain; charset=UTF-8"[\s\S]*<\/Files>/);
+});
