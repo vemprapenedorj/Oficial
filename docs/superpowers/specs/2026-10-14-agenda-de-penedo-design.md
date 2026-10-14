@@ -1,7 +1,7 @@
 # Agenda de Penedo — especificação
 
 Data: 14 de outubro de 2026.
-Estado: proposta funcional aprovada na conversa; especificação escrita aguardando revisão.
+Estado: estrutura aprovada na conversa; revisão visual solicitada pelo usuário incorporada: cartões maiores, com imagens de referência de 600 × 400 px.
 
 ## Objetivo e escopo aprovado
 
@@ -17,15 +17,19 @@ Adicionar a seção “Acontece em Penedo” imediatamente após o carrossel Pre
 
 Exibir até três cartões de eventos com datas confirmadas: primeiro os que estão em andamento, depois os próximos. Dentro de cada grupo, ordenar pela data de início crescente, com desempate pelo título. Os próximos eventos podem estar em qualquer data futura; não limitar a uma janela arbitrária.
 
-Cada cartão apresenta imagem, categoria, título, data ou período, local, resumo e link para os detalhes. Usar “Em cartaz” para eventos em andamento; “Neste fim de semana” para eventos futuros que comecem no sábado ou domingo da semana corrente; “Em breve” para os demais futuros. As datas explícitas acompanham os selos, evitando que estes sejam a única informação temporal.
+Cada cartão apresenta imagem, categoria, título, data ou período, local, resumo e link para os detalhes. Os cartões de eventos são maiores que os cartões padrão do site, com a imagem como principal elemento de destaque. Usar uma área de imagem na proporção 3:2, com referência de 600 × 400 px no desktop; essa medida se refere à imagem, e o conteúdo textual ocupa uma área adicional abaixo dela. A largura é responsiva, sem fixar 600 px em telas menores. Usar “Em cartaz” para eventos em andamento; “Neste fim de semana” para eventos futuros que comecem no sábado ou domingo da semana corrente; “Em breve” para os demais futuros. As datas explícitas acompanham os selos, evitando que estes sejam a única informação temporal.
 
 O botão “Ver agenda completa” leva a `/eventos/`. Se não houver eventos elegíveis, manter uma seção compacta: “Novas experiências estão chegando. Acompanhe a agenda de Penedo.”, com o mesmo botão. Eventos passados e sem data confirmada não ocupam os três destaques.
 
-No celular, os cartões ficam em uma coluna; em telas largas, até três colunas. Seguir as cores verdes, dourado, fontes, espaçamentos e cantos arredondados existentes, com foco de teclado visível e sem depender de animações para acessar o conteúdo.
+No celular e em tablets estreitos, os cartões ficam em uma coluna e ocupam a largura disponível; a partir de 1024 px, usar no máximo duas colunas no contêiner amplo já utilizado pelo site. Manter o limite de três destaques na inicial: o terceiro, quando existir, inicia uma segunda linha com a mesma largura dos demais. A imagem mantém a proporção 3:2 em todas as telas. Usar títulos em destaque e espaço confortável para data, local e resumo abaixo da imagem. Preservar cores verdes, dourado, famílias tipográficas e cantos arredondados existentes, com foco de teclado visível e sem depender de animações para acessar o conteúdo.
+
+Exibir imagens e cartazes integralmente dentro da área 3:2, sem distorção ou corte de textos, usando fundo neutro para preencher as sobras quando a proporção original for diferente. Não sobrepor selos, títulos ou botões ao cartaz. Preferir arquivos de 1200 × 800 px quando disponíveis para manter nitidez em telas de alta densidade; 600 × 400 px é a referência visual, não uma resolução obrigatória para o arquivo.
 
 ### Agenda completa
 
 Criar `/eventos/`, com título “Agenda de Penedo”, introdução curta e links de navegação consistentes com as demais páginas. Incluir “Eventos” antes de “Blog” nos menus de desktop, celular e rodapé.
+
+Usar o mesmo cartão ampliado da página inicial em todos os grupos da agenda, inclusive no histórico: imagem 3:2, até duas colunas no desktop e uma coluna em telas menores. Não reutilizar as dimensões compactas dos cartões de estabelecimentos.
 
 A página contém três grupos, omitindo títulos vazios quando houver conteúdo nos demais:
 
@@ -83,7 +87,7 @@ Documentar o cadastro com os campos obrigatórios, exemplos claramente fictício
 3. Testes cobrem virada de dia no fuso de Penedo, duração de um dia, período entre anos, ordenação, filtros combinados e programação sem datas.
 4. Um evento encerrado mantém a mesma URL, aparece no histórico e não oferece compra ativa de ingressos.
 5. Registros não publicados ou slugs desconhecidos não geram páginas públicas; os desconhecidos retornam à experiência 404.
-6. Busca, filtros, links e navegação por teclado funcionam em celular e desktop. Imagem ausente e coleção vazia não quebram o layout.
+6. Busca, filtros, links e navegação por teclado funcionam em celular e desktop. Imagem ausente e coleção vazia não quebram o layout. Os cartões de eventos são visivelmente maiores que os de estabelecimentos, mantêm imagens 3:2 próximas de 600 × 400 px em desktop amplo e exibem no máximo duas colunas. Em celular não há rolagem horizontal, distorção de imagem ou corte de textos dos cartazes.
 7. As rotas geradas, os metadados e os dados estruturados correspondem aos registros publicados, sem preços ou organizadores inventados.
 8. Executar a checagem TypeScript, testes relevantes de rotas e eventos, validação dos dados e build com pré-renderização. Verificar visualmente inicial, agenda e detalhe com registros de teste isolados da produção.
 
