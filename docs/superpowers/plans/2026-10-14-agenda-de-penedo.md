@@ -1,8 +1,8 @@
-# Agenda de Penedo Implementation Plan
+# Agenda de Penedo e Região Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Implementar a Agenda de Penedo com destaque na inicial, cards ampliados, páginas individuais e histórico permanente.
+**Goal:** Implementar a Agenda de Penedo e Região com destaque na inicial, cards ampliados, páginas individuais e histórico permanente.
 
 **Architecture:** Um cadastro JSON alimenta funções de datas e filtros, componentes React e descoberta das páginas estáticas. A agenda possui páginas próprias, mantendo os fluxos atuais de estabelecimentos e blog. O navegador atualiza a classificação temporal; a publicação gera HTML e sitemap para os eventos publicados, incluindo os encerrados.
 
@@ -14,7 +14,9 @@
 
 - Dois cartões por linha no desktop, a partir de 1024 px; uma coluna abaixo disso. Imagem 3:2 com referência de 600 × 400 px, conteúdo textual abaixo e cartazes completos com `object-contain`. YouTube é apenas exemplo de destaque visual.
 - Até três destaques na inicial: se houver terceiro, ocupa a segunda linha com a mesma largura. Não aumentar para três colunas nem adotar 16:9.
-- “Acontece em Penedo” após o carrossel Premium e antes da busca. Copiar os textos da especificação, incluindo os estados vazios.
+- “Acontece em Penedo e região” após o carrossel Premium e antes da busca. Copiar os textos da especificação, incluindo os estados vazios.
+- Abrangência regional: página “Agenda de Eventos — Penedo e Região”, menu “Eventos” e localização real em cada registro. Não preencher município, UF ou organizador por suposição.
+- Incluir o calendário na inicial e na agenda e o crédito com link ao Instagram no bloco da agenda; manter o ano 2026 explícito. São referências externas, sem incorporação do PDF ou importação automática de eventos.
 - Fuso `America/Sao_Paulo`; encerramento no dia seguinte ao último dia do evento. Horários são informativos.
 - Cadastro de produção inicialmente `[]`; dados fictícios exclusivamente em testes isolados.
 - URLs `/eventos/` e `/eventos/<slug>/`; edições anuais independentes; histórico conserva URL e conteúdo.
@@ -42,6 +44,7 @@ Executar em sequência: 1 → 2 → 3 → 4 → 5 → 6 → 7. Cada tarefa termi
 | `src/types.ts`, `src/routing/routeConfig.ts`, `src/routing/routeHelpers.ts` | Resolução e construção de URLs | 3 |
 | `src/events/EventCard.tsx`, `src/events/EventsHighlight.tsx`, `DESIGN.md` | Identidade e cards ampliados | 4 |
 | `src/pages/EventsPage.tsx`, `src/pages/EventDetailPage.tsx`, `src/events/eventSEO.ts`, `src/schema/event.ts` | Agenda, detalhe e metadados | 5 |
+| `src/events/eventSources.ts` | Referência externa do calendário e crédito da fonte | 5 |
 | `src/App.tsx`, `src/pages/HomePage.tsx` | Menu, rotas React, destaque e busca | 5 |
 | `scripts/site-routes.js`, `docs/eventos.md` | Rotas estáticas e instruções de cadastro | 6 |
 | `src/events/__tests__/*`, `src/routing/__tests__/events.test.ts`, `tests/events.e2e.js`, `tests/helpers/events-workspace.js` | Verificações funcionais e visuais isoladas | 1–7 |
@@ -53,7 +56,8 @@ Executar em sequência: 1 → 2 → 3 → 4 → 5 → 6 → 7. Cada tarefa termi
 **Interfaces:**
 
 - `EventCategory = 'cultura' | 'gastronomia' | 'comemoracoes' | 'atracoes-sazonais'`; `EVENT_CATEGORY_LABELS` fornece os quatro rótulos da especificação.
-- `EventRecord`: `id`, `slug`, `title`, `summary`: string; `description`: string[]; `category`: EventCategory; `published`: boolean. Opcionais string: `image`, `imageAlt`, `locationName`, `locationAddress`, `startDate`, `endDate`, `startTime`, `endTime`, `organizerName`, `entryText`, `ticketUrl`, `officialUrl`, `updatedAt`; `price?: number`.
+- `EventRecord`: `id`, `slug`, `title`, `summary`: string; `description`: string[]; `category`: EventCategory; `published`: boolean. Opcionais string: `image`, `imageAlt`, `locationName`, `locationAddress`, `locality`, `municipality`, `state`, `startDate`, `endDate`, `startTime`, `endTime`, `organizerName`, `entryText`, `ticketUrl`, `officialUrl`, `sourceName`, `updatedAt`; `price?: number`.
+- `locality` identifica bairro/distrito/localidade; `municipality` é o município efetivo; `state` é a UF com duas letras maiúsculas. `sourceName` identifica a fonte do `officialUrl`, sem substituir `organizerName`. Se houver `sourceName`, exigir `officialUrl`; registros derivados de fontes externas recebem `updatedAt` como data de conferência. Validar textos opcionais não vazios e UF quando fornecida.
 - `validateEvents(input: unknown): EventRecord[]` lança erro descritivo com registro/campo inválido.
 - `EVENTS: readonly EventRecord[]` em `catalog.ts`, carregado do JSON validado; `getPublishedEvents(events: readonly EventRecord[] = EVENTS): EventRecord[]`.
 - Fixture `makeEvent(overrides: Partial<EventRecord> = {}): EventRecord`, com evento fictício publicado, slug `evento-teste-2026`, categoria cultura e data `2026-10-14`.
@@ -88,9 +92,10 @@ assert.throws(() => validateEvents([makeEvent({ ticketUrl: 'javascript:alert(1)'
 - `getEventYears(events: readonly EventRecord[]): number[]`, anos únicos decrescentes.
 - `searchEvents(events: readonly EventRecord[], query: string): EventRecord[]`, reutilizando normalização de `src/utils/search.ts`.
 - `getEventBadge(event: EventRecord, today: string): string`; `formatEventDates(event: EventRecord): string`, datas pt-BR sem conversão implícita de data UTC para dia anterior.
+- `formatEventLocation(event: EventRecord): string`, combina os campos de localização conhecidos sem duplicá-los, ou retorna “Local a confirmar”. Usar nos cards e detalhes. Acrescentar teste de busca por município/localidade de evento fictício fora de Penedo.
 - `useEventToday(): string`, compartilhado pelos componentes que dependem da data.
 
-- [ ] Criar testes de limites e ordenação. Semana de segunda a domingo para “Neste fim de semana”; eventos em andamento têm prioridade sobre esse selo. Desempatar ordenação por título e, se igual, slug. Busca considera título, resumo, parágrafos, categoria traduzida e local e exclui rascunhos.
+- [ ] Criar testes de limites e ordenação. Semana de segunda a domingo para “Neste fim de semana”; eventos em andamento têm prioridade sobre esse selo. Desempatar ordenação por título e, se igual, slug. Busca considera título, resumo, parágrafos, categoria traduzida, local, localidade e município e exclui rascunhos.
 
 ```ts
 assert.equal(getPenedoDate(new Date('2026-10-15T02:59:59Z')), '2026-10-14');
@@ -140,25 +145,29 @@ assert.equal(buildPath('evento-detalhe', null, null, 'evento-teste-2026'), '/eve
 - [ ] Rodar `npx tsx --test src/events/__tests__/presentation.test.ts`; confirmar falha inicial.
 - [ ] Implementar card independente de `InfoCard`: contêiner `max-w-7xl`, espaçamento entre cards de 24 px, grade `grid-cols-1 lg:grid-cols-2`, área `aspect-[3/2]`. Imagem com `object-contain`, carregamento preguiçoso e placeholder acessível para imagem ausente/quebrada; nenhuma informação sobreposta ao cartaz. Mesmo com um único evento, não esticar o card para duas colunas. Textos longos quebram linha, inclusive palavras/URLs compridas.
 - [ ] Implementar o destaque com os textos da especificação, foco visível, link descritivo e placeholder compacto quando vazio. Não reutilizar a altura fixa dos carrosséis existentes para uma seção que pode ter duas linhas.
+- [ ] Usar o título regional e `formatEventLocation` no card. O link secundário para o calendário é conectado na tarefa 5, com a mesma configuração usada na página da agenda.
 - [ ] Rodar testes de apresentação e `npm run lint`; esperar sucesso. Medidas e acessibilidade visual serão verificadas no navegador na tarefa 7.
 - [ ] Commit: `feat: criar cards ampliados para eventos`.
 
 ## Tarefa 5: Agenda, detalhe, menu e busca
 
-**Arquivos:** criar `src/pages/EventsPage.tsx`, `src/pages/EventDetailPage.tsx`, `src/events/eventSEO.ts`, `src/events/__tests__/seo.test.ts`; alterar `src/schema/event.ts`, `src/App.tsx`, `src/pages/HomePage.tsx` e o teste de apresentação.
+**Arquivos:** criar `src/pages/EventsPage.tsx`, `src/pages/EventDetailPage.tsx`, `src/events/eventSEO.ts`, `src/events/eventSources.ts`, `src/events/__tests__/seo.test.ts`; alterar `src/schema/event.ts`, `src/App.tsx`, `src/pages/HomePage.tsx` e o teste de apresentação.
 
 **Interfaces:**
 
 - `EventsPage({ events = EVENTS }: { events?: readonly EventRecord[] }): React.JSX.Element`.
 - `EventDetailPage({ events = EVENTS }: { events?: readonly EventRecord[] }): React.JSX.Element`, obtendo `slug` do React Router.
 - `getEventsSEO(events: readonly EventRecord[]): React.ComponentProps<typeof SEO>` e `getEventSEO(event: EventRecord, today: string): React.ComponentProps<typeof SEO>`.
-- `getEventSchema(event: EventRecord, today: string): Record<string, unknown> | null`, substituindo a interface anterior sem consumidores identificados. Retorna null sem data, local e endereço confirmados; usa apenas valores cadastrados. Não alterar schemas de estabelecimentos.
+- `getEventSchema(event: EventRecord, today: string): Record<string, unknown> | null`, substituindo a interface anterior sem consumidores identificados. Retorna null sem data, local, endereço, município e UF confirmados; usa apenas valores cadastrados. Não alterar schemas de estabelecimentos.
+- Em `src/events/eventSources.ts`, exportar `REGIONAL_CALENDAR = { year: 2026, url: 'https://itatiaia.rj.gov.br/wp-content/uploads/2026/01/PDF-Impressao-1-1.pdf', sourceName: 'Prefeitura de Itatiaia', sourceUrl: 'https://www.instagram.com/prefeitura.itatiaia/' } as const`. Este objeto não entra no catálogo de eventos.
 
-- [ ] Criar testes para agenda vazia, detalhe encerrado, detalhe inexistente e metadados. Exemplo: `assert.equal(getEventSchema(makeEvent({ startDate: undefined }), '2026-10-14'), null)`. Para evento datado com local/endereço e sem preço, confirmar `schema.offers === undefined`; para evento sem organizador, `schema.organizer === undefined`. Detalhe encerrado não contém link `ticketUrl`, mas mantém título e datas.
+- [ ] Criar testes para agenda vazia, detalhe encerrado, detalhe inexistente e metadados. Exemplo: `assert.equal(getEventSchema(makeEvent({ startDate: undefined }), '2026-10-14'), null)`. Para evento datado com local/endereço/município/UF e sem preço, confirmar `schema.offers === undefined`; para evento sem organizador, `schema.organizer === undefined`. Detalhe encerrado não contém link `ticketUrl`, mas mantém título e datas.
 - [ ] Rodar `npm run test:events`; confirmar falhas dos novos comportamentos.
 - [ ] Implementar agenda com os três grupos e filtros acessíveis de ano/categoria, botão limpar, estados vazios exatos e mesmo card em todos os grupos. Usar o conjunto inteiro publicado para opções de ano, sem fazer opções desaparecerem ao filtrar.
+- [ ] Implementar o bloco do calendário antes dos filtros, disponível também na agenda vazia, e o link secundário na inicial. Usar os rótulos exatos da especificação, `target="_blank"`, `rel="noopener noreferrer"` e indicação de nova aba. Não usar iframe, pré-carregamento ou download automático. Testar o href exato, ano explícito e crédito com link; não depender de disponibilidade da rede para os testes.
 - [ ] Implementar detalhe com imagem integral, parágrafos de texto React, datas/horários conhecidos, informações editoriais e links válidos; sem `dangerouslySetInnerHTML`. Desconhecido/rascunho exibe `Page404` e SEO noindex próprio. Encerrado preserva conteúdo e omite compra ativa. Páginas emitem SEO uma única vez, usando canonical e breadcrumbs existentes.
 - [ ] Implementar JSON-LD somente com dados confirmados; datas sem hora continuam datas sem hora. Ofertas exigem preço numérico e link de ingresso, ficam ausentes em eventos encerrados; preço zero confirmado pode representar gratuidade. Não inferir status de cancelamento a partir do encerramento. A agenda emite CollectionPage com links de eventos publicados, e todas as páginas válidas têm breadcrumb.
+- [ ] Usar `municipality` e `state` em `addressLocality` e `addressRegion`; omitir código postal não cadastrado. Testar fixture regional fictícia com município diferente de Itatiaia e conferir que não recebe Penedo/Itatiaia por padrão. Mostrar “Fonte: <sourceName>” com `officialUrl` quando ambos existirem; a Prefeitura não é creditada automaticamente em eventos de outras fontes. Revisar título, descrição e compartilhamento para a abrangência regional.
 - [ ] Registrar carregamento tardio das páginas e rotas React em `App.tsx`, links “Eventos” antes de “Blog” nos dois menus e rodapé. Incluir `eventSlug` nas dependências dos efeitos de rolagem e acompanhamento de navegação para mudança entre eventos. Usar o slug de evento onde os acompanhamentos já recebem slug; preservar consentimento existente.
 - [ ] Inserir destaque na posição aprovada em `HomePage.tsx`. Busca de eventos em grupo próprio, com a grade ampliada, abaixo dos resultados de estabelecimentos; somar ambos para contagem e estado sem resultados. Eventos históricos exibem selo; cada resultado abre a página em vez do modal. Testar busca sem acentos e por local, incluindo um rascunho que não pode aparecer.
 - [ ] Rodar `npm test` e `npm run lint`; esperar sucesso. Testes reais de filtros, navegação e mudança de metadados pertencem à tarefa 7.
@@ -174,6 +183,7 @@ assert.equal(buildPath('evento-detalhe', null, null, 'evento-teste-2026'), '/eve
 - [ ] Rodar `npx tsx --test src/events/__tests__/siteRoutes.test.ts`; confirmar falha inicial.
 - [ ] Implementar descoberta e configurações de sitemap: agenda `daily/0.8`, detalhes `weekly/0.7`. Executar `npm run validate:events` no início de `scripts/build.js`, antes de gerar arquivos. Reutilizar a pré-renderização existente e as regras genéricas de hospedagem, sem introduzir fallback SPA.
 - [ ] Documentar cadastro, categorias, duas datas para atrações sazonais, edição anual com slug novo, limites do HTML estático e imagens locais preferencialmente 1200 × 800. Incluir exemplo fictício claramente identificado apenas na documentação, não no JSON público.
+- [ ] Documentar localidade, município, UF, fonte e data da conferência. Incluir os links do calendário e do Instagram, a identificação da edição 2026 e a necessidade de verificar cada evento antes de cadastrá-lo. Não declarar que o PDF completo já foi conferido; esta revisão acrescenta o link de consulta, sem transcrever a programação.
 - [ ] Rodar testes de rotas estáticas e `npm run validate:events`. A prova do HTML de um evento ocorre em ambiente isolado na tarefa 7.
 - [ ] Commit: `feat: gerar paginas estaticas e sitemap de eventos`.
 
@@ -186,6 +196,7 @@ assert.equal(buildPath('evento-detalhe', null, null, 'evento-teste-2026'), '/eve
 - [ ] Criar fixtures na cópia isolada: evento atual, quatro futuros, passado, sem data, rascunho, virada de ano, cartaz vertical local, imagem deliberadamente quebrada e título longo. Gerar um cartaz de teste simples, identificado como fictício; a imagem quebrada é usada apenas na fase de navegador e removida antes do build validado.
 - [ ] Inicializar Vite e Puppeteer seguindo o padrão de `tests/routing-history.e2e.js`, com porta disponível, acesso local e cleanup em `finally`. Congelar o relógio do navegador por `evaluateOnNewDocument` sem adicionar flags de teste ao código de produção. Verificar primeiro que os novos testes falham se o comportamento correspondente estiver ausente; corrigir a implementação na tarefa responsável.
 - [ ] Testar home → agenda → detalhe, links do rodapé/menu móvel, voltar/avançar e troca entre dois eventos. Verificar uma única canonical, título atualizado, conteúdo correto e rolagem ao topo. Testar busca por termo sem acento, filtros combinados, limpar, rascunho/slug inválido e ausência de compra para encerrados.
+- [ ] Testar um evento fictício fora de Penedo: localização correta no card/detalhe, busca por município e metadados sem endereço fixo de Itatiaia. Na coleção vazia, confirmar que calendário e crédito continuam visíveis, com os links exatos; confirmar ausência de iframe/download automático do PDF.
 - [ ] Testar relógio de `2026-10-15T02:59:59Z` para `2026-10-15T03:00:01Z`: evento de 14/10 passa de atual a histórico após atualização da aba e some do destaque. Confirmar também atualização em aba ativa dentro do intervalo de 30 segundos. Não esperar uma meia-noite real.
 - [ ] Medir cards em 1440 px e 1920 px: duas colunas, terceiro card na linha seguinte, imagens entre 580–620 px de largura e razão largura/altura 1.5 com tolerância 0.02. Em 390 px e 768 px: uma coluna, largura sem ultrapassar área útil. Verificar `scrollWidth <= clientWidth`, cartaz integral, placeholder de erro e foco por teclado. Capturar e inspecionar screenshots da inicial, agenda e detalhe; salvar em `artifacts/agenda/` sem dados privados.
 - [ ] Executar `npm run build` na cópia isolada com eventos válidos. Confirmar `dist/eventos/index.html`, `dist/eventos/<slug>/index.html`, evento passado no sitemap e ausência de rascunho. Conferir títulos, canonical e JSON-LD no HTML gerado, não apenas no DOM em desenvolvimento. Remover a cópia ao terminar. Não afirmar teste de resposta HTTP Apache com base no servidor Vite; validar regras existentes por inspeção/testes, registrar que a resposta HTTP depende do ambiente de hospedagem.
