@@ -1,13 +1,15 @@
 # Agenda de Penedo — especificação
 
 Data: 14 de outubro de 2026.
-Estado: estrutura aprovada na conversa; revisão visual solicitada pelo usuário incorporada: cartões maiores, com imagens de referência de 600 × 400 px.
+Estado: especificação aprovada na conversa; criação do plano de implementação solicitada pelo usuário. Revisão visual incorporada: dois cartões por linha no desktop, com imagens de referência de 600 × 400 px.
 
 ## Objetivo e escopo aprovado
 
 Dar ao visitante do Vem Pra Penedo uma forma de descobrir eventos, comemorações e atrações sazonais, planejar sua visita e consultar as edições anteriores. A área reúne um destaque na página inicial, uma página acessível pelo menu e páginas individuais permanentes.
 
 A solução acompanha a identidade visual atual e usa o processo existente de atualização dos dados e publicação do site. Não inclui painel administrativo, inscrições, venda de ingressos, integração com calendários ou publicação automática de fontes externas.
+
+A imagem do YouTube enviada pelo usuário serve apenas como exemplo de destaque visual. A orientação final é manter dois cartões por linha no desktop, com a referência de imagem de 600 × 400 px, sem adotar a grade ou a proporção das miniaturas do YouTube.
 
 ## Experiência do visitante
 
