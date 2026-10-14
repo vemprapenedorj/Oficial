@@ -13,6 +13,8 @@ A imagem do YouTube enviada pelo usuário serve apenas como exemplo de destaque 
 
 Atualização de escopo solicitada pelo usuário: a agenda informa eventos de Penedo e da região, sem restringir os registros a Penedo. Manter “Eventos” no menu e as URLs previstas. Títulos, introduções, estados vazios e metadados devem refletir essa abrangência. Cada registro informa a localidade e o município efetivos quando conhecidos, sem atribuir automaticamente Penedo ou Itatiaia aos eventos regionais.
 
+Recorte editorial final: priorizar Penedo e localidades próximas, como Visconde de Mauá, Serrinha do Alambari, Resende e Capelinha; manter Itatiaia no entorno contemplado. Excluir eventos realizados em Quatis e Porto Real de todos os registros e superfícies públicas, inclusive histórico e busca. Essa prioridade orienta a seleção de conteúdo; os eventos selecionados mantêm a ordenação temporal definida abaixo, sem inventar distâncias. A cobertura de Serrinha permite cadastros futuros verificados; as imagens fornecidas não contêm eventos identificados nessa localidade.
+
 ## Experiência do visitante
 
 ### Página inicial
@@ -41,7 +43,7 @@ A página contém três grupos, omitindo títulos vazios quando houver conteúdo
 2. “Programação a confirmar”, para registros publicados sem datas confirmadas.
 3. “Eventos anteriores”, em ordem decrescente da data de encerramento.
 
-Filtros de categoria e ano atuam sobre os três grupos, começam em “Todas as categorias” e “Todos os anos” e podem ser limpos. Categorias iniciais: Cultura, Gastronomia, Comemorações e Atrações sazonais. As opções de ano derivam dos registros. Eventos que atravessam a virada do ano aparecem em ambos os anos; registros sem datas só aparecem em “Todos os anos”.
+Filtros de categoria e ano atuam sobre os três grupos, começam em “Todas as categorias” e “Todos os anos” e podem ser limpos. Categorias iniciais: Cultura, Gastronomia, Comemorações, Atrações sazonais e Esportes. As opções de ano derivam dos registros. Eventos que atravessam a virada do ano aparecem em ambos os anos; registros sem dia definido, mas com mês previsto, aparecem no ano desse mês; registros sem qualquer referência temporal só aparecem em “Todos os anos”.
 
 Sem resultados de um filtro: “Nenhum evento encontrado para estes filtros”, com ação “Limpar filtros”. Com o cadastro totalmente vazio: “A programação de Penedo e região será divulgada aqui. Volte em breve para conferir as novidades.”
 
@@ -62,19 +64,25 @@ Adicionar um bloco de consulta logo após a introdução da agenda, antes dos fi
 - Calendário indicado pelo usuário, com a duplicação do endereço corrigida: [PDF no site da Prefeitura de Itatiaia](https://itatiaia.rj.gov.br/wp-content/uploads/2026/01/PDF-Impressao-1-1.pdf).
 - Fonte indicada pelo usuário: [Prefeitura de Itatiaia no Instagram](https://www.instagram.com/prefeitura.itatiaia/). Exibir “Fonte: Prefeitura de Itatiaia” com esse link no bloco do calendário.
 
+Junto ao link do PDF, esclarecer: “Calendário regional completo. Aqui no site, selecionamos eventos de Penedo e localidades próximas.” O arquivo da prefeitura contém cidades fora do recorte do site; não apresentá-lo como calendário filtrado nem reproduzir esses eventos no cadastro.
+
 O PDF é uma referência de consulta externa, não um evento e não a fonte automática de todos os registros. Conservar o ano 2026 no rótulo, inclusive em anos seguintes, até atualização editorial explícita. Em eventos extraídos desse material, registrar a fonte consultada e a data da verificação; uma publicação específica mais recente pode corrigir a programação anual. Não importar eventos nem tratar as datas como confirmadas sem leitura e conferência individual.
 
 Registro de conferência nesta etapa: o leitor web encontrou limite de tamanho ao tentar abrir o PDF (aproximadamente 15,8 MB); o conteúdo completo não foi lido. O perfil do Instagram não pôde ser consultado pelo leitor. A autoria indicada acima é a fonte fornecida pelo usuário. Isso não impede registrar os links de consulta, mas não comprova a programação individual.
+
+Atualização posterior: as três imagens enviadas pelo usuário permitiram conferir e transcrever os meses de outubro a dezembro em [programação inicial](../../eventos/programacao-outubro-dezembro-2026.md). Essa conferência valida a transcrição das imagens, não confirma que as datas continuam atuais nem que eventos passados efetivamente ocorreram. Mostrar “Programação divulgada no calendário regional; consulte a fonte para atualizações” nos detalhes provenientes desse material.
 
 ## Cadastro e regras de dados
 
 Manter uma fonte única em `src/data/events.json`, consumida pelo frontend e pelos scripts de publicação, com um tipo específico em `src/events/types.ts`. Não adaptar eventos ao cadastro de estabelecimentos `DetailItem`: datas e arquivamento têm regras próprias.
 
-Campos obrigatórios: identificador estável, slug único, título, resumo, descrição em parágrafos de texto, categoria e indicação de publicação. Campos opcionais: imagem local e texto alternativo, local e endereço, localidade, município e UF, datas de início e fim, horários, organizador, texto sobre entrada, preço numérico confirmado, endereço de ingressos, endereço de informações oficiais, nome da fonte e data da última atualização editorial.
+Campos obrigatórios: identificador estável, slug único, título, resumo, descrição em parágrafos de texto, categoria e indicação de publicação. Campos opcionais: imagem local e texto alternativo, local e endereço, localidade, município e UF, datas de início e fim, mês previsto quando o dia não foi divulgado, horários, organizador, texto sobre entrada, preço numérico confirmado, endereço de ingressos, endereço de informações oficiais, nome da fonte e data da última atualização editorial.
 
-Datas são armazenadas como `YYYY-MM-DD`; horários, quando conhecidos, como `HH:mm`, interpretados em `America/Sao_Paulo`. Não inferir um horário de meia-noite para a apresentação ou para dados estruturados. Para um evento de um dia, o fim pode ser omitido e assume a mesma data de início. Atrações de vários dias exigem fim explícito. Para programação a confirmar, omitir ambas as datas.
+Datas são armazenadas como `YYYY-MM-DD`; horários, quando conhecidos, como `HH:mm`, interpretados em `America/Sao_Paulo`. Não inferir um horário de meia-noite para a apresentação ou para dados estruturados. Para um evento de um dia, o fim pode ser omitido e assume a mesma data de início. Atrações de vários dias exigem fim explícito. Para programação a confirmar, omitir ambas as datas e preservar o mês previsto como YYYY-MM quando disponível, sem inventar início/fim.
 
 Validar slugs duplicados, categoria desconhecida, datas inválidas, fim anterior ao início, fim sem início, horários inválidos e preço negativo. Valores desconhecidos ficam ausentes: preço ausente não significa gratuito. A descrição é texto, sem HTML livre. Registros não publicados ficam fora da busca, das rotas, dos cartões, do sitemap e da pré-renderização.
+
+Datas não consecutivas de um mesmo evento geram registros e slugs próprios, incluindo dia, mês, ano e local quando necessário. Para programação apenas mensal, usar `expectedMonth` sem `startDate`/`endDate`, mantendo o grupo “Programação a confirmar”, sem destaques automáticos ou schema Event. Exibir, por exemplo, “Dezembro de 2026 — data a confirmar”. Não marcar esses registros como realizados ou encerrados por inferência. Uma ocorrência multirregional pode usar a localização textual completa e omitir município/UF únicos e endereço estruturado.
 
 O histórico é uma classificação por data, não uma cópia ou remoção do cadastro. Considerar o evento em andamento desde o início do primeiro dia até o final do último dia, no fuso de Penedo. A mudança para encerrado acontece no dia seguinte ao fim. Horários são informativos nesta versão; não encerrar um evento antes do fim do seu último dia.
 
@@ -93,7 +101,7 @@ O HTML estático reflete a data do último build; o navegador atualiza os grupos
 
 ## Conteúdo inicial e manutenção
 
-O usuário forneceu um calendário regional em PDF e o perfil da Prefeitura de Itatiaia como fonte. Nenhum evento desse material foi transcrito e validado individualmente nesta etapa. A implementação começa com cadastro de produção vazio e estados vazios completos. Usar registros fictícios apenas nos testes e nas verificações locais, sem incluí-los no pacote público como programação verdadeira.
+O usuário forneceu três imagens com a programação de outubro, novembro e dezembro, agora transcritas em [programação inicial](../../eventos/programacao-outubro-dezembro-2026.md). Usar esse material para o cadastro inicial durante a implementação: 24 registros selecionados, sendo 22 com datas previstas na fonte e dois com apenas mês previsto, excluindo Quatis e Porto Real. O ano 2026 é inferido do calendário enviado anteriormente. As datas foram conferidas nas imagens, sem confirmação independente de eventuais mudanças; identificar a programação como divulgada no calendário regional. Estados vazios continuam necessários para filtros e períodos sem eventos. Usar registros fictícios apenas nos testes e nas verificações locais, sem incluí-los no pacote público como programação verdadeira.
 
 Documentar o cadastro com os campos obrigatórios, exemplos claramente fictícios e orientação para adicionar uma edição anual sem sobrescrever a anterior. Datas, preços e programação reais dependem de material fornecido pelo usuário ou de fontes oficiais verificadas durante o cadastro. A entrega desta etapa prepara a área; o preenchimento da primeira programação é uma atividade editorial posterior.
 

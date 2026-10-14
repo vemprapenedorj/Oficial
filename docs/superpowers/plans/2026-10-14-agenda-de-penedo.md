@@ -10,15 +10,18 @@
 
 **Spec:** [Especificação aprovada](../specs/2026-10-14-agenda-de-penedo-design.md).
 
+**Conteúdo inicial:** [Transcrição das imagens de outubro a dezembro de 2026](../../eventos/programacao-outubro-dezembro-2026.md). Ano inferido do calendário anterior; a transcrição foi conferida nas imagens, sem verificação independente de alterações posteriores.
+
 ## Global Constraints
 
 - Dois cartões por linha no desktop, a partir de 1024 px; uma coluna abaixo disso. Imagem 3:2 com referência de 600 × 400 px, conteúdo textual abaixo e cartazes completos com `object-contain`. YouTube é apenas exemplo de destaque visual.
 - Até três destaques na inicial: se houver terceiro, ocupa a segunda linha com a mesma largura. Não aumentar para três colunas nem adotar 16:9.
 - “Acontece em Penedo e região” após o carrossel Premium e antes da busca. Copiar os textos da especificação, incluindo os estados vazios.
 - Abrangência regional: página “Agenda de Eventos — Penedo e Região”, menu “Eventos” e localização real em cada registro. Não preencher município, UF ou organizador por suposição.
+- Recorte editorial: Penedo e entorno, com Visconde de Mauá, Serrinha do Alambari, Resende, Capelinha e Itatiaia. Excluir Quatis e Porto Real do cadastro, destaque, agenda, busca e histórico. A prioridade é na seleção editorial, mantendo a ordenação temporal dos eventos escolhidos; não criar distâncias ou eventos de Serrinha ausentes da fonte.
 - Incluir o calendário na inicial e na agenda e o crédito com link ao Instagram no bloco da agenda; manter o ano 2026 explícito. São referências externas, sem incorporação do PDF ou importação automática de eventos.
 - Fuso `America/Sao_Paulo`; encerramento no dia seguinte ao último dia do evento. Horários são informativos.
-- Cadastro de produção inicialmente `[]`; dados fictícios exclusivamente em testes isolados.
+- Cadastro inicia vazio na tarefa 1 e recebe a programação fornecida na tarefa 6: 24 registros selecionados conforme a transcrição editorial, excluindo Quatis e Porto Real. Dados fictícios ficam exclusivamente em testes isolados.
 - URLs `/eventos/` e `/eventos/<slug>/`; edições anuais independentes; histórico conserva URL e conteúdo.
 - Registros não publicados não aparecem em busca, páginas, sitemap ou destaques. Campos desconhecidos não recebem dados inventados.
 - Preservar a alteração preexistente em `public/sitemap.xml`. Não fazer deploy, push ou mudanças de conteúdo comercial como parte deste plano.
@@ -28,7 +31,7 @@
 
 1. Aba aberta durante a meia-noite ou suspensa por dias: atualizar classificação e destaques ao retomar, sem recarregamento (tarefas 2 e 7).
 2. Cartaz vertical, imagem quebrada e título longo: preservar texto e proporção, com alternativa visual acessível, sem estourar a tela (tarefas 4 e 7).
-3. Evento de dezembro a janeiro: aparecer nos filtros dos dois anos, enquanto programação sem data só aparece em “Todos os anos” (tarefa 2).
+3. Evento de dezembro a janeiro: aparecer nos filtros dos dois anos, enquanto programação sem dia e com mês previsto aparece no ano correspondente; sem qualquer referência temporal, só aparece em “Todos os anos” (tarefa 2).
 4. Navegação entre dois eventos: atualizar título, canonical, conteúdo e rolagem; voltar/avançar continua funcionando (tarefas 3, 5 e 7).
 5. Preço desconhecido e link de compra em evento encerrado: não comunicar gratuidade nem oferecer compra ativa; JSON-LD consistente com conteúdo (tarefas 5 e 7).
 
@@ -55,10 +58,12 @@ Executar em sequência: 1 → 2 → 3 → 4 → 5 → 6 → 7. Cada tarefa termi
 
 **Interfaces:**
 
-- `EventCategory = 'cultura' | 'gastronomia' | 'comemoracoes' | 'atracoes-sazonais'`; `EVENT_CATEGORY_LABELS` fornece os quatro rótulos da especificação.
-- `EventRecord`: `id`, `slug`, `title`, `summary`: string; `description`: string[]; `category`: EventCategory; `published`: boolean. Opcionais string: `image`, `imageAlt`, `locationName`, `locationAddress`, `locality`, `municipality`, `state`, `startDate`, `endDate`, `startTime`, `endTime`, `organizerName`, `entryText`, `ticketUrl`, `officialUrl`, `sourceName`, `updatedAt`; `price?: number`.
+- `EventCategory = 'cultura' | 'gastronomia' | 'comemoracoes' | 'atracoes-sazonais' | 'esportes'`; `EVENT_CATEGORY_LABELS` fornece os cinco rótulos da especificação.
+- `EventRecord`: `id`, `slug`, `title`, `summary`: string; `description`: string[]; `category`: EventCategory; `published`: boolean. Opcionais string: `image`, `imageAlt`, `locationName`, `locationAddress`, `locality`, `municipality`, `state`, `startDate`, `endDate`, `expectedMonth`, `startTime`, `endTime`, `organizerName`, `entryText`, `ticketUrl`, `officialUrl`, `sourceName`, `updatedAt`; `price?: number`.
 - `locality` identifica bairro/distrito/localidade; `municipality` é o município efetivo; `state` é a UF com duas letras maiúsculas. `sourceName` identifica a fonte do `officialUrl`, sem substituir `organizerName`. Se houver `sourceName`, exigir `officialUrl`; registros derivados de fontes externas recebem `updatedAt` como data de conferência. Validar textos opcionais não vazios e UF quando fornecida.
+- `expectedMonth?: string` usa `YYYY-MM`, apenas quando não existem `startDate`/`endDate`. Validar mês de 01 a 12 e exclusão mútua com datas completas. Preserva informação mensal sem inventar um dia. Incluir testes que aceitam `2026-12` e rejeitam `2026-13` ou mês previsto junto de início confirmado.
 - `validateEvents(input: unknown): EventRecord[]` lança erro descritivo com registro/campo inválido.
+- Rejeitar no validador registros cujo município normalizado seja `quatis` ou `porto real`. Não inferir município para contornar campos incompletos: a revisão editorial também confere as localidades textuais. Testar as duas exclusões com diferenças de caixa e espaços, e confirmar em teste do conteúdo inicial que nenhum registro remete a essas cidades, inclusive em `locationName` e `locality`.
 - `EVENTS: readonly EventRecord[]` em `catalog.ts`, carregado do JSON validado; `getPublishedEvents(events: readonly EventRecord[] = EVENTS): EventRecord[]`.
 - Fixture `makeEvent(overrides: Partial<EventRecord> = {}): EventRecord`, com evento fictício publicado, slug `evento-teste-2026`, categoria cultura e data `2026-10-14`.
 
@@ -108,7 +113,8 @@ assert.equal(getFeaturedEvents([makeEvent({ published: false })], '2026-10-14').
 ```
 
 - [ ] Rodar `npx tsx --test src/events/__tests__/eventUtils.test.ts` e confirmar falha antes de implementar.
-- [ ] Implementar funções puras sem mutar o cadastro; confirmar exclusão de eventos sem data de qualquer filtro de ano. Incluir teste de quatro elegíveis retornando apenas três e ordenação de passados por encerramento decrescente.
+- [ ] Implementar funções puras sem mutar o cadastro; confirmar que eventos sem dia, mas com expectedMonth, aparecem no ano previsto; os sem qualquer data/mês continuam excluídos de filtros anuais. Incluir teste de quatro elegíveis retornando apenas três e ordenação de passados por encerramento decrescente.
+- [ ] Testar programação mensal: `makeEvent({ startDate: undefined, expectedMonth: '2026-12' })` permanece `unconfirmed`, entra no filtro de 2026, não ocupa destaque e formata “Dezembro de 2026 — data a confirmar”. `getEventYears` também considera `expectedMonth`. Em fixtures fictícias de dois encontros em Penedo nos dias 03 e 17/10, usar dois registros: em 14/10 o primeiro está no histórico e o segundo nos próximos, sem simular atividade contínua.
 - [ ] Implementar o hook com leitura inicial, verificação a cada 30 segundos, atualização em `focus` e `visibilitychange`, atualizando estado apenas quando o dia mudar e removendo listeners/timer no cleanup. A virada é refletida em até 30 segundos numa aba ativa e imediatamente ao retornar à aba.
 - [ ] Rodar `npm run test:events` e `npm run lint`; esperar sucesso. A verificação real do hook no navegador pertence à tarefa 7.
 - [ ] Commit: `feat: classificar eventos e preservar historico por data`.
@@ -165,6 +171,7 @@ assert.equal(buildPath('evento-detalhe', null, null, 'evento-teste-2026'), '/eve
 - [ ] Rodar `npm run test:events`; confirmar falhas dos novos comportamentos.
 - [ ] Implementar agenda com os três grupos e filtros acessíveis de ano/categoria, botão limpar, estados vazios exatos e mesmo card em todos os grupos. Usar o conjunto inteiro publicado para opções de ano, sem fazer opções desaparecerem ao filtrar.
 - [ ] Implementar o bloco do calendário antes dos filtros, disponível também na agenda vazia, e o link secundário na inicial. Usar os rótulos exatos da especificação, `target="_blank"`, `rel="noopener noreferrer"` e indicação de nova aba. Não usar iframe, pré-carregamento ou download automático. Testar o href exato, ano explícito e crédito com link; não depender de disponibilidade da rede para os testes.
+- [ ] Exibir o esclarecimento de que o PDF é o calendário regional completo, enquanto o site seleciona Penedo e localidades próximas. Não extrair automaticamente entradas de Quatis ou Porto Real desse link.
 - [ ] Implementar detalhe com imagem integral, parágrafos de texto React, datas/horários conhecidos, informações editoriais e links válidos; sem `dangerouslySetInnerHTML`. Desconhecido/rascunho exibe `Page404` e SEO noindex próprio. Encerrado preserva conteúdo e omite compra ativa. Páginas emitem SEO uma única vez, usando canonical e breadcrumbs existentes.
 - [ ] Implementar JSON-LD somente com dados confirmados; datas sem hora continuam datas sem hora. Ofertas exigem preço numérico e link de ingresso, ficam ausentes em eventos encerrados; preço zero confirmado pode representar gratuidade. Não inferir status de cancelamento a partir do encerramento. A agenda emite CollectionPage com links de eventos publicados, e todas as páginas válidas têm breadcrumb.
 - [ ] Usar `municipality` e `state` em `addressLocality` e `addressRegion`; omitir código postal não cadastrado. Testar fixture regional fictícia com município diferente de Itatiaia e conferir que não recebe Penedo/Itatiaia por padrão. Mostrar “Fonte: <sourceName>” com `officialUrl` quando ambos existirem; a Prefeitura não é creditada automaticamente em eventos de outras fontes. Revisar título, descrição e compartilhamento para a abrangência regional.
@@ -183,7 +190,10 @@ assert.equal(buildPath('evento-detalhe', null, null, 'evento-teste-2026'), '/eve
 - [ ] Rodar `npx tsx --test src/events/__tests__/siteRoutes.test.ts`; confirmar falha inicial.
 - [ ] Implementar descoberta e configurações de sitemap: agenda `daily/0.8`, detalhes `weekly/0.7`. Executar `npm run validate:events` no início de `scripts/build.js`, antes de gerar arquivos. Reutilizar a pré-renderização existente e as regras genéricas de hospedagem, sem introduzir fallback SPA.
 - [ ] Documentar cadastro, categorias, duas datas para atrações sazonais, edição anual com slug novo, limites do HTML estático e imagens locais preferencialmente 1200 × 800. Incluir exemplo fictício claramente identificado apenas na documentação, não no JSON público.
-- [ ] Documentar localidade, município, UF, fonte e data da conferência. Incluir os links do calendário e do Instagram, a identificação da edição 2026 e a necessidade de verificar cada evento antes de cadastrá-lo. Não declarar que o PDF completo já foi conferido; esta revisão acrescenta o link de consulta, sem transcrever a programação.
+- [ ] Documentar localidade, município, UF, fonte e data da conferência. Incluir os links do calendário e do Instagram, a identificação da edição 2026 e a necessidade de verificar cada evento antes de cadastrá-lo. Não declarar que o PDF completo já foi conferido; o conteúdo completo do PDF não foi lido, mas as imagens de outubro a dezembro fornecidas pelo usuário foram transcritas e são a base do cadastro inicial.
+- [ ] Preencher `src/data/events.json` a partir da transcrição, após os testes com fixtures: cinco registros de outubro, seis de novembro e 13 de dezembro, total 24. Separar datas não consecutivas; manter intervalos consecutivos, a Temporada da Truta de 02/10 a 01/11 e dois registros com `expectedMonth` sem datas completas. Criar slugs distintos por data e local. Preservar grafias incertas identificadas na transcrição até conferência editorial, sem corrigir nomes silenciosamente.
+- [ ] Cada registro recebe resumo/descrição factual, `officialUrl` do PDF, `sourceName: 'Prefeitura de Itatiaia — calendário regional'` e `updatedAt: '2026-10-14'` como data de transcrição. Descrever “Programação divulgada no calendário regional; consulte a fonte para atualizações”. Não adicionar preços, horários, ingressos, imagens ou organizador sem informação. Para a Temporada da Truta, usar `locationName` com a abrangência textual completa e omitir município/UF únicos. Registros ficam publicados com essa atribuição explícita; nada é publicado na hospedagem nesta tarefa.
+- [ ] Acrescentar `src/events/__tests__/initialContent.test.ts` com contagem 24, dois registros mensais, datas válidas, slugs únicos, todos com fonte, intervalo correto da Truta e ausência de eventos de Quatis/Porto Real. Executar `npm run validate:events` e `npm test`. A contagem fixa valida esta importação; atualizar o teste quando novas entradas editoriais forem acrescentadas, sem limitar a capacidade do cadastro a 24.
 - [ ] Rodar testes de rotas estáticas e `npm run validate:events`. A prova do HTML de um evento ocorre em ambiente isolado na tarefa 7.
 - [ ] Commit: `feat: gerar paginas estaticas e sitemap de eventos`.
 
@@ -200,12 +210,12 @@ assert.equal(buildPath('evento-detalhe', null, null, 'evento-teste-2026'), '/eve
 - [ ] Testar relógio de `2026-10-15T02:59:59Z` para `2026-10-15T03:00:01Z`: evento de 14/10 passa de atual a histórico após atualização da aba e some do destaque. Confirmar também atualização em aba ativa dentro do intervalo de 30 segundos. Não esperar uma meia-noite real.
 - [ ] Medir cards em 1440 px e 1920 px: duas colunas, terceiro card na linha seguinte, imagens entre 580–620 px de largura e razão largura/altura 1.5 com tolerância 0.02. Em 390 px e 768 px: uma coluna, largura sem ultrapassar área útil. Verificar `scrollWidth <= clientWidth`, cartaz integral, placeholder de erro e foco por teclado. Capturar e inspecionar screenshots da inicial, agenda e detalhe; salvar em `artifacts/agenda/` sem dados privados.
 - [ ] Executar `npm run build` na cópia isolada com eventos válidos. Confirmar `dist/eventos/index.html`, `dist/eventos/<slug>/index.html`, evento passado no sitemap e ausência de rascunho. Conferir títulos, canonical e JSON-LD no HTML gerado, não apenas no DOM em desenvolvimento. Remover a cópia ao terminar. Não afirmar teste de resposta HTTP Apache com base no servidor Vite; validar regras existentes por inspeção/testes, registrar que a resposta HTTP depende do ambiente de hospedagem.
-- [ ] No projeto real, registrar o diff inicial do sitemap em arquivo de apoio fora do Git e preservar seu conteúdo antes do build. Rodar `npm run lint`, `npm test`, `npm run validate:db`, `npm run validate:events`, `npm run test:routing:e2e`, `npm run test:events:e2e` e `npm run build`, com a produção ainda vazia. Se o build regenerar o sitemap de trabalho, restaurar exatamente o conteúdo anterior desse arquivo após conferir a saída em `dist`; não usar checkout para apagar alterações do usuário.
+- [ ] No projeto real, registrar o diff inicial do sitemap em arquivo de apoio fora do Git e preservar seu conteúdo antes do build. Rodar `npm run lint`, `npm test`, `npm run validate:db`, `npm run validate:events`, `npm run test:routing:e2e`, `npm run test:events:e2e` e `npm run build`, com a programação inicial cadastrada e sem fixtures no cadastro público. Se o build regenerar o sitemap de trabalho, restaurar exatamente o conteúdo anterior desse arquivo após conferir a saída em `dist`; não usar checkout para apagar alterações do usuário.
 - [ ] Esperar comandos concluídos com sucesso e nenhum teste relevante ignorado. Se Chromium não estiver disponível, registrar que a validação visual/E2E permanece pendente, sem apresentar o skip como aprovação. Revisar diff final e seleção de arquivos antes do commit `test: validar agenda responsiva e historico de eventos`.
 
 ## Entrega e revisão do plano
 
-Entregar a área funcionando localmente, relatório curto das verificações e capturas do layout. Informar que o catálogo real está vazio e que o preenchimento depende dos eventos fornecidos ou verificados. Publicação em hospedagem é etapa posterior.
+Entregar a área funcionando localmente, relatório curto das verificações e capturas do layout. Informar que o catálogo inicial usa as imagens fornecidas, com identificação da fonte, datas previstas, dois itens sem dia definido e ausência de horários/preços/cartazes individuais não informados. Publicação em hospedagem é etapa posterior.
 
 Recomendação de execução: **nesta conversa, pelo agente principal**, pois as sete tarefas compartilham contratos de dados, datas e rotas e têm uma ordem clara. A alternativa é implementação por subagentes com revisão independente por tarefa, com maior custo de contexto. A revisão do plano e a escolha do usuário precedem a implementação, conforme a skill de planejamento.
 
