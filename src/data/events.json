@@ -163,19 +163,49 @@
   {
     "id": "nov09-2026",
     "slug": "abertura-da-temporada-de-natal-itatiaia-11-14-2026",
-    "title": "Abertura da Temporada de Natal",
-    "summary": "Abertura da Temporada de Natal — Itatiaia.",
+    "title": "Natal Luz em Penedo 2026",
+    "summary": "Natal Luz em Penedo 2026 — de 20 de novembro de 2026 a 31 de janeiro de 2027. Túnel de luz, árvores iluminadas, neve artificial e cenários para fotos na Colônia Finlandesa.",
     "description": [
-      "Programação divulgada no calendário regional de 2026. Consulte a fonte oficial para atualizações antes de planejar sua visita."
+      "Penedo entra no clima natalino com uma decoração especial na Colônia Finlandesa. O tradicional túnel de luz estará ainda maior, acompanhado de árvores iluminadas, neve artificial e cenários encantadores para fotos.",
+      "O portal de entrada da cidade também receberá uma nova decoração luminosa para acolher os visitantes com toda a magia natalina.",
+      "A celebração continua após o Natal e inclui uma programação especial de Réveillon. São 73 dias para aproveitar Penedo iluminada, celebrar a virada do ano e explorar a região.",
+      "De 20 de novembro de 2026 a 31 de janeiro de 2027. Consulte os canais oficiais para eventuais atualizações da programação."
     ],
     "category": "atracoes-sazonais",
     "published": true,
-    "startDate": "2026-11-14",
+    "startDate": "2026-11-20",
+    "endDate": "2027-01-31",
+    "locationName": "Penedo (Colônia Finlandesa)",
+    "locationAddress": "Colônia Finlandesa, Penedo",
+    "locality": "Penedo",
     "municipality": "Itatiaia",
     "state": "RJ",
+    "entryText": "Gratuita",
     "sourceName": "Prefeitura de Itatiaia — calendário regional",
     "officialUrl": "https://itatiaia.rj.gov.br/wp-content/uploads/2026/01/PDF-Impressao-1-1.pdf",
-    "updatedAt": "2026-10-14"
+    "images": [
+      {
+        "src": "/assets/imagens/eventos/natal-luz-penedo-tunel-de-luz.webp",
+        "alt": "Túnel de luz decorado do Natal Luz em Penedo com iluminação dourada e árvores natalinas."
+      },
+      {
+        "src": "/assets/imagens/eventos/natal-luz-penedo-casa-papai-noel.webp",
+        "alt": "Casa do Papai Noel iluminada na Pequena Finlândia em Penedo."
+      },
+      {
+        "src": "/assets/imagens/eventos/natal-luz-penedo-papai-noel-pequena-finlandia.webp",
+        "alt": "Papai Noel na Pequena Finlândia recebendo os visitantes no Natal Luz."
+      },
+      {
+        "src": "/assets/imagens/eventos/natal-luz-penedo-ponte-coracao.webp",
+        "alt": "Ponte vermelha sob um coração iluminado na Colônia Finlandesa de Penedo."
+      },
+      {
+        "src": "/assets/imagens/eventos/natal-luz-penedo-estrela.webp",
+        "alt": "Decoração de Natal iluminada com estrela e árvores de luz em Penedo."
+      }
+    ],
+    "updatedAt": "2026-10-15"
   },
   {
     "id": "dez01-2026",

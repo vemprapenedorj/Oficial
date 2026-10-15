@@ -1,5 +1,7 @@
 # Manutenção da agenda
 
+Atualização editorial de 15/10/2026: atualizado o evento Natal Luz em Penedo 2026 (20/11/2026 a 31/01/2027) com texto detalhado e carrossel de 5 fotos em proporção 3:2 (1200 × 800 px) na Colônia Finlandesa.
+
 Atualização editorial de 15/10/2026: atualizadas as informações da Feira do Produtor Kirpputori (produtos regionais, bazar, 10h às 16h, todo segundo sábado, entrada franca e pet friendly).
 
 Atualização editorial de 15/10/2026: atualizadas as informações do Baile Finlandês (dança folclórica PKY, polca e mazurka desde 1943, pista aberta, bar, estacionamento).
