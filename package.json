@@ -14,7 +14,8 @@
     "test:routing:e2e": "node --test tests/routing-history.e2e.js",
     "test:routing": "npm run test && npm run test:routing:e2e",
     "test:events": "tsx --test src/events/__tests__/*.test.ts",
-    "validate:events": "tsx scripts/validate-events.ts"
+    "validate:events": "tsx scripts/validate-events.ts",
+    "test:events:e2e": "node --test tests/events.e2e.js"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.14",

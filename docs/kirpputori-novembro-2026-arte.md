@@ -1,0 +1,9 @@
+# Feira do Produtor e Kirpputori — novembro de 2026
+
+Arte criada pela ferramenta integrada de geração de imagens a partir da referência fornecida pelo usuário. Data 14/11/2026 conforme calendário cadastrado. Horários, atrações, gratuidade e telefone do cartaz anterior não foram reaplicados sem confirmação para novembro.
+
+Arquivos em public/assets/imagens/eventos: feira-produtor-kirpputori-2026-11-14.png e feira-produtor-kirpputori-2026-11-14.webp (1200 × 800). Aplicada ao evento nov08-2026.
+
+## Prompt
+
+Create an entirely NEW premium landscape 3:2 1536x1024 event graphic for a local producer and flea market in Penedo Brazil using supplied poster as identity/content reference, NOT a literal copy. Fresh forest green, deep Finnish blue, ivory, restrained lime accents. Elegant vibrant editorial layout, beautifully legible generous bold typography, organic leaf motif. On right and lower edges, tasteful photorealistic still life of fresh local vegetables in wicker baskets, preserves in small jars, handmade woven goods and pottery suggesting producer market and local crafts. No identifiable vendors, no fake official event photograph. Left and middle have clear uncluttered dark green/deep blue area for text. Exact prominent text: 'FEIRA DO PRODUTOR' then 'E KIRPPUTORI'; smaller location 'CLUBE FINLÂNDIA • PENEDO'; separate clear date panel 'SÁBADO, 14 DE NOVEMBRO' with '2026'. All Portuguese accents and KIRPPUTORI spelling exact. Strong title and date hierarchy readable at600x400. New event date is November14 2026, remove October10. Do NOT include old hours, music attraction, free entry claims, parking claims, recycling information, phone number, institutional logos, social-media screenshot controls or any additional copy. Wide format filling frame without borders. Premium inviting authentic market feeling, no cluttered overlapping circles. Safe margins all text.

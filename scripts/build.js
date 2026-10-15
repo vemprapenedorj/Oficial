@@ -3,6 +3,7 @@ import { execSync } from 'child_process';
 console.log('📡 [Build Pipeline] Preparando pacote para hospedagem estática.');
 
 try {
+  execSync('npm run validate:events', { stdio: 'inherit' });
   // 1. Generate environment-specific crawler directives.
   console.log('🤖 Gerando robots.txt para o ambiente...');
   execSync('node scripts/generate-robots.js', { stdio: 'inherit' });

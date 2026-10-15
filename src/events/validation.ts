@@ -35,13 +35,23 @@ export function validateEvents(input: unknown): EventRecord[] {
     const municipality = normalizeSearchText(raw.municipality || '').replace(/\s+/g, ' ');
     if (['quatis', 'porto real'].includes(municipality)) fail('município fora do recorte');
     if (raw.price !== undefined && (typeof raw.price !== 'number' || !Number.isFinite(raw.price) || raw.price < 0)) fail('price');
-    for (const key of ['ticketUrl', 'officialUrl']) {
+    for (const key of ['ticketUrl', 'officialUrl', 'instagramUrl']) {
       if (raw[key] === undefined) continue;
       try { if (typeof raw[key] !== 'string' || !['http:', 'https:'].includes(new URL(raw[key]).protocol)) fail(key); }
       catch { fail(key); }
     }
     if (raw.sourceName && !raw.officialUrl) fail('officialUrl da fonte');
     if (raw.image && (!raw.image.startsWith('/assets/') || /\.\.|[\\?#%]/.test(raw.image))) fail('image');
+    if (raw.images !== undefined) {
+      if (!Array.isArray(raw.images)) fail('images');
+      const paths = new Set<string>();
+      for (const image of raw.images) {
+        if (!image || typeof image.src !== 'string' || !image.src.startsWith('/assets/') || /\.\.|[\\?#%]/.test(image.src)) fail('images.src');
+        if (typeof image.alt !== 'string' || !image.alt.trim()) fail('images.alt');
+        if (paths.has(image.src)) fail('imagem duplicada');
+        paths.add(image.src);
+      }
+    }
     return raw as EventRecord;
   });
 }

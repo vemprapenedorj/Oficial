@@ -1,3 +1,8 @@
+import { EVENTS } from '../events/catalog';
+import { EventCard } from '../events/EventCard';
+import { EventsHighlight } from '../events/EventsHighlight';
+import { searchEvents } from '../events/eventUtils';
+import { useEventToday } from '../events/useEventToday';
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, ChevronRight } from 'lucide-react';
 import { Page, DetailItem } from '../types';
@@ -23,6 +28,8 @@ export function HomePage({
   onSelectArticle: (id: string | null) => void
 }) {
   const [searchQuery, setSearchQuery] = useState('');
+  const today = useEventToday();
+  const eventResults = searchEvents(EVENTS, searchQuery);
 
   // Randomized data for each section
   const shuffledOQueFazer = React.useMemo(() => shuffleArray(DETAILS_DATA['o-que-fazer']), []);
@@ -43,13 +50,14 @@ export function HomePage({
         item.tags?.some(tag => searchIncludes(tag, normalizedSearchQuery))
       );
 
+  const resultCount = filteredResults.length + eventResults.length;
   useEffect(() => {
     if (!searchQuery.trim()) return;
     const timer = setTimeout(() => {
-      pushSearch(searchQuery, filteredResults.length);
+      pushSearch(searchQuery, resultCount);
     }, 800);
     return () => clearTimeout(timer);
-  }, [searchQuery, filteredResults.length]);
+  }, [searchQuery, resultCount]);
 
   return (
     <div>
@@ -154,22 +162,24 @@ export function HomePage({
         </DeferredSection>
       </div>
 
+      <EventsHighlight />
+
       {/* Search Promo */}
-      <DeferredSection height={390}>
-        <SearchPromo query={searchQuery} onSearch={setSearchQuery} />
-      </DeferredSection>
+      <SearchPromo query={searchQuery} onSearch={setSearchQuery} />
 
       {searchQuery.trim() !== '' ? (
         <section className="py-10 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-3xl font-bold text-penedo-forest mb-4 md:mb-8">Resultados da Busca para "{searchQuery}"</h2>
-            {filteredResults.length > 0 ? (
+            {filteredResults.length > 0 && (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {filteredResults.map((item) => (
                   <InfoCard key={item.id} item={item} onOpen={onOpenDetail} />
                 ))}
               </div>
-            ) : (
+            )}
+            {eventResults.length > 0 && <div className="mt-10"><h3 className="text-2xl font-bold text-penedo-forest mb-6">Eventos</h3><div className="grid grid-cols-1 lg:grid-cols-2 gap-6">{eventResults.map(event => <EventCard key={event.id} event={event} today={today} />)}</div></div>}
+            {resultCount === 0 && (
               <div className="text-center py-8 md:py-20">
                 <p className="text-gray-500 text-xl">Nenhum resultado encontrado em todo o site.</p>
               </div>

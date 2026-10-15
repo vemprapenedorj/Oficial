@@ -1,0 +1,19 @@
+IMAGENS DOS EVENTOS
+
+Coloque nesta pasta os cartazes e fotos relacionados aos eventos.
+Se desejar, organize em subpastas por ano e evento: 2026/baile-finlandes/.
+
+Prefira JPG, PNG ou WebP, com nomes sem espaços ou acentos.
+Para os cards, recomendamos imagens de 1200 x 800 px (proporção 3:2).
+Cartazes verticais também são aceitos e aparecem inteiros, sem corte.
+
+Adicionar o arquivo à pasta não o exibe automaticamente no site.
+É necessário associá-lo ao evento em src/data/events.json:
+  "image": "/assets/imagens/eventos/nome-do-arquivo.webp",
+  "imageAlt": "Descrição do cartaz ou da foto"
+
+Preserve as imagens de eventos anteriores para manter o histórico.
+
+Para mais de uma imagem, use a lista images no evento (src e alt por imagem).
+As setas e indicadores do carrossel aparecem automaticamente com dois ou mais itens.
+Consulte docs/eventos.md para o exemplo de cadastro.

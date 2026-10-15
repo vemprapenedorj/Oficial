@@ -1,54 +1,24 @@
-/**
- * Event Schema Generator
- * Targets Event schema metadata dynamically
- */
-export interface EventData {
-  id: string;
-  name: string;
-  startDate: string; // ISO format: YYYY-MM-DDTHH:mm
-  endDate?: string;
-  locationName: string;
-  locationAddress: string;
-  image: string;
-  description: string;
-  price?: number;
-  organizerName?: string;
-}
+import type { EventRecord } from '../events/types';
+import { getEventStatus } from '../events/eventUtils';
+import { getCanonicalUrl } from '../seo/utils/seoUtils';
+import { getEventImages } from '../events/eventImages';
 
-export const getEventSchema = (event: EventData) => {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    "name": event.name,
-    "startDate": event.startDate,
-    "endDate": event.endDate || event.startDate,
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "location": {
-      "@type": "Place",
-      "name": event.locationName,
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": event.locationAddress,
-        "addressLocality": "Itatiaia",
-        "addressRegion": "RJ",
-        "addressCountry": "BR",
-        "postalCode": "27580-000"
-      }
-    },
-    "image": event.image.startsWith('http') ? event.image : `https://vemprapenedo.com.br${event.image}`,
-    "description": event.description,
-    "offers": {
-      "@type": "Offer",
-      "price": event.price || 0,
-      "priceCurrency": "BRL",
-      "availability": "https://schema.org/InStock",
-      "url": "https://vemprapenedo.com.br"
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": event.organizerName || "Vem Pra Penedo",
-      "url": "https://vemprapenedo.com.br"
-    }
+export function getEventSchema(event: EventRecord, today: string): Record<string, unknown> | null {
+  if (!event.startDate || !event.locationName || !event.locationAddress || !event.municipality || !event.state) return null;
+  const schema: Record<string, unknown> = {
+    '@context': 'https://schema.org', '@type': 'Event', name: event.title,
+    url: getCanonicalUrl(`/eventos/${event.slug}/`), startDate: event.startDate,
+    endDate: event.endDate || event.startDate, description: event.summary,
+    location: { '@type': 'Place', name: event.locationName, address: {
+      '@type': 'PostalAddress', streetAddress: event.locationAddress,
+      addressLocality: event.municipality, addressRegion: event.state, addressCountry: 'BR',
+    } },
   };
-};
+  const images = getEventImages(event);
+  if (images.length) schema.image = images.map(image => getCanonicalUrl(image.src));
+  if (event.organizerName) schema.organizer = { '@type': 'Organization', name: event.organizerName };
+  if (event.price !== undefined && event.ticketUrl && getEventStatus(event, today) !== 'past') {
+    schema.offers = { '@type': 'Offer', price: event.price, priceCurrency: 'BRL', url: event.ticketUrl };
+  }
+  return schema;
+}

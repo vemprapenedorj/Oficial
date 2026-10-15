@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const withTrailingSlash = (route) => route === '/' ? '/' : `${route.replace(/\/+$/, '')}/`;
-const STATIC_ROUTES = ['/', '/blog/', '/contato/', '/politica-de-privacidade/', '/politica-de-cookies/', '/404/'];
+const STATIC_ROUTES = ['/', '/eventos/', '/blog/', '/contato/', '/politica-de-privacidade/', '/politica-de-cookies/', '/404/'];
 const PRERENDER_ONLY_ROUTES = ['/divulgue-seu-negocio/'];
 
 const loadDetailsData = () => {
@@ -21,7 +21,9 @@ const loadDetailsData = () => {
   return JSON.parse(source.slice(objectStart, objectEnd + 1));
 };
 
-export const discoverSiteRoutes = () => {
+const loadEvents = () => JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/data/events.json'), 'utf8'));
+
+export const discoverSiteRoutes = (events = loadEvents()) => {
   const routes = new Set(STATIC_ROUTES);
   const detailsData = loadDetailsData();
 
@@ -39,13 +41,14 @@ export const discoverSiteRoutes = () => {
       if (slug && item.isPremium) routes.add(withTrailingSlash(`/${category}/${slug}`));
     });
   });
+  events.filter(event => event.published).forEach(event => routes.add(withTrailingSlash(`/eventos/${event.slug}`)));
   return Array.from(routes);
 };
 
 // Commercial landing pages may be public and pre-rendered without becoming
 // navigational or sitemap content.
-export const discoverPrerenderRoutes = () => [
-  ...new Set([...discoverSiteRoutes(), ...PRERENDER_ONLY_ROUTES]),
+export const discoverPrerenderRoutes = (events = loadEvents()) => [
+  ...new Set([...discoverSiteRoutes(events), ...PRERENDER_ONLY_ROUTES]),
 ];
 
 export const getSitemapSettings = (route) => {
@@ -54,6 +57,8 @@ export const getSitemapSettings = (route) => {
   if (['/o-que-fazer', '/onde-ficar', '/gastronomia', '/compras'].includes(normalizedRoute)) {
     return { changefreq: 'weekly', priority: '0.9' };
   }
+  if (normalizedRoute === '/eventos') return { changefreq: 'daily', priority: '0.8' };
+  if (normalizedRoute.startsWith('/eventos/')) return { changefreq: 'weekly', priority: '0.7' };
   if (normalizedRoute === '/blog') return { changefreq: 'daily', priority: '0.8' };
   if (normalizedRoute.startsWith('/blog/artigo/')) return { changefreq: 'weekly', priority: '0.7' };
   if (normalizedRoute === '/contato') return { changefreq: 'monthly', priority: '0.5' };

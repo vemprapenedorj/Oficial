@@ -15,6 +15,7 @@ export interface EventRecord {
   published: boolean;
   image?: string;
   imageAlt?: string;
+  images?: { src: string; alt: string }[];
   locationName?: string;
   locationAddress?: string;
   locality?: string;
@@ -30,6 +31,7 @@ export interface EventRecord {
   price?: number;
   ticketUrl?: string;
   officialUrl?: string;
+  instagramUrl?: string;
   sourceName?: string;
   updatedAt?: string;
 }
