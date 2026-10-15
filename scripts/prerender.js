@@ -1,8 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { spawn } from 'child_process';
-import net from 'net';
+import { preview } from 'vite';
 import zlib from 'zlib';
 import puppeteer from 'puppeteer';
 import { discoverPrerenderRoutes } from './site-routes.js';
@@ -14,38 +13,6 @@ const PRODUCTION_URL = (process.env.SITE_URL || process.env.VITE_SITE_URL || 'ht
   .replace(/\/$/, '');
 const DIST_DIR = path.resolve(__dirname, '../dist');
 const PUPPETEER_PROFILE_DIR = path.join(DIST_DIR, '.puppeteer-profile');
-
-// --- 1. PORT POLLING HELPER ---
-const getAvailablePort = () => new Promise((resolve, reject) => {
-  const server = net.createServer();
-  server.once('error', reject);
-  server.listen(0, '127.0.0.1', () => {
-    const address = server.address();
-    if (!address || typeof address === 'string') {
-      server.close();
-      reject(new Error('Não foi possível reservar uma porta para o Vite Preview.'));
-      return;
-    }
-    server.close((error) => error ? reject(error) : resolve(address.port));
-  });
-});
-
-const waitPort = async (port, timeout = 15000) => {
-  const start = Date.now();
-  while (Date.now() - start < timeout) {
-    try {
-      await new Promise((resolve, reject) => {
-        const socket = net.createConnection(port, '127.0.0.1');
-        socket.on('connect', () => { socket.end(); resolve(); });
-        socket.on('error', reject);
-      });
-      return;
-    } catch (e) {
-      await new Promise(r => setTimeout(r, 200));
-    }
-  }
-  throw new Error(`Timeout waiting for port ${port}`);
-};
 
 // --- 2. COMPRESSION HELPER ---
 const compressFile = (filePath) => {
@@ -64,7 +31,20 @@ const compressFile = (filePath) => {
 const prerenderAndValidate = async (routes, baseUrl) => {
   console.log('🚀 Iniciando pré-renderização com Puppeteer...');
   fs.rmSync(PUPPETEER_PROFILE_DIR, { recursive: true, force: true });
-  const browser = await puppeteer.launch({
+  const systemChromiumPaths = [
+    process.env.PUPPETEER_EXECUTABLE_PATH,
+    '/usr/bin/google-chrome-stable',
+    '/usr/bin/google-chrome',
+    '/usr/bin/chromium-browser',
+    '/usr/bin/chromium',
+    '/snap/bin/chromium',
+  ].filter(Boolean);
+
+  const executablePath = systemChromiumPaths.find(p => {
+    try { return fs.existsSync(p); } catch { return false; }
+  });
+
+  const launchOptions = {
     headless: true,
     timeout: 60_000,
     userDataDir: PUPPETEER_PROFILE_DIR,
@@ -75,7 +55,14 @@ const prerenderAndValidate = async (routes, baseUrl) => {
       '--disable-crash-reporter',
       '--no-zygote',
     ],
-  });
+  };
+
+  if (executablePath) {
+    console.log(`🧭 Usando Chromium do ambiente em: ${executablePath}`);
+    launchOptions.executablePath = executablePath;
+  }
+
+  const browser = await puppeteer.launch(launchOptions);
   const page = await browser.newPage();
   // This flag exists only in the browser's JavaScript context. It lets
   // DeferredSection emit the full static page without making real visitors
@@ -414,40 +401,39 @@ const main = async () => {
   // 1. Discover all routes
   const routes = discoverPrerenderRoutes();
   
-  // 2. Start Vite Preview server helper
+  // 2. Start Vite Preview server helper via Vite API
   console.log('🔌 Iniciando servidor de preview do Vite...');
-  let previewProcess;
+  let previewServer;
 
   try {
-    // Reserve a free port so shared build runners cannot serve another process.
-    const port = await getAvailablePort();
-    const baseUrl = `http://127.0.0.1:${port}`;
-    const viteEntry = path.resolve(__dirname, '../node_modules/vite/bin/vite.js');
-    previewProcess = spawn(process.execPath, [
-      viteEntry,
-      'preview',
-      '--host', '127.0.0.1',
-      '--port', port.toString(),
-      '--strictPort',
-    ], { stdio: 'ignore' });
+    previewServer = await preview({
+      root: path.resolve(__dirname, '..'),
+      preview: {
+        host: '127.0.0.1',
+        port: 0,
+        strictPort: false,
+      },
+    });
 
-    // 3. Poll the exact preview process port before crawling.
-    await waitPort(port);
+    const localUrl = previewServer.resolvedUrls?.local?.[0] || previewServer.resolvedUrls?.network?.[0];
+    if (!localUrl) {
+      throw new Error('Não foi possível obter a URL do servidor Vite Preview.');
+    }
+    const baseUrl = localUrl.replace(/\/$/, '');
     console.log(`🔌 Servidor de preview ativo em ${baseUrl}.`);
     
-    // 4. Prerender routes and validate
+    // 3. Prerender routes and validate
     await prerenderAndValidate(routes, baseUrl);
-    
-    // 5. Generate sitemap
     
     console.log('🎉 Pipeline finalizado com sucesso absoluto!');
   } catch (error) {
     console.error('🚨 Erro crítico na pipeline de pré-renderização:', error);
-    previewProcess?.kill();
     process.exit(1);
   } finally {
-    console.log('🔌 Encerrando servidor de preview do Vite...');
-    previewProcess?.kill();
+    if (previewServer) {
+      console.log('🔌 Encerrando servidor de preview do Vite...');
+      await previewServer.close();
+    }
     fs.rmSync(PUPPETEER_PROFILE_DIR, { recursive: true, force: true });
   }
 };
