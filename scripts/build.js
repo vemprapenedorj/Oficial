@@ -19,8 +19,12 @@ try {
   // 4. A pré-renderização é obrigatória: as regras do servidor só publicam
   // rotas válidas quando existe dist/rota/index.html. Nunca publique o fallback
   // SPA, pois ele remove canonicals do HTML inicial e transforma 404 em soft 404.
-  console.log('🚀 Iniciando pré-renderização estática (SSG) com Puppeteer...');
-  execSync('node scripts/prerender.js', { stdio: 'inherit' });
+  if (process.env.SKIP_PRERENDER === 'true') {
+    console.log('⏭️ [Build Pipeline] SKIP_PRERENDER=true detectado: pulando pré-renderização com Puppeteer.');
+  } else {
+    console.log('🚀 Iniciando pré-renderização estática (SSG) com Puppeteer...');
+    execSync('node scripts/prerender.js', { stdio: 'inherit' });
+  }
   
   console.log('🎉 Pipeline de build finalizado com sucesso!');
 } catch (error) {
