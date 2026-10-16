@@ -36,7 +36,7 @@ export function getEventGroups(events: readonly EventRecord[], today: string, fi
   };
 }
 
-export const getFeaturedEvents = (events: readonly EventRecord[], today: string): EventRecord[] => getEventGroups(events, today).active.slice(0, 3);
+export const getFeaturedEvents = (events: readonly EventRecord[], today: string, limit = 4): EventRecord[] => getEventGroups(events, today).active.slice(0, limit);
 export const getEventYears = (events: readonly EventRecord[]): number[] => [...new Set(getPublishedEvents(events).flatMap(yearsOf))].sort((a, b) => b - a);
 
 export function searchEvents(events: readonly EventRecord[], query: string): EventRecord[] {

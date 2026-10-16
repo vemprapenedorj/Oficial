@@ -22,10 +22,10 @@ test('filtros consideram virada do ano e mês previsto sem inventar dias', () =>
   assert.equal(getFeaturedEvents([monthly], '2026-10-14').length, 0);
 });
 
-test('destaques priorizam em andamento, limitam três e nunca mutam a coleção', () => {
-  const events = [17, 18, 19, 14, 3].map(day => makeEvent({ id: String(day), slug: `teste-${day}`, startDate: `2026-10-${String(day).padStart(2, '0')}` }));
+test('destaques priorizam em andamento, limitam quatro e nunca mutam a coleção', () => {
+  const events = [17, 18, 19, 14, 3, 22].map(day => makeEvent({ id: String(day), slug: `teste-${day}`, startDate: `2026-10-${String(day).padStart(2, '0')}` }));
   const before = JSON.stringify(events);
-  assert.deepEqual(getFeaturedEvents(events, '2026-10-14').map(e => e.id), ['14', '17', '18']);
+  assert.deepEqual(getFeaturedEvents(events, '2026-10-14').map(e => e.id), ['14', '17', '18', '19']);
   assert.equal(JSON.stringify(events), before);
   assert.equal(getEventGroups(events, '2026-10-14').past[0].id, '3');
   assert.equal(getFeaturedEvents([makeEvent({ published: false })], '2026-10-14').length, 0);
