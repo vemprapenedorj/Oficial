@@ -1,5 +1,11 @@
 # Arte mensal da Feira da Roça de Visconde de Mauá
 
+## Edição de dezembro
+
+Imagem de 06/12/2026: `public/assets/imagens/eventos/feira-da-roca-maua-2026-12-06.png`, com versão WebP no mesmo diretório vinculada ao registro `dez11-2026`. A ferramenta integrada de geração de imagens alterou somente a data na faixa creme. A imagem e o registro de novembro foram preservados.
+
+Prompt da revisão: Precise text-only edit of this existing landscape 3:2 Feira da Roça poster. Keep photograph of Visconde de Mauá, buildings, trees, string lights, produce, color grade, all signage, layout and all other writing as close to pixel-identical as possible. Change ONLY the date in the horizontal cream date ribbon from '01 DE NOVEMBRO • 2026' to exactly '06 DE DEZEMBRO • 2026'. Preserve the same dark green rustic serif lettering, alignment, size and cream ribbon texture. Do not change the title 'FEIRA DA ROÇA', place 'VISCONDE DE MAUÁ' or venue 'CLUBE DE VISCONDE DE MAUÁ'. No other text, no new decorations. December 6, 2026 date is verified from the provided calendar.
+
 Arte criada pela ferramenta integrada de geração de imagens a partir das duas referências fornecidas pelo usuário: cartaz rural como referência de estilo e fotografia de Mauá como referência de paisagem. Sem banda, caixa de atrações, horário não confirmado ou logotipos institucionais.
 
 ## Arquivos em public/assets/imagens/eventos

@@ -25,7 +25,7 @@ test('agenda: cards responsivos, filtros, histórico, busca e detalhe', { timeou
     await page.setViewport({width:1440,height:1000});
     await page.goto(`${base}/eventos/`);
     await page.waitForSelector('[data-event-card]');
-    assert.equal(await page.$$eval('[data-event-card]', els=>els.length),17);
+    assert.equal(await page.$$eval('[data-event-card]', els=>els.length),16);
     assert.equal(await page.$$eval('link[rel=canonical]', els=>els.length),1);
     await page.evaluate(() => [...document.querySelectorAll('button')].find(b=>b.textContent==='Recusar')?.click());
     await fs.mkdir('artifacts/agenda',{recursive:true});

@@ -1,5 +1,11 @@
 # Feira do Produtor e Kirpputori — novembro de 2026
 
+## Edição de dezembro
+
+Imagem de 12/12/2026: `public/assets/imagens/eventos/feira-produtor-kirpputori-2026-12-12.png`, com versão WebP no mesmo diretório vinculada ao registro `dez17-2026`. A ferramenta integrada de geração de imagens alterou somente a data visível na arte; a edição de novembro permanece em seu registro e arquivo próprios.
+
+Prompt da revisão: Precisely edit this existing landscape 3:2 Feira do Produtor e Kirpputori poster. Change ONLY the white middle date text inside the navy rounded date panel from '14 DE NOVEMBRO' to exactly '12 DE DEZEMBRO'. Preserve 'SÁBADO,' above and green '2026' below. Preserve every other pixel as closely as possible: large title, 'CLUBE FINLÂNDIA • PENEDO', produce and artisan goods photo, colors, leaf decorations, shadows, layout, 3:2 landscape shape. December 12, 2026 is a Saturday. Match the existing bold white lettering, position and size so the new wording fits. Do not add or alter anything else.
+
 Arte criada pela ferramenta integrada de geração de imagens a partir da referência fornecida pelo usuário. Data 14/11/2026 conforme calendário cadastrado. Horários, atrações, gratuidade e telefone do cartaz anterior não foram reaplicados sem confirmação para novembro.
 
 Arquivos em public/assets/imagens/eventos: feira-produtor-kirpputori-2026-11-14.png e feira-produtor-kirpputori-2026-11-14.webp (1200 × 800). Aplicada ao evento nov08-2026.

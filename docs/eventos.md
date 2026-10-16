@@ -1,5 +1,9 @@
 # Manutenção da agenda
 
+Atualização editorial de 16/10/2026: removido o Festival de Dança de Resende (12 e 13/12) da agenda pública, a pedido do usuário. O catálogo passa a ter 16 registros. A transcrição do calendário original permanece como referência histórica.
+
+Baile Finlandês e Feira da Roça de Mauá são cadastrados em registros separados para cada edição de 2026. O texto de apresentação é reaproveitado entre as edições; a data do site vem de `startDate`, e cada cartaz tem a data correspondente. Não reaproveitar horários ou atrações de uma edição sem confirmação específica.
+
 Atualização editorial de 15/10/2026: atualizado o evento Natal Luz em Penedo 2026 (20/11/2026 a 31/01/2027) com texto detalhado e carrossel de 5 fotos em proporção 3:2 (1200 × 800 px) na Colônia Finlandesa.
 
 Atualização editorial de 15/10/2026: atualizadas as informações da Feira do Produtor Kirpputori (produtos regionais, bazar, 10h às 16h, todo segundo sábado, entrada franca e pet friendly).

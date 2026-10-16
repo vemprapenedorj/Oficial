@@ -1,4 +1,2 @@
 User-agent: *
-Allow: /
-
-Sitemap: https://vemprapenedo.com.br/sitemap.xml
+Disallow: /

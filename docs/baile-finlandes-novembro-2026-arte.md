@@ -1,5 +1,11 @@
 # Arte do Baile Finlandês — novembro de 2026
 
+## Edição de dezembro
+
+Imagem de 05/12/2026: `public/assets/imagens/eventos/baile-finlandes-2026-12-05.png`, com versão WebP no mesmo diretório vinculada ao registro `dez05-2026`. A ferramenta integrada de geração de imagens trocou somente a data visível na faixa inferior; a edição de novembro permaneceu em seu arquivo e registro próprios.
+
+Prompt da revisão: Make a precise text-only edit to this existing event poster. Preserve the entire photograph pixel-for-pixel as closely as possible, including every real person's face, clothing, arrangement, hall, lighting, blue treatment, title 'Clube Finlândia', subtitle, 'BAILE FINLANDÊS', the bottom ribbon styling, and '2026 • PENEDO'. Change ONLY the white date line in the lower blue ribbon from 'SÁBADO, 07 DE NOVEMBRO' to exactly 'SÁBADO, 05 DE DEZEMBRO'. The December 5, 2026 date is a Saturday. Match the same bold white type style, size, alignment and position. Do not add or alter any other elements. Keep 3:2 landscape aspect ratio.
+
 Criada pela ferramenta integrada de geração de imagens a partir do cartaz e da foto do grupo fornecidos pelo usuário. A data de 07/11/2026 corresponde ao calendário já cadastrado. O horário de 20h do cartaz de julho não foi transferido para novembro por não estar confirmado para esta edição.
 
 Arquivos em public/assets/imagens/eventos: baile-finlandes-2026-11-07.png e baile-finlandes-2026-11-07.webp (1200 × 800). Vinculada somente ao evento nov04-2026.
