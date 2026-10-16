@@ -25,7 +25,7 @@ export function EventDetailPage({ events = EVENTS }: { events?: readonly EventRe
       <h1 className="text-3xl md:text-5xl font-bold text-penedo-forest max-w-4xl leading-tight tracking-tight [overflow-wrap:anywhere]">{event.title}</h1>
       <p className="mt-5 mb-9 text-lg text-gray-600 max-w-3xl leading-relaxed">{event.summary}</p>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-start">
-        <div className="rounded-3xl overflow-hidden border border-penedo-forest/10"><EventArtwork key={event.id} event={event} /></div>
+        <div className="rounded-3xl overflow-hidden border border-penedo-forest/10"><EventArtwork key={event.id} event={event} past={past} /></div>
         <section aria-label="Informações do evento" className="rounded-3xl bg-white border border-penedo-forest/10 p-6 sm:p-8">
           <h2 className="text-2xl font-bold text-penedo-forest mb-6">Para se programar</h2>
           <dl className="space-y-6 text-gray-700">

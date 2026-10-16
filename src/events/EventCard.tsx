@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { ArrowUpRight, CalendarDays, MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { EVENT_CATEGORY_LABELS, type EventRecord } from './types';
-import { formatEventDates, formatEventLocation, getEventBadge } from './eventUtils';
+import { formatEventDates, formatEventLocation, getEventBadge, getEventStatus } from './eventUtils';
 import { getEventImages } from './eventImages';
 import { getEventPath } from '../routing/routeHelpers';
 
-export function EventArtwork({ event, href }: { event: EventRecord; href?: string; key?: string }) {
+export function EventArtwork({ event, href, past = false }: { event: EventRecord; href?: string; past?: boolean; key?: string }) {
   const images = getEventImages(event);
   const [index, setIndex] = useState(0);
   const activeIndex = images.length ? index % images.length : 0;
@@ -17,7 +17,7 @@ export function EventArtwork({ event, href }: { event: EventRecord; href?: strin
   const month = date ? new Intl.DateTimeFormat('pt-BR', { month: 'long', timeZone: 'UTC' }).format(new Date(`${date}T12:00:00Z`)) : 'Em breve';
   const artwork = <>
     {current && failedImage !== current.src ?
-      <img src={current.src} alt={current.alt} width={600} height={400} loading="lazy" decoding="async" onError={() => setFailedImage(current.src)} className="h-full w-full object-contain" /> :
+      <img src={current.src} alt={current.alt} width={600} height={400} loading="lazy" decoding="async" onError={() => setFailedImage(current.src)} className={'h-full w-full object-contain' + (past ? ' grayscale contrast-90' : '')} /> :
       <div className="h-full flex flex-col justify-between p-6 sm:p-9 text-penedo-forest" role="img" aria-label={`Programação de ${month}, sem cartaz disponível`}>
         <div className="flex items-center justify-between gap-4 border-b border-penedo-forest/15 pb-4"><span className="text-xs sm:text-sm font-semibold uppercase tracking-[0.18em]">{EVENT_CATEGORY_LABELS[event.category]}</span><CalendarDays size={24} strokeWidth={1.5} aria-hidden="true" /></div>
         <div className="flex items-end justify-between gap-4"><div><span className="block text-[clamp(3rem,7vw,6rem)] font-bold tracking-tighter leading-none">{event.startDate ? event.startDate.slice(8) : 'Em breve'}</span><span className="block mt-2 text-lg sm:text-2xl capitalize">{month}{date && <span className="text-penedo-forest/60"> / {date.slice(0, 4)}</span>}</span></div><span className="h-12 w-1.5 rounded-full bg-penedo-gold" aria-hidden="true" /></div>
@@ -39,7 +39,7 @@ export function EventArtwork({ event, href }: { event: EventRecord; href?: strin
 
 export function EventCard({ event, today }: { event: EventRecord; today: string; key?: string }) {
   return <article className="min-w-0 overflow-hidden rounded-3xl border border-penedo-forest/10 bg-white shadow-sm" data-event-card>
-    <EventArtwork key={event.id} event={event} href={getEventPath(event.slug)} />
+    <EventArtwork key={event.id} event={event} href={getEventPath(event.slug)} past={getEventStatus(event, today) === 'past'} />
     <div className="p-6 sm:p-8 [overflow-wrap:anywhere]">
       <div className="flex flex-wrap gap-2 items-center mb-4"><span className="rounded-full bg-penedo-mint/70 px-3 py-1 text-xs font-semibold text-penedo-forest">{getEventBadge(event, today)}</span><span className="text-xs text-gray-600">{EVENT_CATEGORY_LABELS[event.category]}</span></div>
       <h3 className="text-2xl lg:text-[28px] font-bold leading-tight text-penedo-forest mb-4"><Link to={getEventPath(event.slug)} className="hover:underline focus-visible:outline-2 focus-visible:outline-offset-4">{event.title}</Link></h3>

@@ -22,6 +22,8 @@
     "id": "out04-2026",
     "slug": "baile-finlandes-penedo-10-03-2026",
     "title": "Baile Finlandês",
+    "image": "/assets/imagens/eventos/baile-finlandes-2026-10-03.webp",
+    "imageAlt": "Baile Finlandês no Clube Finlândia, em Penedo, em 3 de outubro de 2026.",
     "summary": "Baile Finlandês no Clube Finlândia, em Penedo. O calendário regional reúne diferentes edições ao longo de 2026.",
     "description": [
       "O Baile Finlandês acontece em edições recorrentes no Clube Finlândia, em Penedo.",
@@ -34,12 +36,14 @@
     "locality": "Penedo",
     "sourceName": "Prefeitura de Itatiaia — calendário regional",
     "officialUrl": "https://itatiaia.rj.gov.br/wp-content/uploads/2026/01/PDF-Impressao-1-1.pdf",
-    "updatedAt": "2026-10-14"
+    "updatedAt": "2026-10-16"
   },
   {
     "id": "out07-2026",
     "slug": "feira-da-roca-visconde-de-maua-10-04-2026",
     "title": "Feira da Roça",
+    "image": "/assets/imagens/eventos/feira-da-roca-maua-2026-10-04.webp",
+    "imageAlt": "Feira da Roça em Visconde de Mauá, em 4 de outubro de 2026.",
     "summary": "Feira da Roça no Clube de Visconde de Mauá, em Resende. O calendário regional reúne diferentes edições ao longo de 2026.",
     "description": [
       "A Feira da Roça acontece em edições recorrentes no Clube de Visconde de Mauá, em Resende.",
@@ -54,12 +58,14 @@
     "state": "RJ",
     "sourceName": "Prefeitura de Itatiaia — calendário regional",
     "officialUrl": "https://itatiaia.rj.gov.br/wp-content/uploads/2026/01/PDF-Impressao-1-1.pdf",
-    "updatedAt": "2026-10-14"
+    "updatedAt": "2026-10-16"
   },
   {
     "id": "out09-2026",
     "slug": "feira-do-produtor-kirpputori-penedo-10-10-2026",
     "title": "Feira do Produtor Kirpputori",
+    "image": "/assets/imagens/eventos/feira-produtor-kirpputori-2026-10-10.webp",
+    "imageAlt": "Feira do Produtor e Kirpputori no Clube Finlândia, em Penedo, em 10 de outubro de 2026.",
     "summary": "Feira do Produtor Kirpputori — Clube Finlândia · Penedo.",
     "description": [
       "Programação divulgada no calendário regional de 2026. Consulte a fonte oficial para atualizações antes de planejar sua visita."
@@ -72,7 +78,7 @@
     "sourceName": "Prefeitura de Itatiaia — calendário regional",
     "officialUrl": "https://itatiaia.rj.gov.br/wp-content/uploads/2026/01/PDF-Impressao-1-1.pdf",
     "instagramUrl": "https://www.instagram.com/feira.produtor.kirpputori/",
-    "updatedAt": "2026-10-15"
+    "updatedAt": "2026-10-16"
   },
   {
     "id": "nov01-2026",

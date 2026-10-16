@@ -22,6 +22,14 @@ test('card mostra data, localização e link permanente', () => {
   assert.match(html, /Penedo/);
 });
 
+test('arte de evento encerrado aparece em cinza sem alterar a edição futura', () => {
+  const event = makeEvent({ image: '/assets/imagens/eventos/edicao.webp', startDate: '2026-10-03' });
+  const past = render(React.createElement(EventCard, { event, today: '2026-10-16' }));
+  const upcoming = render(React.createElement(EventCard, { event, today: '2026-10-01' }));
+  assert.match(past, /grayscale contrast-90/);
+  assert.doesNotMatch(upcoming, /grayscale contrast-90/);
+});
+
 test('agenda e destaque vazios preservam calendário e crédito', () => {
   const home = render(React.createElement(EventsHighlight, { events: [] }));
   assert.match(home, /Ver agenda completa/);
