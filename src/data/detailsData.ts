@@ -211,7 +211,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "id": "expedicao-raizes",
       "title": "Expedição Raízes da Mantiqueira",
       "category": "Passeios de Aventura",
-      "isPremium": false,
+      "isPremium": true,
       "image": "/assets/imagens/logos/logo-expedicao-raizes.jpg",
       "description": "Passeios 4x4 em Penedo, trilhas e cachoeiras exclusivas. Prêmio TripAdvisor Travellers' Choice 2026.",
       "fullInfo": "Empresa credenciada Ministério do turismo Cadastur realizando Turismo Legal. Guia credenciado Mtur Cadastur. Nosso compromisso é proporcionar a conectividade com a natureza de maneira sustentável. Não vendemos apenas um serviço proporcionamos experiências.",
@@ -221,6 +221,14 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "rating": 5,
       "whatsapp": "24999116542",
       "tripadvisorUrl": "https://www.tripadvisor.com.br/Attraction_Review-g2427181-d23280155-Reviews-Expedicao_Raizes_da_Mantiqueira-Penedo_Itatiaia_State_of_Rio_de_Janeiro.html",
+      "galeria": [
+        "/assets/imagens/premium/expedicao-raizes/galeria-1.jpg",
+        "/assets/imagens/premium/expedicao-raizes/galeria-2.jpg",
+        "/assets/imagens/premium/expedicao-raizes/galeria-3.jpg",
+        "/assets/imagens/premium/expedicao-raizes/galeria-4.jpg",
+        "/assets/imagens/premium/expedicao-raizes/galeria-5.jpg",
+        "/assets/imagens/premium/expedicao-raizes/galeria-6.jpg"
+      ],
       "tags": [
         "4x4",
         "passeios",
@@ -232,8 +240,21 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "família",
         "guia"
       ],
+      "whatsappUrl": "https://wa.me/5524999116542",
       "instagramUrl": "https://www.instagram.com/expedicaoraizesdamantiqueira/",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Expedi%C3%A7%C3%A3o+Ra%C3%ADzes+da+Mantiqueira+Penedo"
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Expedi%C3%A7%C3%A3o+Ra%C3%ADzes+da+Mantiqueira+Penedo",
+      "videoUrl": "https://www.instagram.com/reel/DTawltXkhlC/",
+      "faq": [
+        {
+          "question": "Onde fica o ponto de atendimento da Expedição Raízes?",
+          "answer": "Fica na Rua das Velas, 100, em Penedo - RJ."
+        },
+        {
+          "question": "Como funciona o agendamento dos passeios 4x4?",
+          "answer": "O agendamento é realizado diretamente pelo WhatsApp oficial (24) 99911-6542, com opções de roteiros para cachoeiras e trilhas ecológicas."
+        }
+      ],
+      "badge": "Recomendado"
     },
     {
       "id": "rodrigo-dione",
@@ -905,7 +926,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "slug": "pousada-reserva-penedo",
       "title": "Pousada Reserva Penedo",
       "category": "Hospedagem",
-      "isPremium": true,
+      "isPremium": false,
       "image": "/assets/imagens/logos/logo-pousada-reserva-penedo.jpg",
       "description": "Paz e sossego em meio a 160 metros de margem de rio.",
       "descricao_longa": "Localizada a apenas 900 metros do centro de Penedo, a Pousada Reserva Penedo é o refúgio perfeito para quem busca desconexão e descanso. Integrada a uma área verde exuberante com mais de 160 metros de extensão de passagem do rio cristalino em sua propriedade, a pousada atrai diversos pássaros e oferece um ambiente relaxante de pura paz. Ao mesmo tempo, sua localização estratégica permite acessar a pé os charmosos restaurantes e atrativos turísticos da região.",
@@ -955,7 +976,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
           "answer": "A pousada está a cerca de 900 metros da Pequena Finlândia, permitindo ir a pé com tranquilidade aos principais atrativos e restaurantes."
         }
       ],
-      "badge": "Recomendado",
       "whatsappUrl": "https://wa.me/5524981783018"
     },
     {
@@ -1170,7 +1190,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "id": "pousada-rainha-da-mata",
       "title": "Pousada Rainha da Mata",
       "category": "Hospedagem",
-      "isPremium": true,
+      "isPremium": false,
       "image": "/assets/imagens/logos/logo-pousada-rainha-mata.jpg",
       "description": "Paz, sossego e contato exuberante com a natureza a apenas 800m do centro de Penedo.",
       "descricao_longa": "Localizada a apenas 800m do centro de Penedo, na Pousada Rainha da Mata a natureza dita o ritmo. Oferecemos um refúgio exclusivo onde o canto dos pássaros e o som relaxante do rio que serpenteia nossa propriedade criam a trilha sonora perfeita para seu descanso. Nossa vasta área verde abriga uma árvore centenária majestosa, enquanto nossa infraestrutura conta com piscina com cascata e um café da manhã artesanal preparado com carinho para começar seu dia da melhor forma possível.",
@@ -1215,7 +1235,6 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
           "answer": "Sim, oferece piscina com cascata, sauna a vapor e café da manhã artesanal."
         }
       ],
-      "badge": "Recomendado",
       "whatsappUrl": "https://wa.me/5524993111367"
     },
     {

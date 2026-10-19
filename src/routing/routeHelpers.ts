@@ -1,3 +1,5 @@
+import { EVENTS } from '../events/catalog';
+import type { EventRecord } from '../events/types';
 import { DETAILS_DATA } from '../data/detailsData';
 import { DetailItem, Page } from '../types';
 import {
@@ -14,9 +16,10 @@ export interface RouteResolution {
   page: Page;
   premiumSlug: string | null;
   blogArticle: string | null;
+  eventSlug: string | null;
 }
 
-const emptyRoute = (page: Page): RouteResolution => ({ page, premiumSlug: null, blogArticle: null });
+const emptyRoute = (page: Page): RouteResolution => ({ page, premiumSlug: null, blogArticle: null, eventSlug: null });
 const removeTrailingSlash = (path: string): string => path === '/' ? path : path.replace(/\/$/, '');
 export const withTrailingSlash = (path: string): string => path === '/' ? '/' : `${path.replace(/\/+$/, '')}/`;
 
@@ -36,23 +39,30 @@ export const getBusinessPath = (slug: string): string => {
 
 export const getBlogArticlePath = (slug: string): string => withTrailingSlash(`${BLOG_ARTICLE_PREFIX}/${slug}`);
 
-export const parsePath = (rawPath: string): RouteResolution => {
+export const getEventPath = (slug: string): string => withTrailingSlash('/eventos/' + slug);
+
+export const parsePath = (rawPath: string, events: readonly EventRecord[] = EVENTS): RouteResolution => {
   const path = removeTrailingSlash(rawPath || '/');
   if (path === '/') return emptyRoute('home');
+  if (path.startsWith('/eventos/')) {
+    const slug = path.slice('/eventos/'.length);
+    return events.some(event => event.published && event.slug === slug)
+      ? { ...emptyRoute('evento-detalhe'), eventSlug: slug } : emptyRoute('404');
+  }
 
   if (path.startsWith(`${LEGACY_DETAIL_PREFIX}/`)) {
     const slug = path.slice(LEGACY_DETAIL_PREFIX.length + 1);
     return premiumBusinessExists(slug)
-      ? { page: 'premium-detail', premiumSlug: slug, blogArticle: null }
+      ? { page: 'premium-detail', premiumSlug: slug, blogArticle: null, eventSlug: null }
       : emptyRoute('404');
   }
 
   if (path.startsWith(`${BLOG_ARTICLE_PREFIX}/`)) {
-    return { page: 'blog', premiumSlug: null, blogArticle: path.slice(BLOG_ARTICLE_PREFIX.length + 1) };
+    return { page: 'blog', premiumSlug: null, eventSlug: null, blogArticle: path.slice(BLOG_ARTICLE_PREFIX.length + 1) };
   }
 
   if (path.startsWith(`${LEGACY_BLOG_PREFIX}/`)) {
-    return { page: 'blog', premiumSlug: null, blogArticle: path.slice(LEGACY_BLOG_PREFIX.length + 1) };
+    return { page: 'blog', premiumSlug: null, eventSlug: null, blogArticle: path.slice(LEGACY_BLOG_PREFIX.length + 1) };
   }
 
   const fixedRoute = getFixedRouteByPath(path);
@@ -64,7 +74,7 @@ export const parsePath = (rawPath: string): RouteResolution => {
     const knownCategories: readonly string[] = [...BUSINESS_CATEGORY_PATHS, ...LEGACY_BUSINESS_CATEGORY_PATHS];
     if (knownCategories.includes(category)) {
       return premiumBusinessExists(slug)
-        ? { page: 'premium-detail', premiumSlug: slug, blogArticle: null }
+        ? { page: 'premium-detail', premiumSlug: slug, blogArticle: null, eventSlug: null }
         : emptyRoute('404');
     }
   }
@@ -72,7 +82,8 @@ export const parsePath = (rawPath: string): RouteResolution => {
   return emptyRoute('404');
 };
 
-export const buildPath = (page: Page, premiumSlug: string | null, blogArticle: string | null): string => {
+export const buildPath = (page: Page, premiumSlug: string | null, blogArticle: string | null, eventSlug: string | null = null): string => {
+  if (page === 'evento-detalhe' && eventSlug) return getEventPath(eventSlug);
   if (page === 'premium-detail' && premiumSlug) return getBusinessPath(premiumSlug);
   if (page === 'blog' && blogArticle) return getBlogArticlePath(blogArticle);
   return withTrailingSlash(getFixedRouteByPage(page)?.path || '/404');

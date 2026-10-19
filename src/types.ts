@@ -36,4 +36,4 @@ export interface DetailItem {
   faq?: { question: string; answer: string }[];
 }
 
-export type Page = 'home' | 'o-que-fazer' | 'onde-ficar' | 'gastronomia' | 'compras' | 'blog' | 'contato' | 'divulgue-seu-negocio' | 'politica-de-privacidade' | 'politica-de-cookies' | 'premium-detail' | '404';
+export type Page = 'home' | 'o-que-fazer' | 'onde-ficar' | 'gastronomia' | 'compras' | 'blog' | 'contato' | 'divulgue-seu-negocio' | 'politica-de-privacidade' | 'politica-de-cookies' | 'premium-detail' | 'eventos' | 'evento-detalhe' | '404';

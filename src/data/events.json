@@ -1,0 +1,415 @@
+[
+  {
+    "id": "out03-2026",
+    "slug": "24-temporada-da-truta-regiao-10-02-2026",
+    "title": "24ª Temporada da Truta",
+    "image": "/assets/imagens/eventos/temporada-da-truta-2026-horizontal.webp",
+    "imageAlt": "Arte da 24ª Temporada da Truta, edição 2026, com ilustrações de trutas em círculo.",
+    "summary": "24ª Temporada da Truta — Penedo / Visconde de Mauá — Itatiaia / Resende.",
+    "description": [
+      "Programação divulgada no calendário regional de 2026. Consulte a fonte oficial para atualizações antes de planejar sua visita."
+    ],
+    "category": "gastronomia",
+    "published": true,
+    "startDate": "2026-10-02",
+    "endDate": "2026-11-01",
+    "locationName": "Penedo / Visconde de Mauá — Itatiaia / Resende",
+    "sourceName": "Prefeitura de Itatiaia — calendário regional",
+    "officialUrl": "https://itatiaia.rj.gov.br/wp-content/uploads/2026/01/PDF-Impressao-1-1.pdf",
+    "updatedAt": "2026-10-14"
+  },
+  {
+    "id": "out04-2026",
+    "slug": "baile-finlandes-penedo-10-03-2026",
+    "title": "Baile Finlandês",
+    "image": "/assets/imagens/eventos/baile-finlandes-2026-10-03.webp",
+    "imageAlt": "Baile Finlandês no Clube Finlândia, em Penedo, em 3 de outubro de 2026.",
+    "summary": "Baile Finlandês no Clube Finlândia, em Penedo. O calendário regional reúne diferentes edições ao longo de 2026.",
+    "description": [
+      "O Baile Finlandês acontece em edições recorrentes no Clube Finlândia, em Penedo.",
+      "A data desta edição está informada acima. Consulte a fonte oficial e a organização para conferir horário, atrações e possíveis alterações antes da visita."
+    ],
+    "category": "cultura",
+    "published": true,
+    "startDate": "2026-10-03",
+    "locationName": "Clube Finlândia",
+    "locality": "Penedo",
+    "sourceName": "Prefeitura de Itatiaia — calendário regional",
+    "officialUrl": "https://itatiaia.rj.gov.br/wp-content/uploads/2026/01/PDF-Impressao-1-1.pdf",
+    "updatedAt": "2026-10-16"
+  },
+  {
+    "id": "out07-2026",
+    "slug": "feira-da-roca-visconde-de-maua-10-04-2026",
+    "title": "Feira da Roça",
+    "image": "/assets/imagens/eventos/feira-da-roca-maua-2026-10-04.webp",
+    "imageAlt": "Feira da Roça em Visconde de Mauá, em 4 de outubro de 2026.",
+    "summary": "Feira da Roça no Clube de Visconde de Mauá, em Resende. O calendário regional reúne diferentes edições ao longo de 2026.",
+    "description": [
+      "A Feira da Roça acontece em edições recorrentes no Clube de Visconde de Mauá, em Resende.",
+      "A data desta edição está informada acima. Consulte a fonte oficial e a organização para conferir horário, atrações e possíveis alterações antes da visita."
+    ],
+    "category": "gastronomia",
+    "published": true,
+    "startDate": "2026-10-04",
+    "locationName": "Clube de Visconde de Mauá",
+    "locality": "Visconde de Mauá",
+    "municipality": "Resende",
+    "state": "RJ",
+    "sourceName": "Prefeitura de Itatiaia — calendário regional",
+    "officialUrl": "https://itatiaia.rj.gov.br/wp-content/uploads/2026/01/PDF-Impressao-1-1.pdf",
+    "updatedAt": "2026-10-16"
+  },
+  {
+    "id": "out09-2026",
+    "slug": "feira-do-produtor-kirpputori-penedo-10-10-2026",
+    "title": "Feira do Produtor Kirpputori",
+    "image": "/assets/imagens/eventos/feira-produtor-kirpputori-2026-10-10.webp",
+    "imageAlt": "Feira do Produtor e Kirpputori no Clube Finlândia, em Penedo, em 10 de outubro de 2026.",
+    "summary": "Feira do Produtor Kirpputori — Clube Finlândia · Penedo.",
+    "description": [
+      "Programação divulgada no calendário regional de 2026. Consulte a fonte oficial para atualizações antes de planejar sua visita."
+    ],
+    "category": "cultura",
+    "published": true,
+    "startDate": "2026-10-10",
+    "locationName": "Clube Finlândia",
+    "locality": "Penedo",
+    "sourceName": "Prefeitura de Itatiaia — calendário regional",
+    "officialUrl": "https://itatiaia.rj.gov.br/wp-content/uploads/2026/01/PDF-Impressao-1-1.pdf",
+    "instagramUrl": "https://www.instagram.com/feira.produtor.kirpputori/",
+    "updatedAt": "2026-10-16"
+  },
+  {
+    "id": "nov01-2026",
+    "slug": "feira-da-roca-visconde-de-maua-11-01-2026",
+    "title": "Feira da Roça",
+    "summary": "Feira da Roça no Clube de Visconde de Mauá, em Resende. O calendário regional reúne diferentes edições ao longo de 2026.",
+    "description": [
+      "A Feira da Roça acontece em edições recorrentes no Clube de Visconde de Mauá, em Resende.",
+      "A data desta edição está informada acima. Consulte a fonte oficial e a organização para conferir horário, atrações e possíveis alterações antes da visita."
+    ],
+    "category": "gastronomia",
+    "published": true,
+    "startDate": "2026-11-01",
+    "locationName": "Clube de Visconde de Mauá",
+    "locality": "Visconde de Mauá",
+    "municipality": "Resende",
+    "state": "RJ",
+    "sourceName": "Prefeitura de Itatiaia — calendário regional",
+    "officialUrl": "https://itatiaia.rj.gov.br/wp-content/uploads/2026/01/PDF-Impressao-1-1.pdf",
+    "updatedAt": "2026-10-15",
+    "image": "/assets/imagens/eventos/feira-da-roca-maua-2026-11-01.webp",
+    "imageAlt": "Feira da Roça de Visconde de Mauá, 1º de novembro de 2026, no Clube de Visconde de Mauá."
+  },
+  {
+    "id": "nov04-2026",
+    "slug": "baile-finlandes-penedo-11-07-2026",
+    "title": "Baile Finlandês",
+    "summary": "Baile Finlandês no Clube Finlândia, em Penedo. O calendário regional reúne diferentes edições ao longo de 2026.",
+    "description": [
+      "O Baile Finlandês acontece em edições recorrentes no Clube Finlândia, em Penedo.",
+      "A data desta edição está informada acima. Consulte a fonte oficial e a organização para conferir horário, atrações e possíveis alterações antes da visita."
+    ],
+    "category": "cultura",
+    "published": true,
+    "startDate": "2026-11-07",
+    "locationName": "Clube Finlândia",
+    "locality": "Penedo",
+    "sourceName": "Prefeitura de Itatiaia — calendário regional",
+    "officialUrl": "https://itatiaia.rj.gov.br/wp-content/uploads/2026/01/PDF-Impressao-1-1.pdf",
+    "updatedAt": "2026-10-15",
+    "image": "/assets/imagens/eventos/baile-finlandes-2026-11-07.webp",
+    "imageAlt": "Baile Finlandês no Clube Finlândia, sábado, 7 de novembro de 2026, em Penedo, com foto do grupo em trajes tradicionais."
+  },
+  {
+    "id": "nov08-2026",
+    "slug": "feira-do-produtor-kirpputori-penedo-11-14-2026",
+    "title": "Feira do Produtor Kirpputori",
+    "summary": "Feira do Produtor e Kirpputori no Clube Finlândia — produtos agroecológicos da roça, artesanato, achadinhos no mercado de pulgas, música ao vivo e pet friendly com entrada franca.",
+    "description": [
+      "Todo segundo sábado do mês, o Clube Finlândia recebe a tradicional Feira do Produtor e Kirpputori em Penedo.",
+      "Produtos regionais, mercado de pulgas e a autêntica cultura finlandesa reunidos em um evento especial para toda a família.",
+      "O que você encontra na feira:",
+      "• Produtos agroecológicos direto da roça",
+      "• Artesanato local",
+      "• Achadinhos no mercado de pulgas",
+      "• Música ao vivo",
+      "Informações práticas:",
+      "• Entrada franca",
+      "• Estacionamento no local",
+      "• Pet friendly (ambiente que acolhe animais de estimação)",
+      "Programação das 10h às 16h divulgada no calendário regional de 2026. Consulte a organização e a fonte oficial para atualizações antes de planejar sua visita."
+    ],
+    "category": "cultura",
+    "published": true,
+    "startDate": "2026-11-14",
+    "startTime": "10:00",
+    "endTime": "16:00",
+    "entryText": "Franca",
+    "locationName": "Clube Finlândia",
+    "locality": "Penedo",
+    "sourceName": "Prefeitura de Itatiaia — calendário regional",
+    "officialUrl": "https://itatiaia.rj.gov.br/wp-content/uploads/2026/01/PDF-Impressao-1-1.pdf",
+    "instagramUrl": "https://www.instagram.com/feira.produtor.kirpputori/",
+    "updatedAt": "2026-10-15",
+    "image": "/assets/imagens/eventos/feira-produtor-kirpputori-2026-11-14.webp",
+    "imageAlt": "Feira do Produtor e Kirpputori, sábado, 14 de novembro de 2026, no Clube Finlândia em Penedo."
+  },
+  {
+    "id": "nov09-2026",
+    "slug": "abertura-da-temporada-de-natal-itatiaia-11-14-2026",
+    "title": "Natal Luz em Penedo 2026",
+    "summary": "Natal Luz em Penedo 2026 — de 20 de novembro de 2026 a 31 de janeiro de 2027. Túnel de luz, árvores iluminadas, neve artificial e cenários para fotos na Colônia Finlandesa.",
+    "description": [
+      "Penedo entra no clima natalino com uma decoração especial na Colônia Finlandesa. O tradicional túnel de luz estará ainda maior, acompanhado de árvores iluminadas, neve artificial e cenários encantadores para fotos.",
+      "O portal de entrada da cidade também receberá uma nova decoração luminosa para acolher os visitantes com toda a magia natalina.",
+      "A celebração continua após o Natal e inclui uma programação especial de Réveillon. São 73 dias para aproveitar Penedo iluminada, celebrar a virada do ano e explorar a região.",
+      "De 20 de novembro de 2026 a 31 de janeiro de 2027. Consulte os canais oficiais para eventuais atualizações da programação."
+    ],
+    "category": "atracoes-sazonais",
+    "published": true,
+    "startDate": "2026-11-20",
+    "endDate": "2027-01-31",
+    "locationName": "Penedo (Colônia Finlandesa)",
+    "locationAddress": "Colônia Finlandesa, Penedo",
+    "locality": "Penedo",
+    "municipality": "Itatiaia",
+    "state": "RJ",
+    "entryText": "Gratuita",
+    "sourceName": "Prefeitura de Itatiaia — calendário regional",
+    "officialUrl": "https://itatiaia.rj.gov.br/wp-content/uploads/2026/01/PDF-Impressao-1-1.pdf",
+    "images": [
+      {
+        "src": "/assets/imagens/eventos/natal-luz-penedo-tunel-de-luz.webp",
+        "alt": "Túnel de luz decorado do Natal Luz em Penedo com iluminação dourada e árvores natalinas."
+      },
+      {
+        "src": "/assets/imagens/eventos/natal-luz-penedo-casa-papai-noel.webp",
+        "alt": "Casa do Papai Noel iluminada na Pequena Finlândia em Penedo."
+      },
+      {
+        "src": "/assets/imagens/eventos/natal-luz-penedo-papai-noel-pequena-finlandia.webp",
+        "alt": "Papai Noel na Pequena Finlândia recebendo os visitantes no Natal Luz."
+      },
+      {
+        "src": "/assets/imagens/eventos/natal-luz-penedo-ponte-coracao.webp",
+        "alt": "Ponte vermelha sob um coração iluminado na Colônia Finlandesa de Penedo."
+      },
+      {
+        "src": "/assets/imagens/eventos/natal-luz-penedo-estrela.webp",
+        "alt": "Decoração de Natal iluminada com estrela e árvores de luz em Penedo."
+      }
+    ],
+    "updatedAt": "2026-10-15"
+  },
+  {
+    "id": "dez05-2026",
+    "slug": "baile-finlandes-penedo-12-05-2026",
+    "title": "Baile Finlandês",
+    "summary": "Baile Finlandês no Clube Finlândia, em Penedo. O calendário regional reúne diferentes edições ao longo de 2026.",
+    "description": [
+      "O Baile Finlandês acontece em edições recorrentes no Clube Finlândia, em Penedo.",
+      "A data desta edição está informada acima. Consulte a fonte oficial e a organização para conferir horário, atrações e possíveis alterações antes da visita."
+    ],
+    "category": "cultura",
+    "published": true,
+    "startDate": "2026-12-05",
+    "locationName": "Clube Finlândia",
+    "locality": "Penedo",
+    "sourceName": "Prefeitura de Itatiaia — calendário regional",
+    "officialUrl": "https://itatiaia.rj.gov.br/wp-content/uploads/2026/01/PDF-Impressao-1-1.pdf",
+    "updatedAt": "2026-10-15",
+    "image": "/assets/imagens/eventos/baile-finlandes-2026-12-05.webp",
+    "imageAlt": "Baile Finlandês em Penedo, sábado, 5 de dezembro de 2026."
+  },
+  {
+    "id": "dez11-2026",
+    "slug": "feira-da-roca-visconde-de-maua-12-06-2026",
+    "title": "Feira da Roça",
+    "summary": "Feira da Roça no Clube de Visconde de Mauá, em Resende. O calendário regional reúne diferentes edições ao longo de 2026.",
+    "description": [
+      "A Feira da Roça acontece em edições recorrentes no Clube de Visconde de Mauá, em Resende.",
+      "A data desta edição está informada acima. Consulte a fonte oficial e a organização para conferir horário, atrações e possíveis alterações antes da visita."
+    ],
+    "category": "gastronomia",
+    "published": true,
+    "startDate": "2026-12-06",
+    "locationName": "Clube de Visconde de Mauá",
+    "locality": "Visconde de Mauá",
+    "municipality": "Resende",
+    "state": "RJ",
+    "sourceName": "Prefeitura de Itatiaia — calendário regional",
+    "officialUrl": "https://itatiaia.rj.gov.br/wp-content/uploads/2026/01/PDF-Impressao-1-1.pdf",
+    "updatedAt": "2026-10-15",
+    "image": "/assets/imagens/eventos/feira-da-roca-maua-2026-12-06.webp",
+    "imageAlt": "Feira da Roça em Visconde de Mauá, 6 de dezembro de 2026."
+  },
+  {
+    "id": "dez17-2026",
+    "slug": "feira-do-produtor-kirpputori-penedo-12-12-2026",
+    "title": "Feira do Produtor Kirpputori",
+    "summary": "Feira do Produtor e Kirpputori no Clube Finlândia — produtos agroecológicos da roça, artesanato, achadinhos no mercado de pulgas, música ao vivo e pet friendly com entrada franca.",
+    "description": [
+      "Todo segundo sábado do mês, o Clube Finlândia recebe a tradicional Feira do Produtor e Kirpputori em Penedo.",
+      "Produtos regionais, mercado de pulgas e a autêntica cultura finlandesa reunidos em um evento especial para toda a família.",
+      "O que você encontra na feira:",
+      "• Produtos agroecológicos direto da roça",
+      "• Artesanato local",
+      "• Achadinhos no mercado de pulgas",
+      "• Música ao vivo",
+      "Informações práticas:",
+      "• Entrada franca",
+      "• Estacionamento no local",
+      "• Pet friendly (ambiente que acolhe animais de estimação)",
+      "Programação das 10h às 16h divulgada no calendário regional de 2026. Consulte a organização e a fonte oficial para atualizações antes de planejar sua visita."
+    ],
+    "category": "cultura",
+    "published": true,
+    "startDate": "2026-12-12",
+    "startTime": "10:00",
+    "endTime": "16:00",
+    "entryText": "Franca",
+    "locationName": "Clube Finlândia",
+    "locality": "Penedo",
+    "sourceName": "Prefeitura de Itatiaia — calendário regional",
+    "officialUrl": "https://itatiaia.rj.gov.br/wp-content/uploads/2026/01/PDF-Impressao-1-1.pdf",
+    "instagramUrl": "https://www.instagram.com/feira.produtor.kirpputori/",
+    "updatedAt": "2026-10-15",
+    "image": "/assets/imagens/eventos/feira-produtor-kirpputori-2026-12-12.webp",
+    "imageAlt": "Feira do Produtor e Kirpputori no Clube Finlândia, em Penedo, sábado, 12 de dezembro de 2026."
+  },
+  {
+    "id": "dez19-2026",
+    "slug": "evento-de-paraquedismo-prime-fql-camp-resende-12-12-2026",
+    "title": "Evento de Paraquedismo Prime FQL Camp",
+    "image": "/assets/imagens/eventos/prime-fql-camp-2026-12-12-sem-marca.webp",
+    "imageAlt": "Paraquedistas em formação sobre as nuvens, com o título Prime FQL Camp e as datas de 12 e 13 de dezembro de 2026 em Resende.",
+    "summary": "Treinos de formação em queda livre e trabalho em equipe no céu, em Resende, nos dias 12 e 13 de dezembro.",
+    "description": [
+      "O Prime FQL Camp reúne paraquedistas para treinos de Formação em Queda Livre (FQL). O encontro é dedicado à evolução técnica, à criação de formações no ar e ao trabalho em equipe.",
+      "A edição de 12 e 13 de dezembro de 2026 está prevista no Centro Resende de Paraquedismo e Lazer, em Resende. Consulte o calendário do evento e os organizadores para confirmar programação e participação."
+    ],
+    "category": "esportes",
+    "published": true,
+    "startDate": "2026-12-12",
+    "endDate": "2026-12-13",
+    "locationName": "Centro Resende de Paraquedismo e Lazer",
+    "municipality": "Resende",
+    "state": "RJ",
+    "sourceName": "Prefeitura de Itatiaia — calendário regional",
+    "officialUrl": "https://itatiaia.rj.gov.br/wp-content/uploads/2026/01/PDF-Impressao-1-1.pdf",
+    "instagramUrl": "https://www.instagram.com/primeskydivingclub/",
+    "updatedAt": "2026-10-16"
+  },
+  {
+    "id": "dez22-2026",
+    "slug": "procissao-de-santa-luzia-penedo-12-26-2026",
+    "title": "Procissão de Santa Luzia",
+    "image": "/assets/imagens/eventos/procissao-santa-luzia-2026-horizontal.webp",
+    "imageAlt": "Arte horizontal da Procissão de Santa Luzia em Penedo, com ilustração da santa, cena da procissão e data de 26 de dezembro, sem horário informado.",
+    "summary": "Uma caminhada de fé pelas ruas de Penedo em homenagem a Santa Luzia, protetora da visão.",
+    "description": [
+      "A Procissão de Santa Luzia é uma tradição de Penedo que reúne moradores e visitantes em homenagem à santa associada à proteção dos olhos e da visão. O cortejo percorre as ruas da vila em um momento de fé e celebração.",
+      "O calendário regional prevê a edição de 2026 para 26 de dezembro. O horário e a programação detalhada ainda precisam de confirmação pelos organizadores."
+    ],
+    "category": "comemoracoes",
+    "published": true,
+    "startDate": "2026-12-26",
+    "locality": "Penedo",
+    "municipality": "Itatiaia",
+    "state": "RJ",
+    "sourceName": "Prefeitura de Itatiaia — calendário regional",
+    "officialUrl": "https://itatiaia.rj.gov.br/wp-content/uploads/2026/01/PDF-Impressao-1-1.pdf",
+    "updatedAt": "2026-10-16"
+  },
+  {
+    "id": "dez23-2026",
+    "slug": "reveillon-em-penedo-penedo-12-31-2026",
+    "title": "Réveillon em Penedo",
+    "image": "/assets/imagens/eventos/reveillon-penedo-2026-2027.webp",
+    "imageAlt": "Arte de Réveillon 2026/2027 em Penedo, com o letreiro Eu amo Penedo ao pôr do sol e a data de 31 de dezembro.",
+    "summary": "Celebre a chegada de 2027 em Penedo. Programação da virada ainda a confirmar.",
+    "description": [
+      "O calendário regional inclui o Réveillon em Penedo em 31 de dezembro de 2026, marcando a chegada de 2027 na vila.",
+      "Horários, atrações e locais da programação ainda não foram divulgados. Consulte os canais oficiais antes de planejar sua visita."
+    ],
+    "category": "comemoracoes",
+    "published": true,
+    "startDate": "2026-12-31",
+    "locality": "Penedo",
+    "municipality": "Itatiaia",
+    "state": "RJ",
+    "sourceName": "Prefeitura de Itatiaia — calendário regional",
+    "officialUrl": "https://itatiaia.rj.gov.br/wp-content/uploads/2026/01/PDF-Impressao-1-1.pdf",
+    "updatedAt": "2026-10-16"
+  },
+  {
+    "id": "set04-2027-bbq",
+    "slug": "penedo-bbq-festival-2027",
+    "title": "Penedo BBQ Festival 2027",
+    "summary": "Churrasco premium, música ao vivo e experiências para toda a família em Penedo. Edição de 4 de setembro de 2027 com Munhoz & Mariano anunciados.",
+    "description": [
+      "O Penedo BBQ Festival volta ao Espaço de Eventos do Clube Finlândia em 4 de setembro de 2027. Apresentado pela organização como o maior festival de churrasco do estado do Rio de Janeiro, o encontro reúne cortes nobres, grandes assadores e uma programação de música e lazer em Penedo.",
+      "A dupla sertaneja Munhoz & Mariano é a atração confirmada para 2027. A proposta do festival inclui cerca de oito a nove horas de open food premium, com carne à vontade em diferentes estações. As bebidas são vendidas à parte.",
+      "Além da gastronomia, o evento reúne shows de sertanejo, rock e country, DJs, área kids, touro mecânico, estandes de equipamentos e exposição de veículos. Confira a programação definitiva nos canais oficiais antes da visita.",
+      "Crianças de até 9 anos têm entrada gratuita quando acompanhadas pelo pai, mãe ou responsável legal. De 10 a 15 anos, há meia-entrada. Menores devem estar acompanhados por responsáveis e não é permitida a entrada de animais de estimação.",
+      "As fotografias da galeria mostram a edição de 2026; a arte de Munhoz & Mariano anuncia a atração de 2027. Consulte o Instagram oficial do festival para novidades e informações sobre ingressos."
+    ],
+    "category": "gastronomia",
+    "published": true,
+    "startDate": "2027-09-04",
+    "locationName": "Espaço de Eventos do Clube Finlândia",
+    "locality": "Penedo",
+    "municipality": "Itatiaia",
+    "state": "RJ",
+    "entryText": "Ingressos: consulte o Instagram oficial; bebidas vendidas à parte",
+    "sourceName": "Penedo BBQ Festival — Instagram oficial",
+    "officialUrl": "https://www.instagram.com/penedobbqfestival/",
+    "instagramUrl": "https://www.instagram.com/penedobbqfestival/",
+    "updatedAt": "2026-10-19",
+    "images": [
+      { "src": "/assets/imagens/eventos/penedo-bbq/penedo-bbq-2027-munhoz-mariano.webp", "alt": "Arte do Penedo BBQ Festival de 4 de setembro de 2027 anunciando Munhoz & Mariano como atração confirmada." },
+      { "src": "/assets/imagens/eventos/penedo-bbq/penedo-bbq-2026-publico.webp", "alt": "Público reunido no Penedo BBQ Festival durante a edição de 2026.", "caption": "Foto da edição de 2026" },
+      { "src": "/assets/imagens/eventos/penedo-bbq/penedo-bbq-2026-fogo-de-chao.webp", "alt": "Cortes de carne preparados no fogo de chão na edição de 2026 do Penedo BBQ Festival.", "caption": "Foto da edição de 2026" },
+      { "src": "/assets/imagens/eventos/penedo-bbq/penedo-bbq-2026-grelha.webp", "alt": "Assador prepara cortes de carne na grelha durante o Penedo BBQ Festival de 2026.", "caption": "Foto da edição de 2026" },
+      { "src": "/assets/imagens/eventos/penedo-bbq/penedo-bbq-2026-show.webp", "alt": "Show no palco do Penedo BBQ Festival durante a edição de 2026.", "caption": "Foto da edição de 2026" },
+      { "src": "/assets/imagens/eventos/penedo-bbq/penedo-bbq-2026-cortes.webp", "alt": "Carnes assando sobre as chamas no Penedo BBQ Festival de 2026.", "caption": "Foto da edição de 2026" },
+      { "src": "/assets/imagens/eventos/penedo-bbq/penedo-bbq-2026-gastronomia.webp", "alt": "Prato servido junto à churrasqueira no Penedo BBQ Festival de 2026.", "caption": "Foto da edição de 2026" },
+      { "src": "/assets/imagens/eventos/penedo-bbq/penedo-bbq-2026-dj.webp", "alt": "DJ se apresenta no Penedo BBQ Festival durante a edição de 2026.", "caption": "Foto da edição de 2026" }
+    ]
+  },
+  {
+    "id": "encontro-motos-penedo-2027",
+    "slug": "encontro-internacional-de-motociclistas-penedo-2027",
+    "title": "Encontro Internacional de Motociclistas de Penedo",
+    "summary": "O encontro sobre duas rodas volta a Penedo em 2027, com data ainda a confirmar. Edições anteriores reuniram motos, rock, gastronomia e visitantes de várias regiões.",
+    "description": [
+      "O tradicional Encontro Internacional de Motociclistas de Penedo reúne apaixonados por duas rodas no Campo do Clube Finlândia, no centro da vila. A realização envolve a Simão Produções e o motoclube Penedo Riders, com apoio da Prefeitura de Itatiaia.",
+      "A edição de 2026 aconteceu de 6 a 9 de agosto, com entrada gratuita, shows de rock, exposição de motocicletas, feira de acessórios, praça de alimentação e atrações para famílias. As fotos desta galeria mostram edições anteriores; elas não representam a programação de 2027.",
+      "A organização informou que as datas inicialmente discutidas para 2027, em julho e agosto, não foram confirmadas. A definição segue em diálogo com o município. Acompanhe o Instagram oficial para saber a data, os shows, as condições de entrada e as orientações de hospedagem da próxima edição."
+    ],
+    "scheduleNotice": "O comunicado da organização cita propostas para julho e agosto de 2027, mas nenhuma data foi definida. A programação e as condições de visita serão atualizadas após o anúncio oficial.",
+    "category": "cultura",
+    "published": true,
+    "expectedYear": 2027,
+    "locationName": "Campo do Clube Finlândia",
+    "locality": "Penedo",
+    "municipality": "Itatiaia",
+    "state": "RJ",
+    "entryText": "Condições para 2027 a confirmar; a edição de 2026 teve entrada gratuita",
+    "sourceName": "Encontro Internacional de Motociclistas de Penedo — Instagram oficial",
+    "officialUrl": "https://www.instagram.com/encontrodemotociclistaspenedo/",
+    "instagramUrl": "https://www.instagram.com/encontrodemotociclistaspenedo/",
+    "updatedAt": "2026-10-19",
+    "images": [
+      { "src": "/assets/imagens/eventos/encontro-motociclistas/motos-encontro.webp", "alt": "Motocicletas reunidas no Encontro Internacional de Motociclistas de Penedo.", "caption": "Foto de edição anterior" },
+      { "src": "/assets/imagens/eventos/encontro-motociclistas/motos-guitarrista.webp", "alt": "Guitarrista se apresenta no palco de uma edição anterior do encontro de motociclistas.", "caption": "Foto de edição anterior" },
+      { "src": "/assets/imagens/eventos/encontro-motociclistas/motos-cantor.webp", "alt": "Cantor em apresentação de rock no encontro de motociclistas em Penedo.", "caption": "Foto de edição anterior" },
+      { "src": "/assets/imagens/eventos/encontro-motociclistas/motos-banda.webp", "alt": "Banda toca no palco de uma edição anterior do encontro.", "caption": "Foto de edição anterior" },
+      { "src": "/assets/imagens/eventos/encontro-motociclistas/motos-publico-noite.webp", "alt": "Público acompanha o encontro de motociclistas durante a noite.", "caption": "Foto de edição anterior" },
+      { "src": "/assets/imagens/eventos/encontro-motociclistas/motos-feira-noite.webp", "alt": "Área de convivência e alimentação do encontro de motociclistas à noite.", "caption": "Foto de edição anterior" },
+      { "src": "/assets/imagens/eventos/encontro-motociclistas/motos-evento-noite.webp", "alt": "Motocicletas e visitantes no encontro realizado à noite em Penedo.", "caption": "Foto de edição anterior" }
+    ]
+  }
+]

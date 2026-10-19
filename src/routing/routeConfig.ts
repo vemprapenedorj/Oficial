@@ -1,6 +1,6 @@
 import { Page } from '../types';
 
-export type RouteKind = 'fixed' | 'business' | 'article';
+export type RouteKind = 'fixed' | 'business' | 'article' | 'event';
 
 export interface FixedRouteConfig {
   page: Page;
@@ -21,6 +21,7 @@ export const FIXED_ROUTES: FixedRouteConfig[] = [
   { page: 'onde-ficar', path: '/onde-ficar', label: 'Onde Ficar', indexable: true },
   { page: 'gastronomia', path: '/gastronomia', label: 'Gastronomia', indexable: true },
   { page: 'compras', path: '/compras', label: 'Compras', indexable: true },
+  { page: 'eventos', path: '/eventos', label: 'Eventos', indexable: true },
   { page: 'blog', path: '/blog', label: 'Blog', indexable: true },
   { page: 'contato', path: '/contato', label: 'Contato', indexable: true },
   { page: 'divulgue-seu-negocio', path: '/divulgue-seu-negocio', label: 'Divulgue seu negócio', indexable: false },
@@ -36,6 +37,7 @@ export const LEGACY_BLOG_PREFIX = '/blog';
 export const LEGACY_DETAIL_PREFIX = '/detalhe';
 
 export const CANONICAL_ROUTES: CanonicalRouteDefinition[] = [
+  { pattern: '/eventos/:slug', kind: 'event', indexable: true },
   ...FIXED_ROUTES.map(({ path, indexable }) => ({ pattern: path, kind: 'fixed' as const, indexable })),
   ...BUSINESS_CATEGORY_PATHS.map((category) => ({
     pattern: `/${category}/:slug`,

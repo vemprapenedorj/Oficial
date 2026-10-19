@@ -1,0 +1,11 @@
+# Arte do Prime FQL Camp — dezembro de 2026
+
+Foto fornecida pelo usuário: `paraquedismo-selo-verde.jpg`. A arte mantém a fotografia como fundo e coloca o nome do evento, a modalidade e a data na área de céu. Em uma segunda edição, a pedido do usuário, a logo e o nome do canto inferior esquerdo foram removidos. A data de 12 e 13 de dezembro de 2026 foi conferida no [calendário de Visite Resende](https://visiteresende.com/calendario-de-eventos/).
+
+Arquivos finais: `public/assets/imagens/eventos/prime-fql-camp-2026-12-12-sem-marca.png` (1536 × 1024) e a versão WebP (1200 × 800) utilizada no site. Vinculada ao evento `dez19-2026`.
+
+Prompt da segunda edição: Faça uma edição localizada e precisa da arte fornecida. Remova COMPLETAMENTE apenas os dois elementos no canto inferior esquerdo: (1) a logo/assinatura circular roxa e (2) o texto preto '@CarecaSkyDive'. Reconstrua naturalmente as nuvens, céu e terreno sob essas marcas com textura coerente, sem vestígios, borrões ou manchas. Preserve todo o restante da imagem o mais fiel possível: todos os paraquedistas, suas posições e trajes; nuvens e céu; cor, enquadramento, proporção horizontal 3:2; e especialmente a tipografia superior e o texto exato '12 E 13 DE DEZEMBRO DE 2026 • RESENDE', 'PRIME FQL CAMP', 'FORMAÇÃO EM QUEDA LIVRE'. Não acrescente logos, nomes, marcas d'água ou texto novo.
+
+## Prompt utilizado
+
+Edite a fotografia fornecida para criar uma arte editorial horizontal de evento, aproximadamente proporção 3:2, mantendo a própria fotografia como fundo principal e preservando os paraquedistas, as nuvens e os créditos/fotógrafo visíveis no canto inferior esquerdo. NÃO invente pessoas, logos, patrocinadores ou informações extras. Faça um tratamento de cor sutil, limpo e esportivo. Na área ampla de céu livre no topo esquerdo, aplique tipografia profissional, muito legível e elegante, sem cobrir os atletas: texto exato, em português: 'PRIME FQL CAMP'. Abaixo em corpo menor: 'FORMAÇÃO EM QUEDA LIVRE'. Na parte superior ou logo abaixo, um pequeno selo discreto com texto exato: '12 E 13 DE DEZEMBRO DE 2026  •  RESENDE'. Não inclua outros textos. Composição pensada para recorte em card de evento 3:2, com margens seguras. Nenhum texto incorreto ou cortado.

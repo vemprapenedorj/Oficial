@@ -31,6 +31,8 @@ const GastronomyPage = React.lazy(() => import('./pages/GastronomyPage').then(mo
 const ShoppingPage = React.lazy(() => import('./pages/ShoppingPage').then(module => ({ default: module.ShoppingPage })));
 const ContactPage = React.lazy(() => import('./pages/ContactPage').then(module => ({ default: module.ContactPage })));
 const AdvertiseBusinessPage = React.lazy(() => import('./pages/AdvertiseBusinessPage').then(module => ({ default: module.AdvertiseBusinessPage })));
+const EventsPage = React.lazy(() => import('./pages/EventsPage').then(module => ({ default: module.EventsPage })));
+const EventDetailPage = React.lazy(() => import('./pages/EventDetailPage').then(module => ({ default: module.EventDetailPage })));
 const BlogPage = React.lazy(() => import('./pages/BlogPage').then(module => ({ default: module.BlogPage })));
 const PremiumDetailPage = React.lazy(() => import('./pages/PremiumDetailPage').then(module => ({ default: module.PremiumDetailPage })));
 const LegalPage = React.lazy(() => import('./pages/LegalPage').then(module => ({ default: module.LegalPage })));
@@ -58,6 +60,7 @@ export default function App() {
   const currentRoute = React.useMemo(() => parsePath(location.pathname), [location.pathname]);
   const currentPage = currentRoute.page;
   const selectedPremiumSlug = currentRoute.premiumSlug;
+  const activeEventSlug = currentRoute.eventSlug;
   const activeBlogArticle = currentRoute.blogArticle;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -106,7 +109,7 @@ export default function App() {
       clearTimeout(timeoutId);
       document.documentElement.style.scrollBehavior = 'smooth';
     };
-  }, [currentPage, activeBlogArticle]);
+  }, [currentPage, activeBlogArticle, activeEventSlug]);
 
   // 1. GTM SPA page_view tracking
   useEffect(() => {
@@ -131,12 +134,12 @@ export default function App() {
       }
       if (fallbackTimer) window.clearTimeout(fallbackTimer);
     };
-  }, [currentPage, selectedPremiumSlug, activeBlogArticle]);
+  }, [currentPage, selectedPremiumSlug, activeBlogArticle, activeEventSlug]);
 
   // 2. GTM page_scroll tracking
   useEffect(() => {
     const triggered = { '25': false, '50': false, '75': false, '100': false };
-    const activeSlug = selectedPremiumSlug;
+    const activeSlug = selectedPremiumSlug || activeEventSlug;
 
     const handleScrollDepth = () => {
       const scrollTop = window.scrollY;
@@ -163,11 +166,11 @@ export default function App() {
 
     window.addEventListener('scroll', handleScrollDepth);
     return () => window.removeEventListener('scroll', handleScrollDepth);
-  }, [currentPage, selectedPremiumSlug, activeBlogArticle]);
+  }, [currentPage, selectedPremiumSlug, activeBlogArticle, activeEventSlug]);
 
   // 3. GTM page_engagement tracking
   useEffect(() => {
-    const activeSlug = selectedPremiumSlug;
+    const activeSlug = selectedPremiumSlug || activeEventSlug;
     
     const pushEvent = (time: number) => {
       if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
@@ -186,7 +189,7 @@ export default function App() {
     return () => {
       timers.forEach(clearTimeout);
     };
-  }, [currentPage, selectedPremiumSlug, activeBlogArticle]);
+  }, [currentPage, selectedPremiumSlug, activeBlogArticle, activeEventSlug]);
 
   const navigate = (page: Page, premiumSlug: string | null = null) => {
     const path = buildPath(
@@ -285,14 +288,15 @@ export default function App() {
             </div>
             
             {/* Desktop Menu */}
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden xl:flex space-x-8">
               {[
                 { id: 'home', label: 'Início' },
                 { id: 'o-que-fazer', label: 'O Que Fazer' },
                 { id: 'onde-ficar', label: 'Onde Ficar' },
                 { id: 'gastronomia', label: 'Gastronomia' },
                 { id: 'compras', label: 'Compras' },
-                { id: 'blog', label: 'Blog' },
+                { id: 'eventos', label: 'Eventos' },
+              { id: 'blog', label: 'Blog' },
                 { id: 'contato', label: 'Contato' }
               ].map((item) => (
                 <Link
@@ -312,7 +316,7 @@ export default function App() {
             {/* Mobile Button */}
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)} 
-              className="md:hidden w-11 h-11 -mr-2 flex items-center justify-center rounded-lg transition-colors text-white hover:bg-white/10"
+              className="xl:hidden w-11 h-11 -mr-2 flex items-center justify-center rounded-lg transition-colors text-white hover:bg-white/10"
               aria-label={isMenuOpen ? 'Fechar menu de navegação' : 'Abrir menu de navegação'}
               aria-expanded={isMenuOpen}
               aria-controls="mobile-navigation"
@@ -325,8 +329,8 @@ export default function App() {
         {/* Mobile Menu */}
         <div 
           id="mobile-navigation"
-          className={`md:hidden bg-penedo-forest border-b border-white/10 overflow-hidden transition-all duration-300 ${
-            isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
+          className={`xl:hidden bg-penedo-forest border-b border-white/10 overflow-hidden transition-all duration-300 ${
+            isMenuOpen ? 'max-h-[calc(100dvh-80px)] overflow-y-auto opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
           }`}
         >
           <div className="px-4 py-4 space-y-2">
@@ -336,6 +340,7 @@ export default function App() {
               { id: 'onde-ficar', label: 'Onde Ficar' },
               { id: 'gastronomia', label: 'Gastronomia' },
               { id: 'compras', label: 'Compras' },
+              { id: 'eventos', label: 'Eventos' },
               { id: 'blog', label: 'Blog' },
               { id: 'contato', label: 'Contato' }
             ].map((item) => (
@@ -418,6 +423,8 @@ export default function App() {
                 <AdvertiseBusinessPage />
               </PageTransition>
           )} />
+          <Route path="/eventos" element={<EventsPage />} />
+          <Route path="/eventos/:slug" element={<EventDetailPage />} />
           <Route path="/blog" element={(
               <PageTransition key="blog">
                 <BlogPage onOpenDetail={handleOpenDetail} onNavigate={navigate} onSelectArticle={selectBlogArticle} />
@@ -490,17 +497,22 @@ export default function App() {
             </div>
             <div>
               <h4 className="font-bold text-penedo-gold mb-6 text-lg">Links Rápidos</h4>
-              <ul className="space-y-2 text-white/50">
-                <li><Link to="/" onClick={handleHomeLinkClick} className="hover:text-white transition-colors cursor-pointer">Início</Link></li>
-                <li><Link to="/o-que-fazer/" className="hover:text-white transition-colors cursor-pointer">O Que Fazer</Link></li>
-                <li><Link to="/onde-ficar/" className="hover:text-white transition-colors cursor-pointer">Onde Ficar</Link></li>
-                <li><Link to="/gastronomia/" className="hover:text-white transition-colors cursor-pointer">Gastronomia</Link></li>
-                <li><Link to="/compras/" className="hover:text-white transition-colors cursor-pointer">Compras</Link></li>
-                <li><Link to="/blog/" className="hover:text-white transition-colors cursor-pointer">Blog</Link></li>
-                <li><Link to="/contato/" className="hover:text-white transition-colors cursor-pointer">Contato</Link></li>
-                <li><Link to="/politica-de-privacidade/" className="hover:text-white transition-colors cursor-pointer">Privacidade</Link></li>
-                <li><Link to="/politica-de-cookies/" className="hover:text-white transition-colors cursor-pointer">Cookies</Link></li>
-              </ul>
+              <div className="grid grid-cols-2 gap-x-4 sm:gap-x-6 text-white/50">
+                <ul className="space-y-2">
+                  <li><Link to="/" onClick={handleHomeLinkClick} className="hover:text-white transition-colors cursor-pointer">Início</Link></li>
+                  <li><Link to="/o-que-fazer/" className="hover:text-white transition-colors cursor-pointer">O Que Fazer</Link></li>
+                  <li><Link to="/onde-ficar/" className="hover:text-white transition-colors cursor-pointer">Onde Ficar</Link></li>
+                  <li><Link to="/gastronomia/" className="hover:text-white transition-colors cursor-pointer">Gastronomia</Link></li>
+                  <li><Link to="/compras/" className="hover:text-white transition-colors cursor-pointer">Compras</Link></li>
+                </ul>
+                <ul className="space-y-2">
+                  <li><Link to="/eventos/" className="hover:text-white transition-colors cursor-pointer">Eventos</Link></li>
+                  <li><Link to="/blog/" className="hover:text-white transition-colors cursor-pointer">Blog</Link></li>
+                  <li><Link to="/contato/" className="hover:text-white transition-colors cursor-pointer">Contato</Link></li>
+                  <li><Link to="/politica-de-privacidade/" className="hover:text-white transition-colors cursor-pointer">Privacidade</Link></li>
+                  <li><Link to="/politica-de-cookies/" className="hover:text-white transition-colors cursor-pointer">Cookies</Link></li>
+                </ul>
+              </div>
             </div>
             <div>
               <h4 className="font-bold text-penedo-gold mb-6 text-lg">Siga-nos</h4>

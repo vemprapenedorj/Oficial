@@ -36,6 +36,7 @@ test('histórico voltar e avançar mantém URL e conteúdo sincronizados', { tim
     stage = 'abrir Chromium';
     browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
+    await page.setViewport({ width: 1440, height: 900 });
     page.setDefaultTimeout(10_000);
     page.setDefaultNavigationTimeout(10_000);
     await page.setRequestInterception(true);
