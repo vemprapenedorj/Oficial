@@ -53,3 +53,12 @@ test('detalhe histórico remove compra e desconhecido mostra 404', () => {
   const missing = render(element([]), '/eventos/inexistente/');
   assert.match(missing, /404/);
 });
+
+test('detalhe de edição sem data destaca aviso da organização', () => {
+  const event = makeEvent({ startDate: undefined, expectedYear: 2027, scheduleNotice: 'As datas propostas para 2027 ainda não foram confirmadas.' });
+  const html = render(React.createElement(Routes, null,
+    React.createElement(Route, { path: '/eventos/:slug', element: React.createElement(EventDetailPage, { events: [event] }) })), '/eventos/evento-teste-2026/');
+  assert.match(html, /Data da próxima edição ainda não definida/);
+  assert.match(html, /As datas propostas para 2027 ainda não foram confirmadas/);
+  assert.match(html, /2027 — data a confirmar/);
+});

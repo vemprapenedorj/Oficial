@@ -7,6 +7,7 @@ test('aceita catálogo vazio, preço desconhecido e programação mensal', () =>
   assert.deepEqual(validateEvents([]), []);
   assert.equal(validateEvents([makeEvent()])[0].price, undefined);
   assert.equal(validateEvents([makeEvent({ startDate: undefined, expectedMonth: '2026-12' })])[0].expectedMonth, '2026-12');
+  assert.equal(validateEvents([makeEvent({ startDate: undefined, expectedYear: 2027 })])[0].expectedYear, 2027);
 });
 
 test('rejeita dados inválidos, duplicados e municípios fora do recorte', () => {
@@ -14,7 +15,9 @@ test('rejeita dados inválidos, duplicados e municípios fora do recorte', () =>
     { startDate: '2026-02-30' }, { startDate: '2026-10-14', endDate: '2026-10-13' },
     { startDate: undefined, endDate: '2026-10-14' }, { startTime: '25:00' },
     { startDate: undefined, startTime: '18:00' }, { expectedMonth: '2026-12' },
-    { startDate: undefined, expectedMonth: '2026-13' }, { price: -1 },
+    { startDate: undefined, expectedMonth: '2026-13' }, { expectedYear: 2027 },
+    { startDate: undefined, expectedYear: 2027.5 }, { startDate: undefined, expectedYear: 2027, expectedMonth: '2027-08' },
+    { price: -1 },
     { ticketUrl: 'javascript:alert(1)' }, { image: '/assets/../secret.png' },
     { title: '' }, { state: 'Rio de Janeiro' }, { sourceName: 'Fonte sem URL' },
     { municipality: ' QUATIS ' }, { municipality: 'Porto  Real' },

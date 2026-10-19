@@ -18,7 +18,7 @@ export interface EventFilters { category?: EventCategory; year?: number }
 const endDate = (event: EventRecord) => event.endDate || event.startDate || '';
 const byTitle = (a: EventRecord, b: EventRecord) => a.title.localeCompare(b.title, 'pt-BR') || a.slug.localeCompare(b.slug);
 const yearsOf = (event: EventRecord): number[] => {
-  if (!event.startDate) return event.expectedMonth ? [Number(event.expectedMonth.slice(0, 4))] : [];
+  if (!event.startDate) return event.expectedMonth ? [Number(event.expectedMonth.slice(0, 4))] : event.expectedYear ? [event.expectedYear] : [];
   const start = Number(event.startDate.slice(0, 4));
   const end = Number(endDate(event).slice(0, 4));
   return Array.from({ length: end - start + 1 }, (_, i) => start + i);
@@ -31,7 +31,7 @@ export function getEventGroups(events: readonly EventRecord[], today: string, fi
     active: filtered.filter(e => ['ongoing', 'upcoming'].includes(getEventStatus(e, today))).sort((a, b) =>
       Number(getEventStatus(b, today) === 'ongoing') - Number(getEventStatus(a, today) === 'ongoing')
       || a.startDate!.localeCompare(b.startDate!) || byTitle(a, b)),
-    unconfirmed: filtered.filter(e => getEventStatus(e, today) === 'unconfirmed').sort((a, b) => (a.expectedMonth || '9999').localeCompare(b.expectedMonth || '9999') || byTitle(a, b)),
+    unconfirmed: filtered.filter(e => getEventStatus(e, today) === 'unconfirmed').sort((a, b) => (a.expectedMonth || (a.expectedYear ? `${a.expectedYear}-99` : '9999')).localeCompare(b.expectedMonth || (b.expectedYear ? `${b.expectedYear}-99` : '9999')) || byTitle(a, b)),
     past: filtered.filter(e => getEventStatus(e, today) === 'past').sort((a, b) => endDate(b).localeCompare(endDate(a)) || byTitle(a, b)),
   };
 }
@@ -62,7 +62,7 @@ export function getEventBadge(event: EventRecord, today: string): string {
 const dateLabel = (date: string) => new Intl.DateTimeFormat('pt-BR', { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(`${date}T12:00:00Z`));
 export function formatEventDates(event: EventRecord): string {
   if (!event.startDate) {
-    if (!event.expectedMonth) return 'Data a confirmar';
+    if (!event.expectedMonth) return event.expectedYear ? `${event.expectedYear} — data a confirmar` : 'Data a confirmar';
     const month = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${event.expectedMonth}-01T12:00:00Z`));
     return `${month.charAt(0).toUpperCase()}${month.slice(1)} — data a confirmar`;
   }

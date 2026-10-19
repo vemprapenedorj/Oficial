@@ -14,11 +14,14 @@ test('classifica pelo dia de São Paulo, incluindo último dia completo', () => 
 test('filtros consideram virada do ano e mês previsto sem inventar dias', () => {
   const virada = makeEvent({ startDate: '2026-12-30', endDate: '2027-01-02' });
   const monthly = makeEvent({ id: 'natal', startDate: undefined, expectedMonth: '2026-12' });
+  const yearly = makeEvent({ id: 'motos', startDate: undefined, expectedYear: 2027 });
   assert.deepEqual(getEventYears([virada]), [2027, 2026]);
   assert.equal(getEventGroups([virada], '2026-10-14', { year: 2027 }).active.length, 1);
   assert.equal(getEventGroups([monthly], '2026-10-14', { year: 2026 }).unconfirmed.length, 1);
+  assert.equal(getEventGroups([yearly], '2026-10-14', { year: 2027 }).unconfirmed.length, 1);
   assert.equal(getEventGroups([makeEvent({ startDate: undefined })], '2026-10-14', { year: 2026 }).unconfirmed.length, 0);
   assert.equal(formatEventDates(monthly), 'Dezembro de 2026 — data a confirmar');
+  assert.equal(formatEventDates(yearly), '2027 — data a confirmar');
   assert.equal(getFeaturedEvents([monthly], '2026-10-14').length, 0);
 });
 

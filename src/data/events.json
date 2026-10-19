@@ -204,41 +204,6 @@
     "updatedAt": "2026-10-15"
   },
   {
-    "id": "dez01-2026",
-    "slug": "temporada-de-natal-resende-12-2026",
-    "title": "Temporada de Natal",
-    "summary": "Temporada de Natal — Resende.",
-    "description": [
-      "Programação divulgada no calendário regional de 2026. Consulte a fonte oficial para atualizações antes de planejar sua visita.",
-      "Evento previsto para dezembro; os dias ainda não foram informados no calendário."
-    ],
-    "category": "atracoes-sazonais",
-    "published": true,
-    "expectedMonth": "2026-12",
-    "municipality": "Resende",
-    "state": "RJ",
-    "sourceName": "Prefeitura de Itatiaia — calendário regional",
-    "officialUrl": "https://itatiaia.rj.gov.br/wp-content/uploads/2026/01/PDF-Impressao-1-1.pdf",
-    "updatedAt": "2026-10-14"
-  },
-  {
-    "id": "dez03-2026",
-    "slug": "natal-itinerante-penedo-12-2026",
-    "title": "Natal Itinerante",
-    "summary": "Natal Itinerante — Penedo.",
-    "description": [
-      "Programação divulgada no calendário regional de 2026. Consulte a fonte oficial para atualizações antes de planejar sua visita.",
-      "Evento previsto para dezembro; os dias ainda não foram informados no calendário."
-    ],
-    "category": "atracoes-sazonais",
-    "published": true,
-    "expectedMonth": "2026-12",
-    "locality": "Penedo",
-    "sourceName": "Prefeitura de Itatiaia — calendário regional",
-    "officialUrl": "https://itatiaia.rj.gov.br/wp-content/uploads/2026/01/PDF-Impressao-1-1.pdf",
-    "updatedAt": "2026-10-14"
-  },
-  {
     "id": "dez05-2026",
     "slug": "baile-finlandes-penedo-12-05-2026",
     "title": "Baile Finlandês",
@@ -378,5 +343,73 @@
     "sourceName": "Prefeitura de Itatiaia — calendário regional",
     "officialUrl": "https://itatiaia.rj.gov.br/wp-content/uploads/2026/01/PDF-Impressao-1-1.pdf",
     "updatedAt": "2026-10-16"
+  },
+  {
+    "id": "set04-2027-bbq",
+    "slug": "penedo-bbq-festival-2027",
+    "title": "Penedo BBQ Festival 2027",
+    "summary": "Churrasco premium, música ao vivo e experiências para toda a família em Penedo. Edição de 4 de setembro de 2027 com Munhoz & Mariano anunciados.",
+    "description": [
+      "O Penedo BBQ Festival volta ao Espaço de Eventos do Clube Finlândia em 4 de setembro de 2027. Apresentado pela organização como o maior festival de churrasco do estado do Rio de Janeiro, o encontro reúne cortes nobres, grandes assadores e uma programação de música e lazer em Penedo.",
+      "A dupla sertaneja Munhoz & Mariano é a atração confirmada para 2027. A proposta do festival inclui cerca de oito a nove horas de open food premium, com carne à vontade em diferentes estações. As bebidas são vendidas à parte.",
+      "Além da gastronomia, o evento reúne shows de sertanejo, rock e country, DJs, área kids, touro mecânico, estandes de equipamentos e exposição de veículos. Confira a programação definitiva nos canais oficiais antes da visita.",
+      "Crianças de até 9 anos têm entrada gratuita quando acompanhadas pelo pai, mãe ou responsável legal. De 10 a 15 anos, há meia-entrada. Menores devem estar acompanhados por responsáveis e não é permitida a entrada de animais de estimação.",
+      "As fotografias da galeria mostram a edição de 2026; a arte de Munhoz & Mariano anuncia a atração de 2027. Consulte o Instagram oficial do festival para novidades e informações sobre ingressos."
+    ],
+    "category": "gastronomia",
+    "published": true,
+    "startDate": "2027-09-04",
+    "locationName": "Espaço de Eventos do Clube Finlândia",
+    "locality": "Penedo",
+    "municipality": "Itatiaia",
+    "state": "RJ",
+    "entryText": "Ingressos: consulte o Instagram oficial; bebidas vendidas à parte",
+    "sourceName": "Penedo BBQ Festival — Instagram oficial",
+    "officialUrl": "https://www.instagram.com/penedobbqfestival/",
+    "instagramUrl": "https://www.instagram.com/penedobbqfestival/",
+    "updatedAt": "2026-10-19",
+    "images": [
+      { "src": "/assets/imagens/eventos/penedo-bbq/penedo-bbq-2027-munhoz-mariano.webp", "alt": "Arte do Penedo BBQ Festival de 4 de setembro de 2027 anunciando Munhoz & Mariano como atração confirmada." },
+      { "src": "/assets/imagens/eventos/penedo-bbq/penedo-bbq-2026-publico.webp", "alt": "Público reunido no Penedo BBQ Festival durante a edição de 2026.", "caption": "Foto da edição de 2026" },
+      { "src": "/assets/imagens/eventos/penedo-bbq/penedo-bbq-2026-fogo-de-chao.webp", "alt": "Cortes de carne preparados no fogo de chão na edição de 2026 do Penedo BBQ Festival.", "caption": "Foto da edição de 2026" },
+      { "src": "/assets/imagens/eventos/penedo-bbq/penedo-bbq-2026-grelha.webp", "alt": "Assador prepara cortes de carne na grelha durante o Penedo BBQ Festival de 2026.", "caption": "Foto da edição de 2026" },
+      { "src": "/assets/imagens/eventos/penedo-bbq/penedo-bbq-2026-show.webp", "alt": "Show no palco do Penedo BBQ Festival durante a edição de 2026.", "caption": "Foto da edição de 2026" },
+      { "src": "/assets/imagens/eventos/penedo-bbq/penedo-bbq-2026-cortes.webp", "alt": "Carnes assando sobre as chamas no Penedo BBQ Festival de 2026.", "caption": "Foto da edição de 2026" },
+      { "src": "/assets/imagens/eventos/penedo-bbq/penedo-bbq-2026-gastronomia.webp", "alt": "Prato servido junto à churrasqueira no Penedo BBQ Festival de 2026.", "caption": "Foto da edição de 2026" },
+      { "src": "/assets/imagens/eventos/penedo-bbq/penedo-bbq-2026-dj.webp", "alt": "DJ se apresenta no Penedo BBQ Festival durante a edição de 2026.", "caption": "Foto da edição de 2026" }
+    ]
+  },
+  {
+    "id": "encontro-motos-penedo-2027",
+    "slug": "encontro-internacional-de-motociclistas-penedo-2027",
+    "title": "Encontro Internacional de Motociclistas de Penedo",
+    "summary": "O encontro sobre duas rodas volta a Penedo em 2027, com data ainda a confirmar. Edições anteriores reuniram motos, rock, gastronomia e visitantes de várias regiões.",
+    "description": [
+      "O tradicional Encontro Internacional de Motociclistas de Penedo reúne apaixonados por duas rodas no Campo do Clube Finlândia, no centro da vila. A realização envolve a Simão Produções e o motoclube Penedo Riders, com apoio da Prefeitura de Itatiaia.",
+      "A edição de 2026 aconteceu de 6 a 9 de agosto, com entrada gratuita, shows de rock, exposição de motocicletas, feira de acessórios, praça de alimentação e atrações para famílias. As fotos desta galeria mostram edições anteriores; elas não representam a programação de 2027.",
+      "A organização informou que as datas inicialmente discutidas para 2027, em julho e agosto, não foram confirmadas. A definição segue em diálogo com o município. Acompanhe o Instagram oficial para saber a data, os shows, as condições de entrada e as orientações de hospedagem da próxima edição."
+    ],
+    "scheduleNotice": "O comunicado da organização cita propostas para julho e agosto de 2027, mas nenhuma data foi definida. A programação e as condições de visita serão atualizadas após o anúncio oficial.",
+    "category": "cultura",
+    "published": true,
+    "expectedYear": 2027,
+    "locationName": "Campo do Clube Finlândia",
+    "locality": "Penedo",
+    "municipality": "Itatiaia",
+    "state": "RJ",
+    "entryText": "Condições para 2027 a confirmar; a edição de 2026 teve entrada gratuita",
+    "sourceName": "Encontro Internacional de Motociclistas de Penedo — Instagram oficial",
+    "officialUrl": "https://www.instagram.com/encontrodemotociclistaspenedo/",
+    "instagramUrl": "https://www.instagram.com/encontrodemotociclistaspenedo/",
+    "updatedAt": "2026-10-19",
+    "images": [
+      { "src": "/assets/imagens/eventos/encontro-motociclistas/motos-encontro.webp", "alt": "Motocicletas reunidas no Encontro Internacional de Motociclistas de Penedo.", "caption": "Foto de edição anterior" },
+      { "src": "/assets/imagens/eventos/encontro-motociclistas/motos-guitarrista.webp", "alt": "Guitarrista se apresenta no palco de uma edição anterior do encontro de motociclistas.", "caption": "Foto de edição anterior" },
+      { "src": "/assets/imagens/eventos/encontro-motociclistas/motos-cantor.webp", "alt": "Cantor em apresentação de rock no encontro de motociclistas em Penedo.", "caption": "Foto de edição anterior" },
+      { "src": "/assets/imagens/eventos/encontro-motociclistas/motos-banda.webp", "alt": "Banda toca no palco de uma edição anterior do encontro.", "caption": "Foto de edição anterior" },
+      { "src": "/assets/imagens/eventos/encontro-motociclistas/motos-publico-noite.webp", "alt": "Público acompanha o encontro de motociclistas durante a noite.", "caption": "Foto de edição anterior" },
+      { "src": "/assets/imagens/eventos/encontro-motociclistas/motos-feira-noite.webp", "alt": "Área de convivência e alimentação do encontro de motociclistas à noite.", "caption": "Foto de edição anterior" },
+      { "src": "/assets/imagens/eventos/encontro-motociclistas/motos-evento-noite.webp", "alt": "Motocicletas e visitantes no encontro realizado à noite em Penedo.", "caption": "Foto de edição anterior" }
+    ]
   }
 ]

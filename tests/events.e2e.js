@@ -55,7 +55,7 @@ test('agenda: cards responsivos, filtros, histórico, busca e detalhe', { timeou
     await page.waitForSelector('#proximos');
     await page.goto(base);
     await page.waitForSelector('[data-events-highlight]');
-    assert.equal(await page.$$eval('[data-events-highlight] [data-event-card]',els=>els.length),3);
+    assert.equal(await page.$$eval('[data-events-highlight] [data-event-card]',els=>els.length),4);
     await page.setViewport({width:1440,height:1000});
     await page.$eval('[data-events-highlight]',el=>el.scrollIntoView({behavior:'instant'}));
     await page.screenshot({path:'artifacts/agenda/home.png'});
@@ -95,7 +95,7 @@ test('agenda atualiza ao virar o dia, mantém rascunhos ocultos e recupera image
 });
 
 test('carrossel permite setas, indicadores e teclado sem acionar o link do card', {timeout:60000}, async()=>{
-  const images=[{src:'/assets/imagens/eventos/temporada-da-truta-2026-horizontal.webp',alt:'Primeira imagem'},{src:'/assets/imagens/eventos/agenda-penedo-hero.webp',alt:'Segunda imagem'},{src:'/assets/imagem-ausente-teste.webp',alt:'Terceira imagem'}];
+  const images=[{src:'/assets/imagens/eventos/temporada-da-truta-2026-horizontal.webp',alt:'Primeira imagem'},{src:'/assets/imagens/eventos/agenda-penedo-hero.webp',alt:'Segunda imagem',caption:'Foto da edição de 2026'},{src:'/assets/imagem-ausente-teste.webp',alt:'Terceira imagem'}];
   const event={id:'galeria',slug:'galeria',title:'Evento com galeria',summary:'Teste',description:['Teste'],category:'cultura',published:true,startDate:'2099-01-01',images};
   const server=await createServer({plugins:[{name:'gallery-fixture',enforce:'pre',load(id){if(id.replaceAll('\\','/').endsWith('/src/data/events.json'))return JSON.stringify([event]);}}],server:{host:'127.0.0.1',port:0}});
   let browser;
@@ -108,6 +108,7 @@ test('carrossel permite setas, indicadores e teclado sem acionar o link do card'
       await page.$eval('[data-event-artwork]',e=>e.scrollIntoView({behavior:'instant',block:'center'}));
       await page.click('[aria-label="Próxima imagem"]');
       await page.waitForSelector('img[alt="Segunda imagem"]');assert.equal(new URL(page.url()).pathname,route);
+      assert.match(await page.$eval('[data-event-artwork]',e=>e.innerText),/Foto da edição de 2026/);
       assert.equal(await page.$eval('[aria-label="Próxima imagem"]',e=>e.closest('a')===null),true);
       await page.focus('[aria-label="Imagem anterior"]');await page.keyboard.press('Enter');await page.waitForSelector('img[alt="Primeira imagem"]');
       await page.click('[aria-label="Ver imagem 2"]');await page.waitForSelector('img[alt="Segunda imagem"]');

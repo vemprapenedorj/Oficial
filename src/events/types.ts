@@ -15,7 +15,7 @@ export interface EventRecord {
   published: boolean;
   image?: string;
   imageAlt?: string;
-  images?: { src: string; alt: string }[];
+  images?: { src: string; alt: string; caption?: string }[];
   locationName?: string;
   locationAddress?: string;
   locality?: string;
@@ -24,6 +24,8 @@ export interface EventRecord {
   startDate?: string;
   endDate?: string;
   expectedMonth?: string;
+  expectedYear?: number;
+  scheduleNotice?: string;
   startTime?: string;
   endTime?: string;
   organizerName?: string;

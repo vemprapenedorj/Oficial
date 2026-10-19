@@ -24,6 +24,10 @@ export function EventDetailPage({ events = EVENTS }: { events?: readonly EventRe
       <div className="flex flex-wrap items-center gap-3 mb-5"><span className="text-xs font-bold uppercase tracking-widest text-penedo-forest">{EVENT_CATEGORY_LABELS[event.category]}</span><span className="rounded-full bg-penedo-mint px-3 py-1 text-xs font-semibold text-penedo-forest">{getEventBadge(event, today)}</span></div>
       <h1 className="text-3xl md:text-5xl font-bold text-penedo-forest max-w-4xl leading-tight tracking-tight [overflow-wrap:anywhere]">{event.title}</h1>
       <p className="mt-5 mb-9 text-lg text-gray-600 max-w-3xl leading-relaxed">{event.summary}</p>
+      {event.scheduleNotice && <aside className="mb-9 max-w-4xl rounded-2xl border border-penedo-gold/60 bg-[#fff9e8] px-5 py-4 sm:px-6" aria-label="Atualização sobre a data do evento">
+        <p className="flex items-center gap-2 font-bold text-penedo-forest"><CalendarDays size={20} aria-hidden="true" />Data da próxima edição ainda não definida</p>
+        <p className="mt-2 text-gray-700 leading-relaxed">{event.scheduleNotice}</p>
+      </aside>}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-start">
         <div className="rounded-3xl overflow-hidden border border-penedo-forest/10"><EventArtwork key={event.id} event={event} past={past} /></div>
         <section aria-label="Informações do evento" className="rounded-3xl bg-white border border-penedo-forest/10 p-6 sm:p-8">

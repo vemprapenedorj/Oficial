@@ -62,64 +62,23 @@ export function HomePage({
   return (
     <div>
       {/* Hero */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <picture>
-            {/* Desktop (1920px) */}
-            <source 
-              media="(min-width: 1280px)" 
-              srcSet="/assets/imagens/hero-desktop.avif" 
-              type="image/avif" 
-            />
-            <source 
-              media="(min-width: 1280px)" 
-              srcSet="/assets/imagens/hero-desktop.webp" 
-              type="image/webp" 
-            />
-            <source 
-              media="(min-width: 1280px)" 
-              srcSet="/assets/imagens/hero-desktop.jpg" 
-              type="image/jpeg" 
-            />
-
-            {/* Tablet (1280px) */}
-            <source 
-              media="(min-width: 768px)" 
-              srcSet="/assets/imagens/hero-tablet.avif" 
-              type="image/avif" 
-            />
-            <source 
-              media="(min-width: 768px)" 
-              srcSet="/assets/imagens/hero-tablet.webp" 
-              type="image/webp" 
-            />
-            <source 
-              media="(min-width: 768px)" 
-              srcSet="/assets/imagens/hero-tablet.jpg" 
-              type="image/jpeg" 
-            />
-
-            {/* Mobile (768px) */}
-            <source 
-              srcSet="/assets/imagens/hero-mobile.avif" 
-              type="image/avif" 
-            />
-            <source 
-              srcSet="/assets/imagens/hero-mobile.webp" 
-              type="image/webp" 
-            />
-            
-            <img 
-              src="/assets/imagens/hero-mobile.jpg" 
-              className="w-full h-full object-cover" 
-              alt="Penedo"
-              fetchPriority="high"
-              decoding="sync"
-            />
-          </picture>
-          <div className="absolute inset-0 bg-black/40"></div>
-        </div>
-        <div className="relative z-10 text-center px-4 max-w-4xl">
+      <section className="relative overflow-hidden bg-[#102633] lg:flex lg:h-[clamp(600px,76svh,760px)] lg:items-center">
+        <picture className="block w-full lg:absolute lg:inset-0 lg:h-full">
+          <source srcSet="/assets/imagens/hero-entrada-penedo.avif" type="image/avif" />
+          <source srcSet="/assets/imagens/hero-entrada-penedo.webp" type="image/webp" />
+          <img
+            src="/assets/imagens/hero-entrada-penedo.jpg"
+            width="1672"
+            height="941"
+            className="block h-auto w-full lg:h-full lg:object-cover"
+            alt="Letreiro Eu amo Penedo diante das montanhas ao pôr do sol"
+            fetchPriority="high"
+            decoding="async"
+          />
+        </picture>
+        <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-[#081920]/80 via-[#081920]/40 to-transparent lg:block" />
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-14 pt-10 sm:px-6 md:py-16 lg:px-8 lg:py-24">
+          <div className="mx-auto max-w-xl text-center lg:mx-0 lg:text-left">
           <span 
             className="inline-block px-4 py-1 mb-6 rounded-full bg-penedo-gold/20 border border-penedo-gold/30 text-penedo-gold text-sm font-semibold tracking-widest uppercase"
           >
@@ -136,7 +95,7 @@ export function HomePage({
             Entre a natureza exuberante e o charme da colonização finlandesa, encontre o seu refúgio perfeito na Serra da Mantiqueira.
           </p>
           <div 
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
           >
             <Link
               to="/gastronomia/"
@@ -150,6 +109,7 @@ export function HomePage({
             >
               Onde Comprar
             </Link>
+          </div>
           </div>
         </div>
       </section>

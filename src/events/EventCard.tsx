@@ -23,6 +23,7 @@ export function EventArtwork({ event, href, past = false }: { event: EventRecord
         <div className="flex items-end justify-between gap-4"><div><span className="block text-[clamp(3rem,7vw,6rem)] font-bold tracking-tighter leading-none">{event.startDate ? event.startDate.slice(8) : 'Em breve'}</span><span className="block mt-2 text-lg sm:text-2xl capitalize">{month}{date && <span className="text-penedo-forest/60"> / {date.slice(0, 4)}</span>}</span></div><span className="h-12 w-1.5 rounded-full bg-penedo-gold" aria-hidden="true" /></div>
         <span className="text-xs uppercase tracking-widest text-penedo-forest/65">Agenda · Vem Pra Penedo</span>
       </div>}
+    {current?.caption && failedImage !== current.src && <span className="absolute left-3 top-3 max-w-[calc(100%-1.5rem)] rounded-full bg-penedo-forest/85 px-3 py-1.5 text-xs font-semibold text-white shadow-sm sm:text-sm">{current.caption}</span>}
   </>;
   return <div className="relative aspect-[3/2] w-full overflow-hidden bg-[#eef3ef]" data-event-artwork role={images.length > 1 ? 'region' : undefined} aria-roledescription={images.length > 1 ? 'carrossel' : undefined} aria-label={images.length > 1 ? 'Imagens de ' + event.title : undefined}>
     {href ? <Link to={href} aria-label={'Ver evento: ' + event.title} className="block h-full focus-visible:outline-4 focus-visible:outline-offset-[-4px] focus-visible:outline-penedo-forest">{artwork}</Link> : artwork}

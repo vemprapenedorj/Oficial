@@ -22,12 +22,13 @@ export function validateEvents(input: unknown): EventRecord[] {
     if (!Object.hasOwn(EVENT_CATEGORY_LABELS, raw.category)) fail('category');
     if (typeof raw.published !== 'boolean') fail('published');
     if (!Array.isArray(raw.description) || !raw.description.length || raw.description.some((p: unknown) => typeof p !== 'string' || !p.trim())) fail('description');
-    for (const key of ['image', 'imageAlt', 'locationName', 'locationAddress', 'locality', 'municipality', 'state', 'organizerName', 'entryText', 'sourceName']) {
+    for (const key of ['image', 'imageAlt', 'locationName', 'locationAddress', 'locality', 'municipality', 'state', 'organizerName', 'entryText', 'sourceName', 'scheduleNotice']) {
       if (raw[key] !== undefined && (typeof raw[key] !== 'string' || !raw[key].trim())) fail(key);
     }
     for (const key of ['startDate', 'endDate', 'updatedAt']) if (raw[key] !== undefined && !validDate(raw[key])) fail(key);
     if (raw.endDate && (!raw.startDate || raw.endDate < raw.startDate)) fail('endDate');
-    if (raw.expectedMonth !== undefined && (!/^\d{4}-(0[1-9]|1[0-2])$/.test(raw.expectedMonth) || raw.startDate || raw.endDate)) fail('expectedMonth');
+    if (raw.expectedMonth !== undefined && (!/^\d{4}-(0[1-9]|1[0-2])$/.test(raw.expectedMonth) || raw.startDate || raw.endDate || raw.expectedYear)) fail('expectedMonth');
+    if (raw.expectedYear !== undefined && (!Number.isInteger(raw.expectedYear) || raw.expectedYear < 2000 || raw.expectedYear > 2100 || raw.startDate || raw.endDate || raw.expectedMonth)) fail('expectedYear');
     for (const key of ['startTime', 'endTime']) {
       if (raw[key] !== undefined && (typeof raw[key] !== 'string' || !/^([01]\d|2[0-3]):[0-5]\d$/.test(raw[key]) || !raw.startDate)) fail(key);
     }
@@ -48,6 +49,7 @@ export function validateEvents(input: unknown): EventRecord[] {
       for (const image of raw.images) {
         if (!image || typeof image.src !== 'string' || !image.src.startsWith('/assets/') || /\.\.|[\\?#%]/.test(image.src)) fail('images.src');
         if (typeof image.alt !== 'string' || !image.alt.trim()) fail('images.alt');
+        if (image.caption !== undefined && (typeof image.caption !== 'string' || !image.caption.trim())) fail('images.caption');
         if (paths.has(image.src)) fail('imagem duplicada');
         paths.add(image.src);
       }

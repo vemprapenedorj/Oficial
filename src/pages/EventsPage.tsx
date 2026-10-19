@@ -18,6 +18,14 @@ export function EventsPage({ events = EVENTS }: { events?: readonly EventRecord[
   const total = groups.active.length + groups.unconfirmed.length + groups.past.length;
   const clear = () => { setCategory(''); setYear(''); };
   const sections = [{ title: 'Em andamento e próximos', id: 'proximos', items: groups.active }, { title: 'Programação a confirmar', id: 'a-confirmar', items: groups.unconfirmed }, { title: 'Eventos anteriores', id: 'anteriores', items: groups.past }];
+  let nextRow = 0;
+  const sectionRows = sections.filter(section => section.items.length).map(section => ({
+    ...section,
+    rows: Array.from({ length: Math.ceil(section.items.length / 2) }, (_, index) => ({
+      events: section.items.slice(index * 2, index * 2 + 2),
+      stripe: nextRow++ % 2,
+    })),
+  }));
   return <div className="bg-[#f6f8f6] min-h-screen pb-20">
     <SEO {...getEventsSEO(events)} />
     <header className="relative isolate overflow-hidden bg-penedo-forest text-white pt-32 pb-12 md:pb-16">
@@ -49,10 +57,14 @@ export function EventsPage({ events = EVENTS }: { events?: readonly EventRecord[
         <p aria-live="polite" className="sm:ml-auto py-3 text-sm text-gray-600">{total} {total === 1 ? 'evento encontrado' : 'eventos encontrados'}</p>
       </div>
       {!total && <div className="bg-white rounded-3xl border border-penedo-forest/10 p-8 text-center text-gray-600">{category || year ? 'Nenhum evento encontrado para estes filtros' : 'A programação de Penedo e região será divulgada aqui. Volte em breve para conferir as novidades.'}</div>}
-      {sections.filter(section => section.items.length).map(section => <section key={section.id} id={section.id} className="mb-14 scroll-mt-28" aria-labelledby={`${section.id}-title`}>
-        <div className="flex items-center gap-4 mb-6"><h2 id={`${section.id}-title`} className="text-2xl md:text-3xl font-bold text-penedo-forest">{section.title}</h2><span className="rounded-full border border-penedo-forest/20 px-3 py-1 text-sm text-penedo-forest">{section.items.length}</span></div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">{section.items.map(event => <EventCard key={event.id} event={event} today={today} />)}</div>
+    </div>
+    {sectionRows.map(section => <section key={section.id} id={section.id} className="scroll-mt-28" aria-labelledby={`${section.id}-title`}>
+        <div className="max-w-7xl mx-auto px-4 pt-12 pb-6 flex items-center gap-4"><h2 id={`${section.id}-title`} className="text-2xl md:text-3xl font-bold text-penedo-forest">{section.title}</h2><span className="rounded-full border border-penedo-forest/20 px-3 py-1 text-sm text-penedo-forest">{section.items.length}</span></div>
+        {section.rows.map((row, index) => <div key={`${section.id}-${index}`} className={row.stripe === 0 ? 'bg-nature-soft' : 'bg-white'} data-event-row>
+          <div className="max-w-7xl mx-auto px-4 py-8 md:py-10 grid grid-cols-1 lg:grid-cols-2 gap-6">{row.events.map(event => <EventCard key={event.id} event={event} today={today} />)}</div>
+        </div>)}
       </section>)}
+    <div className="max-w-7xl mx-auto px-4 pt-12">
       <Link to="/" className="inline-flex items-center gap-2 text-penedo-forest font-semibold hover:underline">Continue explorando Penedo <ArrowRight size={18} aria-hidden="true" /></Link>
     </div>
   </div>;
