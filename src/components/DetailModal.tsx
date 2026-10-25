@@ -106,7 +106,10 @@ export function DetailModal({ item, onClose }: { item: DetailItem | null, onClos
           className="bg-white rounded-[2rem] overflow-hidden max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
           onClick={e => e.stopPropagation()}
         >
-          <div className="relative h-64 sm:h-80 bg-gray-100 flex items-center justify-center overflow-hidden">
+          <div
+            className="relative h-64 sm:h-80 bg-gray-100 flex items-center justify-center overflow-hidden"
+            style={item.id === 'penedo-bugres' ? { backgroundColor: '#05B103' } : undefined}
+          >
             {/* Blurred Background Layer for Contained Images */}
             {['pequena-finlandia', 'pequena-finlandia-shopping', 'lelu-museu', 'hotel-girassol', 'hotel-bertell', 'hotel-britannia', 'hotel-daniela', 'hotel-da-cachoeira', 'pousada-serra-da-india', 'hotel-rio-penedo', 'hotel-do-sino', 'hotel-titanic', 'pousada-aurora-mantiqueira', 'pousada-chez-nous', 'pousada-penedo', 'pousada-reserva-penedo', 'pousada-terraco', 'pousada-villa-luna', 'pousada-rainha-da-mata', 'vila-francesa-hotel', 'aglio-e-olio', 'bazzini-pizzeria', 'borbulha-penedo', 'botegare', 'braseiro-gaucho', 'casa-da-picanha', 'casa-do-fritz', 'enoteca-serrana', 'estancia-penedo', 'kaiten-sushi', 'loazo-resto', 'petit-gourmet', 'pizza-da-villa', 'querencia', 'rei-das-trutas', 'restaurante-finlandes', 'truta-viva', 'zero-a-zero', 'tonttulakki-suklaat', 'lugano-penedo', 'lolita-penedo', 'kahvila-cafe', 'chocolate-do-papai-noel', 'emporio-haru', 'pousada-recanto-de-moria', 'unica-arte-para-voce', 'azia-sushi-lounge', 'bistro-du-cheff', 'sorvete-de-penedo', 'sorvete-finlandes', 'acailandia-penedo', 'pe-de-canela-buteco', 'janela-divino', 'pousada-bela-vista-penedo', 'pousada-vale-do-ermitao', 'pousada-das-acerolas'].includes(item.id) && (
               <div 

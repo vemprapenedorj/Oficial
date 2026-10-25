@@ -4,6 +4,7 @@ export const LOGO_BACKGROUND_BY_ID: Readonly<Record<string, string>> = {
   'gute-passeios': '#FCED1E',
   'expedicao-raizes': '#000000',
   'esquilo-passeios': '#000000',
+  'penedo-bugres': '#05B103',
   'jipe-tour': '#FDFDFD',
   'aguia-de-penedo': '#FEFEFE',
   'rota-dos-passeios': '#FAFAFA',
