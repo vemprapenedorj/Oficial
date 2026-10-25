@@ -61,7 +61,7 @@ export function FeaturedCard(props: { item: DetailItem, onClick: () => void }) {
               ? 'object-cover'
               : item.id === 'enoteca-serrana'
                 ? 'object-cover object-[center_75%]'
-                : (['jipe-tour', 'casa-das-pedras', 'casa-dos-cristais', 'bufallo-couros', 'guela-seca', 'oh-baba-pizza-e-esfiha', 'deck-pizzaria-e-choperia'].includes(item.id) || ['pousada-casa-do-bosque', 'pousada-flor-de-penedo', 'pousada-vale-das-flores', 'pousada-das-acerolas', 'paris-hostelli', 'restaurante-toa-toa', 'gute-passeios', 'rei-da-villa', 'meu-sonho'].includes(item.id))
+                : (['penedo-bugres', 'jipe-tour', 'casa-das-pedras', 'casa-dos-cristais', 'bufallo-couros', 'guela-seca', 'oh-baba-pizza-e-esfiha', 'deck-pizzaria-e-choperia'].includes(item.id) || ['pousada-casa-do-bosque', 'pousada-flor-de-penedo', 'pousada-vale-das-flores', 'pousada-das-acerolas', 'paris-hostelli', 'restaurante-toa-toa', 'gute-passeios', 'rei-da-villa', 'meu-sonho'].includes(item.id))
                   ? 'object-contain object-top'
                   : item.id === 'hotel-girassol'
                     ? 'object-contain object-center p-3'
