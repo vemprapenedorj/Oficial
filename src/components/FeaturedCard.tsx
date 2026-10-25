@@ -39,6 +39,7 @@ export function FeaturedCard(props: { item: DetailItem, onClick: () => void }) {
 
       <div
         className="relative aspect-[3/4] overflow-hidden cursor-pointer bg-gray-100"
+        style={item.id === 'penedo-bugres' ? { backgroundColor: '#05B103' } : undefined}
         onClick={onClick}
       >
         {/* Blurred Background Layer for Contained Images */}

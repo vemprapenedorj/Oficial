@@ -360,7 +360,7 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "title": "Penedo Bugres",
       "category": "Passeios de Aventura",
       "isPremium": false,
-      "image": "/assets/imagens/logos/logo-penedo-bugres.jpg",
+      "image": "/assets/imagens/logos/logo-penedo-bugres-hd.webp",
       "description": "Agência de turismo com guia Cadastur e passeios de bugre, quadriciclo e 4x4 para conhecer Penedo e a região.",
       "fullInfo": "Viva essa aventura com a Penedo Bugres. A agência de turismo oferece passeios de bugre, quadriciclo e 4x4 com guia Cadastur. Entre os roteiros estão o city tour por Penedo, o Parque Nacional do Itatiaia (partes baixa e alta), Visconde de Mauá e Maringá, e a Serrinha do Alambari.",
       "location": "Shopping Rio das Pedras, loja 26, Penedo - RJ",
