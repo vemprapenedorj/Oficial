@@ -356,6 +356,33 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
       "mapsUrl": "https://maps.app.goo.gl/kxyQCf7WKuQjWuet6"
     },
     {
+      "id": "penedo-bugres",
+      "title": "Penedo Bugres",
+      "category": "Passeios de Aventura",
+      "isPremium": false,
+      "image": "/assets/imagens/logos/logo-penedo-bugres.jpg",
+      "description": "Agência de turismo com guia Cadastur e passeios de bugre, quadriciclo e 4x4 para conhecer Penedo e a região.",
+      "fullInfo": "Viva essa aventura com a Penedo Bugres. A agência de turismo oferece passeios de bugre, quadriciclo e 4x4 com guia Cadastur. Entre os roteiros estão o city tour por Penedo, o Parque Nacional do Itatiaia (partes baixa e alta), Visconde de Mauá e Maringá, e a Serrinha do Alambari.",
+      "location": "Shopping Rio das Pedras, loja 26, Penedo - RJ",
+      "whatsapp": "24998609061",
+      "tags": [
+        "bugre",
+        "quadriciclo",
+        "4x4",
+        "city tour",
+        "parque nacional do itatiaia",
+        "visconde de mauá",
+        "maringá",
+        "serrinha do alambari",
+        "guia cadastur",
+        "passeios"
+      ],
+      "whatsappUrl": "https://wa.me/5524998609061",
+      "instagramUrl": "https://www.instagram.com/penedobugresturismo/",
+      "mapsUrl": "https://maps.app.goo.gl/qEnXD5Rwt7gLEqo28",
+      "siteUrl": "https://penedobugres.com.br/"
+    },
+    {
       "id": "jipe-tour",
       "title": "Jipe Tour",
       "category": "Passeios de Aventura",

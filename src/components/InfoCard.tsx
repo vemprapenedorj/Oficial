@@ -57,7 +57,7 @@ export const InfoCard = React.memo(function InfoCard({ item, onOpen }: InfoCardP
       classes += "w-full h-full object-contain object-center";
     } else if (item.id === 'hotel-girassol') {
       classes += "w-full h-full object-contain object-center p-3";
-    } else if (['jipe-tour', 'casa-das-pedras', 'casa-dos-cristais', 'bufallo-couros', 'guela-seca', 'deck-pizzaria-e-choperia'].includes(item.id)) {
+    } else if (['penedo-bugres', 'jipe-tour', 'casa-das-pedras', 'casa-dos-cristais', 'bufallo-couros', 'guela-seca', 'deck-pizzaria-e-choperia'].includes(item.id)) {
       classes += "w-full h-full object-contain object-top";
     } else if (item.id === 'enoteca-serrana') {
       classes += "w-full h-full object-cover object-[center_75%]";
