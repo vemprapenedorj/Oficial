@@ -1,5 +1,7 @@
 # Manutenção da agenda
 
+Atualização editorial de 17/11/2026: atualizadas as datas do Natal Luz em Penedo 2026 a pedido do usuário: início em 28/11/2026 e término no Carnaval de 2027 (09/02/2027). O slug publicado permanece preservado.
+
 Atualização editorial de 19/10/2026: cadastrado o Encontro Internacional de Motociclistas de Penedo para 2027 com **data a confirmar**, conforme comunicado enviado pela organização. As propostas de julho e agosto não são datas oficiais. Sete fotos de edições anteriores aparecem identificadas no carrossel. O catálogo local passa a ter 16 eventos.
 
 Atualização editorial de 19/10/2026: cadastrado o Penedo BBQ Festival de 04/09/2027, com arte da atração anunciada Munhoz & Mariano e sete fotos identificadas como registros da edição de 2026. O catálogo local passa a ter 15 eventos.
