@@ -7,3 +7,16 @@ coverage/
 .env*
 !.env.example
 artifacts/
+
+# Arquivos locais de entrada e dados de terceiros do MazyOS
+dados/*
+!dados/README.md
+saidas/prospeccao/
+*.sqlite
+*.sqlite3
+*credentials*.json
+*service-account*.json
+secrets.json
+*.pem
+*.key
+.mcp.json
