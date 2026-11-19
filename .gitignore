@@ -12,6 +12,8 @@ artifacts/
 dados/*
 !dados/README.md
 saidas/prospeccao/
+tmp/
+output/
 *.sqlite
 *.sqlite3
 *credentials*.json

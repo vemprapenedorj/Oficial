@@ -27,13 +27,14 @@ const MotionLink = motion.create(Link);
 export function BlogPage({ onOpenDetail, onNavigate, onSelectArticle }: { onOpenDetail: (item: DetailItem) => void, onNavigate: (page: Page, premiumSlug?: string | null) => void, onSelectArticle: (id: string | null) => void }) {
   const { slug: activeArticle } = useParams<{ slug: string }>();
   const blogPosts = React.useMemo(() => {
-    return [...(DETAILS_DATA['blog'] || [])].sort((a, b) => {
-      const parseDate = (d: string) => {
-        const [day, month, year] = d.split('/').map(Number);
-        return new Date(year, month - 1, day).getTime();
-      };
-      return parseDate(b.date) - parseDate(a.date);
-    });
+    return [...(DETAILS_DATA['blog'] || [])]
+      .sort((a, b) => {
+        const parseDate = (d: string) => {
+          const [day, month, year] = d.split('/').map(Number);
+          return new Date(year, month - 1, day).getTime();
+        };
+        return parseDate(b.date) - parseDate(a.date);
+      });
   }, []);
 
   const getNavigationButtons = (articleId: string) => {

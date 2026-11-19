@@ -4188,7 +4188,8 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
         "casa do papai noel penedo",
         "turismo penedo"
       ],
-      "date": "19/11/2026"
+      "date": "22/11/2026",
+      "publishAt": "2026-11-22T20:00:00-03:00"
     },
     {
       "id": "melhores-pizzarias-de-penedo",

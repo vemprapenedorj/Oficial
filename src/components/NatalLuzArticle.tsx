@@ -36,7 +36,7 @@ export const NatalLuzArticle: React.FC<NatalLuzArticleProps> = ({ onNavigate }) 
           title: 'Natal Luz em Penedo 2026/2027: Guia Completo, Datas e Atrações',
           description: 'Descubra a magia do Natal Luz em Penedo 2026/2027. Programação de 28 de novembro até o Carnaval, Túnel de Luz gigante, Casa do Papai Noel e dicas de viagem.',
           image: MAIN_IMAGE,
-          datePublished: '2026-11-19',
+          datePublished: '2026-11-22',
           keywords: [
             'natal luz penedo',
             'natal luz penedo 2026',
@@ -85,7 +85,7 @@ export const NatalLuzArticle: React.FC<NatalLuzArticleProps> = ({ onNavigate }) 
             Tudo o que você precisa saber para viver a temporada mais encantadora da Colônia Finlandesa: datas, o Túnel de Luz gigante, atrações e dicas exclusivas.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-gray-300 uppercase tracking-wider">
-            <span className="flex items-center gap-1.5"><Calendar size={15} className="text-penedo-gold" /> 19 de Novembro de 2026</span>
+            <span className="flex items-center gap-1.5"><Calendar size={15} className="text-penedo-gold" /> 22 de Novembro de 2026</span>
             <span className="text-penedo-gold/50">•</span>
             <span className="flex items-center gap-1.5"><Clock size={15} className="text-penedo-gold" /> 6 min de leitura</span>
             <span className="text-penedo-gold/50">•</span>

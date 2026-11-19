@@ -33,6 +33,7 @@ export interface DetailItem {
   siteUrl?: string;
   seo_title?: string;
   seo_description?: string;
+  publishAt?: string;
   faq?: { question: string; answer: string }[];
 }
 
