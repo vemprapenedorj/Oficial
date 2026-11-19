@@ -186,7 +186,7 @@ export const NatalLuzArticle: React.FC<NatalLuzArticleProps> = ({ onNavigate }) 
                 A Pequena Finlândia & Casa do Papai Noel
               </h3>
               <p className="text-gray-700 leading-relaxed">
-                O shopping a céu aberto mais famoso de Penedo ganha neve artificial em horários determinados, árvores de Natal decoradas e música temática. É aqui que fica a tradicional <strong>Casa do Papai Noel</strong>, onde crianças e adultos podem conhecer o bom velhinho pessoalmente em um chalé de madeira típico.
+                O shopping a céu aberto mais famoso de Penedo ganha árvores de Natal decoradas, música temática e eventos especiais. É aqui que fica a tradicional <strong>Casa do Papai Noel</strong>, onde crianças e adultos podem conhecer o bom velhinho pessoalmente em um chalé de madeira típico com muita diversão.
               </p>
             </div>
 

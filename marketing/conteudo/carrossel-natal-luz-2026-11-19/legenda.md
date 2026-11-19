@@ -1,6 +1,6 @@
 Penedo já está pronta para viver a época mais mágica do ano! 🎄✨
 
-De 28 de novembro até o Carnaval de 2027, a Colônia Finlandesa se transforma no Natal Luz: o tradicional túnel iluminado, neve artificial, casinhas decoradas e todo o charme alpino que você já ama.
+De 28 de novembro até o Carnaval de 2027, a Colônia Finlandesa se transforma no Natal Luz: o tradicional túnel iluminado, casinhas decoradas, a visita à Casa do Papai Noel e todo o charme alpino que você já ama.
 
 👉 Arraste para o lado e confira os destaques da programação.
 

@@ -5,7 +5,7 @@
 ### Slide 1 (Capa)
 - **Kicker:** TEMPORADA 2026 / 2027
 - **Título:** Natal Luz em Penedo: a magia começou
-- **Subtítulo:** De 28 de novembro até o Carnaval: 74 dias de luzes, neve artificial e encanto na Colônia Finlandesa.
+- **Subtítulo:** De 28 de novembro até o Carnaval: 74 dias de luzes, atrações especiais e encanto na Colônia Finlandesa.
 - **Rodapé:** @vemprapenedo
 
 ### Slide 2 (Atração Principal)
@@ -17,7 +17,7 @@
 ### Slide 3 (Pequena Finlândia)
 - **Kicker:** ALDEIA NATALINA
 - **Título:** O verdadeiro clima do Polo Norte
-- **Texto:** Na Pequena Finlândia, a magia ganha vida: arquitetura típica em madeira, decorações artesanais, neve artificial e a clássica visita à Casa do Papai Noel com as crianças.
+- **Texto:** Na Pequena Finlândia, a magia ganha vida: arquitetura típica em madeira, decorações artesanais, eventos temáticos e a clássica visita à Casa do Papai Noel com muita diversão.
 - **Rodapé:** @vemprapenedo
 
 ### Slide 4 (Programação e Datas)
