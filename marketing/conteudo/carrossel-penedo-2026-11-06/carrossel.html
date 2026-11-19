@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Penedo, entre a serra e a magia — Vem pra Penedo</title>
+  <style>
+    :root { --forest:#064e3b; --gold:#d4af37; --mint:#d1fae5; --ink:#1f2937; --cream:#f6f8f6; --white:#fff; font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#dbe5dd; }
+    .slide { position:relative; width:1080px; height:1350px; overflow:hidden; isolation:isolate; background:var(--cream); color:var(--forest); }
+    .photo { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    .header { position:absolute; z-index:5; top:64px; left:72px; right:72px; display:flex; align-items:center; justify-content:space-between; }
+    .logo { width:82px; height:82px; object-fit:cover; border-radius:16px; border:1px solid rgba(255,255,255,.28); box-shadow:0 8px 24px rgba(0,0,0,.2); }
+    .counter { font-size:21px; font-weight:700; letter-spacing:.17em; }
+    .footer { position:absolute; z-index:5; left:72px; right:72px; bottom:58px; padding-top:26px; border-top:2px solid currentColor; display:flex; justify-content:space-between; align-items:center; font-size:22px; font-weight:650; letter-spacing:.01em; }
+    .kicker { margin:0 0 30px; font-size:25px; font-weight:800; letter-spacing:.23em; text-transform:uppercase; }
+    h1,h2,p { margin-top:0; }
+    h1 { font-size:101px; line-height:.99; letter-spacing:-.055em; font-weight:800; margin-bottom:32px; }
+    h2 { font-size:75px; line-height:1.04; letter-spacing:-.045em; font-weight:800; margin-bottom:34px; }
+    .body { font-size:35px; line-height:1.38; font-weight:450; letter-spacing:-.018em; }
+    .rule { width:94px; height:6px; background:var(--gold); border-radius:9px; margin:0 0 36px; }
+    .cover { color:var(--white); background:#132322; }
+    .cover .photo { object-position:60% center; }
+    .cover::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(5,26,21,.33) 0%,rgba(5,26,21,.14) 30%,rgba(5,26,21,.72) 59%,rgba(5,26,21,.97) 100%); }
+    .cover .content { position:absolute; z-index:2; left:72px; right:72px; bottom:190px; }
+    .cover h1 { max-width:900px; }
+    .cover .dek { max-width:780px; font-size:34px; line-height:1.3; color:#e8f4ea; }
+    .cover .kicker,.cover .counter { color:var(--gold); }
+    .cover .footer { border-color:rgba(255,255,255,.26); }
+    .finlandia { background:#fff; }
+    .finlandia .photo-frame { position:absolute; left:0; top:0; width:100%; height:610px; overflow:hidden; }
+    .finlandia .photo-frame .photo { object-position:center 43%; }
+    .finlandia .photo-frame::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.35),transparent 42%); }
+    .finlandia .content { position:absolute; left:72px; right:72px; top:660px; }
+    .finlandia .footer { color:var(--forest); border-color:rgba(6,78,59,.16); }
+    .nature { background:var(--forest); color:#fff; }
+    .nature .photo-frame { position:absolute; left:72px; right:72px; top:182px; height:500px; overflow:hidden; border-radius:30px; }
+    .nature .photo-frame .photo { object-position:center 54%; }
+    .nature .content { position:absolute; left:72px; right:72px; top:742px; }
+    .nature .kicker { color:var(--gold); }
+    .nature .body { color:#e7f2eb; }
+    .nature .footer { border-color:rgba(255,255,255,.23); }
+    .flavours { background:#f6f8f6; }
+    .flavours::before { content:"04"; position:absolute; right:-35px; top:170px; font-size:420px; line-height:1; font-weight:800; letter-spacing:-.1em; color:rgba(6,78,59,.065); }
+    .flavours .content { position:absolute; left:72px; right:72px; top:290px; }
+    .flavours h2 { max-width:850px; font-size:92px; }
+    .flavours .body { max-width:860px; font-size:42px; line-height:1.42; }
+    .flavours .accent { position:absolute; width:430px; height:430px; border:7px solid rgba(212,175,55,.8); border-radius:50%; right:-154px; bottom:120px; }
+    .flavours .footer { border-color:rgba(6,78,59,.17); }
+    .rhythm { background:#173127; }
+    .rhythm .photo { object-position:center 46%; }
+    .rhythm::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.35),transparent 28%,rgba(2,26,19,.16) 49%,rgba(2,30,22,.92) 100%); }
+    .rhythm .content { position:absolute; z-index:2; left:72px; right:72px; bottom:186px; }
+    .rhythm .kicker { color:var(--gold); }
+    .rhythm h2,.rhythm .body,.rhythm .counter,.rhythm .footer { color:#fff; }
+    .rhythm .footer { border-color:rgba(255,255,255,.3); }
+    .cta { background:var(--forest); color:#fff; }
+    .cta::before { content:""; position:absolute; width:830px; height:830px; border:3px solid rgba(212,175,55,.28); border-radius:50%; left:500px; top:-310px; }
+    .cta::after { content:""; position:absolute; width:620px; height:620px; border:3px solid rgba(209,250,229,.17); border-radius:50%; left:-390px; bottom:-280px; }
+    .cta .content { position:absolute; left:72px; right:72px; top:280px; text-align:center; }
+    .cta .main-logo { display:block; width:260px; height:260px; object-fit:cover; border-radius:38px; margin:0 auto 74px; border:3px solid rgba(212,175,55,.55); box-shadow:0 24px 70px rgba(0,0,0,.28); }
+    .cta h2 { font-size:88px; max-width:920px; margin-left:auto; margin-right:auto; }
+    .cta .body { max-width:850px; margin:0 auto 43px; color:#e7f2eb; }
+    .cta .website { display:inline-block; border-radius:999px; background:var(--gold); color:var(--forest); padding:22px 38px; font-size:31px; font-weight:800; }
+    .cta .footer { border-color:rgba(255,255,255,.25); }
+  </style>
+</head>
+<body>
+  <div class="slide cover" aria-label="Slide 1: Penedo, entre a serra e a magia">
+    <img class="photo" src="fotos/entrada-penedo.webp" alt="Letreiro Eu amo Penedo ao pôr do sol">
+    <div class="header"><img class="logo" src="fotos/logo.jpg" alt="Vem pra Penedo"><span class="counter">01 / 06</span></div>
+    <div class="content"><p class="kicker">Seu próximo destino</p><div class="rule"></div><h1>Penedo,<br>entre a serra<br>e a magia.</h1><p class="dek">Um convite para descobrir o destino no seu ritmo.</p></div>
+    <div class="footer"><span>VEM PRA PENEDO</span><span>Arraste para descobrir →</span></div>
+  </div>
+
+  <div class="slide finlandia" aria-label="Slide 2: Herança finlandesa">
+    <div class="photo-frame"><img class="photo" src="fotos/pequena-finlandia.jpg" alt="Entrada da Pequena Finlândia em Penedo"></div>
+    <div class="header"><img class="logo" src="fotos/logo.jpg" alt="Vem pra Penedo"><span class="counter" style="color:white">02 / 06</span></div>
+    <div class="content"><p class="kicker">Penedo, RJ</p><div class="rule"></div><h2>Herança<br>finlandesa</h2><p class="body">Na Pequena Finlândia, a arquitetura, as lojas e os sabores dão ao passeio um charme próprio. É um bom começo para descobrir o destino sem pressa.</p></div>
+    <div class="footer"><span>VEM PRA PENEDO</span><span>02</span></div>
+  </div>
+
+  <div class="slide nature" aria-label="Slide 3: Natureza por perto">
+    <div class="header"><img class="logo" src="fotos/logo.jpg" alt="Vem pra Penedo"><span class="counter">03 / 06</span></div>
+    <div class="photo-frame"><img class="photo" src="fotos/cachoeira-de-deus.jpg" alt="Cachoeira de Deus em Penedo"></div>
+    <div class="content"><p class="kicker">Respire a serra</p><div class="rule"></div><h2>Natureza<br>por perto</h2><p class="body">Penedo também convida a sair do centrinho: há cachoeiras, trilhas e paisagens da Mantiqueira para quem quer respirar outros ares. Confira as condições de acesso antes de ir.</p></div>
+    <div class="footer"><span>VEM PRA PENEDO</span><span>03</span></div>
+  </div>
+
+  <div class="slide flavours" aria-label="Slide 4: Sabores da viagem">
+    <div class="header"><img class="logo" src="fotos/logo.jpg" alt="Vem pra Penedo"><span class="counter">04 / 06</span></div>
+    <div class="content"><p class="kicker">Uma pausa gostosa</p><div class="rule"></div><h2>Sabores<br>da viagem</h2><p class="body">Entre cafés, chocolates e restaurantes, a gastronomia faz parte do passeio. Reserve tempo para descobrir o que combina com o seu roteiro.</p></div>
+    <div class="accent" aria-hidden="true"></div>
+    <div class="footer"><span>VEM PRA PENEDO</span><span>04</span></div>
+  </div>
+
+  <div class="slide rhythm" aria-label="Slide 5: No seu ritmo">
+    <img class="photo" src="fotos/serra-da-india.png" alt="Caminho entre jardins e serra em Penedo">
+    <div class="header"><img class="logo" src="fotos/logo.jpg" alt="Vem pra Penedo"><span class="counter">05 / 06</span></div>
+    <div class="content"><p class="kicker">A viagem é sua</p><div class="rule"></div><h2>No seu<br>ritmo</h2><p class="body">Uma escapada a dois, um passeio em família ou alguns dias de descanso: Penedo oferece diferentes maneiras de aproveitar a serra.</p></div>
+    <div class="footer"><span>VEM PRA PENEDO</span><span>05</span></div>
+  </div>
+
+  <div class="slide cta" aria-label="Slide 6: Convite final">
+    <div class="header"><img class="logo" src="fotos/logo.jpg" alt="Vem pra Penedo"><span class="counter">06 / 06</span></div>
+    <div class="content"><img class="main-logo" src="fotos/logo.jpg" alt="Logo Vem pra Penedo"><p class="kicker" style="color:var(--gold)">Comece a planejar</p><h2>Vem pra<br>Penedo.</h2><p class="body">Encontre ideias de hospedagem, gastronomia e lazer no nosso site.</p><span class="website">vemprapenedo.com.br</span></div>
+    <div class="footer"><span>VEM PRA PENEDO</span><span>Até a próxima viagem</span></div>
+  </div>
+</body>
+</html>

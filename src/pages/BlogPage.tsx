@@ -18,6 +18,7 @@ import { HospedagemArticle } from '../components/HospedagemArticle';
 import { Roteiro1DiaArticle } from '../components/Roteiro1DiaArticle';
 import { Roteiro2DiasArticle } from '../components/Roteiro2DiasArticle';
 import { PizzariasArticle } from '../components/PizzariasArticle';
+import { NatalLuzArticle } from '../components/NatalLuzArticle';
 import Page404 from '../components/Page404';
 import { getBlogArticlePath } from '../routing/routeHelpers';
 
@@ -42,7 +43,7 @@ export function BlogPage({ onOpenDetail, onNavigate, onSelectArticle }: { onOpen
 
     const handlePrev = () => {
       if (prevPost) {
-        const inlineArticleIds = ['melhores-pizzarias-de-penedo', 'roteiro-2-dias-em-penedo', 'roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'];
+        const inlineArticleIds = ['natal-luz-penedo', 'melhores-pizzarias-de-penedo', 'roteiro-2-dias-em-penedo', 'roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'];
         if (inlineArticleIds.includes(prevPost.id)) {
           handleSelectArticle(prevPost.id);
           window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -57,7 +58,7 @@ export function BlogPage({ onOpenDetail, onNavigate, onSelectArticle }: { onOpen
 
     const handleNext = () => {
       if (nextPost) {
-        const inlineArticleIds = ['melhores-pizzarias-de-penedo', 'roteiro-2-dias-em-penedo', 'roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'];
+        const inlineArticleIds = ['natal-luz-penedo', 'melhores-pizzarias-de-penedo', 'roteiro-2-dias-em-penedo', 'roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'];
         if (inlineArticleIds.includes(nextPost.id)) {
           handleSelectArticle(nextPost.id);
           window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -73,7 +74,7 @@ export function BlogPage({ onOpenDetail, onNavigate, onSelectArticle }: { onOpen
       }
     };
 
-    const inlineArticleIds = ['melhores-pizzarias-de-penedo', 'roteiro-2-dias-em-penedo', 'roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'];
+    const inlineArticleIds = ['natal-luz-penedo', 'melhores-pizzarias-de-penedo', 'roteiro-2-dias-em-penedo', 'roteiro-1-dia-em-penedo', 'penedo-guia', 'cachoeiras-penedo', 'restaurantes', 'melhores-hospedagens'];
     const prevHref = prevPost && inlineArticleIds.includes(prevPost.id) ? `/blog/artigo/${prevPost.id}/` : '/blog/';
     const penedoGuiaExists = blogPosts.some(post => post.id === 'penedo-guia');
     const nextHref = nextPost && inlineArticleIds.includes(nextPost.id)
@@ -206,6 +207,10 @@ export function BlogPage({ onOpenDetail, onNavigate, onSelectArticle }: { onOpen
         <Page404 onNavigate={onNavigate} />
       </>
     );
+  }
+
+  if (activeArticle === 'natal-luz-penedo') {
+    return <NatalLuzArticle onOpenDetail={onOpenDetail} onNavigate={onNavigate} />;
   }
 
   if (activeArticle === 'roteiro-2-dias-em-penedo') {

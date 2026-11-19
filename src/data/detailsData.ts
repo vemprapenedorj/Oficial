@@ -4173,6 +4173,24 @@ export const DETAILS_DATA: Record<string, DetailItem[]> = {
   ],
   "blog": [
     {
+      "id": "natal-luz-penedo",
+      "title": "Natal Luz em Penedo 2026/2027: Guia Completo, Datas e Atrações",
+      "category": "Destaque",
+      "image": "/assets/imagens/eventos/natal-luz-penedo-tunel-de-luz.webp",
+      "description": "Tudo sobre o Natal Luz em Penedo 2026/2027: datas oficiais de 28/11 ao Carnaval, Túnel de Luz gigante, Casa do Papai Noel e dicas de viagem.",
+      "fullInfo": "Guia completo com tudo o que você precisa saber para curtir o Natal Luz em Penedo: programação oficial, Túnel de Luz, Pequena Finlândia, gastronomia e onde ficar.",
+      "tags": [
+        "natal luz em penedo",
+        "natal em penedo 2026",
+        "tunel de luz penedo",
+        "o que fazer em penedo",
+        "pequena finlandia natal",
+        "casa do papai noel penedo",
+        "turismo penedo"
+      ],
+      "date": "19/11/2026"
+    },
+    {
       "id": "melhores-pizzarias-de-penedo",
       "title": "As 5 Melhores Pizzarias de Penedo RJ",
       "category": "Pizzaria",

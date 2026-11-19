@@ -81,6 +81,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://vemprapenedo.com.br/blog/artigo/natal-luz-penedo/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://vemprapenedo.com.br/blog/artigo/melhores-pizzarias-de-penedo/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
